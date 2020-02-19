@@ -1,0 +1,9 @@
+grammar uk.ac.kcl.dsl.Sql_dsl with org.eclipse.xtext.common.Terminals
+
+generate sql_dsl "http://www.ac.uk/kcl/dsl/Sql_dsl"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
