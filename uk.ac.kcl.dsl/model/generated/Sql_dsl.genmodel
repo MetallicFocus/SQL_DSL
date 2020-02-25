@@ -6,11 +6,66 @@
     copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="Sql_dsl" basePackage="uk.ac.kcl.dsl" disposableProviderFactory="true"
       fileExtensions="sql_dsl" ecorePackage="Sql_dsl.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Sql_dsl.ecore#//DataStructureType">
+      <genEnumLiterals ecoreEnumLiteral="Sql_dsl.ecore#//DataStructureType/VARCHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="Sql_dsl.ecore#//DataStructureType/CHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="Sql_dsl.ecore#//DataStructureType/DATE"/>
+      <genEnumLiterals ecoreEnumLiteral="Sql_dsl.ecore#//DataStructureType/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="Sql_dsl.ecore#//DataStructureType/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="Sql_dsl.ecore#//DataStructureType/TIME"/>
+      <genEnumLiterals ecoreEnumLiteral="Sql_dsl.ecore#//DataStructureType/TEXT"/>
+    </genEnums>
     <genClasses ecoreClass="Sql_dsl.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//Model/greetings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//Model/statements"/>
     </genClasses>
-    <genClasses ecoreClass="Sql_dsl.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//Greeting/name"/>
+    <genClasses ecoreClass="Sql_dsl.ecore#//Statement"/>
+    <genClasses ecoreClass="Sql_dsl.ecore#//DatabaseDeclarationStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//DatabaseDeclarationStatement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//CreateTableStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//CreateTableStatement/tables"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//TableDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//TableDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//TableDeclaration/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//ColumnDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//ColumnDeclaration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//ColumnDeclaration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//ColumnDeclaration/notNull"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//PrimaryKey">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//PrimaryKey/columnAsPK"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//ForeignKey">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//ForeignKey/columnAsFK"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//ForeignKey/foreignTable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//ForeignKey/foreignColumns"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//DropTableStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//DropTableStatement/tables"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//DropTableDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//DropTableDeclaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//TruncateTableStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//TruncateTableStatement/tables"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//TruncateTableDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//TruncateTableDeclaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//AlterTableStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//AlterTableStatement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//AlterTableStatement/addDropUpdate"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//AlterDropStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//AlterDropStatement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//AlterAddStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//AlterAddStatement/column"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//AlterUpdateStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//AlterUpdateStatement/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

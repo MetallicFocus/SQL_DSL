@@ -81,9 +81,79 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseStatement(Statement object)
       {
-        return createGreetingAdapter();
+        return createStatementAdapter();
+      }
+      @Override
+      public Adapter caseDatabaseDeclarationStatement(DatabaseDeclarationStatement object)
+      {
+        return createDatabaseDeclarationStatementAdapter();
+      }
+      @Override
+      public Adapter caseCreateTableStatement(CreateTableStatement object)
+      {
+        return createCreateTableStatementAdapter();
+      }
+      @Override
+      public Adapter caseTableDeclaration(TableDeclaration object)
+      {
+        return createTableDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseColumnDeclaration(ColumnDeclaration object)
+      {
+        return createColumnDeclarationAdapter();
+      }
+      @Override
+      public Adapter casePrimaryKey(PrimaryKey object)
+      {
+        return createPrimaryKeyAdapter();
+      }
+      @Override
+      public Adapter caseForeignKey(ForeignKey object)
+      {
+        return createForeignKeyAdapter();
+      }
+      @Override
+      public Adapter caseDropTableStatement(DropTableStatement object)
+      {
+        return createDropTableStatementAdapter();
+      }
+      @Override
+      public Adapter caseDropTableDeclaration(DropTableDeclaration object)
+      {
+        return createDropTableDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseTruncateTableStatement(TruncateTableStatement object)
+      {
+        return createTruncateTableStatementAdapter();
+      }
+      @Override
+      public Adapter caseTruncateTableDeclaration(TruncateTableDeclaration object)
+      {
+        return createTruncateTableDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseAlterTableStatement(AlterTableStatement object)
+      {
+        return createAlterTableStatementAdapter();
+      }
+      @Override
+      public Adapter caseAlterDropStatement(AlterDropStatement object)
+      {
+        return createAlterDropStatementAdapter();
+      }
+      @Override
+      public Adapter caseAlterAddStatement(AlterAddStatement object)
+      {
+        return createAlterAddStatementAdapter();
+      }
+      @Override
+      public Adapter caseAlterUpdateStatement(AlterUpdateStatement object)
+      {
+        return createAlterUpdateStatementAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -123,16 +193,226 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.Statement <em>Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.dsl.sql_dsl.Greeting
+   * @see uk.ac.kcl.dsl.sql_dsl.Statement
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement <em>Database Declaration Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement
+   * @generated
+   */
+  public Adapter createDatabaseDeclarationStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.CreateTableStatement <em>Create Table Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.CreateTableStatement
+   * @generated
+   */
+  public Adapter createCreateTableStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.TableDeclaration <em>Table Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.TableDeclaration
+   * @generated
+   */
+  public Adapter createTableDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration <em>Column Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration
+   * @generated
+   */
+  public Adapter createColumnDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.PrimaryKey <em>Primary Key</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.PrimaryKey
+   * @generated
+   */
+  public Adapter createPrimaryKeyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.ForeignKey <em>Foreign Key</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.ForeignKey
+   * @generated
+   */
+  public Adapter createForeignKeyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.DropTableStatement <em>Drop Table Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.DropTableStatement
+   * @generated
+   */
+  public Adapter createDropTableStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration <em>Drop Table Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration
+   * @generated
+   */
+  public Adapter createDropTableDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement <em>Truncate Table Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement
+   * @generated
+   */
+  public Adapter createTruncateTableStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration <em>Truncate Table Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration
+   * @generated
+   */
+  public Adapter createTruncateTableDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.AlterTableStatement <em>Alter Table Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterTableStatement
+   * @generated
+   */
+  public Adapter createAlterTableStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.AlterDropStatement <em>Alter Drop Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterDropStatement
+   * @generated
+   */
+  public Adapter createAlterDropStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.AlterAddStatement <em>Alter Add Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterAddStatement
+   * @generated
+   */
+  public Adapter createAlterAddStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement <em>Alter Update Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement
+   * @generated
+   */
+  public Adapter createAlterUpdateStatementAdapter()
   {
     return null;
   }

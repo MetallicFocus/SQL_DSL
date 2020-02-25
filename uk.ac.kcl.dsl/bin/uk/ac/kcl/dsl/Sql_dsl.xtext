@@ -2,8 +2,115 @@ grammar uk.ac.kcl.dsl.Sql_dsl with org.eclipse.xtext.common.Terminals
 
 generate sql_dsl "http://www.ac.uk/kcl/dsl/Sql_dsl"
 
-Model:
-	greetings+=Greeting*;
 	
-Greeting:
-	'Hello' name=ID '!';
+Model:
+	statements += Statement
+;
+
+Statement:
+	DatabaseDeclarationStatement |
+	CreateTableStatement |
+	DropTableStatement |
+	TruncateTableStatement |
+	AlterTableStatement
+;
+
+/*
+ * 
+ * Database Declaration
+ * 
+ */
+
+DatabaseDeclarationStatement:
+	"CREATE" "DATABASE" name=ID
+;
+
+/*
+ * 
+ * Create Table Declaration
+ * 
+ */
+
+CreateTableStatement:
+	// Must contain at least one table declaration
+	tables+=TableDeclaration*
+;
+	
+TableDeclaration:
+	// Create statement for the table generation
+	"CREATE" "TABLE" name=ID "(" attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey)+ 
+		("," attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey))*
+	")"
+;
+	
+ColumnDeclaration:
+	name=ID type=DataStructureType notNull?=("NOT NULL")?
+;
+
+PrimaryKey:
+	"PRIMARY" "KEY" "(" 
+		columnAsPK+=[ColumnDeclaration] ("," columnAsPK+=[ColumnDeclaration])*
+	")"
+;
+
+ForeignKey:
+	"FOREIGN" "KEY" "(" 
+		columnAsFK+=[ColumnDeclaration] ("," columnAsFK+=[ColumnDeclaration])* ")" 
+	"REFERENCES" foreignTable=[TableDeclaration] 
+	"(" foreignColumns+=[ColumnDeclaration] ("," foreignColumns+=[ColumnDeclaration])* ")"
+;
+
+enum DataStructureType:
+	VARCHAR="varchar" | CHAR="char" | DATE="date" | INT="int" | FLOAT="float" | TIME="time" | TEXT="text"
+;
+
+/*
+ * 
+ * Drop Table Statement
+ * 
+ */
+
+DropTableStatement:
+	tables+=DropTableDeclaration*
+;
+
+DropTableDeclaration:
+	"DROP" "TABLE" name=ID
+;
+
+/*
+ * 
+ * Truncate Table Statement
+ * 
+ */
+
+TruncateTableStatement:
+	tables+=TruncateTableDeclaration*
+;
+
+TruncateTableDeclaration:
+	"TRUNCATE" "TABLE" name=ID
+;
+
+/*
+ * 
+ * Alter Table Statement
+ * 
+ * 
+ */
+
+ AlterTableStatement:
+ 	"ALTER" "TABLE" name=ID addDropUpdate=(AlterDropStatement | AlterAddStatement | AlterUpdateStatement)
+ ;
+ 
+ AlterDropStatement:
+ 	"DROP" "COLUMN" name=ID
+ ;
+ 
+ AlterAddStatement:
+ 	"ADD" column+=[ColumnDeclaration]
+ ;
+ 
+ AlterUpdateStatement:
+ 	"ALTER" "COLUMN" name=ID
+ ;

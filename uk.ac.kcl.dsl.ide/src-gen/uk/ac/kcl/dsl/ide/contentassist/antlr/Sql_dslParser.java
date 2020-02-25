@@ -31,9 +31,51 @@ public class Sql_dslParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, Sql_dslGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
-			builder.put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
-			builder.put(grammarAccess.getGreetingAccess().getNameAssignment_1(), "rule__Greeting__NameAssignment_1");
+			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
+			builder.put(grammarAccess.getTableDeclarationAccess().getAttributesAlternatives_4_0(), "rule__TableDeclaration__AttributesAlternatives_4_0");
+			builder.put(grammarAccess.getTableDeclarationAccess().getAttributesAlternatives_5_1_0(), "rule__TableDeclaration__AttributesAlternatives_5_1_0");
+			builder.put(grammarAccess.getAlterTableStatementAccess().getAddDropUpdateAlternatives_3_0(), "rule__AlterTableStatement__AddDropUpdateAlternatives_3_0");
+			builder.put(grammarAccess.getDataStructureTypeAccess().getAlternatives(), "rule__DataStructureType__Alternatives");
+			builder.put(grammarAccess.getDatabaseDeclarationStatementAccess().getGroup(), "rule__DatabaseDeclarationStatement__Group__0");
+			builder.put(grammarAccess.getTableDeclarationAccess().getGroup(), "rule__TableDeclaration__Group__0");
+			builder.put(grammarAccess.getTableDeclarationAccess().getGroup_5(), "rule__TableDeclaration__Group_5__0");
+			builder.put(grammarAccess.getColumnDeclarationAccess().getGroup(), "rule__ColumnDeclaration__Group__0");
+			builder.put(grammarAccess.getPrimaryKeyAccess().getGroup(), "rule__PrimaryKey__Group__0");
+			builder.put(grammarAccess.getPrimaryKeyAccess().getGroup_4(), "rule__PrimaryKey__Group_4__0");
+			builder.put(grammarAccess.getForeignKeyAccess().getGroup(), "rule__ForeignKey__Group__0");
+			builder.put(grammarAccess.getForeignKeyAccess().getGroup_4(), "rule__ForeignKey__Group_4__0");
+			builder.put(grammarAccess.getForeignKeyAccess().getGroup_10(), "rule__ForeignKey__Group_10__0");
+			builder.put(grammarAccess.getDropTableDeclarationAccess().getGroup(), "rule__DropTableDeclaration__Group__0");
+			builder.put(grammarAccess.getTruncateTableDeclarationAccess().getGroup(), "rule__TruncateTableDeclaration__Group__0");
+			builder.put(grammarAccess.getAlterTableStatementAccess().getGroup(), "rule__AlterTableStatement__Group__0");
+			builder.put(grammarAccess.getAlterDropStatementAccess().getGroup(), "rule__AlterDropStatement__Group__0");
+			builder.put(grammarAccess.getAlterAddStatementAccess().getGroup(), "rule__AlterAddStatement__Group__0");
+			builder.put(grammarAccess.getAlterUpdateStatementAccess().getGroup(), "rule__AlterUpdateStatement__Group__0");
+			builder.put(grammarAccess.getModelAccess().getStatementsAssignment(), "rule__Model__StatementsAssignment");
+			builder.put(grammarAccess.getDatabaseDeclarationStatementAccess().getNameAssignment_2(), "rule__DatabaseDeclarationStatement__NameAssignment_2");
+			builder.put(grammarAccess.getCreateTableStatementAccess().getTablesAssignment(), "rule__CreateTableStatement__TablesAssignment");
+			builder.put(grammarAccess.getTableDeclarationAccess().getNameAssignment_2(), "rule__TableDeclaration__NameAssignment_2");
+			builder.put(grammarAccess.getTableDeclarationAccess().getAttributesAssignment_4(), "rule__TableDeclaration__AttributesAssignment_4");
+			builder.put(grammarAccess.getTableDeclarationAccess().getAttributesAssignment_5_1(), "rule__TableDeclaration__AttributesAssignment_5_1");
+			builder.put(grammarAccess.getColumnDeclarationAccess().getNameAssignment_0(), "rule__ColumnDeclaration__NameAssignment_0");
+			builder.put(grammarAccess.getColumnDeclarationAccess().getTypeAssignment_1(), "rule__ColumnDeclaration__TypeAssignment_1");
+			builder.put(grammarAccess.getColumnDeclarationAccess().getNotNullAssignment_2(), "rule__ColumnDeclaration__NotNullAssignment_2");
+			builder.put(grammarAccess.getPrimaryKeyAccess().getColumnAsPKAssignment_3(), "rule__PrimaryKey__ColumnAsPKAssignment_3");
+			builder.put(grammarAccess.getPrimaryKeyAccess().getColumnAsPKAssignment_4_1(), "rule__PrimaryKey__ColumnAsPKAssignment_4_1");
+			builder.put(grammarAccess.getForeignKeyAccess().getColumnAsFKAssignment_3(), "rule__ForeignKey__ColumnAsFKAssignment_3");
+			builder.put(grammarAccess.getForeignKeyAccess().getColumnAsFKAssignment_4_1(), "rule__ForeignKey__ColumnAsFKAssignment_4_1");
+			builder.put(grammarAccess.getForeignKeyAccess().getForeignTableAssignment_7(), "rule__ForeignKey__ForeignTableAssignment_7");
+			builder.put(grammarAccess.getForeignKeyAccess().getForeignColumnsAssignment_9(), "rule__ForeignKey__ForeignColumnsAssignment_9");
+			builder.put(grammarAccess.getForeignKeyAccess().getForeignColumnsAssignment_10_1(), "rule__ForeignKey__ForeignColumnsAssignment_10_1");
+			builder.put(grammarAccess.getDropTableStatementAccess().getTablesAssignment(), "rule__DropTableStatement__TablesAssignment");
+			builder.put(grammarAccess.getDropTableDeclarationAccess().getNameAssignment_2(), "rule__DropTableDeclaration__NameAssignment_2");
+			builder.put(grammarAccess.getTruncateTableStatementAccess().getTablesAssignment(), "rule__TruncateTableStatement__TablesAssignment");
+			builder.put(grammarAccess.getTruncateTableDeclarationAccess().getNameAssignment_2(), "rule__TruncateTableDeclaration__NameAssignment_2");
+			builder.put(grammarAccess.getAlterTableStatementAccess().getNameAssignment_2(), "rule__AlterTableStatement__NameAssignment_2");
+			builder.put(grammarAccess.getAlterTableStatementAccess().getAddDropUpdateAssignment_3(), "rule__AlterTableStatement__AddDropUpdateAssignment_3");
+			builder.put(grammarAccess.getAlterDropStatementAccess().getNameAssignment_2(), "rule__AlterDropStatement__NameAssignment_2");
+			builder.put(grammarAccess.getAlterAddStatementAccess().getColumnAssignment_1(), "rule__AlterAddStatement__ColumnAssignment_1");
+			builder.put(grammarAccess.getAlterUpdateStatementAccess().getNameAssignment_2(), "rule__AlterUpdateStatement__NameAssignment_2");
 		}
 	}
 	

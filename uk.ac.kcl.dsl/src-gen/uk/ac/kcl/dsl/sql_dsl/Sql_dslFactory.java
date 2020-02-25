@@ -33,13 +33,139 @@ public interface Sql_dslFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Statement</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  Statement createStatement();
+
+  /**
+   * Returns a new object of class '<em>Database Declaration Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Database Declaration Statement</em>'.
+   * @generated
+   */
+  DatabaseDeclarationStatement createDatabaseDeclarationStatement();
+
+  /**
+   * Returns a new object of class '<em>Create Table Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Create Table Statement</em>'.
+   * @generated
+   */
+  CreateTableStatement createCreateTableStatement();
+
+  /**
+   * Returns a new object of class '<em>Table Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Table Declaration</em>'.
+   * @generated
+   */
+  TableDeclaration createTableDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Column Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Column Declaration</em>'.
+   * @generated
+   */
+  ColumnDeclaration createColumnDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Primary Key</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Primary Key</em>'.
+   * @generated
+   */
+  PrimaryKey createPrimaryKey();
+
+  /**
+   * Returns a new object of class '<em>Foreign Key</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Foreign Key</em>'.
+   * @generated
+   */
+  ForeignKey createForeignKey();
+
+  /**
+   * Returns a new object of class '<em>Drop Table Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Drop Table Statement</em>'.
+   * @generated
+   */
+  DropTableStatement createDropTableStatement();
+
+  /**
+   * Returns a new object of class '<em>Drop Table Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Drop Table Declaration</em>'.
+   * @generated
+   */
+  DropTableDeclaration createDropTableDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Truncate Table Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Truncate Table Statement</em>'.
+   * @generated
+   */
+  TruncateTableStatement createTruncateTableStatement();
+
+  /**
+   * Returns a new object of class '<em>Truncate Table Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Truncate Table Declaration</em>'.
+   * @generated
+   */
+  TruncateTableDeclaration createTruncateTableDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Alter Table Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alter Table Statement</em>'.
+   * @generated
+   */
+  AlterTableStatement createAlterTableStatement();
+
+  /**
+   * Returns a new object of class '<em>Alter Drop Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alter Drop Statement</em>'.
+   * @generated
+   */
+  AlterDropStatement createAlterDropStatement();
+
+  /**
+   * Returns a new object of class '<em>Alter Add Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alter Add Statement</em>'.
+   * @generated
+   */
+  AlterAddStatement createAlterAddStatement();
+
+  /**
+   * Returns a new object of class '<em>Alter Update Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alter Update Statement</em>'.
+   * @generated
+   */
+  AlterUpdateStatement createAlterUpdateStatement();
 
   /**
    * Returns the package supported by this factory.

@@ -5,6 +5,7 @@ package uk.ac.kcl.dsl.sql_dsl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -68,13 +69,13 @@ public interface Sql_dslPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 0;
+  int MODEL__STATEMENTS = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -86,14 +87,33 @@ public interface Sql_dslPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.GreetingImpl <em>Greeting</em>}' class.
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.StatementImpl <em>Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.kcl.dsl.sql_dsl.impl.GreetingImpl
-   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getGreeting()
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.StatementImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getStatement()
    * @generated
    */
-  int GREETING = 1;
+  int STATEMENT = 1;
+
+  /**
+   * The number of structural features of the '<em>Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.DatabaseDeclarationStatementImpl <em>Database Declaration Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.DatabaseDeclarationStatementImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDatabaseDeclarationStatement()
+   * @generated
+   */
+  int DATABASE_DECLARATION_STATEMENT = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,16 +122,444 @@ public interface Sql_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GREETING__NAME = 0;
+  int DATABASE_DECLARATION_STATEMENT__NAME = STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The number of structural features of the '<em>Database Declaration Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int DATABASE_DECLARATION_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.CreateTableStatementImpl <em>Create Table Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.CreateTableStatementImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getCreateTableStatement()
+   * @generated
+   */
+  int CREATE_TABLE_STATEMENT = 3;
+
+  /**
+   * The feature id for the '<em><b>Tables</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_TABLE_STATEMENT__TABLES = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Create Table Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_TABLE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.TableDeclarationImpl <em>Table Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.TableDeclarationImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTableDeclaration()
+   * @generated
+   */
+  int TABLE_DECLARATION = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_DECLARATION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_DECLARATION__ATTRIBUTES = 1;
+
+  /**
+   * The number of structural features of the '<em>Table Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_DECLARATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.ColumnDeclarationImpl <em>Column Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.ColumnDeclarationImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getColumnDeclaration()
+   * @generated
+   */
+  int COLUMN_DECLARATION = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_DECLARATION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_DECLARATION__TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Not Null</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_DECLARATION__NOT_NULL = 2;
+
+  /**
+   * The number of structural features of the '<em>Column Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_DECLARATION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.PrimaryKeyImpl <em>Primary Key</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.PrimaryKeyImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getPrimaryKey()
+   * @generated
+   */
+  int PRIMARY_KEY = 6;
+
+  /**
+   * The feature id for the '<em><b>Column As PK</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_KEY__COLUMN_AS_PK = 0;
+
+  /**
+   * The number of structural features of the '<em>Primary Key</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_KEY_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.ForeignKeyImpl <em>Foreign Key</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.ForeignKeyImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getForeignKey()
+   * @generated
+   */
+  int FOREIGN_KEY = 7;
+
+  /**
+   * The feature id for the '<em><b>Column As FK</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOREIGN_KEY__COLUMN_AS_FK = 0;
+
+  /**
+   * The feature id for the '<em><b>Foreign Table</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOREIGN_KEY__FOREIGN_TABLE = 1;
+
+  /**
+   * The feature id for the '<em><b>Foreign Columns</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOREIGN_KEY__FOREIGN_COLUMNS = 2;
+
+  /**
+   * The number of structural features of the '<em>Foreign Key</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOREIGN_KEY_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.DropTableStatementImpl <em>Drop Table Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.DropTableStatementImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDropTableStatement()
+   * @generated
+   */
+  int DROP_TABLE_STATEMENT = 8;
+
+  /**
+   * The feature id for the '<em><b>Tables</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DROP_TABLE_STATEMENT__TABLES = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Drop Table Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DROP_TABLE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.DropTableDeclarationImpl <em>Drop Table Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.DropTableDeclarationImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDropTableDeclaration()
+   * @generated
+   */
+  int DROP_TABLE_DECLARATION = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DROP_TABLE_DECLARATION__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Drop Table Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DROP_TABLE_DECLARATION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.TruncateTableStatementImpl <em>Truncate Table Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.TruncateTableStatementImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTruncateTableStatement()
+   * @generated
+   */
+  int TRUNCATE_TABLE_STATEMENT = 10;
+
+  /**
+   * The feature id for the '<em><b>Tables</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRUNCATE_TABLE_STATEMENT__TABLES = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Truncate Table Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRUNCATE_TABLE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.TruncateTableDeclarationImpl <em>Truncate Table Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.TruncateTableDeclarationImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTruncateTableDeclaration()
+   * @generated
+   */
+  int TRUNCATE_TABLE_DECLARATION = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRUNCATE_TABLE_DECLARATION__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Truncate Table Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRUNCATE_TABLE_DECLARATION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterTableStatementImpl <em>Alter Table Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.AlterTableStatementImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterTableStatement()
+   * @generated
+   */
+  int ALTER_TABLE_STATEMENT = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALTER_TABLE_STATEMENT__NAME = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Add Drop Update</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALTER_TABLE_STATEMENT__ADD_DROP_UPDATE = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Alter Table Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALTER_TABLE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterDropStatementImpl <em>Alter Drop Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.AlterDropStatementImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterDropStatement()
+   * @generated
+   */
+  int ALTER_DROP_STATEMENT = 13;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALTER_DROP_STATEMENT__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Alter Drop Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALTER_DROP_STATEMENT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterAddStatementImpl <em>Alter Add Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.AlterAddStatementImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterAddStatement()
+   * @generated
+   */
+  int ALTER_ADD_STATEMENT = 14;
+
+  /**
+   * The feature id for the '<em><b>Column</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALTER_ADD_STATEMENT__COLUMN = 0;
+
+  /**
+   * The number of structural features of the '<em>Alter Add Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALTER_ADD_STATEMENT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterUpdateStatementImpl <em>Alter Update Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.AlterUpdateStatementImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterUpdateStatement()
+   * @generated
+   */
+  int ALTER_UPDATE_STATEMENT = 15;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALTER_UPDATE_STATEMENT__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Alter Update Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALTER_UPDATE_STATEMENT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.DataStructureType <em>Data Structure Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.DataStructureType
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDataStructureType()
+   * @generated
+   */
+  int DATA_STRUCTURE_TYPE = 16;
 
 
   /**
@@ -125,36 +573,395 @@ public interface Sql_dslPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.dsl.sql_dsl.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.dsl.sql_dsl.Model#getStatements <em>Statements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see uk.ac.kcl.dsl.sql_dsl.Model#getGreetings()
+   * @return the meta object for the containment reference list '<em>Statements</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.Model#getStatements()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Greetings();
+  EReference getModel_Statements();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.Statement <em>Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see uk.ac.kcl.dsl.sql_dsl.Greeting
+   * @return the meta object for class '<em>Statement</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.Statement
    * @generated
    */
-  EClass getGreeting();
+  EClass getStatement();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement <em>Database Declaration Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Database Declaration Statement</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement
+   * @generated
+   */
+  EClass getDatabaseDeclarationStatement();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.kcl.dsl.sql_dsl.Greeting#getName()
-   * @see #getGreeting()
+   * @see uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement#getName()
+   * @see #getDatabaseDeclarationStatement()
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EAttribute getDatabaseDeclarationStatement_Name();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.CreateTableStatement <em>Create Table Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Create Table Statement</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.CreateTableStatement
+   * @generated
+   */
+  EClass getCreateTableStatement();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.dsl.sql_dsl.CreateTableStatement#getTables <em>Tables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Tables</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.CreateTableStatement#getTables()
+   * @see #getCreateTableStatement()
+   * @generated
+   */
+  EReference getCreateTableStatement_Tables();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.TableDeclaration <em>Table Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Table Declaration</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.TableDeclaration
+   * @generated
+   */
+  EClass getTableDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.TableDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.TableDeclaration#getName()
+   * @see #getTableDeclaration()
+   * @generated
+   */
+  EAttribute getTableDeclaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.dsl.sql_dsl.TableDeclaration#getAttributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Attributes</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.TableDeclaration#getAttributes()
+   * @see #getTableDeclaration()
+   * @generated
+   */
+  EReference getTableDeclaration_Attributes();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration <em>Column Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Column Declaration</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration
+   * @generated
+   */
+  EClass getColumnDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#getName()
+   * @see #getColumnDeclaration()
+   * @generated
+   */
+  EAttribute getColumnDeclaration_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#getType()
+   * @see #getColumnDeclaration()
+   * @generated
+   */
+  EAttribute getColumnDeclaration_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#isNotNull <em>Not Null</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Not Null</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#isNotNull()
+   * @see #getColumnDeclaration()
+   * @generated
+   */
+  EAttribute getColumnDeclaration_NotNull();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.PrimaryKey <em>Primary Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Primary Key</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.PrimaryKey
+   * @generated
+   */
+  EClass getPrimaryKey();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.kcl.dsl.sql_dsl.PrimaryKey#getColumnAsPK <em>Column As PK</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Column As PK</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.PrimaryKey#getColumnAsPK()
+   * @see #getPrimaryKey()
+   * @generated
+   */
+  EReference getPrimaryKey_ColumnAsPK();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.ForeignKey <em>Foreign Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Foreign Key</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.ForeignKey
+   * @generated
+   */
+  EClass getForeignKey();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.kcl.dsl.sql_dsl.ForeignKey#getColumnAsFK <em>Column As FK</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Column As FK</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.ForeignKey#getColumnAsFK()
+   * @see #getForeignKey()
+   * @generated
+   */
+  EReference getForeignKey_ColumnAsFK();
+
+  /**
+   * Returns the meta object for the reference '{@link uk.ac.kcl.dsl.sql_dsl.ForeignKey#getForeignTable <em>Foreign Table</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Foreign Table</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.ForeignKey#getForeignTable()
+   * @see #getForeignKey()
+   * @generated
+   */
+  EReference getForeignKey_ForeignTable();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.kcl.dsl.sql_dsl.ForeignKey#getForeignColumns <em>Foreign Columns</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Foreign Columns</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.ForeignKey#getForeignColumns()
+   * @see #getForeignKey()
+   * @generated
+   */
+  EReference getForeignKey_ForeignColumns();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.DropTableStatement <em>Drop Table Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Drop Table Statement</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.DropTableStatement
+   * @generated
+   */
+  EClass getDropTableStatement();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.dsl.sql_dsl.DropTableStatement#getTables <em>Tables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Tables</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.DropTableStatement#getTables()
+   * @see #getDropTableStatement()
+   * @generated
+   */
+  EReference getDropTableStatement_Tables();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration <em>Drop Table Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Drop Table Declaration</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration
+   * @generated
+   */
+  EClass getDropTableDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration#getName()
+   * @see #getDropTableDeclaration()
+   * @generated
+   */
+  EAttribute getDropTableDeclaration_Name();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement <em>Truncate Table Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Truncate Table Statement</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement
+   * @generated
+   */
+  EClass getTruncateTableStatement();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement#getTables <em>Tables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Tables</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement#getTables()
+   * @see #getTruncateTableStatement()
+   * @generated
+   */
+  EReference getTruncateTableStatement_Tables();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration <em>Truncate Table Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Truncate Table Declaration</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration
+   * @generated
+   */
+  EClass getTruncateTableDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration#getName()
+   * @see #getTruncateTableDeclaration()
+   * @generated
+   */
+  EAttribute getTruncateTableDeclaration_Name();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.AlterTableStatement <em>Alter Table Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Alter Table Statement</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterTableStatement
+   * @generated
+   */
+  EClass getAlterTableStatement();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.AlterTableStatement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterTableStatement#getName()
+   * @see #getAlterTableStatement()
+   * @generated
+   */
+  EAttribute getAlterTableStatement_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.dsl.sql_dsl.AlterTableStatement#getAddDropUpdate <em>Add Drop Update</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Add Drop Update</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterTableStatement#getAddDropUpdate()
+   * @see #getAlterTableStatement()
+   * @generated
+   */
+  EReference getAlterTableStatement_AddDropUpdate();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.AlterDropStatement <em>Alter Drop Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Alter Drop Statement</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterDropStatement
+   * @generated
+   */
+  EClass getAlterDropStatement();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.AlterDropStatement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterDropStatement#getName()
+   * @see #getAlterDropStatement()
+   * @generated
+   */
+  EAttribute getAlterDropStatement_Name();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.AlterAddStatement <em>Alter Add Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Alter Add Statement</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterAddStatement
+   * @generated
+   */
+  EClass getAlterAddStatement();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.kcl.dsl.sql_dsl.AlterAddStatement#getColumn <em>Column</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Column</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterAddStatement#getColumn()
+   * @see #getAlterAddStatement()
+   * @generated
+   */
+  EReference getAlterAddStatement_Column();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement <em>Alter Update Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Alter Update Statement</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement
+   * @generated
+   */
+  EClass getAlterUpdateStatement();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement#getName()
+   * @see #getAlterUpdateStatement()
+   * @generated
+   */
+  EAttribute getAlterUpdateStatement_Name();
+
+  /**
+   * Returns the meta object for enum '{@link uk.ac.kcl.dsl.sql_dsl.DataStructureType <em>Data Structure Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Data Structure Type</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.DataStructureType
+   * @generated
+   */
+  EEnum getDataStructureType();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -190,22 +997,32 @@ public interface Sql_dslPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EReference MODEL__STATEMENTS = eINSTANCE.getModel_Statements();
 
     /**
-     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.StatementImpl <em>Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.kcl.dsl.sql_dsl.impl.GreetingImpl
-     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getGreeting()
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.StatementImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getStatement()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EClass STATEMENT = eINSTANCE.getStatement();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.DatabaseDeclarationStatementImpl <em>Database Declaration Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.DatabaseDeclarationStatementImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDatabaseDeclarationStatement()
+     * @generated
+     */
+    EClass DATABASE_DECLARATION_STATEMENT = eINSTANCE.getDatabaseDeclarationStatement();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -213,7 +1030,299 @@ public interface Sql_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EAttribute DATABASE_DECLARATION_STATEMENT__NAME = eINSTANCE.getDatabaseDeclarationStatement_Name();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.CreateTableStatementImpl <em>Create Table Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.CreateTableStatementImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getCreateTableStatement()
+     * @generated
+     */
+    EClass CREATE_TABLE_STATEMENT = eINSTANCE.getCreateTableStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Tables</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CREATE_TABLE_STATEMENT__TABLES = eINSTANCE.getCreateTableStatement_Tables();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.TableDeclarationImpl <em>Table Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.TableDeclarationImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTableDeclaration()
+     * @generated
+     */
+    EClass TABLE_DECLARATION = eINSTANCE.getTableDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TABLE_DECLARATION__NAME = eINSTANCE.getTableDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLE_DECLARATION__ATTRIBUTES = eINSTANCE.getTableDeclaration_Attributes();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.ColumnDeclarationImpl <em>Column Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.ColumnDeclarationImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getColumnDeclaration()
+     * @generated
+     */
+    EClass COLUMN_DECLARATION = eINSTANCE.getColumnDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COLUMN_DECLARATION__NAME = eINSTANCE.getColumnDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COLUMN_DECLARATION__TYPE = eINSTANCE.getColumnDeclaration_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Not Null</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COLUMN_DECLARATION__NOT_NULL = eINSTANCE.getColumnDeclaration_NotNull();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.PrimaryKeyImpl <em>Primary Key</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.PrimaryKeyImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getPrimaryKey()
+     * @generated
+     */
+    EClass PRIMARY_KEY = eINSTANCE.getPrimaryKey();
+
+    /**
+     * The meta object literal for the '<em><b>Column As PK</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_KEY__COLUMN_AS_PK = eINSTANCE.getPrimaryKey_ColumnAsPK();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.ForeignKeyImpl <em>Foreign Key</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.ForeignKeyImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getForeignKey()
+     * @generated
+     */
+    EClass FOREIGN_KEY = eINSTANCE.getForeignKey();
+
+    /**
+     * The meta object literal for the '<em><b>Column As FK</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOREIGN_KEY__COLUMN_AS_FK = eINSTANCE.getForeignKey_ColumnAsFK();
+
+    /**
+     * The meta object literal for the '<em><b>Foreign Table</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOREIGN_KEY__FOREIGN_TABLE = eINSTANCE.getForeignKey_ForeignTable();
+
+    /**
+     * The meta object literal for the '<em><b>Foreign Columns</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOREIGN_KEY__FOREIGN_COLUMNS = eINSTANCE.getForeignKey_ForeignColumns();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.DropTableStatementImpl <em>Drop Table Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.DropTableStatementImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDropTableStatement()
+     * @generated
+     */
+    EClass DROP_TABLE_STATEMENT = eINSTANCE.getDropTableStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Tables</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DROP_TABLE_STATEMENT__TABLES = eINSTANCE.getDropTableStatement_Tables();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.DropTableDeclarationImpl <em>Drop Table Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.DropTableDeclarationImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDropTableDeclaration()
+     * @generated
+     */
+    EClass DROP_TABLE_DECLARATION = eINSTANCE.getDropTableDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DROP_TABLE_DECLARATION__NAME = eINSTANCE.getDropTableDeclaration_Name();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.TruncateTableStatementImpl <em>Truncate Table Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.TruncateTableStatementImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTruncateTableStatement()
+     * @generated
+     */
+    EClass TRUNCATE_TABLE_STATEMENT = eINSTANCE.getTruncateTableStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Tables</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRUNCATE_TABLE_STATEMENT__TABLES = eINSTANCE.getTruncateTableStatement_Tables();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.TruncateTableDeclarationImpl <em>Truncate Table Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.TruncateTableDeclarationImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTruncateTableDeclaration()
+     * @generated
+     */
+    EClass TRUNCATE_TABLE_DECLARATION = eINSTANCE.getTruncateTableDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TRUNCATE_TABLE_DECLARATION__NAME = eINSTANCE.getTruncateTableDeclaration_Name();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterTableStatementImpl <em>Alter Table Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.AlterTableStatementImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterTableStatement()
+     * @generated
+     */
+    EClass ALTER_TABLE_STATEMENT = eINSTANCE.getAlterTableStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ALTER_TABLE_STATEMENT__NAME = eINSTANCE.getAlterTableStatement_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Add Drop Update</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ALTER_TABLE_STATEMENT__ADD_DROP_UPDATE = eINSTANCE.getAlterTableStatement_AddDropUpdate();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterDropStatementImpl <em>Alter Drop Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.AlterDropStatementImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterDropStatement()
+     * @generated
+     */
+    EClass ALTER_DROP_STATEMENT = eINSTANCE.getAlterDropStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ALTER_DROP_STATEMENT__NAME = eINSTANCE.getAlterDropStatement_Name();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterAddStatementImpl <em>Alter Add Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.AlterAddStatementImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterAddStatement()
+     * @generated
+     */
+    EClass ALTER_ADD_STATEMENT = eINSTANCE.getAlterAddStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Column</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ALTER_ADD_STATEMENT__COLUMN = eINSTANCE.getAlterAddStatement_Column();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterUpdateStatementImpl <em>Alter Update Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.AlterUpdateStatementImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterUpdateStatement()
+     * @generated
+     */
+    EClass ALTER_UPDATE_STATEMENT = eINSTANCE.getAlterUpdateStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ALTER_UPDATE_STATEMENT__NAME = eINSTANCE.getAlterUpdateStatement_Name();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.DataStructureType <em>Data Structure Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.DataStructureType
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDataStructureType()
+     * @generated
+     */
+    EEnum DATA_STRUCTURE_TYPE = eINSTANCE.getDataStructureType();
 
   }
 

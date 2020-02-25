@@ -6,7 +6,11 @@ package uk.ac.kcl.dsl.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.CrossReference;
+import org.eclipse.xtext.EnumLiteralDeclaration;
+import org.eclipse.xtext.EnumRule;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -15,6 +19,7 @@ import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
 import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
+import org.eclipse.xtext.service.AbstractElementFinder.AbstractEnumRuleElementFinder;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 
@@ -23,50 +28,715 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.Model");
-		private final Assignment cGreetingsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cGreetingsGreetingParserRuleCall_0 = (RuleCall)cGreetingsAssignment.eContents().get(0);
+		private final Assignment cStatementsAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cStatementsStatementParserRuleCall_0 = (RuleCall)cStatementsAssignment.eContents().get(0);
 		
 		//Model:
-		//	greetings+=Greeting*;
+		//	statements+=Statement;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//greetings+=Greeting*
-		public Assignment getGreetingsAssignment() { return cGreetingsAssignment; }
+		//statements+=Statement
+		public Assignment getStatementsAssignment() { return cStatementsAssignment; }
 		
-		//Greeting
-		public RuleCall getGreetingsGreetingParserRuleCall_0() { return cGreetingsGreetingParserRuleCall_0; }
+		//Statement
+		public RuleCall getStatementsStatementParserRuleCall_0() { return cStatementsStatementParserRuleCall_0; }
 	}
-	public class GreetingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.Greeting");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHelloKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cExclamationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+	public class StatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.Statement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDatabaseDeclarationStatementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cCreateTableStatementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cDropTableStatementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cTruncateTableStatementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cAlterTableStatementParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
-		//Greeting:
-		//	'Hello' name=ID '!';
+		//Statement:
+		//	DatabaseDeclarationStatement | CreateTableStatement | DropTableStatement | TruncateTableStatement |
+		//	AlterTableStatement;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Hello' name=ID '!'
+		//DatabaseDeclarationStatement | CreateTableStatement | DropTableStatement | TruncateTableStatement | AlterTableStatement
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//DatabaseDeclarationStatement
+		public RuleCall getDatabaseDeclarationStatementParserRuleCall_0() { return cDatabaseDeclarationStatementParserRuleCall_0; }
+		
+		//CreateTableStatement
+		public RuleCall getCreateTableStatementParserRuleCall_1() { return cCreateTableStatementParserRuleCall_1; }
+		
+		//DropTableStatement
+		public RuleCall getDropTableStatementParserRuleCall_2() { return cDropTableStatementParserRuleCall_2; }
+		
+		//TruncateTableStatement
+		public RuleCall getTruncateTableStatementParserRuleCall_3() { return cTruncateTableStatementParserRuleCall_3; }
+		
+		//AlterTableStatement
+		public RuleCall getAlterTableStatementParserRuleCall_4() { return cAlterTableStatementParserRuleCall_4; }
+	}
+	public class DatabaseDeclarationStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.DatabaseDeclarationStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCREATEKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cDATABASEKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		
+		///*
+		// * 
+		// * Database Declaration
+		// * 
+		// */ DatabaseDeclarationStatement:
+		//	"CREATE" "DATABASE" name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"CREATE" "DATABASE" name=ID
 		public Group getGroup() { return cGroup; }
 		
-		//'Hello'
-		public Keyword getHelloKeyword_0() { return cHelloKeyword_0; }
+		//"CREATE"
+		public Keyword getCREATEKeyword_0() { return cCREATEKeyword_0; }
+		
+		//"DATABASE"
+		public Keyword getDATABASEKeyword_1() { return cDATABASEKeyword_1; }
 		
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+	}
+	public class CreateTableStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.CreateTableStatement");
+		private final Assignment cTablesAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cTablesTableDeclarationParserRuleCall_0 = (RuleCall)cTablesAssignment.eContents().get(0);
 		
-		//'!'
-		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
+		///*
+		// * 
+		// * Create Table Declaration
+		// * 
+		// */ CreateTableStatement:
+		//	tables+=TableDeclaration*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//// Must contain at least one table declaration
+		//tables+=TableDeclaration*
+		public Assignment getTablesAssignment() { return cTablesAssignment; }
+		
+		//TableDeclaration
+		public RuleCall getTablesTableDeclarationParserRuleCall_0() { return cTablesTableDeclarationParserRuleCall_0; }
+	}
+	public class TableDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.TableDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCREATEKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTABLEKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Alternatives cAttributesAlternatives_4_0 = (Alternatives)cAttributesAssignment_4.eContents().get(0);
+		private final RuleCall cAttributesColumnDeclarationParserRuleCall_4_0_0 = (RuleCall)cAttributesAlternatives_4_0.eContents().get(0);
+		private final RuleCall cAttributesPrimaryKeyParserRuleCall_4_0_1 = (RuleCall)cAttributesAlternatives_4_0.eContents().get(1);
+		private final RuleCall cAttributesForeignKeyParserRuleCall_4_0_2 = (RuleCall)cAttributesAlternatives_4_0.eContents().get(2);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cAttributesAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final Alternatives cAttributesAlternatives_5_1_0 = (Alternatives)cAttributesAssignment_5_1.eContents().get(0);
+		private final RuleCall cAttributesColumnDeclarationParserRuleCall_5_1_0_0 = (RuleCall)cAttributesAlternatives_5_1_0.eContents().get(0);
+		private final RuleCall cAttributesPrimaryKeyParserRuleCall_5_1_0_1 = (RuleCall)cAttributesAlternatives_5_1_0.eContents().get(1);
+		private final RuleCall cAttributesForeignKeyParserRuleCall_5_1_0_2 = (RuleCall)cAttributesAlternatives_5_1_0.eContents().get(2);
+		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//TableDeclaration: // Create statement for the table generation
+		//	"CREATE" "TABLE" name=ID "(" attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey)+ (","
+		//	attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey))* ")";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//// Create statement for the table generation
+		//"CREATE" "TABLE" name=ID "(" attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey)+ (","
+		//attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey))* ")"
+		public Group getGroup() { return cGroup; }
+		
+		//// Create statement for the table generation
+		//"CREATE"
+		public Keyword getCREATEKeyword_0() { return cCREATEKeyword_0; }
+		
+		//"TABLE"
+		public Keyword getTABLEKeyword_1() { return cTABLEKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		
+		//"("
+		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
+		
+		//attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey)+
+		public Assignment getAttributesAssignment_4() { return cAttributesAssignment_4; }
+		
+		//(ColumnDeclaration | PrimaryKey | ForeignKey)
+		public Alternatives getAttributesAlternatives_4_0() { return cAttributesAlternatives_4_0; }
+		
+		//ColumnDeclaration
+		public RuleCall getAttributesColumnDeclarationParserRuleCall_4_0_0() { return cAttributesColumnDeclarationParserRuleCall_4_0_0; }
+		
+		//PrimaryKey
+		public RuleCall getAttributesPrimaryKeyParserRuleCall_4_0_1() { return cAttributesPrimaryKeyParserRuleCall_4_0_1; }
+		
+		//ForeignKey
+		public RuleCall getAttributesForeignKeyParserRuleCall_4_0_2() { return cAttributesForeignKeyParserRuleCall_4_0_2; }
+		
+		//("," attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey))*
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//","
+		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
+		
+		//attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey)
+		public Assignment getAttributesAssignment_5_1() { return cAttributesAssignment_5_1; }
+		
+		//(ColumnDeclaration | PrimaryKey | ForeignKey)
+		public Alternatives getAttributesAlternatives_5_1_0() { return cAttributesAlternatives_5_1_0; }
+		
+		//ColumnDeclaration
+		public RuleCall getAttributesColumnDeclarationParserRuleCall_5_1_0_0() { return cAttributesColumnDeclarationParserRuleCall_5_1_0_0; }
+		
+		//PrimaryKey
+		public RuleCall getAttributesPrimaryKeyParserRuleCall_5_1_0_1() { return cAttributesPrimaryKeyParserRuleCall_5_1_0_1; }
+		
+		//ForeignKey
+		public RuleCall getAttributesForeignKeyParserRuleCall_5_1_0_2() { return cAttributesForeignKeyParserRuleCall_5_1_0_2; }
+		
+		//")"
+		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
+	}
+	public class ColumnDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.ColumnDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTypeDataStructureTypeEnumRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
+		private final Assignment cNotNullAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cNotNullNOTNULLKeyword_2_0 = (Keyword)cNotNullAssignment_2.eContents().get(0);
+		
+		//ColumnDeclaration:
+		//	name=ID type=DataStructureType notNull?="NOT NULL"?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=ID type=DataStructureType notNull?="NOT NULL"?
+		public Group getGroup() { return cGroup; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//type=DataStructureType
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
+		
+		//DataStructureType
+		public RuleCall getTypeDataStructureTypeEnumRuleCall_1_0() { return cTypeDataStructureTypeEnumRuleCall_1_0; }
+		
+		//notNull?="NOT NULL"?
+		public Assignment getNotNullAssignment_2() { return cNotNullAssignment_2; }
+		
+		//"NOT NULL"
+		public Keyword getNotNullNOTNULLKeyword_2_0() { return cNotNullNOTNULLKeyword_2_0; }
+	}
+	public class PrimaryKeyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.PrimaryKey");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPRIMARYKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cKEYKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cColumnAsPKAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cColumnAsPKColumnDeclarationCrossReference_3_0 = (CrossReference)cColumnAsPKAssignment_3.eContents().get(0);
+		private final RuleCall cColumnAsPKColumnDeclarationIDTerminalRuleCall_3_0_1 = (RuleCall)cColumnAsPKColumnDeclarationCrossReference_3_0.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cColumnAsPKAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cColumnAsPKColumnDeclarationCrossReference_4_1_0 = (CrossReference)cColumnAsPKAssignment_4_1.eContents().get(0);
+		private final RuleCall cColumnAsPKColumnDeclarationIDTerminalRuleCall_4_1_0_1 = (RuleCall)cColumnAsPKColumnDeclarationCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//PrimaryKey:
+		//	"PRIMARY" "KEY" "("
+		//	columnAsPK+=[ColumnDeclaration] ("," columnAsPK+=[ColumnDeclaration])*
+		//	")";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"PRIMARY" "KEY" "(" columnAsPK+=[ColumnDeclaration] ("," columnAsPK+=[ColumnDeclaration])* ")"
+		public Group getGroup() { return cGroup; }
+		
+		//"PRIMARY"
+		public Keyword getPRIMARYKeyword_0() { return cPRIMARYKeyword_0; }
+		
+		//"KEY"
+		public Keyword getKEYKeyword_1() { return cKEYKeyword_1; }
+		
+		//"("
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//columnAsPK+=[ColumnDeclaration]
+		public Assignment getColumnAsPKAssignment_3() { return cColumnAsPKAssignment_3; }
+		
+		//[ColumnDeclaration]
+		public CrossReference getColumnAsPKColumnDeclarationCrossReference_3_0() { return cColumnAsPKColumnDeclarationCrossReference_3_0; }
+		
+		//ID
+		public RuleCall getColumnAsPKColumnDeclarationIDTerminalRuleCall_3_0_1() { return cColumnAsPKColumnDeclarationIDTerminalRuleCall_3_0_1; }
+		
+		//("," columnAsPK+=[ColumnDeclaration])*
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//","
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
+		
+		//columnAsPK+=[ColumnDeclaration]
+		public Assignment getColumnAsPKAssignment_4_1() { return cColumnAsPKAssignment_4_1; }
+		
+		//[ColumnDeclaration]
+		public CrossReference getColumnAsPKColumnDeclarationCrossReference_4_1_0() { return cColumnAsPKColumnDeclarationCrossReference_4_1_0; }
+		
+		//ID
+		public RuleCall getColumnAsPKColumnDeclarationIDTerminalRuleCall_4_1_0_1() { return cColumnAsPKColumnDeclarationIDTerminalRuleCall_4_1_0_1; }
+		
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+	public class ForeignKeyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.ForeignKey");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFOREIGNKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cKEYKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cColumnAsFKAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cColumnAsFKColumnDeclarationCrossReference_3_0 = (CrossReference)cColumnAsFKAssignment_3.eContents().get(0);
+		private final RuleCall cColumnAsFKColumnDeclarationIDTerminalRuleCall_3_0_1 = (RuleCall)cColumnAsFKColumnDeclarationCrossReference_3_0.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cColumnAsFKAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cColumnAsFKColumnDeclarationCrossReference_4_1_0 = (CrossReference)cColumnAsFKAssignment_4_1.eContents().get(0);
+		private final RuleCall cColumnAsFKColumnDeclarationIDTerminalRuleCall_4_1_0_1 = (RuleCall)cColumnAsFKColumnDeclarationCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cREFERENCESKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cForeignTableAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cForeignTableTableDeclarationCrossReference_7_0 = (CrossReference)cForeignTableAssignment_7.eContents().get(0);
+		private final RuleCall cForeignTableTableDeclarationIDTerminalRuleCall_7_0_1 = (RuleCall)cForeignTableTableDeclarationCrossReference_7_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cForeignColumnsAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final CrossReference cForeignColumnsColumnDeclarationCrossReference_9_0 = (CrossReference)cForeignColumnsAssignment_9.eContents().get(0);
+		private final RuleCall cForeignColumnsColumnDeclarationIDTerminalRuleCall_9_0_1 = (RuleCall)cForeignColumnsColumnDeclarationCrossReference_9_0.eContents().get(1);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Keyword cCommaKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Assignment cForeignColumnsAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final CrossReference cForeignColumnsColumnDeclarationCrossReference_10_1_0 = (CrossReference)cForeignColumnsAssignment_10_1.eContents().get(0);
+		private final RuleCall cForeignColumnsColumnDeclarationIDTerminalRuleCall_10_1_0_1 = (RuleCall)cForeignColumnsColumnDeclarationCrossReference_10_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		
+		//ForeignKey:
+		//	"FOREIGN" "KEY" "("
+		//	columnAsFK+=[ColumnDeclaration] ("," columnAsFK+=[ColumnDeclaration])* ")"
+		//	"REFERENCES" foreignTable=[TableDeclaration]
+		//	"(" foreignColumns+=[ColumnDeclaration] ("," foreignColumns+=[ColumnDeclaration])* ")";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"FOREIGN" "KEY" "(" columnAsFK+=[ColumnDeclaration] ("," columnAsFK+=[ColumnDeclaration])* ")" "REFERENCES"
+		//foreignTable=[TableDeclaration] "(" foreignColumns+=[ColumnDeclaration] ("," foreignColumns+=[ColumnDeclaration])* ")"
+		public Group getGroup() { return cGroup; }
+		
+		//"FOREIGN"
+		public Keyword getFOREIGNKeyword_0() { return cFOREIGNKeyword_0; }
+		
+		//"KEY"
+		public Keyword getKEYKeyword_1() { return cKEYKeyword_1; }
+		
+		//"("
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//columnAsFK+=[ColumnDeclaration]
+		public Assignment getColumnAsFKAssignment_3() { return cColumnAsFKAssignment_3; }
+		
+		//[ColumnDeclaration]
+		public CrossReference getColumnAsFKColumnDeclarationCrossReference_3_0() { return cColumnAsFKColumnDeclarationCrossReference_3_0; }
+		
+		//ID
+		public RuleCall getColumnAsFKColumnDeclarationIDTerminalRuleCall_3_0_1() { return cColumnAsFKColumnDeclarationIDTerminalRuleCall_3_0_1; }
+		
+		//("," columnAsFK+=[ColumnDeclaration])*
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//","
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
+		
+		//columnAsFK+=[ColumnDeclaration]
+		public Assignment getColumnAsFKAssignment_4_1() { return cColumnAsFKAssignment_4_1; }
+		
+		//[ColumnDeclaration]
+		public CrossReference getColumnAsFKColumnDeclarationCrossReference_4_1_0() { return cColumnAsFKColumnDeclarationCrossReference_4_1_0; }
+		
+		//ID
+		public RuleCall getColumnAsFKColumnDeclarationIDTerminalRuleCall_4_1_0_1() { return cColumnAsFKColumnDeclarationIDTerminalRuleCall_4_1_0_1; }
+		
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		
+		//"REFERENCES"
+		public Keyword getREFERENCESKeyword_6() { return cREFERENCESKeyword_6; }
+		
+		//foreignTable=[TableDeclaration]
+		public Assignment getForeignTableAssignment_7() { return cForeignTableAssignment_7; }
+		
+		//[TableDeclaration]
+		public CrossReference getForeignTableTableDeclarationCrossReference_7_0() { return cForeignTableTableDeclarationCrossReference_7_0; }
+		
+		//ID
+		public RuleCall getForeignTableTableDeclarationIDTerminalRuleCall_7_0_1() { return cForeignTableTableDeclarationIDTerminalRuleCall_7_0_1; }
+		
+		//"("
+		public Keyword getLeftParenthesisKeyword_8() { return cLeftParenthesisKeyword_8; }
+		
+		//foreignColumns+=[ColumnDeclaration]
+		public Assignment getForeignColumnsAssignment_9() { return cForeignColumnsAssignment_9; }
+		
+		//[ColumnDeclaration]
+		public CrossReference getForeignColumnsColumnDeclarationCrossReference_9_0() { return cForeignColumnsColumnDeclarationCrossReference_9_0; }
+		
+		//ID
+		public RuleCall getForeignColumnsColumnDeclarationIDTerminalRuleCall_9_0_1() { return cForeignColumnsColumnDeclarationIDTerminalRuleCall_9_0_1; }
+		
+		//("," foreignColumns+=[ColumnDeclaration])*
+		public Group getGroup_10() { return cGroup_10; }
+		
+		//","
+		public Keyword getCommaKeyword_10_0() { return cCommaKeyword_10_0; }
+		
+		//foreignColumns+=[ColumnDeclaration]
+		public Assignment getForeignColumnsAssignment_10_1() { return cForeignColumnsAssignment_10_1; }
+		
+		//[ColumnDeclaration]
+		public CrossReference getForeignColumnsColumnDeclarationCrossReference_10_1_0() { return cForeignColumnsColumnDeclarationCrossReference_10_1_0; }
+		
+		//ID
+		public RuleCall getForeignColumnsColumnDeclarationIDTerminalRuleCall_10_1_0_1() { return cForeignColumnsColumnDeclarationIDTerminalRuleCall_10_1_0_1; }
+		
+		//")"
+		public Keyword getRightParenthesisKeyword_11() { return cRightParenthesisKeyword_11; }
+	}
+	public class DropTableStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.DropTableStatement");
+		private final Assignment cTablesAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cTablesDropTableDeclarationParserRuleCall_0 = (RuleCall)cTablesAssignment.eContents().get(0);
+		
+		///*
+		// * 
+		// * Drop Table Statement
+		// * 
+		// */ DropTableStatement:
+		//	tables+=DropTableDeclaration*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//tables+=DropTableDeclaration*
+		public Assignment getTablesAssignment() { return cTablesAssignment; }
+		
+		//DropTableDeclaration
+		public RuleCall getTablesDropTableDeclarationParserRuleCall_0() { return cTablesDropTableDeclarationParserRuleCall_0; }
+	}
+	public class DropTableDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.DropTableDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDROPKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTABLEKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		
+		//DropTableDeclaration:
+		//	"DROP" "TABLE" name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"DROP" "TABLE" name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//"DROP"
+		public Keyword getDROPKeyword_0() { return cDROPKeyword_0; }
+		
+		//"TABLE"
+		public Keyword getTABLEKeyword_1() { return cTABLEKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+	}
+	public class TruncateTableStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.TruncateTableStatement");
+		private final Assignment cTablesAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cTablesTruncateTableDeclarationParserRuleCall_0 = (RuleCall)cTablesAssignment.eContents().get(0);
+		
+		///*
+		// * 
+		// * Truncate Table Statement
+		// * 
+		// */ TruncateTableStatement:
+		//	tables+=TruncateTableDeclaration*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//tables+=TruncateTableDeclaration*
+		public Assignment getTablesAssignment() { return cTablesAssignment; }
+		
+		//TruncateTableDeclaration
+		public RuleCall getTablesTruncateTableDeclarationParserRuleCall_0() { return cTablesTruncateTableDeclarationParserRuleCall_0; }
+	}
+	public class TruncateTableDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.TruncateTableDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTRUNCATEKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTABLEKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		
+		//TruncateTableDeclaration:
+		//	"TRUNCATE" "TABLE" name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"TRUNCATE" "TABLE" name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//"TRUNCATE"
+		public Keyword getTRUNCATEKeyword_0() { return cTRUNCATEKeyword_0; }
+		
+		//"TABLE"
+		public Keyword getTABLEKeyword_1() { return cTABLEKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+	}
+	public class AlterTableStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.AlterTableStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cALTERKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTABLEKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cAddDropUpdateAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Alternatives cAddDropUpdateAlternatives_3_0 = (Alternatives)cAddDropUpdateAssignment_3.eContents().get(0);
+		private final RuleCall cAddDropUpdateAlterDropStatementParserRuleCall_3_0_0 = (RuleCall)cAddDropUpdateAlternatives_3_0.eContents().get(0);
+		private final RuleCall cAddDropUpdateAlterAddStatementParserRuleCall_3_0_1 = (RuleCall)cAddDropUpdateAlternatives_3_0.eContents().get(1);
+		private final RuleCall cAddDropUpdateAlterUpdateStatementParserRuleCall_3_0_2 = (RuleCall)cAddDropUpdateAlternatives_3_0.eContents().get(2);
+		
+		///*
+		// * 
+		// * Alter Table Statement
+		// * 
+		// * 
+		// */ AlterTableStatement:
+		//	"ALTER" "TABLE" name=ID addDropUpdate=(AlterDropStatement | AlterAddStatement | AlterUpdateStatement);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"ALTER" "TABLE" name=ID addDropUpdate=(AlterDropStatement | AlterAddStatement | AlterUpdateStatement)
+		public Group getGroup() { return cGroup; }
+		
+		//"ALTER"
+		public Keyword getALTERKeyword_0() { return cALTERKeyword_0; }
+		
+		//"TABLE"
+		public Keyword getTABLEKeyword_1() { return cTABLEKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		
+		//addDropUpdate=(AlterDropStatement | AlterAddStatement | AlterUpdateStatement)
+		public Assignment getAddDropUpdateAssignment_3() { return cAddDropUpdateAssignment_3; }
+		
+		//(AlterDropStatement | AlterAddStatement | AlterUpdateStatement)
+		public Alternatives getAddDropUpdateAlternatives_3_0() { return cAddDropUpdateAlternatives_3_0; }
+		
+		//AlterDropStatement
+		public RuleCall getAddDropUpdateAlterDropStatementParserRuleCall_3_0_0() { return cAddDropUpdateAlterDropStatementParserRuleCall_3_0_0; }
+		
+		//AlterAddStatement
+		public RuleCall getAddDropUpdateAlterAddStatementParserRuleCall_3_0_1() { return cAddDropUpdateAlterAddStatementParserRuleCall_3_0_1; }
+		
+		//AlterUpdateStatement
+		public RuleCall getAddDropUpdateAlterUpdateStatementParserRuleCall_3_0_2() { return cAddDropUpdateAlterUpdateStatementParserRuleCall_3_0_2; }
+	}
+	public class AlterDropStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.AlterDropStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDROPKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cCOLUMNKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		
+		//AlterDropStatement:
+		//	"DROP" "COLUMN" name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"DROP" "COLUMN" name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//"DROP"
+		public Keyword getDROPKeyword_0() { return cDROPKeyword_0; }
+		
+		//"COLUMN"
+		public Keyword getCOLUMNKeyword_1() { return cCOLUMNKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+	}
+	public class AlterAddStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.AlterAddStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cADDKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cColumnAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cColumnColumnDeclarationCrossReference_1_0 = (CrossReference)cColumnAssignment_1.eContents().get(0);
+		private final RuleCall cColumnColumnDeclarationIDTerminalRuleCall_1_0_1 = (RuleCall)cColumnColumnDeclarationCrossReference_1_0.eContents().get(1);
+		
+		//AlterAddStatement:
+		//	"ADD" column+=[ColumnDeclaration];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"ADD" column+=[ColumnDeclaration]
+		public Group getGroup() { return cGroup; }
+		
+		//"ADD"
+		public Keyword getADDKeyword_0() { return cADDKeyword_0; }
+		
+		//column+=[ColumnDeclaration]
+		public Assignment getColumnAssignment_1() { return cColumnAssignment_1; }
+		
+		//[ColumnDeclaration]
+		public CrossReference getColumnColumnDeclarationCrossReference_1_0() { return cColumnColumnDeclarationCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getColumnColumnDeclarationIDTerminalRuleCall_1_0_1() { return cColumnColumnDeclarationIDTerminalRuleCall_1_0_1; }
+	}
+	public class AlterUpdateStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.AlterUpdateStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cALTERKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cCOLUMNKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		
+		//AlterUpdateStatement:
+		//	"ALTER" "COLUMN" name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"ALTER" "COLUMN" name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//"ALTER"
+		public Keyword getALTERKeyword_0() { return cALTERKeyword_0; }
+		
+		//"COLUMN"
+		public Keyword getCOLUMNKeyword_1() { return cCOLUMNKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 	}
 	
+	public class DataStructureTypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.DataStructureType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cVARCHAREnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cVARCHARVarcharKeyword_0_0 = (Keyword)cVARCHAREnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cCHAREnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cCHARCharKeyword_1_0 = (Keyword)cCHAREnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cDATEEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cDATEDateKeyword_2_0 = (Keyword)cDATEEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cINTEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cINTIntKeyword_3_0 = (Keyword)cINTEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cFLOATEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cFLOATFloatKeyword_4_0 = (Keyword)cFLOATEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cTIMEEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cTIMETimeKeyword_5_0 = (Keyword)cTIMEEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cTEXTEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cTEXTTextKeyword_6_0 = (Keyword)cTEXTEnumLiteralDeclaration_6.eContents().get(0);
+		
+		//enum DataStructureType:
+		//	VARCHAR="varchar" | CHAR="char" | DATE="date" | INT="int" | FLOAT="float" | TIME="time" | TEXT="text";
+		public EnumRule getRule() { return rule; }
+		
+		//VARCHAR="varchar" | CHAR="char" | DATE="date" | INT="int" | FLOAT="float" | TIME="time" | TEXT="text"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//VARCHAR="varchar"
+		public EnumLiteralDeclaration getVARCHAREnumLiteralDeclaration_0() { return cVARCHAREnumLiteralDeclaration_0; }
+		
+		//"varchar"
+		public Keyword getVARCHARVarcharKeyword_0_0() { return cVARCHARVarcharKeyword_0_0; }
+		
+		//CHAR="char"
+		public EnumLiteralDeclaration getCHAREnumLiteralDeclaration_1() { return cCHAREnumLiteralDeclaration_1; }
+		
+		//"char"
+		public Keyword getCHARCharKeyword_1_0() { return cCHARCharKeyword_1_0; }
+		
+		//DATE="date"
+		public EnumLiteralDeclaration getDATEEnumLiteralDeclaration_2() { return cDATEEnumLiteralDeclaration_2; }
+		
+		//"date"
+		public Keyword getDATEDateKeyword_2_0() { return cDATEDateKeyword_2_0; }
+		
+		//INT="int"
+		public EnumLiteralDeclaration getINTEnumLiteralDeclaration_3() { return cINTEnumLiteralDeclaration_3; }
+		
+		//"int"
+		public Keyword getINTIntKeyword_3_0() { return cINTIntKeyword_3_0; }
+		
+		//FLOAT="float"
+		public EnumLiteralDeclaration getFLOATEnumLiteralDeclaration_4() { return cFLOATEnumLiteralDeclaration_4; }
+		
+		//"float"
+		public Keyword getFLOATFloatKeyword_4_0() { return cFLOATFloatKeyword_4_0; }
+		
+		//TIME="time"
+		public EnumLiteralDeclaration getTIMEEnumLiteralDeclaration_5() { return cTIMEEnumLiteralDeclaration_5; }
+		
+		//"time"
+		public Keyword getTIMETimeKeyword_5_0() { return cTIMETimeKeyword_5_0; }
+		
+		//TEXT="text"
+		public EnumLiteralDeclaration getTEXTEnumLiteralDeclaration_6() { return cTEXTEnumLiteralDeclaration_6; }
+		
+		//"text"
+		public Keyword getTEXTTextKeyword_6_0() { return cTEXTTextKeyword_6_0; }
+	}
 	
 	private final ModelElements pModel;
-	private final GreetingElements pGreeting;
+	private final StatementElements pStatement;
+	private final DatabaseDeclarationStatementElements pDatabaseDeclarationStatement;
+	private final CreateTableStatementElements pCreateTableStatement;
+	private final TableDeclarationElements pTableDeclaration;
+	private final ColumnDeclarationElements pColumnDeclaration;
+	private final PrimaryKeyElements pPrimaryKey;
+	private final ForeignKeyElements pForeignKey;
+	private final DataStructureTypeElements eDataStructureType;
+	private final DropTableStatementElements pDropTableStatement;
+	private final DropTableDeclarationElements pDropTableDeclaration;
+	private final TruncateTableStatementElements pTruncateTableStatement;
+	private final TruncateTableDeclarationElements pTruncateTableDeclaration;
+	private final AlterTableStatementElements pAlterTableStatement;
+	private final AlterDropStatementElements pAlterDropStatement;
+	private final AlterAddStatementElements pAlterAddStatement;
+	private final AlterUpdateStatementElements pAlterUpdateStatement;
 	
 	private final Grammar grammar;
 	
@@ -78,7 +748,22 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
-		this.pGreeting = new GreetingElements();
+		this.pStatement = new StatementElements();
+		this.pDatabaseDeclarationStatement = new DatabaseDeclarationStatementElements();
+		this.pCreateTableStatement = new CreateTableStatementElements();
+		this.pTableDeclaration = new TableDeclarationElements();
+		this.pColumnDeclaration = new ColumnDeclarationElements();
+		this.pPrimaryKey = new PrimaryKeyElements();
+		this.pForeignKey = new ForeignKeyElements();
+		this.eDataStructureType = new DataStructureTypeElements();
+		this.pDropTableStatement = new DropTableStatementElements();
+		this.pDropTableDeclaration = new DropTableDeclarationElements();
+		this.pTruncateTableStatement = new TruncateTableStatementElements();
+		this.pTruncateTableDeclaration = new TruncateTableDeclarationElements();
+		this.pAlterTableStatement = new AlterTableStatementElements();
+		this.pAlterDropStatement = new AlterDropStatementElements();
+		this.pAlterAddStatement = new AlterAddStatementElements();
+		this.pAlterUpdateStatement = new AlterUpdateStatementElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -109,7 +794,7 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	greetings+=Greeting*;
+	//	statements+=Statement;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -118,14 +803,192 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
-	//Greeting:
-	//	'Hello' name=ID '!';
-	public GreetingElements getGreetingAccess() {
-		return pGreeting;
+	//Statement:
+	//	DatabaseDeclarationStatement | CreateTableStatement | DropTableStatement | TruncateTableStatement |
+	//	AlterTableStatement;
+	public StatementElements getStatementAccess() {
+		return pStatement;
 	}
 	
-	public ParserRule getGreetingRule() {
-		return getGreetingAccess().getRule();
+	public ParserRule getStatementRule() {
+		return getStatementAccess().getRule();
+	}
+	
+	///*
+	// * 
+	// * Database Declaration
+	// * 
+	// */ DatabaseDeclarationStatement:
+	//	"CREATE" "DATABASE" name=ID;
+	public DatabaseDeclarationStatementElements getDatabaseDeclarationStatementAccess() {
+		return pDatabaseDeclarationStatement;
+	}
+	
+	public ParserRule getDatabaseDeclarationStatementRule() {
+		return getDatabaseDeclarationStatementAccess().getRule();
+	}
+	
+	///*
+	// * 
+	// * Create Table Declaration
+	// * 
+	// */ CreateTableStatement:
+	//	tables+=TableDeclaration*;
+	public CreateTableStatementElements getCreateTableStatementAccess() {
+		return pCreateTableStatement;
+	}
+	
+	public ParserRule getCreateTableStatementRule() {
+		return getCreateTableStatementAccess().getRule();
+	}
+	
+	//TableDeclaration: // Create statement for the table generation
+	//	"CREATE" "TABLE" name=ID "(" attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey)+ (","
+	//	attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey))* ")";
+	public TableDeclarationElements getTableDeclarationAccess() {
+		return pTableDeclaration;
+	}
+	
+	public ParserRule getTableDeclarationRule() {
+		return getTableDeclarationAccess().getRule();
+	}
+	
+	//ColumnDeclaration:
+	//	name=ID type=DataStructureType notNull?="NOT NULL"?;
+	public ColumnDeclarationElements getColumnDeclarationAccess() {
+		return pColumnDeclaration;
+	}
+	
+	public ParserRule getColumnDeclarationRule() {
+		return getColumnDeclarationAccess().getRule();
+	}
+	
+	//PrimaryKey:
+	//	"PRIMARY" "KEY" "("
+	//	columnAsPK+=[ColumnDeclaration] ("," columnAsPK+=[ColumnDeclaration])*
+	//	")";
+	public PrimaryKeyElements getPrimaryKeyAccess() {
+		return pPrimaryKey;
+	}
+	
+	public ParserRule getPrimaryKeyRule() {
+		return getPrimaryKeyAccess().getRule();
+	}
+	
+	//ForeignKey:
+	//	"FOREIGN" "KEY" "("
+	//	columnAsFK+=[ColumnDeclaration] ("," columnAsFK+=[ColumnDeclaration])* ")"
+	//	"REFERENCES" foreignTable=[TableDeclaration]
+	//	"(" foreignColumns+=[ColumnDeclaration] ("," foreignColumns+=[ColumnDeclaration])* ")";
+	public ForeignKeyElements getForeignKeyAccess() {
+		return pForeignKey;
+	}
+	
+	public ParserRule getForeignKeyRule() {
+		return getForeignKeyAccess().getRule();
+	}
+	
+	//enum DataStructureType:
+	//	VARCHAR="varchar" | CHAR="char" | DATE="date" | INT="int" | FLOAT="float" | TIME="time" | TEXT="text";
+	public DataStructureTypeElements getDataStructureTypeAccess() {
+		return eDataStructureType;
+	}
+	
+	public EnumRule getDataStructureTypeRule() {
+		return getDataStructureTypeAccess().getRule();
+	}
+	
+	///*
+	// * 
+	// * Drop Table Statement
+	// * 
+	// */ DropTableStatement:
+	//	tables+=DropTableDeclaration*;
+	public DropTableStatementElements getDropTableStatementAccess() {
+		return pDropTableStatement;
+	}
+	
+	public ParserRule getDropTableStatementRule() {
+		return getDropTableStatementAccess().getRule();
+	}
+	
+	//DropTableDeclaration:
+	//	"DROP" "TABLE" name=ID;
+	public DropTableDeclarationElements getDropTableDeclarationAccess() {
+		return pDropTableDeclaration;
+	}
+	
+	public ParserRule getDropTableDeclarationRule() {
+		return getDropTableDeclarationAccess().getRule();
+	}
+	
+	///*
+	// * 
+	// * Truncate Table Statement
+	// * 
+	// */ TruncateTableStatement:
+	//	tables+=TruncateTableDeclaration*;
+	public TruncateTableStatementElements getTruncateTableStatementAccess() {
+		return pTruncateTableStatement;
+	}
+	
+	public ParserRule getTruncateTableStatementRule() {
+		return getTruncateTableStatementAccess().getRule();
+	}
+	
+	//TruncateTableDeclaration:
+	//	"TRUNCATE" "TABLE" name=ID;
+	public TruncateTableDeclarationElements getTruncateTableDeclarationAccess() {
+		return pTruncateTableDeclaration;
+	}
+	
+	public ParserRule getTruncateTableDeclarationRule() {
+		return getTruncateTableDeclarationAccess().getRule();
+	}
+	
+	///*
+	// * 
+	// * Alter Table Statement
+	// * 
+	// * 
+	// */ AlterTableStatement:
+	//	"ALTER" "TABLE" name=ID addDropUpdate=(AlterDropStatement | AlterAddStatement | AlterUpdateStatement);
+	public AlterTableStatementElements getAlterTableStatementAccess() {
+		return pAlterTableStatement;
+	}
+	
+	public ParserRule getAlterTableStatementRule() {
+		return getAlterTableStatementAccess().getRule();
+	}
+	
+	//AlterDropStatement:
+	//	"DROP" "COLUMN" name=ID;
+	public AlterDropStatementElements getAlterDropStatementAccess() {
+		return pAlterDropStatement;
+	}
+	
+	public ParserRule getAlterDropStatementRule() {
+		return getAlterDropStatementAccess().getRule();
+	}
+	
+	//AlterAddStatement:
+	//	"ADD" column+=[ColumnDeclaration];
+	public AlterAddStatementElements getAlterAddStatementAccess() {
+		return pAlterAddStatement;
+	}
+	
+	public ParserRule getAlterAddStatementRule() {
+		return getAlterAddStatementAccess().getRule();
+	}
+	
+	//AlterUpdateStatement:
+	//	"ALTER" "COLUMN" name=ID;
+	public AlterUpdateStatementElements getAlterUpdateStatementAccess() {
+		return pAlterUpdateStatement;
+	}
+	
+	public ParserRule getAlterUpdateStatementRule() {
+		return getAlterUpdateStatementAccess().getRule();
 	}
 	
 	//terminal ID:

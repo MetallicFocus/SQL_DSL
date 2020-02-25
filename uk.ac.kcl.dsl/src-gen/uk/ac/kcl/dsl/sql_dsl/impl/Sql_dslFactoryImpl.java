@@ -4,6 +4,7 @@
 package uk.ac.kcl.dsl.sql_dsl.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -66,9 +67,57 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
     switch (eClass.getClassifierID())
     {
       case Sql_dslPackage.MODEL: return createModel();
-      case Sql_dslPackage.GREETING: return createGreeting();
+      case Sql_dslPackage.STATEMENT: return createStatement();
+      case Sql_dslPackage.DATABASE_DECLARATION_STATEMENT: return createDatabaseDeclarationStatement();
+      case Sql_dslPackage.CREATE_TABLE_STATEMENT: return createCreateTableStatement();
+      case Sql_dslPackage.TABLE_DECLARATION: return createTableDeclaration();
+      case Sql_dslPackage.COLUMN_DECLARATION: return createColumnDeclaration();
+      case Sql_dslPackage.PRIMARY_KEY: return createPrimaryKey();
+      case Sql_dslPackage.FOREIGN_KEY: return createForeignKey();
+      case Sql_dslPackage.DROP_TABLE_STATEMENT: return createDropTableStatement();
+      case Sql_dslPackage.DROP_TABLE_DECLARATION: return createDropTableDeclaration();
+      case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT: return createTruncateTableStatement();
+      case Sql_dslPackage.TRUNCATE_TABLE_DECLARATION: return createTruncateTableDeclaration();
+      case Sql_dslPackage.ALTER_TABLE_STATEMENT: return createAlterTableStatement();
+      case Sql_dslPackage.ALTER_DROP_STATEMENT: return createAlterDropStatement();
+      case Sql_dslPackage.ALTER_ADD_STATEMENT: return createAlterAddStatement();
+      case Sql_dslPackage.ALTER_UPDATE_STATEMENT: return createAlterUpdateStatement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case Sql_dslPackage.DATA_STRUCTURE_TYPE:
+        return createDataStructureTypeFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case Sql_dslPackage.DATA_STRUCTURE_TYPE:
+        return convertDataStructureTypeToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -90,10 +139,200 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
    * @generated
    */
   @Override
-  public Greeting createGreeting()
+  public Statement createStatement()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    StatementImpl statement = new StatementImpl();
+    return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DatabaseDeclarationStatement createDatabaseDeclarationStatement()
+  {
+    DatabaseDeclarationStatementImpl databaseDeclarationStatement = new DatabaseDeclarationStatementImpl();
+    return databaseDeclarationStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CreateTableStatement createCreateTableStatement()
+  {
+    CreateTableStatementImpl createTableStatement = new CreateTableStatementImpl();
+    return createTableStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TableDeclaration createTableDeclaration()
+  {
+    TableDeclarationImpl tableDeclaration = new TableDeclarationImpl();
+    return tableDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ColumnDeclaration createColumnDeclaration()
+  {
+    ColumnDeclarationImpl columnDeclaration = new ColumnDeclarationImpl();
+    return columnDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PrimaryKey createPrimaryKey()
+  {
+    PrimaryKeyImpl primaryKey = new PrimaryKeyImpl();
+    return primaryKey;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ForeignKey createForeignKey()
+  {
+    ForeignKeyImpl foreignKey = new ForeignKeyImpl();
+    return foreignKey;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DropTableStatement createDropTableStatement()
+  {
+    DropTableStatementImpl dropTableStatement = new DropTableStatementImpl();
+    return dropTableStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DropTableDeclaration createDropTableDeclaration()
+  {
+    DropTableDeclarationImpl dropTableDeclaration = new DropTableDeclarationImpl();
+    return dropTableDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TruncateTableStatement createTruncateTableStatement()
+  {
+    TruncateTableStatementImpl truncateTableStatement = new TruncateTableStatementImpl();
+    return truncateTableStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TruncateTableDeclaration createTruncateTableDeclaration()
+  {
+    TruncateTableDeclarationImpl truncateTableDeclaration = new TruncateTableDeclarationImpl();
+    return truncateTableDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AlterTableStatement createAlterTableStatement()
+  {
+    AlterTableStatementImpl alterTableStatement = new AlterTableStatementImpl();
+    return alterTableStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AlterDropStatement createAlterDropStatement()
+  {
+    AlterDropStatementImpl alterDropStatement = new AlterDropStatementImpl();
+    return alterDropStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AlterAddStatement createAlterAddStatement()
+  {
+    AlterAddStatementImpl alterAddStatement = new AlterAddStatementImpl();
+    return alterAddStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AlterUpdateStatement createAlterUpdateStatement()
+  {
+    AlterUpdateStatementImpl alterUpdateStatement = new AlterUpdateStatementImpl();
+    return alterUpdateStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataStructureType createDataStructureTypeFromString(EDataType eDataType, String initialValue)
+  {
+    DataStructureType result = DataStructureType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertDataStructureTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

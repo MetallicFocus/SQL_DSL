@@ -5,15 +5,31 @@ package uk.ac.kcl.dsl.sql_dsl.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import uk.ac.kcl.dsl.sql_dsl.Greeting;
+import uk.ac.kcl.dsl.sql_dsl.AlterAddStatement;
+import uk.ac.kcl.dsl.sql_dsl.AlterDropStatement;
+import uk.ac.kcl.dsl.sql_dsl.AlterTableStatement;
+import uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement;
+import uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.CreateTableStatement;
+import uk.ac.kcl.dsl.sql_dsl.DataStructureType;
+import uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement;
+import uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.DropTableStatement;
+import uk.ac.kcl.dsl.sql_dsl.ForeignKey;
 import uk.ac.kcl.dsl.sql_dsl.Model;
+import uk.ac.kcl.dsl.sql_dsl.PrimaryKey;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslFactory;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
+import uk.ac.kcl.dsl.sql_dsl.Statement;
+import uk.ac.kcl.dsl.sql_dsl.TableDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +51,112 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass greetingEClass = null;
+  private EClass statementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass databaseDeclarationStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass createTableStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tableDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass columnDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass primaryKeyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass foreignKeyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dropTableStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dropTableDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass truncateTableStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass truncateTableDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alterTableStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alterDropStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alterAddStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alterUpdateStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum dataStructureTypeEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -117,7 +238,7 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EReference getModel_Greetings()
+  public EReference getModel_Statements()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -128,9 +249,9 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EClass getGreeting()
+  public EClass getStatement()
   {
-    return greetingEClass;
+    return statementEClass;
   }
 
   /**
@@ -139,9 +260,383 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EAttribute getGreeting_Name()
+  public EClass getDatabaseDeclarationStatement()
   {
-    return (EAttribute)greetingEClass.getEStructuralFeatures().get(0);
+    return databaseDeclarationStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDatabaseDeclarationStatement_Name()
+  {
+    return (EAttribute)databaseDeclarationStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCreateTableStatement()
+  {
+    return createTableStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCreateTableStatement_Tables()
+  {
+    return (EReference)createTableStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTableDeclaration()
+  {
+    return tableDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTableDeclaration_Name()
+  {
+    return (EAttribute)tableDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTableDeclaration_Attributes()
+  {
+    return (EReference)tableDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getColumnDeclaration()
+  {
+    return columnDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getColumnDeclaration_Name()
+  {
+    return (EAttribute)columnDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getColumnDeclaration_Type()
+  {
+    return (EAttribute)columnDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getColumnDeclaration_NotNull()
+  {
+    return (EAttribute)columnDeclarationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPrimaryKey()
+  {
+    return primaryKeyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPrimaryKey_ColumnAsPK()
+  {
+    return (EReference)primaryKeyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getForeignKey()
+  {
+    return foreignKeyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getForeignKey_ColumnAsFK()
+  {
+    return (EReference)foreignKeyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getForeignKey_ForeignTable()
+  {
+    return (EReference)foreignKeyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getForeignKey_ForeignColumns()
+  {
+    return (EReference)foreignKeyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDropTableStatement()
+  {
+    return dropTableStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDropTableStatement_Tables()
+  {
+    return (EReference)dropTableStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDropTableDeclaration()
+  {
+    return dropTableDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDropTableDeclaration_Name()
+  {
+    return (EAttribute)dropTableDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTruncateTableStatement()
+  {
+    return truncateTableStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTruncateTableStatement_Tables()
+  {
+    return (EReference)truncateTableStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTruncateTableDeclaration()
+  {
+    return truncateTableDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTruncateTableDeclaration_Name()
+  {
+    return (EAttribute)truncateTableDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAlterTableStatement()
+  {
+    return alterTableStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAlterTableStatement_Name()
+  {
+    return (EAttribute)alterTableStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAlterTableStatement_AddDropUpdate()
+  {
+    return (EReference)alterTableStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAlterDropStatement()
+  {
+    return alterDropStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAlterDropStatement_Name()
+  {
+    return (EAttribute)alterDropStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAlterAddStatement()
+  {
+    return alterAddStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAlterAddStatement_Column()
+  {
+    return (EReference)alterAddStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAlterUpdateStatement()
+  {
+    return alterUpdateStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAlterUpdateStatement_Name()
+  {
+    return (EAttribute)alterUpdateStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getDataStructureType()
+  {
+    return dataStructureTypeEEnum;
   }
 
   /**
@@ -176,10 +671,60 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__GREETINGS);
+    createEReference(modelEClass, MODEL__STATEMENTS);
 
-    greetingEClass = createEClass(GREETING);
-    createEAttribute(greetingEClass, GREETING__NAME);
+    statementEClass = createEClass(STATEMENT);
+
+    databaseDeclarationStatementEClass = createEClass(DATABASE_DECLARATION_STATEMENT);
+    createEAttribute(databaseDeclarationStatementEClass, DATABASE_DECLARATION_STATEMENT__NAME);
+
+    createTableStatementEClass = createEClass(CREATE_TABLE_STATEMENT);
+    createEReference(createTableStatementEClass, CREATE_TABLE_STATEMENT__TABLES);
+
+    tableDeclarationEClass = createEClass(TABLE_DECLARATION);
+    createEAttribute(tableDeclarationEClass, TABLE_DECLARATION__NAME);
+    createEReference(tableDeclarationEClass, TABLE_DECLARATION__ATTRIBUTES);
+
+    columnDeclarationEClass = createEClass(COLUMN_DECLARATION);
+    createEAttribute(columnDeclarationEClass, COLUMN_DECLARATION__NAME);
+    createEAttribute(columnDeclarationEClass, COLUMN_DECLARATION__TYPE);
+    createEAttribute(columnDeclarationEClass, COLUMN_DECLARATION__NOT_NULL);
+
+    primaryKeyEClass = createEClass(PRIMARY_KEY);
+    createEReference(primaryKeyEClass, PRIMARY_KEY__COLUMN_AS_PK);
+
+    foreignKeyEClass = createEClass(FOREIGN_KEY);
+    createEReference(foreignKeyEClass, FOREIGN_KEY__COLUMN_AS_FK);
+    createEReference(foreignKeyEClass, FOREIGN_KEY__FOREIGN_TABLE);
+    createEReference(foreignKeyEClass, FOREIGN_KEY__FOREIGN_COLUMNS);
+
+    dropTableStatementEClass = createEClass(DROP_TABLE_STATEMENT);
+    createEReference(dropTableStatementEClass, DROP_TABLE_STATEMENT__TABLES);
+
+    dropTableDeclarationEClass = createEClass(DROP_TABLE_DECLARATION);
+    createEAttribute(dropTableDeclarationEClass, DROP_TABLE_DECLARATION__NAME);
+
+    truncateTableStatementEClass = createEClass(TRUNCATE_TABLE_STATEMENT);
+    createEReference(truncateTableStatementEClass, TRUNCATE_TABLE_STATEMENT__TABLES);
+
+    truncateTableDeclarationEClass = createEClass(TRUNCATE_TABLE_DECLARATION);
+    createEAttribute(truncateTableDeclarationEClass, TRUNCATE_TABLE_DECLARATION__NAME);
+
+    alterTableStatementEClass = createEClass(ALTER_TABLE_STATEMENT);
+    createEAttribute(alterTableStatementEClass, ALTER_TABLE_STATEMENT__NAME);
+    createEReference(alterTableStatementEClass, ALTER_TABLE_STATEMENT__ADD_DROP_UPDATE);
+
+    alterDropStatementEClass = createEClass(ALTER_DROP_STATEMENT);
+    createEAttribute(alterDropStatementEClass, ALTER_DROP_STATEMENT__NAME);
+
+    alterAddStatementEClass = createEClass(ALTER_ADD_STATEMENT);
+    createEReference(alterAddStatementEClass, ALTER_ADD_STATEMENT__COLUMN);
+
+    alterUpdateStatementEClass = createEClass(ALTER_UPDATE_STATEMENT);
+    createEAttribute(alterUpdateStatementEClass, ALTER_UPDATE_STATEMENT__NAME);
+
+    // Create enums
+    dataStructureTypeEEnum = createEEnum(DATA_STRUCTURE_TYPE);
   }
 
   /**
@@ -211,13 +756,75 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    databaseDeclarationStatementEClass.getESuperTypes().add(this.getStatement());
+    createTableStatementEClass.getESuperTypes().add(this.getStatement());
+    dropTableStatementEClass.getESuperTypes().add(this.getStatement());
+    truncateTableStatementEClass.getESuperTypes().add(this.getStatement());
+    alterTableStatementEClass.getESuperTypes().add(this.getStatement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Greetings(), this.getGreeting(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Statements(), this.getStatement(), null, "statements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(databaseDeclarationStatementEClass, DatabaseDeclarationStatement.class, "DatabaseDeclarationStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDatabaseDeclarationStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, DatabaseDeclarationStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(createTableStatementEClass, CreateTableStatement.class, "CreateTableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCreateTableStatement_Tables(), this.getTableDeclaration(), null, "tables", null, 0, -1, CreateTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tableDeclarationEClass, TableDeclaration.class, "TableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, TableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTableDeclaration_Attributes(), ecorePackage.getEObject(), null, "attributes", null, 0, -1, TableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(columnDeclarationEClass, ColumnDeclaration.class, "ColumnDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getColumnDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, ColumnDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getColumnDeclaration_Type(), this.getDataStructureType(), "type", null, 0, 1, ColumnDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getColumnDeclaration_NotNull(), ecorePackage.getEBoolean(), "notNull", null, 0, 1, ColumnDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(primaryKeyEClass, PrimaryKey.class, "PrimaryKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPrimaryKey_ColumnAsPK(), this.getColumnDeclaration(), null, "columnAsPK", null, 0, -1, PrimaryKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(foreignKeyEClass, ForeignKey.class, "ForeignKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getForeignKey_ColumnAsFK(), this.getColumnDeclaration(), null, "columnAsFK", null, 0, -1, ForeignKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForeignKey_ForeignTable(), this.getTableDeclaration(), null, "foreignTable", null, 0, 1, ForeignKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForeignKey_ForeignColumns(), this.getColumnDeclaration(), null, "foreignColumns", null, 0, -1, ForeignKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dropTableStatementEClass, DropTableStatement.class, "DropTableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDropTableStatement_Tables(), this.getDropTableDeclaration(), null, "tables", null, 0, -1, DropTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dropTableDeclarationEClass, DropTableDeclaration.class, "DropTableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDropTableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, DropTableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(truncateTableStatementEClass, TruncateTableStatement.class, "TruncateTableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTruncateTableStatement_Tables(), this.getTruncateTableDeclaration(), null, "tables", null, 0, -1, TruncateTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(truncateTableDeclarationEClass, TruncateTableDeclaration.class, "TruncateTableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTruncateTableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, TruncateTableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(alterTableStatementEClass, AlterTableStatement.class, "AlterTableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAlterTableStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AlterTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAlterTableStatement_AddDropUpdate(), ecorePackage.getEObject(), null, "addDropUpdate", null, 0, 1, AlterTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(alterDropStatementEClass, AlterDropStatement.class, "AlterDropStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAlterDropStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AlterDropStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(alterAddStatementEClass, AlterAddStatement.class, "AlterAddStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAlterAddStatement_Column(), this.getColumnDeclaration(), null, "column", null, 0, -1, AlterAddStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(alterUpdateStatementEClass, AlterUpdateStatement.class, "AlterUpdateStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAlterUpdateStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AlterUpdateStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(dataStructureTypeEEnum, DataStructureType.class, "DataStructureType");
+    addEEnumLiteral(dataStructureTypeEEnum, DataStructureType.VARCHAR);
+    addEEnumLiteral(dataStructureTypeEEnum, DataStructureType.CHAR);
+    addEEnumLiteral(dataStructureTypeEEnum, DataStructureType.DATE);
+    addEEnumLiteral(dataStructureTypeEEnum, DataStructureType.INT);
+    addEEnumLiteral(dataStructureTypeEEnum, DataStructureType.FLOAT);
+    addEEnumLiteral(dataStructureTypeEEnum, DataStructureType.TIME);
+    addEEnumLiteral(dataStructureTypeEEnum, DataStructureType.TEXT);
 
     // Create resource
     createResource(eNS_URI);

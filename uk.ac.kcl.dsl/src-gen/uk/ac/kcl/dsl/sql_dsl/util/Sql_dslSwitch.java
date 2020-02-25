@@ -80,10 +80,113 @@ public class Sql_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Sql_dslPackage.GREETING:
+      case Sql_dslPackage.STATEMENT:
       {
-        Greeting greeting = (Greeting)theEObject;
-        T result = caseGreeting(greeting);
+        Statement statement = (Statement)theEObject;
+        T result = caseStatement(statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.DATABASE_DECLARATION_STATEMENT:
+      {
+        DatabaseDeclarationStatement databaseDeclarationStatement = (DatabaseDeclarationStatement)theEObject;
+        T result = caseDatabaseDeclarationStatement(databaseDeclarationStatement);
+        if (result == null) result = caseStatement(databaseDeclarationStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.CREATE_TABLE_STATEMENT:
+      {
+        CreateTableStatement createTableStatement = (CreateTableStatement)theEObject;
+        T result = caseCreateTableStatement(createTableStatement);
+        if (result == null) result = caseStatement(createTableStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.TABLE_DECLARATION:
+      {
+        TableDeclaration tableDeclaration = (TableDeclaration)theEObject;
+        T result = caseTableDeclaration(tableDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.COLUMN_DECLARATION:
+      {
+        ColumnDeclaration columnDeclaration = (ColumnDeclaration)theEObject;
+        T result = caseColumnDeclaration(columnDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.PRIMARY_KEY:
+      {
+        PrimaryKey primaryKey = (PrimaryKey)theEObject;
+        T result = casePrimaryKey(primaryKey);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.FOREIGN_KEY:
+      {
+        ForeignKey foreignKey = (ForeignKey)theEObject;
+        T result = caseForeignKey(foreignKey);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.DROP_TABLE_STATEMENT:
+      {
+        DropTableStatement dropTableStatement = (DropTableStatement)theEObject;
+        T result = caseDropTableStatement(dropTableStatement);
+        if (result == null) result = caseStatement(dropTableStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.DROP_TABLE_DECLARATION:
+      {
+        DropTableDeclaration dropTableDeclaration = (DropTableDeclaration)theEObject;
+        T result = caseDropTableDeclaration(dropTableDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT:
+      {
+        TruncateTableStatement truncateTableStatement = (TruncateTableStatement)theEObject;
+        T result = caseTruncateTableStatement(truncateTableStatement);
+        if (result == null) result = caseStatement(truncateTableStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.TRUNCATE_TABLE_DECLARATION:
+      {
+        TruncateTableDeclaration truncateTableDeclaration = (TruncateTableDeclaration)theEObject;
+        T result = caseTruncateTableDeclaration(truncateTableDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.ALTER_TABLE_STATEMENT:
+      {
+        AlterTableStatement alterTableStatement = (AlterTableStatement)theEObject;
+        T result = caseAlterTableStatement(alterTableStatement);
+        if (result == null) result = caseStatement(alterTableStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.ALTER_DROP_STATEMENT:
+      {
+        AlterDropStatement alterDropStatement = (AlterDropStatement)theEObject;
+        T result = caseAlterDropStatement(alterDropStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.ALTER_ADD_STATEMENT:
+      {
+        AlterAddStatement alterAddStatement = (AlterAddStatement)theEObject;
+        T result = caseAlterAddStatement(alterAddStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.ALTER_UPDATE_STATEMENT:
+      {
+        AlterUpdateStatement alterUpdateStatement = (AlterUpdateStatement)theEObject;
+        T result = caseAlterUpdateStatement(alterUpdateStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -108,17 +211,241 @@ public class Sql_dslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGreeting(Greeting object)
+  public T caseStatement(Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Database Declaration Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Database Declaration Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDatabaseDeclarationStatement(DatabaseDeclarationStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Create Table Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Create Table Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCreateTableStatement(CreateTableStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Table Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Table Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTableDeclaration(TableDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Column Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Column Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseColumnDeclaration(ColumnDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Primary Key</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Primary Key</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrimaryKey(PrimaryKey object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Foreign Key</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Foreign Key</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseForeignKey(ForeignKey object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Drop Table Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Drop Table Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDropTableStatement(DropTableStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Drop Table Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Drop Table Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDropTableDeclaration(DropTableDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Truncate Table Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Truncate Table Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTruncateTableStatement(TruncateTableStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Truncate Table Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Truncate Table Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTruncateTableDeclaration(TruncateTableDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Alter Table Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Alter Table Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlterTableStatement(AlterTableStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Alter Drop Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Alter Drop Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlterDropStatement(AlterDropStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Alter Add Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Alter Add Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlterAddStatement(AlterAddStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Alter Update Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Alter Update Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlterUpdateStatement(AlterUpdateStatement object)
   {
     return null;
   }
