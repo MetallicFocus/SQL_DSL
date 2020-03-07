@@ -106,6 +106,43 @@ public interface Sql_dslPackage extends EPackage
   int STATEMENT_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.SelectStatementImpl <em>Select Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.SelectStatementImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getSelectStatement()
+   * @generated
+   */
+  int SELECT_STATEMENT = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_STATEMENT__NAME = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Column</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_STATEMENT__COLUMN = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Select Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.DatabaseDeclarationStatementImpl <em>Database Declaration Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -113,7 +150,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDatabaseDeclarationStatement()
    * @generated
    */
-  int DATABASE_DECLARATION_STATEMENT = 2;
+  int DATABASE_DECLARATION_STATEMENT = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -141,7 +178,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getCreateTableStatement()
    * @generated
    */
-  int CREATE_TABLE_STATEMENT = 3;
+  int CREATE_TABLE_STATEMENT = 4;
 
   /**
    * The feature id for the '<em><b>Tables</b></em>' containment reference list.
@@ -169,7 +206,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTableDeclaration()
    * @generated
    */
-  int TABLE_DECLARATION = 4;
+  int TABLE_DECLARATION = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -199,14 +236,14 @@ public interface Sql_dslPackage extends EPackage
   int TABLE_DECLARATION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.ColumnDeclarationImpl <em>Column Declaration</em>}' class.
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.CDImpl <em>CD</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.kcl.dsl.sql_dsl.impl.ColumnDeclarationImpl
-   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getColumnDeclaration()
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.CDImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getCD()
    * @generated
    */
-  int COLUMN_DECLARATION = 5;
+  int CD = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -215,7 +252,7 @@ public interface Sql_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COLUMN_DECLARATION__NAME = 0;
+  int CD__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -224,7 +261,7 @@ public interface Sql_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COLUMN_DECLARATION__TYPE = 1;
+  int CD__TYPE = 1;
 
   /**
    * The feature id for the '<em><b>Not Null</b></em>' attribute.
@@ -233,16 +270,16 @@ public interface Sql_dslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COLUMN_DECLARATION__NOT_NULL = 2;
+  int CD__NOT_NULL = 2;
 
   /**
-   * The number of structural features of the '<em>Column Declaration</em>' class.
+   * The number of structural features of the '<em>CD</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COLUMN_DECLARATION_FEATURE_COUNT = 3;
+  int CD_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.PrimaryKeyImpl <em>Primary Key</em>}' class.
@@ -252,7 +289,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getPrimaryKey()
    * @generated
    */
-  int PRIMARY_KEY = 6;
+  int PRIMARY_KEY = 7;
 
   /**
    * The feature id for the '<em><b>Column As PK</b></em>' reference list.
@@ -280,7 +317,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getForeignKey()
    * @generated
    */
-  int FOREIGN_KEY = 7;
+  int FOREIGN_KEY = 8;
 
   /**
    * The feature id for the '<em><b>Column As FK</b></em>' reference list.
@@ -326,7 +363,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDropTableStatement()
    * @generated
    */
-  int DROP_TABLE_STATEMENT = 8;
+  int DROP_TABLE_STATEMENT = 9;
 
   /**
    * The feature id for the '<em><b>Tables</b></em>' containment reference list.
@@ -354,7 +391,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDropTableDeclaration()
    * @generated
    */
-  int DROP_TABLE_DECLARATION = 9;
+  int DROP_TABLE_DECLARATION = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -382,7 +419,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTruncateTableStatement()
    * @generated
    */
-  int TRUNCATE_TABLE_STATEMENT = 10;
+  int TRUNCATE_TABLE_STATEMENT = 11;
 
   /**
    * The feature id for the '<em><b>Tables</b></em>' containment reference list.
@@ -410,7 +447,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTruncateTableDeclaration()
    * @generated
    */
-  int TRUNCATE_TABLE_DECLARATION = 11;
+  int TRUNCATE_TABLE_DECLARATION = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -438,7 +475,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterTableStatement()
    * @generated
    */
-  int ALTER_TABLE_STATEMENT = 12;
+  int ALTER_TABLE_STATEMENT = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -475,7 +512,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterDropStatement()
    * @generated
    */
-  int ALTER_DROP_STATEMENT = 13;
+  int ALTER_DROP_STATEMENT = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -503,7 +540,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterAddStatement()
    * @generated
    */
-  int ALTER_ADD_STATEMENT = 14;
+  int ALTER_ADD_STATEMENT = 15;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -531,7 +568,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterUpdateStatement()
    * @generated
    */
-  int ALTER_UPDATE_STATEMENT = 15;
+  int ALTER_UPDATE_STATEMENT = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -552,6 +589,127 @@ public interface Sql_dslPackage extends EPackage
   int ALTER_UPDATE_STATEMENT_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.VariableDeclarationStatementImpl <em>Variable Declaration Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.VariableDeclarationStatementImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getVariableDeclarationStatement()
+   * @generated
+   */
+  int VARIABLE_DECLARATION_STATEMENT = 17;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATION_STATEMENT__NAME = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATION_STATEMENT__VALUE = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Variable Declaration Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATION_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.IntLiteralImpl <em>Int Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.IntLiteralImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getIntLiteral()
+   * @generated
+   */
+  int INT_LITERAL = 18;
+
+  /**
+   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_LITERAL__VAL = 0;
+
+  /**
+   * The number of structural features of the '<em>Int Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_LITERAL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.RealLiteralImpl <em>Real Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.RealLiteralImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getRealLiteral()
+   * @generated
+   */
+  int REAL_LITERAL = 19;
+
+  /**
+   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REAL_LITERAL__VAL = 0;
+
+  /**
+   * The number of structural features of the '<em>Real Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REAL_LITERAL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.IntVarExpressionImpl <em>Int Var Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.IntVarExpressionImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getIntVarExpression()
+   * @generated
+   */
+  int INT_VAR_EXPRESSION = 20;
+
+  /**
+   * The feature id for the '<em><b>Var</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_VAR_EXPRESSION__VAR = 0;
+
+  /**
+   * The number of structural features of the '<em>Int Var Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_VAR_EXPRESSION_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.DataStructureType <em>Data Structure Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -559,7 +717,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDataStructureType()
    * @generated
    */
-  int DATA_STRUCTURE_TYPE = 16;
+  int DATA_STRUCTURE_TYPE = 21;
 
 
   /**
@@ -592,6 +750,38 @@ public interface Sql_dslPackage extends EPackage
    * @generated
    */
   EClass getStatement();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.SelectStatement <em>Select Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Select Statement</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.SelectStatement
+   * @generated
+   */
+  EClass getSelectStatement();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.SelectStatement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.SelectStatement#getName()
+   * @see #getSelectStatement()
+   * @generated
+   */
+  EAttribute getSelectStatement_Name();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.kcl.dsl.sql_dsl.SelectStatement#getColumn <em>Column</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Column</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.SelectStatement#getColumn()
+   * @see #getSelectStatement()
+   * @generated
+   */
+  EReference getSelectStatement_Column();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement <em>Database Declaration Statement</em>}'.
@@ -668,47 +858,47 @@ public interface Sql_dslPackage extends EPackage
   EReference getTableDeclaration_Attributes();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration <em>Column Declaration</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.CD <em>CD</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Column Declaration</em>'.
-   * @see uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration
+   * @return the meta object for class '<em>CD</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.CD
    * @generated
    */
-  EClass getColumnDeclaration();
+  EClass getCD();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.CD#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#getName()
-   * @see #getColumnDeclaration()
+   * @see uk.ac.kcl.dsl.sql_dsl.CD#getName()
+   * @see #getCD()
    * @generated
    */
-  EAttribute getColumnDeclaration_Name();
+  EAttribute getCD_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.CD#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Type</em>'.
-   * @see uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#getType()
-   * @see #getColumnDeclaration()
+   * @see uk.ac.kcl.dsl.sql_dsl.CD#getType()
+   * @see #getCD()
    * @generated
    */
-  EAttribute getColumnDeclaration_Type();
+  EAttribute getCD_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#isNotNull <em>Not Null</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.CD#isNotNull <em>Not Null</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Not Null</em>'.
-   * @see uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#isNotNull()
-   * @see #getColumnDeclaration()
+   * @see uk.ac.kcl.dsl.sql_dsl.CD#isNotNull()
+   * @see #getCD()
    * @generated
    */
-  EAttribute getColumnDeclaration_NotNull();
+  EAttribute getCD_NotNull();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.PrimaryKey <em>Primary Key</em>}'.
@@ -954,6 +1144,101 @@ public interface Sql_dslPackage extends EPackage
   EAttribute getAlterUpdateStatement_Name();
 
   /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.VariableDeclarationStatement <em>Variable Declaration Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable Declaration Statement</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.VariableDeclarationStatement
+   * @generated
+   */
+  EClass getVariableDeclarationStatement();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.VariableDeclarationStatement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.VariableDeclarationStatement#getName()
+   * @see #getVariableDeclarationStatement()
+   * @generated
+   */
+  EAttribute getVariableDeclarationStatement_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.VariableDeclarationStatement#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.VariableDeclarationStatement#getValue()
+   * @see #getVariableDeclarationStatement()
+   * @generated
+   */
+  EAttribute getVariableDeclarationStatement_Value();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.IntLiteral <em>Int Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Int Literal</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.IntLiteral
+   * @generated
+   */
+  EClass getIntLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.IntLiteral#getVal <em>Val</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Val</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.IntLiteral#getVal()
+   * @see #getIntLiteral()
+   * @generated
+   */
+  EAttribute getIntLiteral_Val();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.RealLiteral <em>Real Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Real Literal</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.RealLiteral
+   * @generated
+   */
+  EClass getRealLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.RealLiteral#getVal <em>Val</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Val</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.RealLiteral#getVal()
+   * @see #getRealLiteral()
+   * @generated
+   */
+  EAttribute getRealLiteral_Val();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.IntVarExpression <em>Int Var Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Int Var Expression</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.IntVarExpression
+   * @generated
+   */
+  EClass getIntVarExpression();
+
+  /**
+   * Returns the meta object for the reference '{@link uk.ac.kcl.dsl.sql_dsl.IntVarExpression#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Var</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.IntVarExpression#getVar()
+   * @see #getIntVarExpression()
+   * @generated
+   */
+  EReference getIntVarExpression_Var();
+
+  /**
    * Returns the meta object for enum '{@link uk.ac.kcl.dsl.sql_dsl.DataStructureType <em>Data Structure Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1013,6 +1298,32 @@ public interface Sql_dslPackage extends EPackage
      * @generated
      */
     EClass STATEMENT = eINSTANCE.getStatement();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.SelectStatementImpl <em>Select Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.SelectStatementImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getSelectStatement()
+     * @generated
+     */
+    EClass SELECT_STATEMENT = eINSTANCE.getSelectStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SELECT_STATEMENT__NAME = eINSTANCE.getSelectStatement_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Column</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT_STATEMENT__COLUMN = eINSTANCE.getSelectStatement_Column();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.DatabaseDeclarationStatementImpl <em>Database Declaration Statement</em>}' class.
@@ -1077,14 +1388,14 @@ public interface Sql_dslPackage extends EPackage
     EReference TABLE_DECLARATION__ATTRIBUTES = eINSTANCE.getTableDeclaration_Attributes();
 
     /**
-     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.ColumnDeclarationImpl <em>Column Declaration</em>}' class.
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.CDImpl <em>CD</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.kcl.dsl.sql_dsl.impl.ColumnDeclarationImpl
-     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getColumnDeclaration()
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.CDImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getCD()
      * @generated
      */
-    EClass COLUMN_DECLARATION = eINSTANCE.getColumnDeclaration();
+    EClass CD = eINSTANCE.getCD();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1092,7 +1403,7 @@ public interface Sql_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COLUMN_DECLARATION__NAME = eINSTANCE.getColumnDeclaration_Name();
+    EAttribute CD__NAME = eINSTANCE.getCD_Name();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -1100,7 +1411,7 @@ public interface Sql_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COLUMN_DECLARATION__TYPE = eINSTANCE.getColumnDeclaration_Type();
+    EAttribute CD__TYPE = eINSTANCE.getCD_Type();
 
     /**
      * The meta object literal for the '<em><b>Not Null</b></em>' attribute feature.
@@ -1108,7 +1419,7 @@ public interface Sql_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COLUMN_DECLARATION__NOT_NULL = eINSTANCE.getColumnDeclaration_NotNull();
+    EAttribute CD__NOT_NULL = eINSTANCE.getCD_NotNull();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.PrimaryKeyImpl <em>Primary Key</em>}' class.
@@ -1313,6 +1624,86 @@ public interface Sql_dslPackage extends EPackage
      * @generated
      */
     EAttribute ALTER_UPDATE_STATEMENT__NAME = eINSTANCE.getAlterUpdateStatement_Name();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.VariableDeclarationStatementImpl <em>Variable Declaration Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.VariableDeclarationStatementImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getVariableDeclarationStatement()
+     * @generated
+     */
+    EClass VARIABLE_DECLARATION_STATEMENT = eINSTANCE.getVariableDeclarationStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE_DECLARATION_STATEMENT__NAME = eINSTANCE.getVariableDeclarationStatement_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE_DECLARATION_STATEMENT__VALUE = eINSTANCE.getVariableDeclarationStatement_Value();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.IntLiteralImpl <em>Int Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.IntLiteralImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getIntLiteral()
+     * @generated
+     */
+    EClass INT_LITERAL = eINSTANCE.getIntLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INT_LITERAL__VAL = eINSTANCE.getIntLiteral_Val();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.RealLiteralImpl <em>Real Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.RealLiteralImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getRealLiteral()
+     * @generated
+     */
+    EClass REAL_LITERAL = eINSTANCE.getRealLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REAL_LITERAL__VAL = eINSTANCE.getRealLiteral_Val();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.IntVarExpressionImpl <em>Int Var Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.IntVarExpressionImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getIntVarExpression()
+     * @generated
+     */
+    EClass INT_VAR_EXPRESSION = eINSTANCE.getIntVarExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Var</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INT_VAR_EXPRESSION__VAR = eINSTANCE.getIntVarExpression_Var();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.DataStructureType <em>Data Structure Type</em>}' enum.

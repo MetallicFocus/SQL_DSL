@@ -19,6 +19,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//Model/statements"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//Statement"/>
+    <genClasses ecoreClass="Sql_dsl.ecore#//SelectStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//SelectStatement/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//SelectStatement/column"/>
+    </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//DatabaseDeclarationStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//DatabaseDeclarationStatement/name"/>
     </genClasses>
@@ -29,10 +33,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//TableDeclaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//TableDeclaration/attributes"/>
     </genClasses>
-    <genClasses ecoreClass="Sql_dsl.ecore#//ColumnDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//ColumnDeclaration/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//ColumnDeclaration/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//ColumnDeclaration/notNull"/>
+    <genClasses ecoreClass="Sql_dsl.ecore#//CD">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//CD/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//CD/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//CD/notNull"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//PrimaryKey">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//PrimaryKey/columnAsPK"/>
@@ -66,6 +70,19 @@
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//AlterUpdateStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//AlterUpdateStatement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//VariableDeclarationStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//VariableDeclarationStatement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//VariableDeclarationStatement/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//IntLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//IntLiteral/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//RealLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//RealLiteral/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//IntVarExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//IntVarExpression/var"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

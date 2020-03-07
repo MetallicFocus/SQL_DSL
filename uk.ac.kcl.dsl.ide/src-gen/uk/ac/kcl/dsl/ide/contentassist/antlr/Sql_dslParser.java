@@ -36,6 +36,7 @@ public class Sql_dslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTableDeclarationAccess().getAttributesAlternatives_5_1_0(), "rule__TableDeclaration__AttributesAlternatives_5_1_0");
 			builder.put(grammarAccess.getAlterTableStatementAccess().getAddDropUpdateAlternatives_3_0(), "rule__AlterTableStatement__AddDropUpdateAlternatives_3_0");
 			builder.put(grammarAccess.getDataStructureTypeAccess().getAlternatives(), "rule__DataStructureType__Alternatives");
+			builder.put(grammarAccess.getSelectStatementAccess().getGroup(), "rule__SelectStatement__Group__0");
 			builder.put(grammarAccess.getDatabaseDeclarationStatementAccess().getGroup(), "rule__DatabaseDeclarationStatement__Group__0");
 			builder.put(grammarAccess.getTableDeclarationAccess().getGroup(), "rule__TableDeclaration__Group__0");
 			builder.put(grammarAccess.getTableDeclarationAccess().getGroup_5(), "rule__TableDeclaration__Group_5__0");
@@ -51,7 +52,11 @@ public class Sql_dslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAlterDropStatementAccess().getGroup(), "rule__AlterDropStatement__Group__0");
 			builder.put(grammarAccess.getAlterAddStatementAccess().getGroup(), "rule__AlterAddStatement__Group__0");
 			builder.put(grammarAccess.getAlterUpdateStatementAccess().getGroup(), "rule__AlterUpdateStatement__Group__0");
+			builder.put(grammarAccess.getVariableDeclarationStatementAccess().getGroup(), "rule__VariableDeclarationStatement__Group__0");
+			builder.put(grammarAccess.getREALAccess().getGroup(), "rule__REAL__Group__0");
 			builder.put(grammarAccess.getModelAccess().getStatementsAssignment(), "rule__Model__StatementsAssignment");
+			builder.put(grammarAccess.getSelectStatementAccess().getNameAssignment_1(), "rule__SelectStatement__NameAssignment_1");
+			builder.put(grammarAccess.getSelectStatementAccess().getColumnAssignment_3(), "rule__SelectStatement__ColumnAssignment_3");
 			builder.put(grammarAccess.getDatabaseDeclarationStatementAccess().getNameAssignment_2(), "rule__DatabaseDeclarationStatement__NameAssignment_2");
 			builder.put(grammarAccess.getCreateTableStatementAccess().getTablesAssignment(), "rule__CreateTableStatement__TablesAssignment");
 			builder.put(grammarAccess.getTableDeclarationAccess().getNameAssignment_2(), "rule__TableDeclaration__NameAssignment_2");
@@ -76,6 +81,11 @@ public class Sql_dslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAlterDropStatementAccess().getNameAssignment_2(), "rule__AlterDropStatement__NameAssignment_2");
 			builder.put(grammarAccess.getAlterAddStatementAccess().getColumnAssignment_1(), "rule__AlterAddStatement__ColumnAssignment_1");
 			builder.put(grammarAccess.getAlterUpdateStatementAccess().getNameAssignment_2(), "rule__AlterUpdateStatement__NameAssignment_2");
+			builder.put(grammarAccess.getVariableDeclarationStatementAccess().getNameAssignment_1(), "rule__VariableDeclarationStatement__NameAssignment_1");
+			builder.put(grammarAccess.getVariableDeclarationStatementAccess().getValueAssignment_3(), "rule__VariableDeclarationStatement__ValueAssignment_3");
+			builder.put(grammarAccess.getIntLiteralAccess().getValAssignment(), "rule__IntLiteral__ValAssignment");
+			builder.put(grammarAccess.getRealLiteralAccess().getValAssignment(), "rule__RealLiteral__ValAssignment");
+			builder.put(grammarAccess.getIntVarExpressionAccess().getVarAssignment(), "rule__IntVarExpression__VarAssignment");
 		}
 	}
 	

@@ -27,7 +27,7 @@ public interface AlterAddStatement extends EObject
 {
   /**
    * Returns the value of the '<em><b>Column</b></em>' reference list.
-   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration}.
+   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.CD}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Column</em>' reference list.
@@ -35,6 +35,6 @@ public interface AlterAddStatement extends EObject
    * @model
    * @generated
    */
-  EList<ColumnDeclaration> getColumn();
+  EList<CD> getColumn();
 
 } // AlterAddStatement

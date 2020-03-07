@@ -10,26 +10,26 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.CD;
 import uk.ac.kcl.dsl.sql_dsl.DataStructureType;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Column Declaration</b></em>'.
+ * An implementation of the model object '<em><b>CD</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.ColumnDeclarationImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.ColumnDeclarationImpl#getType <em>Type</em>}</li>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.ColumnDeclarationImpl#isNotNull <em>Not Null</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.CDImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.CDImpl#getType <em>Type</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.CDImpl#isNotNull <em>Not Null</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ColumnDeclarationImpl extends MinimalEObjectImpl.Container implements ColumnDeclaration
+public class CDImpl extends MinimalEObjectImpl.Container implements CD
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -96,7 +96,7 @@ public class ColumnDeclarationImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ColumnDeclarationImpl()
+  protected CDImpl()
   {
     super();
   }
@@ -109,7 +109,7 @@ public class ColumnDeclarationImpl extends MinimalEObjectImpl.Container implemen
   @Override
   protected EClass eStaticClass()
   {
-    return Sql_dslPackage.Literals.COLUMN_DECLARATION;
+    return Sql_dslPackage.Literals.CD;
   }
 
   /**
@@ -134,7 +134,7 @@ public class ColumnDeclarationImpl extends MinimalEObjectImpl.Container implemen
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.COLUMN_DECLARATION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.CD__NAME, oldName, name));
   }
 
   /**
@@ -159,7 +159,7 @@ public class ColumnDeclarationImpl extends MinimalEObjectImpl.Container implemen
     DataStructureType oldType = type;
     type = newType == null ? TYPE_EDEFAULT : newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.COLUMN_DECLARATION__TYPE, oldType, type));
+      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.CD__TYPE, oldType, type));
   }
 
   /**
@@ -184,7 +184,7 @@ public class ColumnDeclarationImpl extends MinimalEObjectImpl.Container implemen
     boolean oldNotNull = notNull;
     notNull = newNotNull;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.COLUMN_DECLARATION__NOT_NULL, oldNotNull, notNull));
+      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.CD__NOT_NULL, oldNotNull, notNull));
   }
 
   /**
@@ -197,11 +197,11 @@ public class ColumnDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case Sql_dslPackage.COLUMN_DECLARATION__NAME:
+      case Sql_dslPackage.CD__NAME:
         return getName();
-      case Sql_dslPackage.COLUMN_DECLARATION__TYPE:
+      case Sql_dslPackage.CD__TYPE:
         return getType();
-      case Sql_dslPackage.COLUMN_DECLARATION__NOT_NULL:
+      case Sql_dslPackage.CD__NOT_NULL:
         return isNotNull();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -217,13 +217,13 @@ public class ColumnDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case Sql_dslPackage.COLUMN_DECLARATION__NAME:
+      case Sql_dslPackage.CD__NAME:
         setName((String)newValue);
         return;
-      case Sql_dslPackage.COLUMN_DECLARATION__TYPE:
+      case Sql_dslPackage.CD__TYPE:
         setType((DataStructureType)newValue);
         return;
-      case Sql_dslPackage.COLUMN_DECLARATION__NOT_NULL:
+      case Sql_dslPackage.CD__NOT_NULL:
         setNotNull((Boolean)newValue);
         return;
     }
@@ -240,13 +240,13 @@ public class ColumnDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case Sql_dslPackage.COLUMN_DECLARATION__NAME:
+      case Sql_dslPackage.CD__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case Sql_dslPackage.COLUMN_DECLARATION__TYPE:
+      case Sql_dslPackage.CD__TYPE:
         setType(TYPE_EDEFAULT);
         return;
-      case Sql_dslPackage.COLUMN_DECLARATION__NOT_NULL:
+      case Sql_dslPackage.CD__NOT_NULL:
         setNotNull(NOT_NULL_EDEFAULT);
         return;
     }
@@ -263,11 +263,11 @@ public class ColumnDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case Sql_dslPackage.COLUMN_DECLARATION__NAME:
+      case Sql_dslPackage.CD__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case Sql_dslPackage.COLUMN_DECLARATION__TYPE:
+      case Sql_dslPackage.CD__TYPE:
         return type != TYPE_EDEFAULT;
-      case Sql_dslPackage.COLUMN_DECLARATION__NOT_NULL:
+      case Sql_dslPackage.CD__NOT_NULL:
         return notNull != NOT_NULL_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -294,4 +294,4 @@ public class ColumnDeclarationImpl extends MinimalEObjectImpl.Container implemen
     return result.toString();
   }
 
-} //ColumnDeclarationImpl
+} //CDImpl

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import uk.ac.kcl.dsl.sql_dsl.AlterAddStatement;
-import uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.CD;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
 
 /**
@@ -40,7 +40,7 @@ public class AlterAddStatementImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected EList<ColumnDeclaration> column;
+  protected EList<CD> column;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class AlterAddStatementImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public EList<ColumnDeclaration> getColumn()
+  public EList<CD> getColumn()
   {
     if (column == null)
     {
-      column = new EObjectResolvingEList<ColumnDeclaration>(ColumnDeclaration.class, this, Sql_dslPackage.ALTER_ADD_STATEMENT__COLUMN);
+      column = new EObjectResolvingEList<CD>(CD.class, this, Sql_dslPackage.ALTER_ADD_STATEMENT__COLUMN);
     }
     return column;
   }
@@ -107,7 +107,7 @@ public class AlterAddStatementImpl extends MinimalEObjectImpl.Container implemen
     {
       case Sql_dslPackage.ALTER_ADD_STATEMENT__COLUMN:
         getColumn().clear();
-        getColumn().addAll((Collection<? extends ColumnDeclaration>)newValue);
+        getColumn().addAll((Collection<? extends CD>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

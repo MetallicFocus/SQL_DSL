@@ -2,6 +2,8 @@ grammar uk.ac.kcl.dsl.Sql_dsl with org.eclipse.xtext.common.Terminals
 
 generate sql_dsl "http://www.ac.uk/kcl/dsl/Sql_dsl"
 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
 	
 Model:
 	statements += Statement
@@ -12,7 +14,13 @@ Statement:
 	CreateTableStatement |
 	DropTableStatement |
 	TruncateTableStatement |
-	AlterTableStatement
+	AlterTableStatement |
+	VariableDeclarationStatement |
+	SelectStatement
+;
+
+SelectStatement:
+	"SELECT" name=ID "FROM" column+=[CD]
 ;
 
 /*
@@ -43,21 +51,21 @@ TableDeclaration:
 	")"
 ;
 	
-ColumnDeclaration:
+ColumnDeclaration returns CD:
 	name=ID type=DataStructureType notNull?=("NOT NULL")?
 ;
 
-PrimaryKey:
+PrimaryKey returns PrimaryKey:
 	"PRIMARY" "KEY" "(" 
-		columnAsPK+=[ColumnDeclaration] ("," columnAsPK+=[ColumnDeclaration])*
+		columnAsPK+=[CD] ("," columnAsPK+=[CD])*
 	")"
 ;
 
-ForeignKey:
+ForeignKey returns ForeignKey:
 	"FOREIGN" "KEY" "(" 
-		columnAsFK+=[ColumnDeclaration] ("," columnAsFK+=[ColumnDeclaration])* ")" 
+		columnAsFK+=[CD] ("," columnAsFK+=[CD])* ")" 
 	"REFERENCES" foreignTable=[TableDeclaration] 
-	"(" foreignColumns+=[ColumnDeclaration] ("," foreignColumns+=[ColumnDeclaration])* ")"
+	"(" foreignColumns+=[CD] ("," foreignColumns+=[CD])* ")"
 ;
 
 enum DataStructureType:
@@ -108,9 +116,35 @@ TruncateTableDeclaration:
  ;
  
  AlterAddStatement:
- 	"ADD" column+=[ColumnDeclaration]
+ 	"ADD" column+=[CD]
  ;
  
  AlterUpdateStatement:
  	"ALTER" "COLUMN" name=ID
  ;
+ 
+ /*
+ * 
+ * Variable Declaration
+ * 
+ */
+
+VariableDeclarationStatement:
+	"var" name=ID "=" value=INT
+;
+
+IntLiteral:
+	val = INT
+;
+
+RealLiteral:
+	val = REAL
+;
+
+IntVarExpression:
+	var = [VariableDeclarationStatement]
+;
+
+REAL returns ecore::EFloat hidden():
+	INT? "." INT
+; 

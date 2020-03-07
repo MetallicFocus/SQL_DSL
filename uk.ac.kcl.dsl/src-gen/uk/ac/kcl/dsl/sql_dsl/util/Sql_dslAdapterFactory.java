@@ -86,6 +86,11 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
         return createStatementAdapter();
       }
       @Override
+      public Adapter caseSelectStatement(SelectStatement object)
+      {
+        return createSelectStatementAdapter();
+      }
+      @Override
       public Adapter caseDatabaseDeclarationStatement(DatabaseDeclarationStatement object)
       {
         return createDatabaseDeclarationStatementAdapter();
@@ -101,9 +106,9 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
         return createTableDeclarationAdapter();
       }
       @Override
-      public Adapter caseColumnDeclaration(ColumnDeclaration object)
+      public Adapter caseCD(CD object)
       {
-        return createColumnDeclarationAdapter();
+        return createCDAdapter();
       }
       @Override
       public Adapter casePrimaryKey(PrimaryKey object)
@@ -154,6 +159,26 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAlterUpdateStatement(AlterUpdateStatement object)
       {
         return createAlterUpdateStatementAdapter();
+      }
+      @Override
+      public Adapter caseVariableDeclarationStatement(VariableDeclarationStatement object)
+      {
+        return createVariableDeclarationStatementAdapter();
+      }
+      @Override
+      public Adapter caseIntLiteral(IntLiteral object)
+      {
+        return createIntLiteralAdapter();
+      }
+      @Override
+      public Adapter caseRealLiteral(RealLiteral object)
+      {
+        return createRealLiteralAdapter();
+      }
+      @Override
+      public Adapter caseIntVarExpression(IntVarExpression object)
+      {
+        return createIntVarExpressionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -208,6 +233,21 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.SelectStatement <em>Select Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.SelectStatement
+   * @generated
+   */
+  public Adapter createSelectStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement <em>Database Declaration Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -253,16 +293,16 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration <em>Column Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.CD <em>CD</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration
+   * @see uk.ac.kcl.dsl.sql_dsl.CD
    * @generated
    */
-  public Adapter createColumnDeclarationAdapter()
+  public Adapter createCDAdapter()
   {
     return null;
   }
@@ -413,6 +453,66 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAlterUpdateStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.VariableDeclarationStatement <em>Variable Declaration Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.VariableDeclarationStatement
+   * @generated
+   */
+  public Adapter createVariableDeclarationStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.IntLiteral <em>Int Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.IntLiteral
+   * @generated
+   */
+  public Adapter createIntLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.RealLiteral <em>Real Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.RealLiteral
+   * @generated
+   */
+  public Adapter createRealLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.IntVarExpression <em>Int Var Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.IntVarExpression
+   * @generated
+   */
+  public Adapter createIntVarExpressionAdapter()
   {
     return null;
   }

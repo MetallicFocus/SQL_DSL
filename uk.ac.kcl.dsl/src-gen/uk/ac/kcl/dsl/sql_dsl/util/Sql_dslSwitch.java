@@ -87,6 +87,14 @@ public class Sql_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Sql_dslPackage.SELECT_STATEMENT:
+      {
+        SelectStatement selectStatement = (SelectStatement)theEObject;
+        T result = caseSelectStatement(selectStatement);
+        if (result == null) result = caseStatement(selectStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case Sql_dslPackage.DATABASE_DECLARATION_STATEMENT:
       {
         DatabaseDeclarationStatement databaseDeclarationStatement = (DatabaseDeclarationStatement)theEObject;
@@ -110,10 +118,10 @@ public class Sql_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Sql_dslPackage.COLUMN_DECLARATION:
+      case Sql_dslPackage.CD:
       {
-        ColumnDeclaration columnDeclaration = (ColumnDeclaration)theEObject;
-        T result = caseColumnDeclaration(columnDeclaration);
+        CD cd = (CD)theEObject;
+        T result = caseCD(cd);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -190,6 +198,35 @@ public class Sql_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Sql_dslPackage.VARIABLE_DECLARATION_STATEMENT:
+      {
+        VariableDeclarationStatement variableDeclarationStatement = (VariableDeclarationStatement)theEObject;
+        T result = caseVariableDeclarationStatement(variableDeclarationStatement);
+        if (result == null) result = caseStatement(variableDeclarationStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.INT_LITERAL:
+      {
+        IntLiteral intLiteral = (IntLiteral)theEObject;
+        T result = caseIntLiteral(intLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.REAL_LITERAL:
+      {
+        RealLiteral realLiteral = (RealLiteral)theEObject;
+        T result = caseRealLiteral(realLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.INT_VAR_EXPRESSION:
+      {
+        IntVarExpression intVarExpression = (IntVarExpression)theEObject;
+        T result = caseIntVarExpression(intVarExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -222,6 +259,22 @@ public class Sql_dslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStatement(Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Select Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Select Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSelectStatement(SelectStatement object)
   {
     return null;
   }
@@ -275,17 +328,17 @@ public class Sql_dslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Column Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>CD</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Column Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>CD</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseColumnDeclaration(ColumnDeclaration object)
+  public T caseCD(CD object)
   {
     return null;
   }
@@ -446,6 +499,70 @@ public class Sql_dslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAlterUpdateStatement(AlterUpdateStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Declaration Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Declaration Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableDeclarationStatement(VariableDeclarationStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Int Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Int Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntLiteral(IntLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Real Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Real Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRealLiteral(RealLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Int Var Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Int Var Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntVarExpression(IntVarExpression object)
   {
     return null;
   }

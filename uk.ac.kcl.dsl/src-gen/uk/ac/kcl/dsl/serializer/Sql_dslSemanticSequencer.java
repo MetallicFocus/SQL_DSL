@@ -19,18 +19,23 @@ import uk.ac.kcl.dsl.sql_dsl.AlterAddStatement;
 import uk.ac.kcl.dsl.sql_dsl.AlterDropStatement;
 import uk.ac.kcl.dsl.sql_dsl.AlterTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement;
-import uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.CD;
 import uk.ac.kcl.dsl.sql_dsl.CreateTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement;
 import uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration;
 import uk.ac.kcl.dsl.sql_dsl.DropTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.ForeignKey;
+import uk.ac.kcl.dsl.sql_dsl.IntLiteral;
+import uk.ac.kcl.dsl.sql_dsl.IntVarExpression;
 import uk.ac.kcl.dsl.sql_dsl.Model;
 import uk.ac.kcl.dsl.sql_dsl.PrimaryKey;
+import uk.ac.kcl.dsl.sql_dsl.RealLiteral;
+import uk.ac.kcl.dsl.sql_dsl.SelectStatement;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
 import uk.ac.kcl.dsl.sql_dsl.TableDeclaration;
 import uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration;
 import uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement;
+import uk.ac.kcl.dsl.sql_dsl.VariableDeclarationStatement;
 
 @SuppressWarnings("all")
 public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -58,8 +63,8 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case Sql_dslPackage.ALTER_UPDATE_STATEMENT:
 				sequence_AlterUpdateStatement(context, (AlterUpdateStatement) semanticObject); 
 				return; 
-			case Sql_dslPackage.COLUMN_DECLARATION:
-				sequence_ColumnDeclaration(context, (ColumnDeclaration) semanticObject); 
+			case Sql_dslPackage.CD:
+				sequence_ColumnDeclaration(context, (CD) semanticObject); 
 				return; 
 			case Sql_dslPackage.CREATE_TABLE_STATEMENT:
 				sequence_CreateTableStatement(context, (CreateTableStatement) semanticObject); 
@@ -76,11 +81,23 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case Sql_dslPackage.FOREIGN_KEY:
 				sequence_ForeignKey(context, (ForeignKey) semanticObject); 
 				return; 
+			case Sql_dslPackage.INT_LITERAL:
+				sequence_IntLiteral(context, (IntLiteral) semanticObject); 
+				return; 
+			case Sql_dslPackage.INT_VAR_EXPRESSION:
+				sequence_IntVarExpression(context, (IntVarExpression) semanticObject); 
+				return; 
 			case Sql_dslPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
 			case Sql_dslPackage.PRIMARY_KEY:
 				sequence_PrimaryKey(context, (PrimaryKey) semanticObject); 
+				return; 
+			case Sql_dslPackage.REAL_LITERAL:
+				sequence_RealLiteral(context, (RealLiteral) semanticObject); 
+				return; 
+			case Sql_dslPackage.SELECT_STATEMENT:
+				sequence_SelectStatement(context, (SelectStatement) semanticObject); 
 				return; 
 			case Sql_dslPackage.TABLE_DECLARATION:
 				sequence_TableDeclaration(context, (TableDeclaration) semanticObject); 
@@ -90,6 +107,9 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT:
 				sequence_TruncateTableStatement(context, (TruncateTableStatement) semanticObject); 
+				return; 
+			case Sql_dslPackage.VARIABLE_DECLARATION_STATEMENT:
+				sequence_VariableDeclarationStatement(context, (VariableDeclarationStatement) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -101,7 +121,7 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     AlterAddStatement returns AlterAddStatement
 	 *
 	 * Constraint:
-	 *     column+=[ColumnDeclaration|ID]
+	 *     column+=[CD|ID]
 	 */
 	protected void sequence_AlterAddStatement(ISerializationContext context, AlterAddStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -159,12 +179,12 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     ColumnDeclaration returns ColumnDeclaration
+	 *     ColumnDeclaration returns CD
 	 *
 	 * Constraint:
 	 *     (name=ID type=DataStructureType notNull?='NOT NULL'?)
 	 */
-	protected void sequence_ColumnDeclaration(ISerializationContext context, ColumnDeclaration semanticObject) {
+	protected void sequence_ColumnDeclaration(ISerializationContext context, CD semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -237,16 +257,46 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ForeignKey returns ForeignKey
 	 *
 	 * Constraint:
-	 *     (
-	 *         columnAsFK+=[ColumnDeclaration|ID] 
-	 *         columnAsFK+=[ColumnDeclaration|ID]* 
-	 *         foreignTable=[TableDeclaration|ID] 
-	 *         foreignColumns+=[ColumnDeclaration|ID] 
-	 *         foreignColumns+=[ColumnDeclaration|ID]*
-	 *     )
+	 *     (columnAsFK+=[CD|ID] columnAsFK+=[CD|ID]* foreignTable=[TableDeclaration|ID] foreignColumns+=[CD|ID] foreignColumns+=[CD|ID]*)
 	 */
 	protected void sequence_ForeignKey(ISerializationContext context, ForeignKey semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     IntLiteral returns IntLiteral
+	 *
+	 * Constraint:
+	 *     val=INT
+	 */
+	protected void sequence_IntLiteral(ISerializationContext context, IntLiteral semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.INT_LITERAL__VAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.INT_LITERAL__VAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIntLiteralAccess().getValINTTerminalRuleCall_0(), semanticObject.getVal());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     IntVarExpression returns IntVarExpression
+	 *
+	 * Constraint:
+	 *     var=[VariableDeclarationStatement|ID]
+	 */
+	protected void sequence_IntVarExpression(ISerializationContext context, IntVarExpression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.INT_VAR_EXPRESSION__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.INT_VAR_EXPRESSION__VAR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIntVarExpressionAccess().getVarVariableDeclarationStatementIDTerminalRuleCall_0_1(), semanticObject.eGet(Sql_dslPackage.Literals.INT_VAR_EXPRESSION__VAR, false));
+		feeder.finish();
 	}
 	
 	
@@ -267,9 +317,40 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PrimaryKey returns PrimaryKey
 	 *
 	 * Constraint:
-	 *     (columnAsPK+=[ColumnDeclaration|ID] columnAsPK+=[ColumnDeclaration|ID]*)
+	 *     (columnAsPK+=[CD|ID] columnAsPK+=[CD|ID]*)
 	 */
 	protected void sequence_PrimaryKey(ISerializationContext context, PrimaryKey semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RealLiteral returns RealLiteral
+	 *
+	 * Constraint:
+	 *     val=REAL
+	 */
+	protected void sequence_RealLiteral(ISerializationContext context, RealLiteral semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.REAL_LITERAL__VAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.REAL_LITERAL__VAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRealLiteralAccess().getValREALParserRuleCall_0(), semanticObject.getVal());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns SelectStatement
+	 *     SelectStatement returns SelectStatement
+	 *
+	 * Constraint:
+	 *     (name=ID column+=[CD|ID])
+	 */
+	protected void sequence_SelectStatement(ISerializationContext context, SelectStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -319,6 +400,28 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_TruncateTableStatement(ISerializationContext context, TruncateTableStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns VariableDeclarationStatement
+	 *     VariableDeclarationStatement returns VariableDeclarationStatement
+	 *
+	 * Constraint:
+	 *     (name=ID value=INT)
+	 */
+	protected void sequence_VariableDeclarationStatement(ISerializationContext context, VariableDeclarationStatement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.VARIABLE_DECLARATION_STATEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.VARIABLE_DECLARATION_STATEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.VARIABLE_DECLARATION_STATEMENT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.VARIABLE_DECLARATION_STATEMENT__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVariableDeclarationStatementAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVariableDeclarationStatementAccess().getValueINTTerminalRuleCall_3_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

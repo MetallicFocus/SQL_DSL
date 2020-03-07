@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.CD;
 import uk.ac.kcl.dsl.sql_dsl.ForeignKey;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
 import uk.ac.kcl.dsl.sql_dsl.TableDeclaration;
@@ -47,7 +47,7 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
    * @generated
    * @ordered
    */
-  protected EList<ColumnDeclaration> columnAsFK;
+  protected EList<CD> columnAsFK;
 
   /**
    * The cached value of the '{@link #getForeignTable() <em>Foreign Table</em>}' reference.
@@ -67,7 +67,7 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
    * @generated
    * @ordered
    */
-  protected EList<ColumnDeclaration> foreignColumns;
+  protected EList<CD> foreignColumns;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,11 +96,11 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
    * @generated
    */
   @Override
-  public EList<ColumnDeclaration> getColumnAsFK()
+  public EList<CD> getColumnAsFK()
   {
     if (columnAsFK == null)
     {
-      columnAsFK = new EObjectResolvingEList<ColumnDeclaration>(ColumnDeclaration.class, this, Sql_dslPackage.FOREIGN_KEY__COLUMN_AS_FK);
+      columnAsFK = new EObjectResolvingEList<CD>(CD.class, this, Sql_dslPackage.FOREIGN_KEY__COLUMN_AS_FK);
     }
     return columnAsFK;
   }
@@ -156,11 +156,11 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
    * @generated
    */
   @Override
-  public EList<ColumnDeclaration> getForeignColumns()
+  public EList<CD> getForeignColumns()
   {
     if (foreignColumns == null)
     {
-      foreignColumns = new EObjectResolvingEList<ColumnDeclaration>(ColumnDeclaration.class, this, Sql_dslPackage.FOREIGN_KEY__FOREIGN_COLUMNS);
+      foreignColumns = new EObjectResolvingEList<CD>(CD.class, this, Sql_dslPackage.FOREIGN_KEY__FOREIGN_COLUMNS);
     }
     return foreignColumns;
   }
@@ -199,14 +199,14 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
     {
       case Sql_dslPackage.FOREIGN_KEY__COLUMN_AS_FK:
         getColumnAsFK().clear();
-        getColumnAsFK().addAll((Collection<? extends ColumnDeclaration>)newValue);
+        getColumnAsFK().addAll((Collection<? extends CD>)newValue);
         return;
       case Sql_dslPackage.FOREIGN_KEY__FOREIGN_TABLE:
         setForeignTable((TableDeclaration)newValue);
         return;
       case Sql_dslPackage.FOREIGN_KEY__FOREIGN_COLUMNS:
         getForeignColumns().clear();
-        getForeignColumns().addAll((Collection<? extends ColumnDeclaration>)newValue);
+        getForeignColumns().addAll((Collection<? extends CD>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

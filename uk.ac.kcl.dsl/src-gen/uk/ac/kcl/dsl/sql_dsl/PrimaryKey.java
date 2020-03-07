@@ -27,7 +27,7 @@ public interface PrimaryKey extends EObject
 {
   /**
    * Returns the value of the '<em><b>Column As PK</b></em>' reference list.
-   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration}.
+   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.CD}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Column As PK</em>' reference list.
@@ -35,6 +35,6 @@ public interface PrimaryKey extends EObject
    * @model
    * @generated
    */
-  EList<ColumnDeclaration> getColumnAsPK();
+  EList<CD> getColumnAsPK();
 
 } // PrimaryKey

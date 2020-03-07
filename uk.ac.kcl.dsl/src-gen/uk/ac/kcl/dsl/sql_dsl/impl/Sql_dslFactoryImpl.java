@@ -68,10 +68,11 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
     {
       case Sql_dslPackage.MODEL: return createModel();
       case Sql_dslPackage.STATEMENT: return createStatement();
+      case Sql_dslPackage.SELECT_STATEMENT: return createSelectStatement();
       case Sql_dslPackage.DATABASE_DECLARATION_STATEMENT: return createDatabaseDeclarationStatement();
       case Sql_dslPackage.CREATE_TABLE_STATEMENT: return createCreateTableStatement();
       case Sql_dslPackage.TABLE_DECLARATION: return createTableDeclaration();
-      case Sql_dslPackage.COLUMN_DECLARATION: return createColumnDeclaration();
+      case Sql_dslPackage.CD: return createCD();
       case Sql_dslPackage.PRIMARY_KEY: return createPrimaryKey();
       case Sql_dslPackage.FOREIGN_KEY: return createForeignKey();
       case Sql_dslPackage.DROP_TABLE_STATEMENT: return createDropTableStatement();
@@ -82,6 +83,10 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
       case Sql_dslPackage.ALTER_DROP_STATEMENT: return createAlterDropStatement();
       case Sql_dslPackage.ALTER_ADD_STATEMENT: return createAlterAddStatement();
       case Sql_dslPackage.ALTER_UPDATE_STATEMENT: return createAlterUpdateStatement();
+      case Sql_dslPackage.VARIABLE_DECLARATION_STATEMENT: return createVariableDeclarationStatement();
+      case Sql_dslPackage.INT_LITERAL: return createIntLiteral();
+      case Sql_dslPackage.REAL_LITERAL: return createRealLiteral();
+      case Sql_dslPackage.INT_VAR_EXPRESSION: return createIntVarExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -151,6 +156,18 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
    * @generated
    */
   @Override
+  public SelectStatement createSelectStatement()
+  {
+    SelectStatementImpl selectStatement = new SelectStatementImpl();
+    return selectStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public DatabaseDeclarationStatement createDatabaseDeclarationStatement()
   {
     DatabaseDeclarationStatementImpl databaseDeclarationStatement = new DatabaseDeclarationStatementImpl();
@@ -187,10 +204,10 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
    * @generated
    */
   @Override
-  public ColumnDeclaration createColumnDeclaration()
+  public CD createCD()
   {
-    ColumnDeclarationImpl columnDeclaration = new ColumnDeclarationImpl();
-    return columnDeclaration;
+    CDImpl cd = new CDImpl();
+    return cd;
   }
 
   /**
@@ -311,6 +328,54 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
   {
     AlterUpdateStatementImpl alterUpdateStatement = new AlterUpdateStatementImpl();
     return alterUpdateStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VariableDeclarationStatement createVariableDeclarationStatement()
+  {
+    VariableDeclarationStatementImpl variableDeclarationStatement = new VariableDeclarationStatementImpl();
+    return variableDeclarationStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IntLiteral createIntLiteral()
+  {
+    IntLiteralImpl intLiteral = new IntLiteralImpl();
+    return intLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RealLiteral createRealLiteral()
+  {
+    RealLiteralImpl realLiteral = new RealLiteralImpl();
+    return realLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IntVarExpression createIntVarExpression()
+  {
+    IntVarExpressionImpl intVarExpression = new IntVarExpressionImpl();
+    return intVarExpression;
   }
 
   /**

@@ -42,6 +42,15 @@ public interface Sql_dslFactory extends EFactory
   Statement createStatement();
 
   /**
+   * Returns a new object of class '<em>Select Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Select Statement</em>'.
+   * @generated
+   */
+  SelectStatement createSelectStatement();
+
+  /**
    * Returns a new object of class '<em>Database Declaration Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -69,13 +78,13 @@ public interface Sql_dslFactory extends EFactory
   TableDeclaration createTableDeclaration();
 
   /**
-   * Returns a new object of class '<em>Column Declaration</em>'.
+   * Returns a new object of class '<em>CD</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Column Declaration</em>'.
+   * @return a new object of class '<em>CD</em>'.
    * @generated
    */
-  ColumnDeclaration createColumnDeclaration();
+  CD createCD();
 
   /**
    * Returns a new object of class '<em>Primary Key</em>'.
@@ -166,6 +175,42 @@ public interface Sql_dslFactory extends EFactory
    * @generated
    */
   AlterUpdateStatement createAlterUpdateStatement();
+
+  /**
+   * Returns a new object of class '<em>Variable Declaration Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Declaration Statement</em>'.
+   * @generated
+   */
+  VariableDeclarationStatement createVariableDeclarationStatement();
+
+  /**
+   * Returns a new object of class '<em>Int Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Int Literal</em>'.
+   * @generated
+   */
+  IntLiteral createIntLiteral();
+
+  /**
+   * Returns a new object of class '<em>Real Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Real Literal</em>'.
+   * @generated
+   */
+  RealLiteral createRealLiteral();
+
+  /**
+   * Returns a new object of class '<em>Int Var Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Int Var Expression</em>'.
+   * @generated
+   */
+  IntVarExpression createIntVarExpression();
 
   /**
    * Returns the package supported by this factory.

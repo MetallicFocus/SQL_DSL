@@ -29,7 +29,7 @@ public interface ForeignKey extends EObject
 {
   /**
    * Returns the value of the '<em><b>Column As FK</b></em>' reference list.
-   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration}.
+   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.CD}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Column As FK</em>' reference list.
@@ -37,7 +37,7 @@ public interface ForeignKey extends EObject
    * @model
    * @generated
    */
-  EList<ColumnDeclaration> getColumnAsFK();
+  EList<CD> getColumnAsFK();
 
   /**
    * Returns the value of the '<em><b>Foreign Table</b></em>' reference.
@@ -63,7 +63,7 @@ public interface ForeignKey extends EObject
 
   /**
    * Returns the value of the '<em><b>Foreign Columns</b></em>' reference list.
-   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration}.
+   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.CD}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Foreign Columns</em>' reference list.
@@ -71,6 +71,6 @@ public interface ForeignKey extends EObject
    * @model
    * @generated
    */
-  EList<ColumnDeclaration> getForeignColumns();
+  EList<CD> getForeignColumns();
 
 } // ForeignKey

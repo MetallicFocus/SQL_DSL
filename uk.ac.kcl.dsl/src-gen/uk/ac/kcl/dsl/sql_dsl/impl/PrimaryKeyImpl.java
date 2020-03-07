@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.CD;
 import uk.ac.kcl.dsl.sql_dsl.PrimaryKey;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
 
@@ -40,7 +40,7 @@ public class PrimaryKeyImpl extends MinimalEObjectImpl.Container implements Prim
    * @generated
    * @ordered
    */
-  protected EList<ColumnDeclaration> columnAsPK;
+  protected EList<CD> columnAsPK;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class PrimaryKeyImpl extends MinimalEObjectImpl.Container implements Prim
    * @generated
    */
   @Override
-  public EList<ColumnDeclaration> getColumnAsPK()
+  public EList<CD> getColumnAsPK()
   {
     if (columnAsPK == null)
     {
-      columnAsPK = new EObjectResolvingEList<ColumnDeclaration>(ColumnDeclaration.class, this, Sql_dslPackage.PRIMARY_KEY__COLUMN_AS_PK);
+      columnAsPK = new EObjectResolvingEList<CD>(CD.class, this, Sql_dslPackage.PRIMARY_KEY__COLUMN_AS_PK);
     }
     return columnAsPK;
   }
@@ -107,7 +107,7 @@ public class PrimaryKeyImpl extends MinimalEObjectImpl.Container implements Prim
     {
       case Sql_dslPackage.PRIMARY_KEY__COLUMN_AS_PK:
         getColumnAsPK().clear();
-        getColumnAsPK().addAll((Collection<? extends ColumnDeclaration>)newValue);
+        getColumnAsPK().addAll((Collection<? extends CD>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

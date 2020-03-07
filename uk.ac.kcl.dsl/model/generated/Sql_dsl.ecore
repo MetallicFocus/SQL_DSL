@@ -6,6 +6,11 @@
         eType="#//Statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectStatement" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="column" unique="false"
+        upperBound="-1" eType="#//CD"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DatabaseDeclarationStatement" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -18,21 +23,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ColumnDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="CD">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataStructureType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="notNull" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimaryKey">
     <eStructuralFeatures xsi:type="ecore:EReference" name="columnAsPK" unique="false"
-        upperBound="-1" eType="#//ColumnDeclaration"/>
+        upperBound="-1" eType="#//CD"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForeignKey">
     <eStructuralFeatures xsi:type="ecore:EReference" name="columnAsFK" unique="false"
-        upperBound="-1" eType="#//ColumnDeclaration"/>
+        upperBound="-1" eType="#//CD"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="foreignTable" eType="#//TableDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="foreignColumns" unique="false"
-        upperBound="-1" eType="#//ColumnDeclaration"/>
+        upperBound="-1" eType="#//CD"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DataStructureType">
     <eLiterals name="VARCHAR" literal="varchar"/>
@@ -67,9 +72,22 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AlterAddStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="column" unique="false"
-        upperBound="-1" eType="#//ColumnDeclaration"/>
+        upperBound="-1" eType="#//CD"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AlterUpdateStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDeclarationStatement" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RealLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntVarExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VariableDeclarationStatement"/>
   </eClassifiers>
 </ecore:EPackage>

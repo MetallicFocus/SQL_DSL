@@ -7,23 +7,23 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Column Declaration</b></em>'.
+ * A representation of the model object '<em><b>CD</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#getType <em>Type</em>}</li>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#isNotNull <em>Not Null</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.CD#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.CD#getType <em>Type</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.CD#isNotNull <em>Not Null</em>}</li>
  * </ul>
  *
- * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getColumnDeclaration()
+ * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getCD()
  * @model
  * @generated
  */
-public interface ColumnDeclaration extends EObject
+public interface CD extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -31,14 +31,14 @@ public interface ColumnDeclaration extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getColumnDeclaration_Name()
+   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getCD_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.CD#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -55,14 +55,14 @@ public interface ColumnDeclaration extends EObject
    * @return the value of the '<em>Type</em>' attribute.
    * @see uk.ac.kcl.dsl.sql_dsl.DataStructureType
    * @see #setType(DataStructureType)
-   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getColumnDeclaration_Type()
+   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getCD_Type()
    * @model
    * @generated
    */
   DataStructureType getType();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#getType <em>Type</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.CD#getType <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' attribute.
@@ -78,14 +78,14 @@ public interface ColumnDeclaration extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Not Null</em>' attribute.
    * @see #setNotNull(boolean)
-   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getColumnDeclaration_NotNull()
+   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getCD_NotNull()
    * @model
    * @generated
    */
   boolean isNotNull();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.ColumnDeclaration#isNotNull <em>Not Null</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.CD#isNotNull <em>Not Null</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Not Null</em>' attribute.
@@ -94,4 +94,4 @@ public interface ColumnDeclaration extends EObject
    */
   void setNotNull(boolean value);
 
-} // ColumnDeclaration
+} // CD
