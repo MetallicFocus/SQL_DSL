@@ -76,6 +76,7 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
       case Sql_dslPackage.TABLE_DECLARATION: return createTableDeclaration();
       case Sql_dslPackage.TABLE_NAME: return createTableName();
       case Sql_dslPackage.CD: return createCD();
+      case Sql_dslPackage.COLUMN_REFERENCING: return createColumnReferencing();
       case Sql_dslPackage.PRIMARY_KEY: return createPrimaryKey();
       case Sql_dslPackage.FOREIGN_KEY: return createForeignKey();
       case Sql_dslPackage.DROP_TABLE_STATEMENT: return createDropTableStatement();
@@ -254,6 +255,18 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
   {
     CDImpl cd = new CDImpl();
     return cd;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ColumnReferencing createColumnReferencing()
+  {
+    ColumnReferencingImpl columnReferencing = new ColumnReferencingImpl();
+    return columnReferencing;
   }
 
   /**

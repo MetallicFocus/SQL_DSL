@@ -146,6 +146,13 @@ public class Sql_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Sql_dslPackage.COLUMN_REFERENCING:
+      {
+        ColumnReferencing columnReferencing = (ColumnReferencing)theEObject;
+        T result = caseColumnReferencing(columnReferencing);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case Sql_dslPackage.PRIMARY_KEY:
       {
         PrimaryKey primaryKey = (PrimaryKey)theEObject;
@@ -470,6 +477,22 @@ public class Sql_dslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCD(CD object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Column Referencing</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Column Referencing</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseColumnReferencing(ColumnReferencing object)
   {
     return null;
   }

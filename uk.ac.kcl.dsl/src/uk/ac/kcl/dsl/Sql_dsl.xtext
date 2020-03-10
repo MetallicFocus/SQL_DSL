@@ -80,6 +80,10 @@ ColumnDeclaration returns CD:
 	name=ID type=DataStructureType notNull?=("NOT NULL")?
 ;
 
+ColumnReferencing:
+	var = [CD]
+;
+
 PrimaryKey returns PrimaryKey:
 	"PRIMARY" "KEY" "(" 
 		columnAsPK+=[CD] ("," columnAsPK+=[CD])*

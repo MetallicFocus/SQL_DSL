@@ -16,6 +16,7 @@ import uk.ac.kcl.dsl.sql_dsl.AlterDropStatement;
 import uk.ac.kcl.dsl.sql_dsl.AlterTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement;
 import uk.ac.kcl.dsl.sql_dsl.AvgFunction;
+import uk.ac.kcl.dsl.sql_dsl.ColumnReferencing;
 import uk.ac.kcl.dsl.sql_dsl.CountFunction;
 import uk.ac.kcl.dsl.sql_dsl.CreateTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.DataStructureType;
@@ -122,6 +123,13 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   private EClass cdEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass columnReferencingEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -624,6 +632,28 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
   public EAttribute getCD_NotNull()
   {
     return (EAttribute)cdEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getColumnReferencing()
+  {
+    return columnReferencingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getColumnReferencing_Var()
+  {
+    return (EReference)columnReferencingEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1210,6 +1240,9 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
     createEAttribute(cdEClass, CD__TYPE);
     createEAttribute(cdEClass, CD__NOT_NULL);
 
+    columnReferencingEClass = createEClass(COLUMN_REFERENCING);
+    createEReference(columnReferencingEClass, COLUMN_REFERENCING__VAR);
+
     primaryKeyEClass = createEClass(PRIMARY_KEY);
     createEReference(primaryKeyEClass, PRIMARY_KEY__COLUMN_AS_PK);
 
@@ -1362,6 +1395,9 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
     initEAttribute(getCD_Name(), ecorePackage.getEString(), "name", null, 0, 1, uk.ac.kcl.dsl.sql_dsl.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCD_Type(), this.getDataStructureType(), "type", null, 0, 1, uk.ac.kcl.dsl.sql_dsl.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCD_NotNull(), ecorePackage.getEBoolean(), "notNull", null, 0, 1, uk.ac.kcl.dsl.sql_dsl.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(columnReferencingEClass, ColumnReferencing.class, "ColumnReferencing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getColumnReferencing_Var(), this.getCD(), null, "var", null, 0, 1, ColumnReferencing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(primaryKeyEClass, PrimaryKey.class, "PrimaryKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPrimaryKey_ColumnAsPK(), this.getCD(), null, "columnAsPK", null, 0, -1, PrimaryKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

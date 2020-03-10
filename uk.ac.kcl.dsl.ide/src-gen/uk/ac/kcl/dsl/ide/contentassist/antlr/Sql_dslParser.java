@@ -100,6 +100,7 @@ public class Sql_dslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getColumnDeclarationAccess().getNameAssignment_0(), "rule__ColumnDeclaration__NameAssignment_0");
 			builder.put(grammarAccess.getColumnDeclarationAccess().getTypeAssignment_1(), "rule__ColumnDeclaration__TypeAssignment_1");
 			builder.put(grammarAccess.getColumnDeclarationAccess().getNotNullAssignment_2(), "rule__ColumnDeclaration__NotNullAssignment_2");
+			builder.put(grammarAccess.getColumnReferencingAccess().getVarAssignment(), "rule__ColumnReferencing__VarAssignment");
 			builder.put(grammarAccess.getPrimaryKeyAccess().getColumnAsPKAssignment_3(), "rule__PrimaryKey__ColumnAsPKAssignment_3");
 			builder.put(grammarAccess.getPrimaryKeyAccess().getColumnAsPKAssignment_4_1(), "rule__PrimaryKey__ColumnAsPKAssignment_4_1");
 			builder.put(grammarAccess.getForeignKeyAccess().getColumnAsFKAssignment_3(), "rule__ForeignKey__ColumnAsFKAssignment_3");

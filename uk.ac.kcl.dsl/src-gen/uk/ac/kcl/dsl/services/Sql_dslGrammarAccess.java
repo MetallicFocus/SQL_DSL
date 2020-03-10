@@ -520,6 +520,25 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 		//"NOT NULL"
 		public Keyword getNotNullNOTNULLKeyword_2_0() { return cNotNullNOTNULLKeyword_2_0; }
 	}
+	public class ColumnReferencingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.ColumnReferencing");
+		private final Assignment cVarAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cVarCDCrossReference_0 = (CrossReference)cVarAssignment.eContents().get(0);
+		private final RuleCall cVarCDIDTerminalRuleCall_0_1 = (RuleCall)cVarCDCrossReference_0.eContents().get(1);
+		
+		//ColumnReferencing:
+		//	var=[CD];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//var=[CD]
+		public Assignment getVarAssignment() { return cVarAssignment; }
+		
+		//[CD]
+		public CrossReference getVarCDCrossReference_0() { return cVarCDCrossReference_0; }
+		
+		//ID
+		public RuleCall getVarCDIDTerminalRuleCall_0_1() { return cVarCDIDTerminalRuleCall_0_1; }
+	}
 	public class PrimaryKeyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.PrimaryKey");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1564,6 +1583,7 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 	private final TableDeclarationElements pTableDeclaration;
 	private final TableNameElements pTableName;
 	private final ColumnDeclarationElements pColumnDeclaration;
+	private final ColumnReferencingElements pColumnReferencing;
 	private final PrimaryKeyElements pPrimaryKey;
 	private final ForeignKeyElements pForeignKey;
 	private final DataStructureTypeElements eDataStructureType;
@@ -1607,6 +1627,7 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTableDeclaration = new TableDeclarationElements();
 		this.pTableName = new TableNameElements();
 		this.pColumnDeclaration = new ColumnDeclarationElements();
+		this.pColumnReferencing = new ColumnReferencingElements();
 		this.pPrimaryKey = new PrimaryKeyElements();
 		this.pForeignKey = new ForeignKeyElements();
 		this.eDataStructureType = new DataStructureTypeElements();
@@ -1772,6 +1793,16 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getColumnDeclarationRule() {
 		return getColumnDeclarationAccess().getRule();
+	}
+	
+	//ColumnReferencing:
+	//	var=[CD];
+	public ColumnReferencingElements getColumnReferencingAccess() {
+		return pColumnReferencing;
+	}
+	
+	public ParserRule getColumnReferencingRule() {
+		return getColumnReferencingAccess().getRule();
 	}
 	
 	//PrimaryKey:

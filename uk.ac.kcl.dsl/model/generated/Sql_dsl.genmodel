@@ -50,6 +50,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//CD/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//CD/notNull"/>
     </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//ColumnReferencing">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//ColumnReferencing/var"/>
+    </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//PrimaryKey">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//PrimaryKey/columnAsPK"/>
     </genClasses>

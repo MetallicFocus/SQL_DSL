@@ -114,6 +114,15 @@ public interface Sql_dslFactory extends EFactory
   CD createCD();
 
   /**
+   * Returns a new object of class '<em>Column Referencing</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Column Referencing</em>'.
+   * @generated
+   */
+  ColumnReferencing createColumnReferencing();
+
+  /**
    * Returns a new object of class '<em>Primary Key</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

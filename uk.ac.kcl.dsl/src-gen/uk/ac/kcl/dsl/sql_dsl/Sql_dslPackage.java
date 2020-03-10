@@ -393,6 +393,34 @@ public interface Sql_dslPackage extends EPackage
   int CD_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.ColumnReferencingImpl <em>Column Referencing</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.ColumnReferencingImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getColumnReferencing()
+   * @generated
+   */
+  int COLUMN_REFERENCING = 10;
+
+  /**
+   * The feature id for the '<em><b>Var</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_REFERENCING__VAR = 0;
+
+  /**
+   * The number of structural features of the '<em>Column Referencing</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUMN_REFERENCING_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.PrimaryKeyImpl <em>Primary Key</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -400,7 +428,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getPrimaryKey()
    * @generated
    */
-  int PRIMARY_KEY = 10;
+  int PRIMARY_KEY = 11;
 
   /**
    * The feature id for the '<em><b>Column As PK</b></em>' reference list.
@@ -428,7 +456,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getForeignKey()
    * @generated
    */
-  int FOREIGN_KEY = 11;
+  int FOREIGN_KEY = 12;
 
   /**
    * The feature id for the '<em><b>Column As FK</b></em>' reference list.
@@ -474,7 +502,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDropTableStatement()
    * @generated
    */
-  int DROP_TABLE_STATEMENT = 12;
+  int DROP_TABLE_STATEMENT = 13;
 
   /**
    * The feature id for the '<em><b>Table</b></em>' reference list.
@@ -502,7 +530,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTruncateTableStatement()
    * @generated
    */
-  int TRUNCATE_TABLE_STATEMENT = 13;
+  int TRUNCATE_TABLE_STATEMENT = 14;
 
   /**
    * The feature id for the '<em><b>Table</b></em>' reference list.
@@ -530,7 +558,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDeleteTableStatement()
    * @generated
    */
-  int DELETE_TABLE_STATEMENT = 14;
+  int DELETE_TABLE_STATEMENT = 15;
 
   /**
    * The feature id for the '<em><b>X</b></em>' containment reference.
@@ -558,7 +586,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getUpdateTableStatement()
    * @generated
    */
-  int UPDATE_TABLE_STATEMENT = 15;
+  int UPDATE_TABLE_STATEMENT = 16;
 
   /**
    * The feature id for the '<em><b>Table</b></em>' reference list.
@@ -604,7 +632,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getSetClause()
    * @generated
    */
-  int SET_CLAUSE = 16;
+  int SET_CLAUSE = 17;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -650,7 +678,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterTableStatement()
    * @generated
    */
-  int ALTER_TABLE_STATEMENT = 17;
+  int ALTER_TABLE_STATEMENT = 18;
 
   /**
    * The feature id for the '<em><b>Table</b></em>' reference list.
@@ -687,7 +715,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterDropStatement()
    * @generated
    */
-  int ALTER_DROP_STATEMENT = 18;
+  int ALTER_DROP_STATEMENT = 19;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -715,7 +743,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterAddStatement()
    * @generated
    */
-  int ALTER_ADD_STATEMENT = 19;
+  int ALTER_ADD_STATEMENT = 20;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -743,7 +771,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterUpdateStatement()
    * @generated
    */
-  int ALTER_UPDATE_STATEMENT = 20;
+  int ALTER_UPDATE_STATEMENT = 21;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -771,7 +799,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getVariableDeclarationStatement()
    * @generated
    */
-  int VARIABLE_DECLARATION_STATEMENT = 21;
+  int VARIABLE_DECLARATION_STATEMENT = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -808,7 +836,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getIntLiteral()
    * @generated
    */
-  int INT_LITERAL = 22;
+  int INT_LITERAL = 23;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -836,7 +864,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getRealLiteral()
    * @generated
    */
-  int REAL_LITERAL = 23;
+  int REAL_LITERAL = 24;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -864,7 +892,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getIntVarExpression()
    * @generated
    */
-  int INT_VAR_EXPRESSION = 24;
+  int INT_VAR_EXPRESSION = 25;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' reference.
@@ -892,7 +920,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getFunctions()
    * @generated
    */
-  int FUNCTIONS = 25;
+  int FUNCTIONS = 26;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -929,7 +957,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getCountFunction()
    * @generated
    */
-  int COUNT_FUNCTION = 26;
+  int COUNT_FUNCTION = 27;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -966,7 +994,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAvgFunction()
    * @generated
    */
-  int AVG_FUNCTION = 27;
+  int AVG_FUNCTION = 28;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -1003,7 +1031,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getSumFunction()
    * @generated
    */
-  int SUM_FUNCTION = 28;
+  int SUM_FUNCTION = 29;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -1040,7 +1068,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getMinFunction()
    * @generated
    */
-  int MIN_FUNCTION = 29;
+  int MIN_FUNCTION = 30;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -1077,7 +1105,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getMaxFunction()
    * @generated
    */
-  int MAX_FUNCTION = 30;
+  int MAX_FUNCTION = 31;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -1114,7 +1142,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDataStructureType()
    * @generated
    */
-  int DATA_STRUCTURE_TYPE = 31;
+  int DATA_STRUCTURE_TYPE = 32;
 
 
   /**
@@ -1392,6 +1420,27 @@ public interface Sql_dslPackage extends EPackage
    * @generated
    */
   EAttribute getCD_NotNull();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.ColumnReferencing <em>Column Referencing</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Column Referencing</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.ColumnReferencing
+   * @generated
+   */
+  EClass getColumnReferencing();
+
+  /**
+   * Returns the meta object for the reference '{@link uk.ac.kcl.dsl.sql_dsl.ColumnReferencing#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Var</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.ColumnReferencing#getVar()
+   * @see #getColumnReferencing()
+   * @generated
+   */
+  EReference getColumnReferencing_Var();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.PrimaryKey <em>Primary Key</em>}'.
@@ -2138,6 +2187,24 @@ public interface Sql_dslPackage extends EPackage
      * @generated
      */
     EAttribute CD__NOT_NULL = eINSTANCE.getCD_NotNull();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.ColumnReferencingImpl <em>Column Referencing</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.ColumnReferencingImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getColumnReferencing()
+     * @generated
+     */
+    EClass COLUMN_REFERENCING = eINSTANCE.getColumnReferencing();
+
+    /**
+     * The meta object literal for the '<em><b>Var</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLUMN_REFERENCING__VAR = eINSTANCE.getColumnReferencing_Var();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.PrimaryKeyImpl <em>Primary Key</em>}' class.

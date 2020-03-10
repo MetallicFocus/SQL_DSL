@@ -126,6 +126,11 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
         return createCDAdapter();
       }
       @Override
+      public Adapter caseColumnReferencing(ColumnReferencing object)
+      {
+        return createColumnReferencingAdapter();
+      }
+      @Override
       public Adapter casePrimaryKey(PrimaryKey object)
       {
         return createPrimaryKeyAdapter();
@@ -398,6 +403,21 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCDAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.ColumnReferencing <em>Column Referencing</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.ColumnReferencing
+   * @generated
+   */
+  public Adapter createColumnReferencingAdapter()
   {
     return null;
   }

@@ -21,6 +21,7 @@ import uk.ac.kcl.dsl.sql_dsl.AlterTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement;
 import uk.ac.kcl.dsl.sql_dsl.AvgFunction;
 import uk.ac.kcl.dsl.sql_dsl.CD;
+import uk.ac.kcl.dsl.sql_dsl.ColumnReferencing;
 import uk.ac.kcl.dsl.sql_dsl.CountFunction;
 import uk.ac.kcl.dsl.sql_dsl.CreateTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement;
@@ -77,6 +78,9 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case Sql_dslPackage.CD:
 				sequence_ColumnDeclaration(context, (CD) semanticObject); 
+				return; 
+			case Sql_dslPackage.COLUMN_REFERENCING:
+				sequence_ColumnReferencing(context, (ColumnReferencing) semanticObject); 
 				return; 
 			case Sql_dslPackage.COUNT_FUNCTION:
 				sequence_CountFunction(context, (CountFunction) semanticObject); 
@@ -224,6 +228,24 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_ColumnDeclaration(ISerializationContext context, CD semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ColumnReferencing returns ColumnReferencing
+	 *
+	 * Constraint:
+	 *     var=[CD|ID]
+	 */
+	protected void sequence_ColumnReferencing(ISerializationContext context, ColumnReferencing semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.COLUMN_REFERENCING__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.COLUMN_REFERENCING__VAR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getColumnReferencingAccess().getVarCDIDTerminalRuleCall_0_1(), semanticObject.eGet(Sql_dslPackage.Literals.COLUMN_REFERENCING__VAR, false));
+		feeder.finish();
 	}
 	
 	
