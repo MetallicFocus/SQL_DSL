@@ -3,8 +3,12 @@
  */
 package uk.ac.kcl.dsl.sql_dsl.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -12,8 +16,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import uk.ac.kcl.dsl.sql_dsl.AlterTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
+import uk.ac.kcl.dsl.sql_dsl.TableName;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +30,7 @@ import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterTableStatementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterTableStatementImpl#getTable <em>Table</em>}</li>
  *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterTableStatementImpl#getAddDropUpdate <em>Add Drop Update</em>}</li>
  * </ul>
  *
@@ -32,24 +39,14 @@ import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
 public class AlterTableStatementImpl extends StatementImpl implements AlterTableStatement
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getTable() <em>Table</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getTable()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected EList<TableName> table;
 
   /**
    * The cached value of the '{@link #getAddDropUpdate() <em>Add Drop Update</em>}' containment reference.
@@ -88,23 +85,13 @@ public class AlterTableStatementImpl extends StatementImpl implements AlterTable
    * @generated
    */
   @Override
-  public String getName()
+  public EList<TableName> getTable()
   {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.ALTER_TABLE_STATEMENT__NAME, oldName, name));
+    if (table == null)
+    {
+      table = new EObjectResolvingEList<TableName>(TableName.class, this, Sql_dslPackage.ALTER_TABLE_STATEMENT__TABLE);
+    }
+    return table;
   }
 
   /**
@@ -183,8 +170,8 @@ public class AlterTableStatementImpl extends StatementImpl implements AlterTable
   {
     switch (featureID)
     {
-      case Sql_dslPackage.ALTER_TABLE_STATEMENT__NAME:
-        return getName();
+      case Sql_dslPackage.ALTER_TABLE_STATEMENT__TABLE:
+        return getTable();
       case Sql_dslPackage.ALTER_TABLE_STATEMENT__ADD_DROP_UPDATE:
         return getAddDropUpdate();
     }
@@ -196,13 +183,15 @@ public class AlterTableStatementImpl extends StatementImpl implements AlterTable
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case Sql_dslPackage.ALTER_TABLE_STATEMENT__NAME:
-        setName((String)newValue);
+      case Sql_dslPackage.ALTER_TABLE_STATEMENT__TABLE:
+        getTable().clear();
+        getTable().addAll((Collection<? extends TableName>)newValue);
         return;
       case Sql_dslPackage.ALTER_TABLE_STATEMENT__ADD_DROP_UPDATE:
         setAddDropUpdate((EObject)newValue);
@@ -221,8 +210,8 @@ public class AlterTableStatementImpl extends StatementImpl implements AlterTable
   {
     switch (featureID)
     {
-      case Sql_dslPackage.ALTER_TABLE_STATEMENT__NAME:
-        setName(NAME_EDEFAULT);
+      case Sql_dslPackage.ALTER_TABLE_STATEMENT__TABLE:
+        getTable().clear();
         return;
       case Sql_dslPackage.ALTER_TABLE_STATEMENT__ADD_DROP_UPDATE:
         setAddDropUpdate((EObject)null);
@@ -241,29 +230,12 @@ public class AlterTableStatementImpl extends StatementImpl implements AlterTable
   {
     switch (featureID)
     {
-      case Sql_dslPackage.ALTER_TABLE_STATEMENT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case Sql_dslPackage.ALTER_TABLE_STATEMENT__TABLE:
+        return table != null && !table.isEmpty();
       case Sql_dslPackage.ALTER_TABLE_STATEMENT__ADD_DROP_UPDATE:
         return addDropUpdate != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //AlterTableStatementImpl

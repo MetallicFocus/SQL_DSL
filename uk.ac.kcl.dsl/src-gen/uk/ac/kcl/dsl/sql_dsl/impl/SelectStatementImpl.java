@@ -6,16 +6,19 @@ package uk.ac.kcl.dsl.sql_dsl.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import uk.ac.kcl.dsl.sql_dsl.CD;
+import uk.ac.kcl.dsl.sql_dsl.FromAndWhereClauses;
 import uk.ac.kcl.dsl.sql_dsl.SelectStatement;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
 
@@ -27,34 +30,14 @@ import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.SelectStatementImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.SelectStatementImpl#getColumn <em>Column</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.SelectStatementImpl#getX <em>X</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SelectStatementImpl extends StatementImpl implements SelectStatement
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getColumn() <em>Column</em>}' reference list.
    * <!-- begin-user-doc -->
@@ -64,6 +47,16 @@ public class SelectStatementImpl extends StatementImpl implements SelectStatemen
    * @ordered
    */
   protected EList<CD> column;
+
+  /**
+   * The cached value of the '{@link #getX() <em>X</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getX()
+   * @generated
+   * @ordered
+   */
+  protected FromAndWhereClauses x;
 
   /**
    * <!-- begin-user-doc -->
@@ -92,31 +85,6 @@ public class SelectStatementImpl extends StatementImpl implements SelectStatemen
    * @generated
    */
   @Override
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.SELECT_STATEMENT__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<CD> getColumn()
   {
     if (column == null)
@@ -132,14 +100,80 @@ public class SelectStatementImpl extends StatementImpl implements SelectStatemen
    * @generated
    */
   @Override
+  public FromAndWhereClauses getX()
+  {
+    return x;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetX(FromAndWhereClauses newX, NotificationChain msgs)
+  {
+    FromAndWhereClauses oldX = x;
+    x = newX;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Sql_dslPackage.SELECT_STATEMENT__X, oldX, newX);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setX(FromAndWhereClauses newX)
+  {
+    if (newX != x)
+    {
+      NotificationChain msgs = null;
+      if (x != null)
+        msgs = ((InternalEObject)x).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sql_dslPackage.SELECT_STATEMENT__X, null, msgs);
+      if (newX != null)
+        msgs = ((InternalEObject)newX).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sql_dslPackage.SELECT_STATEMENT__X, null, msgs);
+      msgs = basicSetX(newX, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.SELECT_STATEMENT__X, newX, newX));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case Sql_dslPackage.SELECT_STATEMENT__X:
+        return basicSetX(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case Sql_dslPackage.SELECT_STATEMENT__NAME:
-        return getName();
       case Sql_dslPackage.SELECT_STATEMENT__COLUMN:
         return getColumn();
+      case Sql_dslPackage.SELECT_STATEMENT__X:
+        return getX();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -155,12 +189,12 @@ public class SelectStatementImpl extends StatementImpl implements SelectStatemen
   {
     switch (featureID)
     {
-      case Sql_dslPackage.SELECT_STATEMENT__NAME:
-        setName((String)newValue);
-        return;
       case Sql_dslPackage.SELECT_STATEMENT__COLUMN:
         getColumn().clear();
         getColumn().addAll((Collection<? extends CD>)newValue);
+        return;
+      case Sql_dslPackage.SELECT_STATEMENT__X:
+        setX((FromAndWhereClauses)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -176,11 +210,11 @@ public class SelectStatementImpl extends StatementImpl implements SelectStatemen
   {
     switch (featureID)
     {
-      case Sql_dslPackage.SELECT_STATEMENT__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case Sql_dslPackage.SELECT_STATEMENT__COLUMN:
         getColumn().clear();
+        return;
+      case Sql_dslPackage.SELECT_STATEMENT__X:
+        setX((FromAndWhereClauses)null);
         return;
     }
     super.eUnset(featureID);
@@ -196,29 +230,12 @@ public class SelectStatementImpl extends StatementImpl implements SelectStatemen
   {
     switch (featureID)
     {
-      case Sql_dslPackage.SELECT_STATEMENT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case Sql_dslPackage.SELECT_STATEMENT__COLUMN:
         return column != null && !column.isEmpty();
+      case Sql_dslPackage.SELECT_STATEMENT__X:
+        return x != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //SelectStatementImpl

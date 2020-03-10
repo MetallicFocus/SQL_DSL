@@ -20,8 +20,17 @@
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//Statement"/>
     <genClasses ecoreClass="Sql_dsl.ecore#//SelectStatement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//SelectStatement/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//SelectStatement/column"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//SelectStatement/x"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//FromAndWhereClauses">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//FromAndWhereClauses/table"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//FromAndWhereClauses/z"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//WhereDec">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//WhereDec/column"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//WhereDec/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//WhereDec/val"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//DatabaseDeclarationStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//DatabaseDeclarationStatement/name"/>
@@ -30,8 +39,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//CreateTableStatement/tables"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//TableDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//TableDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//TableDeclaration/table"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//TableDeclaration/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//TableName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//TableName/name"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//CD">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//CD/name"/>
@@ -47,29 +59,36 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//ForeignKey/foreignColumns"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//DropTableStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//DropTableStatement/tables"/>
-    </genClasses>
-    <genClasses ecoreClass="Sql_dsl.ecore#//DropTableDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//DropTableDeclaration/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//DropTableStatement/table"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//TruncateTableStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//TruncateTableStatement/tables"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//TruncateTableStatement/table"/>
     </genClasses>
-    <genClasses ecoreClass="Sql_dsl.ecore#//TruncateTableDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//TruncateTableDeclaration/name"/>
+    <genClasses ecoreClass="Sql_dsl.ecore#//DeleteTableStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//DeleteTableStatement/x"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//UpdateTableStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//UpdateTableStatement/table"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//UpdateTableStatement/sc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//UpdateTableStatement/z"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//SetClause">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//SetClause/column"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//SetClause/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//SetClause/val"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//AlterTableStatement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//AlterTableStatement/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//AlterTableStatement/table"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//AlterTableStatement/addDropUpdate"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//AlterDropStatement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//AlterDropStatement/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//AlterDropStatement/column"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//AlterAddStatement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//AlterAddStatement/column"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//AlterUpdateStatement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//AlterUpdateStatement/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//AlterUpdateStatement/column"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//VariableDeclarationStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//VariableDeclarationStatement/name"/>
@@ -84,5 +103,14 @@
     <genClasses ecoreClass="Sql_dsl.ecore#//IntVarExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//IntVarExpression/var"/>
     </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//Functions">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//Functions/column"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//Functions/x"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//CountFunction"/>
+    <genClasses ecoreClass="Sql_dsl.ecore#//AvgFunction"/>
+    <genClasses ecoreClass="Sql_dsl.ecore#//SumFunction"/>
+    <genClasses ecoreClass="Sql_dsl.ecore#//MinFunction"/>
+    <genClasses ecoreClass="Sql_dsl.ecore#//MaxFunction"/>
   </genPackages>
 </genmodel:GenModel>

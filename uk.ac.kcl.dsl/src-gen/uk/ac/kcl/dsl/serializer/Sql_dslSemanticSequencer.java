@@ -19,23 +19,32 @@ import uk.ac.kcl.dsl.sql_dsl.AlterAddStatement;
 import uk.ac.kcl.dsl.sql_dsl.AlterDropStatement;
 import uk.ac.kcl.dsl.sql_dsl.AlterTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement;
+import uk.ac.kcl.dsl.sql_dsl.AvgFunction;
 import uk.ac.kcl.dsl.sql_dsl.CD;
+import uk.ac.kcl.dsl.sql_dsl.CountFunction;
 import uk.ac.kcl.dsl.sql_dsl.CreateTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement;
-import uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.DeleteTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.DropTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.ForeignKey;
+import uk.ac.kcl.dsl.sql_dsl.FromAndWhereClauses;
 import uk.ac.kcl.dsl.sql_dsl.IntLiteral;
 import uk.ac.kcl.dsl.sql_dsl.IntVarExpression;
+import uk.ac.kcl.dsl.sql_dsl.MaxFunction;
+import uk.ac.kcl.dsl.sql_dsl.MinFunction;
 import uk.ac.kcl.dsl.sql_dsl.Model;
 import uk.ac.kcl.dsl.sql_dsl.PrimaryKey;
 import uk.ac.kcl.dsl.sql_dsl.RealLiteral;
 import uk.ac.kcl.dsl.sql_dsl.SelectStatement;
+import uk.ac.kcl.dsl.sql_dsl.SetClause;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
+import uk.ac.kcl.dsl.sql_dsl.SumFunction;
 import uk.ac.kcl.dsl.sql_dsl.TableDeclaration;
-import uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.TableName;
 import uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement;
+import uk.ac.kcl.dsl.sql_dsl.UpdateTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.VariableDeclarationStatement;
+import uk.ac.kcl.dsl.sql_dsl.WhereDec;
 
 @SuppressWarnings("all")
 public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -63,8 +72,14 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case Sql_dslPackage.ALTER_UPDATE_STATEMENT:
 				sequence_AlterUpdateStatement(context, (AlterUpdateStatement) semanticObject); 
 				return; 
+			case Sql_dslPackage.AVG_FUNCTION:
+				sequence_AvgFunction(context, (AvgFunction) semanticObject); 
+				return; 
 			case Sql_dslPackage.CD:
 				sequence_ColumnDeclaration(context, (CD) semanticObject); 
+				return; 
+			case Sql_dslPackage.COUNT_FUNCTION:
+				sequence_CountFunction(context, (CountFunction) semanticObject); 
 				return; 
 			case Sql_dslPackage.CREATE_TABLE_STATEMENT:
 				sequence_CreateTableStatement(context, (CreateTableStatement) semanticObject); 
@@ -72,8 +87,8 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case Sql_dslPackage.DATABASE_DECLARATION_STATEMENT:
 				sequence_DatabaseDeclarationStatement(context, (DatabaseDeclarationStatement) semanticObject); 
 				return; 
-			case Sql_dslPackage.DROP_TABLE_DECLARATION:
-				sequence_DropTableDeclaration(context, (DropTableDeclaration) semanticObject); 
+			case Sql_dslPackage.DELETE_TABLE_STATEMENT:
+				sequence_DeleteTableStatement(context, (DeleteTableStatement) semanticObject); 
 				return; 
 			case Sql_dslPackage.DROP_TABLE_STATEMENT:
 				sequence_DropTableStatement(context, (DropTableStatement) semanticObject); 
@@ -81,11 +96,20 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case Sql_dslPackage.FOREIGN_KEY:
 				sequence_ForeignKey(context, (ForeignKey) semanticObject); 
 				return; 
+			case Sql_dslPackage.FROM_AND_WHERE_CLAUSES:
+				sequence_FromAndWhereClauses(context, (FromAndWhereClauses) semanticObject); 
+				return; 
 			case Sql_dslPackage.INT_LITERAL:
 				sequence_IntLiteral(context, (IntLiteral) semanticObject); 
 				return; 
 			case Sql_dslPackage.INT_VAR_EXPRESSION:
 				sequence_IntVarExpression(context, (IntVarExpression) semanticObject); 
+				return; 
+			case Sql_dslPackage.MAX_FUNCTION:
+				sequence_MaxFunction(context, (MaxFunction) semanticObject); 
+				return; 
+			case Sql_dslPackage.MIN_FUNCTION:
+				sequence_MinFunction(context, (MinFunction) semanticObject); 
 				return; 
 			case Sql_dslPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -99,17 +123,29 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case Sql_dslPackage.SELECT_STATEMENT:
 				sequence_SelectStatement(context, (SelectStatement) semanticObject); 
 				return; 
+			case Sql_dslPackage.SET_CLAUSE:
+				sequence_SetClause(context, (SetClause) semanticObject); 
+				return; 
+			case Sql_dslPackage.SUM_FUNCTION:
+				sequence_SumFunction(context, (SumFunction) semanticObject); 
+				return; 
 			case Sql_dslPackage.TABLE_DECLARATION:
 				sequence_TableDeclaration(context, (TableDeclaration) semanticObject); 
 				return; 
-			case Sql_dslPackage.TRUNCATE_TABLE_DECLARATION:
-				sequence_TruncateTableDeclaration(context, (TruncateTableDeclaration) semanticObject); 
+			case Sql_dslPackage.TABLE_NAME:
+				sequence_tableName(context, (TableName) semanticObject); 
 				return; 
 			case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT:
 				sequence_TruncateTableStatement(context, (TruncateTableStatement) semanticObject); 
 				return; 
+			case Sql_dslPackage.UPDATE_TABLE_STATEMENT:
+				sequence_UpdateTableStatement(context, (UpdateTableStatement) semanticObject); 
+				return; 
 			case Sql_dslPackage.VARIABLE_DECLARATION_STATEMENT:
 				sequence_VariableDeclarationStatement(context, (VariableDeclarationStatement) semanticObject); 
+				return; 
+			case Sql_dslPackage.WHERE_DEC:
+				sequence_WhereDec(context, (WhereDec) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -133,16 +169,10 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     AlterDropStatement returns AlterDropStatement
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     column+=[CD|ID]
 	 */
 	protected void sequence_AlterDropStatement(ISerializationContext context, AlterDropStatement semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.ALTER_DROP_STATEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.ALTER_DROP_STATEMENT__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAlterDropStatementAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -152,7 +182,7 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     AlterTableStatement returns AlterTableStatement
 	 *
 	 * Constraint:
-	 *     (name=ID (addDropUpdate=AlterDropStatement | addDropUpdate=AlterAddStatement | addDropUpdate=AlterUpdateStatement))
+	 *     (table+=[TableName|ID] (addDropUpdate=AlterDropStatement | addDropUpdate=AlterAddStatement | addDropUpdate=AlterUpdateStatement))
 	 */
 	protected void sequence_AlterTableStatement(ISerializationContext context, AlterTableStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -164,16 +194,24 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     AlterUpdateStatement returns AlterUpdateStatement
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     column+=[CD|ID]
 	 */
 	protected void sequence_AlterUpdateStatement(ISerializationContext context, AlterUpdateStatement semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.ALTER_UPDATE_STATEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.ALTER_UPDATE_STATEMENT__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAlterUpdateStatementAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns AvgFunction
+	 *     Functions returns AvgFunction
+	 *     AvgFunction returns AvgFunction
+	 *
+	 * Constraint:
+	 *     (column+=[CD|ID] x=FromAndWhereClauses)
+	 */
+	protected void sequence_AvgFunction(ISerializationContext context, AvgFunction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -185,6 +223,20 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (name=ID type=DataStructureType notNull?='NOT NULL'?)
 	 */
 	protected void sequence_ColumnDeclaration(ISerializationContext context, CD semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns CountFunction
+	 *     Functions returns CountFunction
+	 *     CountFunction returns CountFunction
+	 *
+	 * Constraint:
+	 *     (column+=[CD|ID] x=FromAndWhereClauses)
+	 */
+	protected void sequence_CountFunction(ISerializationContext context, CountFunction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -223,18 +275,19 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     DropTableDeclaration returns DropTableDeclaration
+	 *     Statement returns DeleteTableStatement
+	 *     DeleteTableStatement returns DeleteTableStatement
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     x=FromAndWhereClauses
 	 */
-	protected void sequence_DropTableDeclaration(ISerializationContext context, DropTableDeclaration semanticObject) {
+	protected void sequence_DeleteTableStatement(ISerializationContext context, DeleteTableStatement semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.DROP_TABLE_DECLARATION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.DROP_TABLE_DECLARATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.DELETE_TABLE_STATEMENT__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.DELETE_TABLE_STATEMENT__X));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDropTableDeclarationAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDeleteTableStatementAccess().getXFromAndWhereClausesParserRuleCall_1_0(), semanticObject.getX());
 		feeder.finish();
 	}
 	
@@ -245,7 +298,7 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     DropTableStatement returns DropTableStatement
 	 *
 	 * Constraint:
-	 *     tables+=DropTableDeclaration+
+	 *     table+=[TableName|ID]
 	 */
 	protected void sequence_DropTableStatement(ISerializationContext context, DropTableStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -260,6 +313,18 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (columnAsFK+=[CD|ID] columnAsFK+=[CD|ID]* foreignTable=[TableDeclaration|ID] foreignColumns+=[CD|ID] foreignColumns+=[CD|ID]*)
 	 */
 	protected void sequence_ForeignKey(ISerializationContext context, ForeignKey semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FromAndWhereClauses returns FromAndWhereClauses
+	 *
+	 * Constraint:
+	 *     (table+=[TableName|ID] (z+=WhereDec z+=WhereDec*)?)
+	 */
+	protected void sequence_FromAndWhereClauses(ISerializationContext context, FromAndWhereClauses semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -302,10 +367,38 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Statement returns MaxFunction
+	 *     Functions returns MaxFunction
+	 *     MaxFunction returns MaxFunction
+	 *
+	 * Constraint:
+	 *     (column+=[CD|ID] x=FromAndWhereClauses)
+	 */
+	protected void sequence_MaxFunction(ISerializationContext context, MaxFunction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns MinFunction
+	 *     Functions returns MinFunction
+	 *     MinFunction returns MinFunction
+	 *
+	 * Constraint:
+	 *     (column+=[CD|ID] x=FromAndWhereClauses)
+	 */
+	protected void sequence_MinFunction(ISerializationContext context, MinFunction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     statements+=Statement
+	 *     statements+=Statement+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -348,9 +441,35 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     SelectStatement returns SelectStatement
 	 *
 	 * Constraint:
-	 *     (name=ID column+=[CD|ID])
+	 *     ((column+=[CD|ID] column+=[CD|ID]*)* x=FromAndWhereClauses)
 	 */
 	protected void sequence_SelectStatement(ISerializationContext context, SelectStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SetClause returns SetClause
+	 *
+	 * Constraint:
+	 *     (column+=[CD|ID] (name=ID | val=INT))
+	 */
+	protected void sequence_SetClause(ISerializationContext context, SetClause semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns SumFunction
+	 *     Functions returns SumFunction
+	 *     SumFunction returns SumFunction
+	 *
+	 * Constraint:
+	 *     (column+=[CD|ID] x=FromAndWhereClauses)
+	 */
+	protected void sequence_SumFunction(ISerializationContext context, SumFunction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -361,7 +480,7 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=ID 
+	 *         table+=tableName 
 	 *         (attributes+=ColumnDeclaration | attributes+=PrimaryKey | attributes+=ForeignKey)+ 
 	 *         attributes+=ColumnDeclaration? 
 	 *         ((attributes+=PrimaryKey | attributes+=ForeignKey)? attributes+=ColumnDeclaration?)*
@@ -374,31 +493,26 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     TruncateTableDeclaration returns TruncateTableDeclaration
+	 *     Statement returns TruncateTableStatement
+	 *     TruncateTableStatement returns TruncateTableStatement
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     table+=[TableName|ID]
 	 */
-	protected void sequence_TruncateTableDeclaration(ISerializationContext context, TruncateTableDeclaration semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.TRUNCATE_TABLE_DECLARATION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.TRUNCATE_TABLE_DECLARATION__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTruncateTableDeclarationAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.finish();
+	protected void sequence_TruncateTableStatement(ISerializationContext context, TruncateTableStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Statement returns TruncateTableStatement
-	 *     TruncateTableStatement returns TruncateTableStatement
+	 *     Statement returns UpdateTableStatement
+	 *     UpdateTableStatement returns UpdateTableStatement
 	 *
 	 * Constraint:
-	 *     tables+=TruncateTableDeclaration+
+	 *     (table+=[TableName|ID] sc+=SetClause sc+=SetClause* (z+=WhereDec z+=WhereDec*)?)
 	 */
-	protected void sequence_TruncateTableStatement(ISerializationContext context, TruncateTableStatement semanticObject) {
+	protected void sequence_UpdateTableStatement(ISerializationContext context, UpdateTableStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -421,6 +535,36 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getVariableDeclarationStatementAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getVariableDeclarationStatementAccess().getValueINTTerminalRuleCall_3_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     WhereDec returns WhereDec
+	 *
+	 * Constraint:
+	 *     (column+=[CD|ID] (name=ID | column+=[CD|ID] | val=INT))
+	 */
+	protected void sequence_WhereDec(ISerializationContext context, WhereDec semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     tableName returns TableName
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_tableName(ISerializationContext context, TableName semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.TABLE_NAME__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.TABLE_NAME__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTableNameAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

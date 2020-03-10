@@ -51,6 +51,24 @@ public interface Sql_dslFactory extends EFactory
   SelectStatement createSelectStatement();
 
   /**
+   * Returns a new object of class '<em>From And Where Clauses</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>From And Where Clauses</em>'.
+   * @generated
+   */
+  FromAndWhereClauses createFromAndWhereClauses();
+
+  /**
+   * Returns a new object of class '<em>Where Dec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Where Dec</em>'.
+   * @generated
+   */
+  WhereDec createWhereDec();
+
+  /**
    * Returns a new object of class '<em>Database Declaration Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -76,6 +94,15 @@ public interface Sql_dslFactory extends EFactory
    * @generated
    */
   TableDeclaration createTableDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Table Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Table Name</em>'.
+   * @generated
+   */
+  TableName createTableName();
 
   /**
    * Returns a new object of class '<em>CD</em>'.
@@ -114,15 +141,6 @@ public interface Sql_dslFactory extends EFactory
   DropTableStatement createDropTableStatement();
 
   /**
-   * Returns a new object of class '<em>Drop Table Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Drop Table Declaration</em>'.
-   * @generated
-   */
-  DropTableDeclaration createDropTableDeclaration();
-
-  /**
    * Returns a new object of class '<em>Truncate Table Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -132,13 +150,31 @@ public interface Sql_dslFactory extends EFactory
   TruncateTableStatement createTruncateTableStatement();
 
   /**
-   * Returns a new object of class '<em>Truncate Table Declaration</em>'.
+   * Returns a new object of class '<em>Delete Table Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Truncate Table Declaration</em>'.
+   * @return a new object of class '<em>Delete Table Statement</em>'.
    * @generated
    */
-  TruncateTableDeclaration createTruncateTableDeclaration();
+  DeleteTableStatement createDeleteTableStatement();
+
+  /**
+   * Returns a new object of class '<em>Update Table Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Table Statement</em>'.
+   * @generated
+   */
+  UpdateTableStatement createUpdateTableStatement();
+
+  /**
+   * Returns a new object of class '<em>Set Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Set Clause</em>'.
+   * @generated
+   */
+  SetClause createSetClause();
 
   /**
    * Returns a new object of class '<em>Alter Table Statement</em>'.
@@ -211,6 +247,60 @@ public interface Sql_dslFactory extends EFactory
    * @generated
    */
   IntVarExpression createIntVarExpression();
+
+  /**
+   * Returns a new object of class '<em>Functions</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Functions</em>'.
+   * @generated
+   */
+  Functions createFunctions();
+
+  /**
+   * Returns a new object of class '<em>Count Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Count Function</em>'.
+   * @generated
+   */
+  CountFunction createCountFunction();
+
+  /**
+   * Returns a new object of class '<em>Avg Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Avg Function</em>'.
+   * @generated
+   */
+  AvgFunction createAvgFunction();
+
+  /**
+   * Returns a new object of class '<em>Sum Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sum Function</em>'.
+   * @generated
+   */
+  SumFunction createSumFunction();
+
+  /**
+   * Returns a new object of class '<em>Min Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Min Function</em>'.
+   * @generated
+   */
+  MinFunction createMinFunction();
+
+  /**
+   * Returns a new object of class '<em>Max Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Max Function</em>'.
+   * @generated
+   */
+  MaxFunction createMaxFunction();
 
   /**
    * Returns the package supported by this factory.

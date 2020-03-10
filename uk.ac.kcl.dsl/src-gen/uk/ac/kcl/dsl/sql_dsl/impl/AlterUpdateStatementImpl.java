@@ -3,14 +3,18 @@
  */
 package uk.ac.kcl.dsl.sql_dsl.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement;
+import uk.ac.kcl.dsl.sql_dsl.CD;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
 
 /**
@@ -21,7 +25,7 @@ import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterUpdateStatementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.AlterUpdateStatementImpl#getColumn <em>Column</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +33,14 @@ import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
 public class AlterUpdateStatementImpl extends MinimalEObjectImpl.Container implements AlterUpdateStatement
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getColumn() <em>Column</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getColumn()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected EList<CD> column;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,23 +69,13 @@ public class AlterUpdateStatementImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
-  public String getName()
+  public EList<CD> getColumn()
   {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.ALTER_UPDATE_STATEMENT__NAME, oldName, name));
+    if (column == null)
+    {
+      column = new EObjectResolvingEList<CD>(CD.class, this, Sql_dslPackage.ALTER_UPDATE_STATEMENT__COLUMN);
+    }
+    return column;
   }
 
   /**
@@ -104,8 +88,8 @@ public class AlterUpdateStatementImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case Sql_dslPackage.ALTER_UPDATE_STATEMENT__NAME:
-        return getName();
+      case Sql_dslPackage.ALTER_UPDATE_STATEMENT__COLUMN:
+        return getColumn();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,13 +99,15 @@ public class AlterUpdateStatementImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case Sql_dslPackage.ALTER_UPDATE_STATEMENT__NAME:
-        setName((String)newValue);
+      case Sql_dslPackage.ALTER_UPDATE_STATEMENT__COLUMN:
+        getColumn().clear();
+        getColumn().addAll((Collection<? extends CD>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +123,8 @@ public class AlterUpdateStatementImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case Sql_dslPackage.ALTER_UPDATE_STATEMENT__NAME:
-        setName(NAME_EDEFAULT);
+      case Sql_dslPackage.ALTER_UPDATE_STATEMENT__COLUMN:
+        getColumn().clear();
         return;
     }
     super.eUnset(featureID);
@@ -154,27 +140,10 @@ public class AlterUpdateStatementImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case Sql_dslPackage.ALTER_UPDATE_STATEMENT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case Sql_dslPackage.ALTER_UPDATE_STATEMENT__COLUMN:
+        return column != null && !column.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //AlterUpdateStatementImpl

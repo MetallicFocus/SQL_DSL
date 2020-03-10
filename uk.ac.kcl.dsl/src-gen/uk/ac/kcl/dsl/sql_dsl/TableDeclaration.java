@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.TableDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.TableDeclaration#getTable <em>Table</em>}</li>
  *   <li>{@link uk.ac.kcl.dsl.sql_dsl.TableDeclaration#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
@@ -27,26 +27,16 @@ import org.eclipse.emf.ecore.EObject;
 public interface TableDeclaration extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Table</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.TableName}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getTableDeclaration_Name()
-   * @model
+   * @return the value of the '<em>Table</em>' containment reference list.
+   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getTableDeclaration_Table()
+   * @model containment="true"
    * @generated
    */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.TableDeclaration#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
+  EList<TableName> getTable();
 
   /**
    * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.

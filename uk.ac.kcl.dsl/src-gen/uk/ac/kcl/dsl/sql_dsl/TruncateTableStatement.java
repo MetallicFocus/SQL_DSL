@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement#getTables <em>Tables</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement#getTable <em>Table</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getTruncateTableStatement()
@@ -24,15 +24,15 @@ import org.eclipse.emf.common.util.EList;
 public interface TruncateTableStatement extends Statement
 {
   /**
-   * Returns the value of the '<em><b>Tables</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration}.
+   * Returns the value of the '<em><b>Table</b></em>' reference list.
+   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.TableName}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Tables</em>' containment reference list.
-   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getTruncateTableStatement_Tables()
-   * @model containment="true"
+   * @return the value of the '<em>Table</em>' reference list.
+   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getTruncateTableStatement_Table()
+   * @model
    * @generated
    */
-  EList<TruncateTableDeclaration> getTables();
+  EList<TableName> getTable();
 
 } // TruncateTableStatement

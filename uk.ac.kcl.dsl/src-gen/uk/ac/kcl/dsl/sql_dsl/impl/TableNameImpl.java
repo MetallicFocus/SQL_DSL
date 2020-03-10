@@ -10,23 +10,23 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
+import uk.ac.kcl.dsl.sql_dsl.TableName;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Drop Table Declaration</b></em>'.
+ * An implementation of the model object '<em><b>Table Name</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.DropTableDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.TableNameImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DropTableDeclarationImpl extends MinimalEObjectImpl.Container implements DropTableDeclaration
+public class TableNameImpl extends MinimalEObjectImpl.Container implements TableName
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -53,7 +53,7 @@ public class DropTableDeclarationImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DropTableDeclarationImpl()
+  protected TableNameImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class DropTableDeclarationImpl extends MinimalEObjectImpl.Container imple
   @Override
   protected EClass eStaticClass()
   {
-    return Sql_dslPackage.Literals.DROP_TABLE_DECLARATION;
+    return Sql_dslPackage.Literals.TABLE_NAME;
   }
 
   /**
@@ -91,7 +91,7 @@ public class DropTableDeclarationImpl extends MinimalEObjectImpl.Container imple
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.DROP_TABLE_DECLARATION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.TABLE_NAME__NAME, oldName, name));
   }
 
   /**
@@ -104,7 +104,7 @@ public class DropTableDeclarationImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case Sql_dslPackage.DROP_TABLE_DECLARATION__NAME:
+      case Sql_dslPackage.TABLE_NAME__NAME:
         return getName();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -120,7 +120,7 @@ public class DropTableDeclarationImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case Sql_dslPackage.DROP_TABLE_DECLARATION__NAME:
+      case Sql_dslPackage.TABLE_NAME__NAME:
         setName((String)newValue);
         return;
     }
@@ -137,7 +137,7 @@ public class DropTableDeclarationImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case Sql_dslPackage.DROP_TABLE_DECLARATION__NAME:
+      case Sql_dslPackage.TABLE_NAME__NAME:
         setName(NAME_EDEFAULT);
         return;
     }
@@ -154,7 +154,7 @@ public class DropTableDeclarationImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case Sql_dslPackage.DROP_TABLE_DECLARATION__NAME:
+      case Sql_dslPackage.TABLE_NAME__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
@@ -177,4 +177,4 @@ public class DropTableDeclarationImpl extends MinimalEObjectImpl.Container imple
     return result.toString();
   }
 
-} //DropTableDeclarationImpl
+} //TableNameImpl

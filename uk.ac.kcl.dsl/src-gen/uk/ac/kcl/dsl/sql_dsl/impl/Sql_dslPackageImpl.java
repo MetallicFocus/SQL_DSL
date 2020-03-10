@@ -15,25 +15,35 @@ import uk.ac.kcl.dsl.sql_dsl.AlterAddStatement;
 import uk.ac.kcl.dsl.sql_dsl.AlterDropStatement;
 import uk.ac.kcl.dsl.sql_dsl.AlterTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.AlterUpdateStatement;
+import uk.ac.kcl.dsl.sql_dsl.AvgFunction;
+import uk.ac.kcl.dsl.sql_dsl.CountFunction;
 import uk.ac.kcl.dsl.sql_dsl.CreateTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.DataStructureType;
 import uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement;
-import uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.DeleteTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.DropTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.ForeignKey;
+import uk.ac.kcl.dsl.sql_dsl.FromAndWhereClauses;
+import uk.ac.kcl.dsl.sql_dsl.Functions;
 import uk.ac.kcl.dsl.sql_dsl.IntLiteral;
 import uk.ac.kcl.dsl.sql_dsl.IntVarExpression;
+import uk.ac.kcl.dsl.sql_dsl.MaxFunction;
+import uk.ac.kcl.dsl.sql_dsl.MinFunction;
 import uk.ac.kcl.dsl.sql_dsl.Model;
 import uk.ac.kcl.dsl.sql_dsl.PrimaryKey;
 import uk.ac.kcl.dsl.sql_dsl.RealLiteral;
 import uk.ac.kcl.dsl.sql_dsl.SelectStatement;
+import uk.ac.kcl.dsl.sql_dsl.SetClause;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslFactory;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
 import uk.ac.kcl.dsl.sql_dsl.Statement;
+import uk.ac.kcl.dsl.sql_dsl.SumFunction;
 import uk.ac.kcl.dsl.sql_dsl.TableDeclaration;
-import uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.TableName;
 import uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement;
+import uk.ac.kcl.dsl.sql_dsl.UpdateTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.VariableDeclarationStatement;
+import uk.ac.kcl.dsl.sql_dsl.WhereDec;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,6 +79,20 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass fromAndWhereClausesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass whereDecEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass databaseDeclarationStatementEClass = null;
 
   /**
@@ -84,6 +108,13 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   private EClass tableDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tableNameEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,13 +149,6 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass dropTableDeclarationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass truncateTableStatementEClass = null;
 
   /**
@@ -132,7 +156,21 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass truncateTableDeclarationEClass = null;
+  private EClass deleteTableStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass updateTableStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass setClauseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -189,6 +227,48 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   private EClass intVarExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass functionsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass countFunctionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass avgFunctionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sumFunctionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass minFunctionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass maxFunctionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -310,9 +390,9 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EAttribute getSelectStatement_Name()
+  public EReference getSelectStatement_Column()
   {
-    return (EAttribute)selectStatementEClass.getEStructuralFeatures().get(0);
+    return (EReference)selectStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -321,9 +401,86 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EReference getSelectStatement_Column()
+  public EReference getSelectStatement_X()
   {
     return (EReference)selectStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFromAndWhereClauses()
+  {
+    return fromAndWhereClausesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFromAndWhereClauses_Table()
+  {
+    return (EReference)fromAndWhereClausesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFromAndWhereClauses_Z()
+  {
+    return (EReference)fromAndWhereClausesEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getWhereDec()
+  {
+    return whereDecEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWhereDec_Column()
+  {
+    return (EReference)whereDecEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWhereDec_Name()
+  {
+    return (EAttribute)whereDecEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWhereDec_Val()
+  {
+    return (EAttribute)whereDecEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -387,9 +544,9 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EAttribute getTableDeclaration_Name()
+  public EReference getTableDeclaration_Table()
   {
-    return (EAttribute)tableDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EReference)tableDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -401,6 +558,28 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
   public EReference getTableDeclaration_Attributes()
   {
     return (EReference)tableDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTableName()
+  {
+    return tableNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTableName_Name()
+  {
+    return (EAttribute)tableNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -530,31 +709,9 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EReference getDropTableStatement_Tables()
+  public EReference getDropTableStatement_Table()
   {
     return (EReference)dropTableStatementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getDropTableDeclaration()
-  {
-    return dropTableDeclarationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDropTableDeclaration_Name()
-  {
-    return (EAttribute)dropTableDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -574,7 +731,7 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EReference getTruncateTableStatement_Tables()
+  public EReference getTruncateTableStatement_Table()
   {
     return (EReference)truncateTableStatementEClass.getEStructuralFeatures().get(0);
   }
@@ -585,9 +742,9 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EClass getTruncateTableDeclaration()
+  public EClass getDeleteTableStatement()
   {
-    return truncateTableDeclarationEClass;
+    return deleteTableStatementEClass;
   }
 
   /**
@@ -596,9 +753,97 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EAttribute getTruncateTableDeclaration_Name()
+  public EReference getDeleteTableStatement_X()
   {
-    return (EAttribute)truncateTableDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EReference)deleteTableStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getUpdateTableStatement()
+  {
+    return updateTableStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getUpdateTableStatement_Table()
+  {
+    return (EReference)updateTableStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getUpdateTableStatement_Sc()
+  {
+    return (EReference)updateTableStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getUpdateTableStatement_Z()
+  {
+    return (EReference)updateTableStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSetClause()
+  {
+    return setClauseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSetClause_Column()
+  {
+    return (EReference)setClauseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSetClause_Name()
+  {
+    return (EAttribute)setClauseEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSetClause_Val()
+  {
+    return (EAttribute)setClauseEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -618,9 +863,9 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EAttribute getAlterTableStatement_Name()
+  public EReference getAlterTableStatement_Table()
   {
-    return (EAttribute)alterTableStatementEClass.getEStructuralFeatures().get(0);
+    return (EReference)alterTableStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -651,9 +896,9 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EAttribute getAlterDropStatement_Name()
+  public EReference getAlterDropStatement_Column()
   {
-    return (EAttribute)alterDropStatementEClass.getEStructuralFeatures().get(0);
+    return (EReference)alterDropStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -695,9 +940,9 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EAttribute getAlterUpdateStatement_Name()
+  public EReference getAlterUpdateStatement_Column()
   {
-    return (EAttribute)alterUpdateStatementEClass.getEStructuralFeatures().get(0);
+    return (EReference)alterUpdateStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -805,6 +1050,94 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
+  public EClass getFunctions()
+  {
+    return functionsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFunctions_Column()
+  {
+    return (EReference)functionsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFunctions_X()
+  {
+    return (EReference)functionsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCountFunction()
+  {
+    return countFunctionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAvgFunction()
+  {
+    return avgFunctionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSumFunction()
+  {
+    return sumFunctionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMinFunction()
+  {
+    return minFunctionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMaxFunction()
+  {
+    return maxFunctionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EEnum getDataStructureType()
   {
     return dataStructureTypeEEnum;
@@ -847,8 +1180,17 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
     statementEClass = createEClass(STATEMENT);
 
     selectStatementEClass = createEClass(SELECT_STATEMENT);
-    createEAttribute(selectStatementEClass, SELECT_STATEMENT__NAME);
     createEReference(selectStatementEClass, SELECT_STATEMENT__COLUMN);
+    createEReference(selectStatementEClass, SELECT_STATEMENT__X);
+
+    fromAndWhereClausesEClass = createEClass(FROM_AND_WHERE_CLAUSES);
+    createEReference(fromAndWhereClausesEClass, FROM_AND_WHERE_CLAUSES__TABLE);
+    createEReference(fromAndWhereClausesEClass, FROM_AND_WHERE_CLAUSES__Z);
+
+    whereDecEClass = createEClass(WHERE_DEC);
+    createEReference(whereDecEClass, WHERE_DEC__COLUMN);
+    createEAttribute(whereDecEClass, WHERE_DEC__NAME);
+    createEAttribute(whereDecEClass, WHERE_DEC__VAL);
 
     databaseDeclarationStatementEClass = createEClass(DATABASE_DECLARATION_STATEMENT);
     createEAttribute(databaseDeclarationStatementEClass, DATABASE_DECLARATION_STATEMENT__NAME);
@@ -857,8 +1199,11 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
     createEReference(createTableStatementEClass, CREATE_TABLE_STATEMENT__TABLES);
 
     tableDeclarationEClass = createEClass(TABLE_DECLARATION);
-    createEAttribute(tableDeclarationEClass, TABLE_DECLARATION__NAME);
+    createEReference(tableDeclarationEClass, TABLE_DECLARATION__TABLE);
     createEReference(tableDeclarationEClass, TABLE_DECLARATION__ATTRIBUTES);
+
+    tableNameEClass = createEClass(TABLE_NAME);
+    createEAttribute(tableNameEClass, TABLE_NAME__NAME);
 
     cdEClass = createEClass(CD);
     createEAttribute(cdEClass, CD__NAME);
@@ -874,29 +1219,36 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
     createEReference(foreignKeyEClass, FOREIGN_KEY__FOREIGN_COLUMNS);
 
     dropTableStatementEClass = createEClass(DROP_TABLE_STATEMENT);
-    createEReference(dropTableStatementEClass, DROP_TABLE_STATEMENT__TABLES);
-
-    dropTableDeclarationEClass = createEClass(DROP_TABLE_DECLARATION);
-    createEAttribute(dropTableDeclarationEClass, DROP_TABLE_DECLARATION__NAME);
+    createEReference(dropTableStatementEClass, DROP_TABLE_STATEMENT__TABLE);
 
     truncateTableStatementEClass = createEClass(TRUNCATE_TABLE_STATEMENT);
-    createEReference(truncateTableStatementEClass, TRUNCATE_TABLE_STATEMENT__TABLES);
+    createEReference(truncateTableStatementEClass, TRUNCATE_TABLE_STATEMENT__TABLE);
 
-    truncateTableDeclarationEClass = createEClass(TRUNCATE_TABLE_DECLARATION);
-    createEAttribute(truncateTableDeclarationEClass, TRUNCATE_TABLE_DECLARATION__NAME);
+    deleteTableStatementEClass = createEClass(DELETE_TABLE_STATEMENT);
+    createEReference(deleteTableStatementEClass, DELETE_TABLE_STATEMENT__X);
+
+    updateTableStatementEClass = createEClass(UPDATE_TABLE_STATEMENT);
+    createEReference(updateTableStatementEClass, UPDATE_TABLE_STATEMENT__TABLE);
+    createEReference(updateTableStatementEClass, UPDATE_TABLE_STATEMENT__SC);
+    createEReference(updateTableStatementEClass, UPDATE_TABLE_STATEMENT__Z);
+
+    setClauseEClass = createEClass(SET_CLAUSE);
+    createEReference(setClauseEClass, SET_CLAUSE__COLUMN);
+    createEAttribute(setClauseEClass, SET_CLAUSE__NAME);
+    createEAttribute(setClauseEClass, SET_CLAUSE__VAL);
 
     alterTableStatementEClass = createEClass(ALTER_TABLE_STATEMENT);
-    createEAttribute(alterTableStatementEClass, ALTER_TABLE_STATEMENT__NAME);
+    createEReference(alterTableStatementEClass, ALTER_TABLE_STATEMENT__TABLE);
     createEReference(alterTableStatementEClass, ALTER_TABLE_STATEMENT__ADD_DROP_UPDATE);
 
     alterDropStatementEClass = createEClass(ALTER_DROP_STATEMENT);
-    createEAttribute(alterDropStatementEClass, ALTER_DROP_STATEMENT__NAME);
+    createEReference(alterDropStatementEClass, ALTER_DROP_STATEMENT__COLUMN);
 
     alterAddStatementEClass = createEClass(ALTER_ADD_STATEMENT);
     createEReference(alterAddStatementEClass, ALTER_ADD_STATEMENT__COLUMN);
 
     alterUpdateStatementEClass = createEClass(ALTER_UPDATE_STATEMENT);
-    createEAttribute(alterUpdateStatementEClass, ALTER_UPDATE_STATEMENT__NAME);
+    createEReference(alterUpdateStatementEClass, ALTER_UPDATE_STATEMENT__COLUMN);
 
     variableDeclarationStatementEClass = createEClass(VARIABLE_DECLARATION_STATEMENT);
     createEAttribute(variableDeclarationStatementEClass, VARIABLE_DECLARATION_STATEMENT__NAME);
@@ -910,6 +1262,20 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
 
     intVarExpressionEClass = createEClass(INT_VAR_EXPRESSION);
     createEReference(intVarExpressionEClass, INT_VAR_EXPRESSION__VAR);
+
+    functionsEClass = createEClass(FUNCTIONS);
+    createEReference(functionsEClass, FUNCTIONS__COLUMN);
+    createEReference(functionsEClass, FUNCTIONS__X);
+
+    countFunctionEClass = createEClass(COUNT_FUNCTION);
+
+    avgFunctionEClass = createEClass(AVG_FUNCTION);
+
+    sumFunctionEClass = createEClass(SUM_FUNCTION);
+
+    minFunctionEClass = createEClass(MIN_FUNCTION);
+
+    maxFunctionEClass = createEClass(MAX_FUNCTION);
 
     // Create enums
     dataStructureTypeEEnum = createEEnum(DATA_STRUCTURE_TYPE);
@@ -949,8 +1315,16 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
     createTableStatementEClass.getESuperTypes().add(this.getStatement());
     dropTableStatementEClass.getESuperTypes().add(this.getStatement());
     truncateTableStatementEClass.getESuperTypes().add(this.getStatement());
+    deleteTableStatementEClass.getESuperTypes().add(this.getStatement());
+    updateTableStatementEClass.getESuperTypes().add(this.getStatement());
     alterTableStatementEClass.getESuperTypes().add(this.getStatement());
     variableDeclarationStatementEClass.getESuperTypes().add(this.getStatement());
+    functionsEClass.getESuperTypes().add(this.getStatement());
+    countFunctionEClass.getESuperTypes().add(this.getFunctions());
+    avgFunctionEClass.getESuperTypes().add(this.getFunctions());
+    sumFunctionEClass.getESuperTypes().add(this.getFunctions());
+    minFunctionEClass.getESuperTypes().add(this.getFunctions());
+    maxFunctionEClass.getESuperTypes().add(this.getFunctions());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -959,8 +1333,17 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(selectStatementEClass, SelectStatement.class, "SelectStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSelectStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, SelectStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSelectStatement_Column(), this.getCD(), null, "column", null, 0, -1, SelectStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSelectStatement_X(), this.getFromAndWhereClauses(), null, "x", null, 0, 1, SelectStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(fromAndWhereClausesEClass, FromAndWhereClauses.class, "FromAndWhereClauses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFromAndWhereClauses_Table(), this.getTableName(), null, "table", null, 0, -1, FromAndWhereClauses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFromAndWhereClauses_Z(), this.getWhereDec(), null, "z", null, 0, -1, FromAndWhereClauses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(whereDecEClass, WhereDec.class, "WhereDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWhereDec_Column(), this.getCD(), null, "column", null, 0, -1, WhereDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWhereDec_Name(), ecorePackage.getEString(), "name", null, 0, 1, WhereDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWhereDec_Val(), ecorePackage.getEInt(), "val", null, 0, 1, WhereDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(databaseDeclarationStatementEClass, DatabaseDeclarationStatement.class, "DatabaseDeclarationStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDatabaseDeclarationStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, DatabaseDeclarationStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -969,8 +1352,11 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
     initEReference(getCreateTableStatement_Tables(), this.getTableDeclaration(), null, "tables", null, 0, -1, CreateTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(tableDeclarationEClass, TableDeclaration.class, "TableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, TableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTableDeclaration_Table(), this.getTableName(), null, "table", null, 0, -1, TableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTableDeclaration_Attributes(), ecorePackage.getEObject(), null, "attributes", null, 0, -1, TableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tableNameEClass, TableName.class, "TableName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTableName_Name(), ecorePackage.getEString(), "name", null, 0, 1, TableName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(cdEClass, uk.ac.kcl.dsl.sql_dsl.CD.class, "CD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCD_Name(), ecorePackage.getEString(), "name", null, 0, 1, uk.ac.kcl.dsl.sql_dsl.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -986,29 +1372,36 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
     initEReference(getForeignKey_ForeignColumns(), this.getCD(), null, "foreignColumns", null, 0, -1, ForeignKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dropTableStatementEClass, DropTableStatement.class, "DropTableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDropTableStatement_Tables(), this.getDropTableDeclaration(), null, "tables", null, 0, -1, DropTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dropTableDeclarationEClass, DropTableDeclaration.class, "DropTableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDropTableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, DropTableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDropTableStatement_Table(), this.getTableName(), null, "table", null, 0, -1, DropTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(truncateTableStatementEClass, TruncateTableStatement.class, "TruncateTableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTruncateTableStatement_Tables(), this.getTruncateTableDeclaration(), null, "tables", null, 0, -1, TruncateTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTruncateTableStatement_Table(), this.getTableName(), null, "table", null, 0, -1, TruncateTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(truncateTableDeclarationEClass, TruncateTableDeclaration.class, "TruncateTableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTruncateTableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, TruncateTableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(deleteTableStatementEClass, DeleteTableStatement.class, "DeleteTableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeleteTableStatement_X(), this.getFromAndWhereClauses(), null, "x", null, 0, 1, DeleteTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(updateTableStatementEClass, UpdateTableStatement.class, "UpdateTableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUpdateTableStatement_Table(), this.getTableName(), null, "table", null, 0, -1, UpdateTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUpdateTableStatement_Sc(), this.getSetClause(), null, "sc", null, 0, -1, UpdateTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUpdateTableStatement_Z(), this.getWhereDec(), null, "z", null, 0, -1, UpdateTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(setClauseEClass, SetClause.class, "SetClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSetClause_Column(), this.getCD(), null, "column", null, 0, -1, SetClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSetClause_Name(), ecorePackage.getEString(), "name", null, 0, 1, SetClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSetClause_Val(), ecorePackage.getEInt(), "val", null, 0, 1, SetClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(alterTableStatementEClass, AlterTableStatement.class, "AlterTableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAlterTableStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AlterTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAlterTableStatement_Table(), this.getTableName(), null, "table", null, 0, -1, AlterTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAlterTableStatement_AddDropUpdate(), ecorePackage.getEObject(), null, "addDropUpdate", null, 0, 1, AlterTableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(alterDropStatementEClass, AlterDropStatement.class, "AlterDropStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAlterDropStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AlterDropStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAlterDropStatement_Column(), this.getCD(), null, "column", null, 0, -1, AlterDropStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(alterAddStatementEClass, AlterAddStatement.class, "AlterAddStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAlterAddStatement_Column(), this.getCD(), null, "column", null, 0, -1, AlterAddStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(alterUpdateStatementEClass, AlterUpdateStatement.class, "AlterUpdateStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAlterUpdateStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AlterUpdateStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAlterUpdateStatement_Column(), this.getCD(), null, "column", null, 0, -1, AlterUpdateStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableDeclarationStatementEClass, VariableDeclarationStatement.class, "VariableDeclarationStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableDeclarationStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDeclarationStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1022,6 +1415,20 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
 
     initEClass(intVarExpressionEClass, IntVarExpression.class, "IntVarExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getIntVarExpression_Var(), this.getVariableDeclarationStatement(), null, "var", null, 0, 1, IntVarExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(functionsEClass, Functions.class, "Functions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFunctions_Column(), this.getCD(), null, "column", null, 0, -1, Functions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctions_X(), this.getFromAndWhereClauses(), null, "x", null, 0, 1, Functions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(countFunctionEClass, CountFunction.class, "CountFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(avgFunctionEClass, AvgFunction.class, "AvgFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(sumFunctionEClass, SumFunction.class, "SumFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(minFunctionEClass, MinFunction.class, "MinFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(maxFunctionEClass, MaxFunction.class, "MaxFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Initialize enums and add enum literals
     initEEnum(dataStructureTypeEEnum, DataStructureType.class, "DataStructureType");

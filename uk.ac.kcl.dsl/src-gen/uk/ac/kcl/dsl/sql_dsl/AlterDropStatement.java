@@ -3,6 +3,8 @@
  */
 package uk.ac.kcl.dsl.sql_dsl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.AlterDropStatement#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.AlterDropStatement#getColumn <em>Column</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getAlterDropStatement()
@@ -24,25 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface AlterDropStatement extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Column</b></em>' reference list.
+   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.CD}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getAlterDropStatement_Name()
+   * @return the value of the '<em>Column</em>' reference list.
+   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getAlterDropStatement_Column()
    * @model
    * @generated
    */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.AlterDropStatement#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
+  EList<CD> getColumn();
 
 } // AlterDropStatement

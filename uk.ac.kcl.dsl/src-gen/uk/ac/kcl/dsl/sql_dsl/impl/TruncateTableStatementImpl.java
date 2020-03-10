@@ -5,18 +5,14 @@ package uk.ac.kcl.dsl.sql_dsl.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
-import uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.TableName;
 import uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement;
 
 /**
@@ -27,7 +23,7 @@ import uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.TruncateTableStatementImpl#getTables <em>Tables</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.TruncateTableStatementImpl#getTable <em>Table</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +31,14 @@ import uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement;
 public class TruncateTableStatementImpl extends StatementImpl implements TruncateTableStatement
 {
   /**
-   * The cached value of the '{@link #getTables() <em>Tables</em>}' containment reference list.
+   * The cached value of the '{@link #getTable() <em>Table</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTables()
+   * @see #getTable()
    * @generated
    * @ordered
    */
-  protected EList<TruncateTableDeclaration> tables;
+  protected EList<TableName> table;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,29 +67,13 @@ public class TruncateTableStatementImpl extends StatementImpl implements Truncat
    * @generated
    */
   @Override
-  public EList<TruncateTableDeclaration> getTables()
+  public EList<TableName> getTable()
   {
-    if (tables == null)
+    if (table == null)
     {
-      tables = new EObjectContainmentEList<TruncateTableDeclaration>(TruncateTableDeclaration.class, this, Sql_dslPackage.TRUNCATE_TABLE_STATEMENT__TABLES);
+      table = new EObjectResolvingEList<TableName>(TableName.class, this, Sql_dslPackage.TRUNCATE_TABLE_STATEMENT__TABLE);
     }
-    return tables;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT__TABLES:
-        return ((InternalEList<?>)getTables()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return table;
   }
 
   /**
@@ -106,8 +86,8 @@ public class TruncateTableStatementImpl extends StatementImpl implements Truncat
   {
     switch (featureID)
     {
-      case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT__TABLES:
-        return getTables();
+      case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT__TABLE:
+        return getTable();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +103,9 @@ public class TruncateTableStatementImpl extends StatementImpl implements Truncat
   {
     switch (featureID)
     {
-      case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT__TABLES:
-        getTables().clear();
-        getTables().addAll((Collection<? extends TruncateTableDeclaration>)newValue);
+      case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT__TABLE:
+        getTable().clear();
+        getTable().addAll((Collection<? extends TableName>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +121,8 @@ public class TruncateTableStatementImpl extends StatementImpl implements Truncat
   {
     switch (featureID)
     {
-      case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT__TABLES:
-        getTables().clear();
+      case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT__TABLE:
+        getTable().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +138,8 @@ public class TruncateTableStatementImpl extends StatementImpl implements Truncat
   {
     switch (featureID)
     {
-      case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT__TABLES:
-        return tables != null && !tables.isEmpty();
+      case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT__TABLE:
+        return table != null && !table.isEmpty();
     }
     return super.eIsSet(featureID);
   }

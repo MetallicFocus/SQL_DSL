@@ -95,6 +95,20 @@ public class Sql_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Sql_dslPackage.FROM_AND_WHERE_CLAUSES:
+      {
+        FromAndWhereClauses fromAndWhereClauses = (FromAndWhereClauses)theEObject;
+        T result = caseFromAndWhereClauses(fromAndWhereClauses);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.WHERE_DEC:
+      {
+        WhereDec whereDec = (WhereDec)theEObject;
+        T result = caseWhereDec(whereDec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case Sql_dslPackage.DATABASE_DECLARATION_STATEMENT:
       {
         DatabaseDeclarationStatement databaseDeclarationStatement = (DatabaseDeclarationStatement)theEObject;
@@ -115,6 +129,13 @@ public class Sql_dslSwitch<T> extends Switch<T>
       {
         TableDeclaration tableDeclaration = (TableDeclaration)theEObject;
         T result = caseTableDeclaration(tableDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.TABLE_NAME:
+      {
+        TableName tableName = (TableName)theEObject;
+        T result = caseTableName(tableName);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -147,13 +168,6 @@ public class Sql_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Sql_dslPackage.DROP_TABLE_DECLARATION:
-      {
-        DropTableDeclaration dropTableDeclaration = (DropTableDeclaration)theEObject;
-        T result = caseDropTableDeclaration(dropTableDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT:
       {
         TruncateTableStatement truncateTableStatement = (TruncateTableStatement)theEObject;
@@ -162,10 +176,26 @@ public class Sql_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Sql_dslPackage.TRUNCATE_TABLE_DECLARATION:
+      case Sql_dslPackage.DELETE_TABLE_STATEMENT:
       {
-        TruncateTableDeclaration truncateTableDeclaration = (TruncateTableDeclaration)theEObject;
-        T result = caseTruncateTableDeclaration(truncateTableDeclaration);
+        DeleteTableStatement deleteTableStatement = (DeleteTableStatement)theEObject;
+        T result = caseDeleteTableStatement(deleteTableStatement);
+        if (result == null) result = caseStatement(deleteTableStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.UPDATE_TABLE_STATEMENT:
+      {
+        UpdateTableStatement updateTableStatement = (UpdateTableStatement)theEObject;
+        T result = caseUpdateTableStatement(updateTableStatement);
+        if (result == null) result = caseStatement(updateTableStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.SET_CLAUSE:
+      {
+        SetClause setClause = (SetClause)theEObject;
+        T result = caseSetClause(setClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -227,6 +257,59 @@ public class Sql_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Sql_dslPackage.FUNCTIONS:
+      {
+        Functions functions = (Functions)theEObject;
+        T result = caseFunctions(functions);
+        if (result == null) result = caseStatement(functions);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.COUNT_FUNCTION:
+      {
+        CountFunction countFunction = (CountFunction)theEObject;
+        T result = caseCountFunction(countFunction);
+        if (result == null) result = caseFunctions(countFunction);
+        if (result == null) result = caseStatement(countFunction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.AVG_FUNCTION:
+      {
+        AvgFunction avgFunction = (AvgFunction)theEObject;
+        T result = caseAvgFunction(avgFunction);
+        if (result == null) result = caseFunctions(avgFunction);
+        if (result == null) result = caseStatement(avgFunction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.SUM_FUNCTION:
+      {
+        SumFunction sumFunction = (SumFunction)theEObject;
+        T result = caseSumFunction(sumFunction);
+        if (result == null) result = caseFunctions(sumFunction);
+        if (result == null) result = caseStatement(sumFunction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.MIN_FUNCTION:
+      {
+        MinFunction minFunction = (MinFunction)theEObject;
+        T result = caseMinFunction(minFunction);
+        if (result == null) result = caseFunctions(minFunction);
+        if (result == null) result = caseStatement(minFunction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.MAX_FUNCTION:
+      {
+        MaxFunction maxFunction = (MaxFunction)theEObject;
+        T result = caseMaxFunction(maxFunction);
+        if (result == null) result = caseFunctions(maxFunction);
+        if (result == null) result = caseStatement(maxFunction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -280,6 +363,38 @@ public class Sql_dslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>From And Where Clauses</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>From And Where Clauses</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFromAndWhereClauses(FromAndWhereClauses object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Where Dec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Where Dec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhereDec(WhereDec object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Database Declaration Statement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -323,6 +438,22 @@ public class Sql_dslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTableDeclaration(TableDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Table Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Table Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTableName(TableName object)
   {
     return null;
   }
@@ -392,22 +523,6 @@ public class Sql_dslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Drop Table Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Drop Table Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDropTableDeclaration(DropTableDeclaration object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Truncate Table Statement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -424,17 +539,49 @@ public class Sql_dslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Truncate Table Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Delete Table Statement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Truncate Table Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Delete Table Statement</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTruncateTableDeclaration(TruncateTableDeclaration object)
+  public T caseDeleteTableStatement(DeleteTableStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Update Table Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Update Table Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUpdateTableStatement(UpdateTableStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Set Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Set Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSetClause(SetClause object)
   {
     return null;
   }
@@ -563,6 +710,102 @@ public class Sql_dslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIntVarExpression(IntVarExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Functions</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Functions</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctions(Functions object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Count Function</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Count Function</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCountFunction(CountFunction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Avg Function</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Avg Function</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAvgFunction(AvgFunction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sum Function</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sum Function</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSumFunction(SumFunction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Min Function</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Min Function</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMinFunction(MinFunction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Max Function</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Max Function</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMaxFunction(MaxFunction object)
   {
     return null;
   }

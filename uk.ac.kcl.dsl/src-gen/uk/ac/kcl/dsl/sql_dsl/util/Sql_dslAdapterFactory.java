@@ -91,6 +91,16 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
         return createSelectStatementAdapter();
       }
       @Override
+      public Adapter caseFromAndWhereClauses(FromAndWhereClauses object)
+      {
+        return createFromAndWhereClausesAdapter();
+      }
+      @Override
+      public Adapter caseWhereDec(WhereDec object)
+      {
+        return createWhereDecAdapter();
+      }
+      @Override
       public Adapter caseDatabaseDeclarationStatement(DatabaseDeclarationStatement object)
       {
         return createDatabaseDeclarationStatementAdapter();
@@ -104,6 +114,11 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTableDeclaration(TableDeclaration object)
       {
         return createTableDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseTableName(TableName object)
+      {
+        return createTableNameAdapter();
       }
       @Override
       public Adapter caseCD(CD object)
@@ -126,19 +141,24 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
         return createDropTableStatementAdapter();
       }
       @Override
-      public Adapter caseDropTableDeclaration(DropTableDeclaration object)
-      {
-        return createDropTableDeclarationAdapter();
-      }
-      @Override
       public Adapter caseTruncateTableStatement(TruncateTableStatement object)
       {
         return createTruncateTableStatementAdapter();
       }
       @Override
-      public Adapter caseTruncateTableDeclaration(TruncateTableDeclaration object)
+      public Adapter caseDeleteTableStatement(DeleteTableStatement object)
       {
-        return createTruncateTableDeclarationAdapter();
+        return createDeleteTableStatementAdapter();
+      }
+      @Override
+      public Adapter caseUpdateTableStatement(UpdateTableStatement object)
+      {
+        return createUpdateTableStatementAdapter();
+      }
+      @Override
+      public Adapter caseSetClause(SetClause object)
+      {
+        return createSetClauseAdapter();
       }
       @Override
       public Adapter caseAlterTableStatement(AlterTableStatement object)
@@ -179,6 +199,36 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseIntVarExpression(IntVarExpression object)
       {
         return createIntVarExpressionAdapter();
+      }
+      @Override
+      public Adapter caseFunctions(Functions object)
+      {
+        return createFunctionsAdapter();
+      }
+      @Override
+      public Adapter caseCountFunction(CountFunction object)
+      {
+        return createCountFunctionAdapter();
+      }
+      @Override
+      public Adapter caseAvgFunction(AvgFunction object)
+      {
+        return createAvgFunctionAdapter();
+      }
+      @Override
+      public Adapter caseSumFunction(SumFunction object)
+      {
+        return createSumFunctionAdapter();
+      }
+      @Override
+      public Adapter caseMinFunction(MinFunction object)
+      {
+        return createMinFunctionAdapter();
+      }
+      @Override
+      public Adapter caseMaxFunction(MaxFunction object)
+      {
+        return createMaxFunctionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -248,6 +298,36 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.FromAndWhereClauses <em>From And Where Clauses</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.FromAndWhereClauses
+   * @generated
+   */
+  public Adapter createFromAndWhereClausesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.WhereDec <em>Where Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.WhereDec
+   * @generated
+   */
+  public Adapter createWhereDecAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement <em>Database Declaration Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -288,6 +368,21 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTableDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.TableName <em>Table Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.TableName
+   * @generated
+   */
+  public Adapter createTableNameAdapter()
   {
     return null;
   }
@@ -353,21 +448,6 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration <em>Drop Table Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration
-   * @generated
-   */
-  public Adapter createDropTableDeclarationAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement <em>Truncate Table Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -383,16 +463,46 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration <em>Truncate Table Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.DeleteTableStatement <em>Delete Table Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.dsl.sql_dsl.TruncateTableDeclaration
+   * @see uk.ac.kcl.dsl.sql_dsl.DeleteTableStatement
    * @generated
    */
-  public Adapter createTruncateTableDeclarationAdapter()
+  public Adapter createDeleteTableStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.UpdateTableStatement <em>Update Table Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.UpdateTableStatement
+   * @generated
+   */
+  public Adapter createUpdateTableStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.SetClause <em>Set Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.SetClause
+   * @generated
+   */
+  public Adapter createSetClauseAdapter()
   {
     return null;
   }
@@ -513,6 +623,96 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIntVarExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.Functions <em>Functions</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.Functions
+   * @generated
+   */
+  public Adapter createFunctionsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.CountFunction <em>Count Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.CountFunction
+   * @generated
+   */
+  public Adapter createCountFunctionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.AvgFunction <em>Avg Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.AvgFunction
+   * @generated
+   */
+  public Adapter createAvgFunctionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.SumFunction <em>Sum Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.SumFunction
+   * @generated
+   */
+  public Adapter createSumFunctionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.MinFunction <em>Min Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.MinFunction
+   * @generated
+   */
+  public Adapter createMinFunctionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.MaxFunction <em>Max Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.MaxFunction
+   * @generated
+   */
+  public Adapter createMaxFunctionAdapter()
   {
     return null;
   }

@@ -6,7 +6,7 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 	
 Model:
-	statements += Statement
+	statements += Statement*
 ;
 
 Statement:
@@ -16,12 +16,32 @@ Statement:
 	TruncateTableStatement |
 	AlterTableStatement |
 	VariableDeclarationStatement |
-	SelectStatement
+	SelectStatement |
+	DeleteTableStatement |
+	UpdateTableStatement |
+	Functions
 ;
 
+/*
+ * 
+ * Select Statement
+ * 
+ */
+
 SelectStatement:
-	"SELECT" name=ID "FROM" column+=[CD]
+	"SELECT" ("*" | (column+=[CD] ("," column+=[CD])*)* ) 
+	x=FromAndWhereClauses
 ;
+
+FromAndWhereClauses:
+	"FROM" table+=[TableName] 
+	("WHERE" z+=WhereDec (("AND" | "OR") z+=WhereDec)* )?
+;
+
+WhereDec:
+	(column+=[CD] ("="|"<"|"<="|">"|">="|"!="|"LIKE") (("#" name=ID "#") | column+=[CD] | val = INT) )
+;
+
 
 /*
  * 
@@ -33,6 +53,7 @@ DatabaseDeclarationStatement:
 	"CREATE" "DATABASE" name=ID
 ;
 
+
 /*
  * 
  * Create Table Declaration
@@ -41,14 +62,18 @@ DatabaseDeclarationStatement:
 
 CreateTableStatement:
 	// Must contain at least one table declaration
-	tables+=TableDeclaration*
+	tables+=TableDeclaration+
 ;
 	
 TableDeclaration:
 	// Create statement for the table generation
-	"CREATE" "TABLE" name=ID "(" attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey)+ 
+	"CREATE" "TABLE" table+=tableName "(" attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey)+ 
 		("," attributes+=(ColumnDeclaration | PrimaryKey | ForeignKey))*
 	")"
+;
+
+tableName returns TableName:
+	name=ID
 ;
 	
 ColumnDeclaration returns CD:
@@ -79,11 +104,7 @@ enum DataStructureType:
  */
 
 DropTableStatement:
-	tables+=DropTableDeclaration*
-;
-
-DropTableDeclaration:
-	"DROP" "TABLE" name=ID
+	"DROP" "TABLE" table+=[TableName]
 ;
 
 /*
@@ -93,12 +114,35 @@ DropTableDeclaration:
  */
 
 TruncateTableStatement:
-	tables+=TruncateTableDeclaration*
+	"TRUNCATE" "TABLE" table+=[TableName]
 ;
 
-TruncateTableDeclaration:
-	"TRUNCATE" "TABLE" name=ID
+/*
+ * 
+ * Delete Table Statement
+ * 
+ * 
+ */
+ 
+DeleteTableStatement:
+	"DELETE" x=FromAndWhereClauses
 ;
+
+/*
+ * 
+ * Update Table Statement
+ * 
+ * 
+ */
+ 
+ UpdateTableStatement:
+	"UPDATE" table+=[TableName] "SET" sc+=SetClause ("," sc+=SetClause)* ("WHERE" z+=WhereDec (("AND" | "OR") z+=WhereDec)* )?
+;
+
+SetClause:
+	(column+=[CD] "=" (("#" name=ID "#") | val = INT) ) 
+;
+ 
 
 /*
  * 
@@ -108,11 +152,11 @@ TruncateTableDeclaration:
  */
 
  AlterTableStatement:
- 	"ALTER" "TABLE" name=ID addDropUpdate=(AlterDropStatement | AlterAddStatement | AlterUpdateStatement)
+ 	"ALTER" "TABLE" table+=[TableName] addDropUpdate=(AlterDropStatement | AlterAddStatement | AlterUpdateStatement)
  ;
  
  AlterDropStatement:
- 	"DROP" "COLUMN" name=ID
+ 	"DROP" "COLUMN" column+=[CD]
  ;
  
  AlterAddStatement:
@@ -120,7 +164,7 @@ TruncateTableDeclaration:
  ;
  
  AlterUpdateStatement:
- 	"ALTER" "COLUMN" name=ID
+ 	"ALTER" "COLUMN" column+=[CD]
  ;
  
  /*
@@ -147,4 +191,38 @@ IntVarExpression:
 
 REAL returns ecore::EFloat hidden():
 	INT? "." INT
-; 
+;
+
+/*
+ * 
+ * Different Functions
+ * 
+ */
+ 
+Functions:
+ 	CountFunction |
+ 	AvgFunction |
+ 	SumFunction |
+ 	MinFunction |
+ 	MaxFunction
+ ;
+ 
+ CountFunction:
+ 	"SELECT" "COUNT" "(" column+=[CD] ")" x=FromAndWhereClauses
+ ;
+ 
+ AvgFunction:
+ 	"SELECT" "AVG" "(" column+=[CD] ")" x=FromAndWhereClauses
+ ;
+ 
+ SumFunction:
+ 	"SELECT" "SUM" "(" column+=[CD] ")" x=FromAndWhereClauses
+ ;
+ 
+ MinFunction:
+ 	"SELECT" "MIN" "(" column+=[CD] ")" x=FromAndWhereClauses
+ ;
+ 
+ MaxFunction:
+ 	"SELECT" "MAX" "(" column+=[CD] ")" x=FromAndWhereClauses
+ ;

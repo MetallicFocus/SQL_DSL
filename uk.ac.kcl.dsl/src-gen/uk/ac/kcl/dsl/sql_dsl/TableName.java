@@ -7,21 +7,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Drop Table Declaration</b></em>'.
+ * A representation of the model object '<em><b>Table Name</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.TableName#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getDropTableDeclaration()
+ * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getTableName()
  * @model
  * @generated
  */
-public interface DropTableDeclaration extends EObject
+public interface TableName extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface DropTableDeclaration extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getDropTableDeclaration_Name()
+   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getTableName_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.DropTableDeclaration#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.TableName#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -45,4 +45,4 @@ public interface DropTableDeclaration extends EObject
    */
   void setName(String value);
 
-} // DropTableDeclaration
+} // TableName

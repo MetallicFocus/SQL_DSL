@@ -69,16 +69,20 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
       case Sql_dslPackage.MODEL: return createModel();
       case Sql_dslPackage.STATEMENT: return createStatement();
       case Sql_dslPackage.SELECT_STATEMENT: return createSelectStatement();
+      case Sql_dslPackage.FROM_AND_WHERE_CLAUSES: return createFromAndWhereClauses();
+      case Sql_dslPackage.WHERE_DEC: return createWhereDec();
       case Sql_dslPackage.DATABASE_DECLARATION_STATEMENT: return createDatabaseDeclarationStatement();
       case Sql_dslPackage.CREATE_TABLE_STATEMENT: return createCreateTableStatement();
       case Sql_dslPackage.TABLE_DECLARATION: return createTableDeclaration();
+      case Sql_dslPackage.TABLE_NAME: return createTableName();
       case Sql_dslPackage.CD: return createCD();
       case Sql_dslPackage.PRIMARY_KEY: return createPrimaryKey();
       case Sql_dslPackage.FOREIGN_KEY: return createForeignKey();
       case Sql_dslPackage.DROP_TABLE_STATEMENT: return createDropTableStatement();
-      case Sql_dslPackage.DROP_TABLE_DECLARATION: return createDropTableDeclaration();
       case Sql_dslPackage.TRUNCATE_TABLE_STATEMENT: return createTruncateTableStatement();
-      case Sql_dslPackage.TRUNCATE_TABLE_DECLARATION: return createTruncateTableDeclaration();
+      case Sql_dslPackage.DELETE_TABLE_STATEMENT: return createDeleteTableStatement();
+      case Sql_dslPackage.UPDATE_TABLE_STATEMENT: return createUpdateTableStatement();
+      case Sql_dslPackage.SET_CLAUSE: return createSetClause();
       case Sql_dslPackage.ALTER_TABLE_STATEMENT: return createAlterTableStatement();
       case Sql_dslPackage.ALTER_DROP_STATEMENT: return createAlterDropStatement();
       case Sql_dslPackage.ALTER_ADD_STATEMENT: return createAlterAddStatement();
@@ -87,6 +91,12 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
       case Sql_dslPackage.INT_LITERAL: return createIntLiteral();
       case Sql_dslPackage.REAL_LITERAL: return createRealLiteral();
       case Sql_dslPackage.INT_VAR_EXPRESSION: return createIntVarExpression();
+      case Sql_dslPackage.FUNCTIONS: return createFunctions();
+      case Sql_dslPackage.COUNT_FUNCTION: return createCountFunction();
+      case Sql_dslPackage.AVG_FUNCTION: return createAvgFunction();
+      case Sql_dslPackage.SUM_FUNCTION: return createSumFunction();
+      case Sql_dslPackage.MIN_FUNCTION: return createMinFunction();
+      case Sql_dslPackage.MAX_FUNCTION: return createMaxFunction();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -168,6 +178,30 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
    * @generated
    */
   @Override
+  public FromAndWhereClauses createFromAndWhereClauses()
+  {
+    FromAndWhereClausesImpl fromAndWhereClauses = new FromAndWhereClausesImpl();
+    return fromAndWhereClauses;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WhereDec createWhereDec()
+  {
+    WhereDecImpl whereDec = new WhereDecImpl();
+    return whereDec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public DatabaseDeclarationStatement createDatabaseDeclarationStatement()
   {
     DatabaseDeclarationStatementImpl databaseDeclarationStatement = new DatabaseDeclarationStatementImpl();
@@ -196,6 +230,18 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
   {
     TableDeclarationImpl tableDeclaration = new TableDeclarationImpl();
     return tableDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TableName createTableName()
+  {
+    TableNameImpl tableName = new TableNameImpl();
+    return tableName;
   }
 
   /**
@@ -252,18 +298,6 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
    * @generated
    */
   @Override
-  public DropTableDeclaration createDropTableDeclaration()
-  {
-    DropTableDeclarationImpl dropTableDeclaration = new DropTableDeclarationImpl();
-    return dropTableDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public TruncateTableStatement createTruncateTableStatement()
   {
     TruncateTableStatementImpl truncateTableStatement = new TruncateTableStatementImpl();
@@ -276,10 +310,34 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
    * @generated
    */
   @Override
-  public TruncateTableDeclaration createTruncateTableDeclaration()
+  public DeleteTableStatement createDeleteTableStatement()
   {
-    TruncateTableDeclarationImpl truncateTableDeclaration = new TruncateTableDeclarationImpl();
-    return truncateTableDeclaration;
+    DeleteTableStatementImpl deleteTableStatement = new DeleteTableStatementImpl();
+    return deleteTableStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UpdateTableStatement createUpdateTableStatement()
+  {
+    UpdateTableStatementImpl updateTableStatement = new UpdateTableStatementImpl();
+    return updateTableStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SetClause createSetClause()
+  {
+    SetClauseImpl setClause = new SetClauseImpl();
+    return setClause;
   }
 
   /**
@@ -376,6 +434,78 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
   {
     IntVarExpressionImpl intVarExpression = new IntVarExpressionImpl();
     return intVarExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Functions createFunctions()
+  {
+    FunctionsImpl functions = new FunctionsImpl();
+    return functions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CountFunction createCountFunction()
+  {
+    CountFunctionImpl countFunction = new CountFunctionImpl();
+    return countFunction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AvgFunction createAvgFunction()
+  {
+    AvgFunctionImpl avgFunction = new AvgFunctionImpl();
+    return avgFunction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SumFunction createSumFunction()
+  {
+    SumFunctionImpl sumFunction = new SumFunctionImpl();
+    return sumFunction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MinFunction createMinFunction()
+  {
+    MinFunctionImpl minFunction = new MinFunctionImpl();
+    return minFunction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MaxFunction createMaxFunction()
+  {
+    MaxFunctionImpl maxFunction = new MaxFunctionImpl();
+    return maxFunction;
   }
 
   /**
