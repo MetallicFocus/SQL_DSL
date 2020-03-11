@@ -3,10 +3,22 @@
  */
 package uk.ac.kcl.dsl.generator;
 
+import java.util.Arrays;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ListExtensions;
+import uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement;
+import uk.ac.kcl.dsl.sql_dsl.Model;
+import uk.ac.kcl.dsl.sql_dsl.Statement;
+import uk.ac.kcl.dsl.sql_dsl.TableDeclaration;
+import uk.ac.kcl.dsl.sql_dsl.TableName;
 
 /**
  * Generates code from your model files on save.
@@ -15,7 +27,80 @@ import org.eclipse.xtext.generator.IGeneratorContext;
  */
 @SuppressWarnings("all")
 public class Sql_dslGenerator extends AbstractGenerator {
+  private static class Environment {
+    private int counter = 0;
+    
+    public CharSequence getFreshVarName() {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i");
+      int _plusPlus = this.counter++;
+      _builder.append(_plusPlus);
+      return _builder;
+    }
+    
+    public int exit() {
+      return this.counter--;
+    }
+  }
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    EObject _head = IterableExtensions.<EObject>head(resource.getContents());
+    final Model model = ((Model) _head);
+    String _lastSegment = resource.getURI().lastSegment();
+    String _plus = (_lastSegment + ".sql");
+    fsa.generateFile(_plus, this.doGenerate(model));
+  }
+  
+  public String doGenerate(final Model m) {
+    StringConcatenation _builder = new StringConcatenation();
+    final Function1<Statement, String> _function = (Statement it) -> {
+      return this.generateJavaStatement(it);
+    };
+    String _join = IterableExtensions.join(ListExtensions.<Statement, String>map(m.getStatements(), _function), "\n");
+    _builder.append(_join);
+    _builder.newLineIfNotEmpty();
+    return _builder.toString();
+  }
+  
+  protected String _generateJavaStatement(final Statement stmt) {
+    StringConcatenation _builder = new StringConcatenation();
+    return _builder.toString();
+  }
+  
+  protected String _generateJavaStatement(final DatabaseDeclarationStatement stmt) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("CREATE DATABASE ");
+    String _name = stmt.getName();
+    _builder.append(_name);
+    _builder.append(" ;");
+    _builder.newLineIfNotEmpty();
+    return _builder.toString();
+  }
+  
+  protected String _generateJavaStatement(final TableDeclaration stmt) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("CREATE TABLE ");
+    EList<TableName> _table = stmt.getTable();
+    _builder.append(_table);
+    _builder.append(" (");
+    EList<EObject> _attributes = stmt.getAttributes();
+    _builder.append(_attributes);
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
+    return _builder.toString();
+  }
+  
+  public String generateJavaStatement(final EObject stmt) {
+    if (stmt instanceof DatabaseDeclarationStatement) {
+      return _generateJavaStatement((DatabaseDeclarationStatement)stmt);
+    } else if (stmt instanceof Statement) {
+      return _generateJavaStatement((Statement)stmt);
+    } else if (stmt instanceof TableDeclaration) {
+      return _generateJavaStatement((TableDeclaration)stmt);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(stmt).toString());
+    }
   }
 }

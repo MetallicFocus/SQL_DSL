@@ -7,6 +7,11 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import uk.ac.kcl.dsl.sql_dsl.Model
+import uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement
+import uk.ac.kcl.dsl.sql_dsl.Statement
+import uk.ac.kcl.dsl.sql_dsl.CreateTableStatement
+import uk.ac.kcl.dsl.sql_dsl.TableDeclaration
 
 /**
  * Generates code from your model files on save.
@@ -21,5 +26,27 @@ class Sql_dslGenerator extends AbstractGenerator {
 //				.filter(Greeting)
 //				.map[name]
 //				.join(', '))
+		val model = resource.contents.head as Model
+		fsa.generateFile(resource.URI.lastSegment + ".sql", model.doGenerate)
 	}
+	
+	def String doGenerate(Model m) '''
+		«m.statements.map[generateJavaStatement()].join('\n')»
+	'''
+	
+	private static class Environment {
+		var int counter = 0
+		
+		def getFreshVarName() '''i«counter++»'''
+		
+		def exit() { counter-- }
+	}
+	
+	dispatch def String generateJavaStatement(Statement stmt) ''''''
+	dispatch def String generateJavaStatement(DatabaseDeclarationStatement stmt) '''
+	CREATE DATABASE «stmt.name» ;
+	'''
+	dispatch def String generateJavaStatement(TableDeclaration stmt) '''
+	CREATE TABLE «stmt.table» («stmt.attributes»);
+	'''
 }
