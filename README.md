@@ -20,7 +20,7 @@ Note2: For code generation, up until now we have covered `CREATE DATABASE`, `DRO
 
 `CREATE DATABASE NAME_X`
 
-`CREATE TABLE Table1(column1 char PRIMARY KEY(column1))``
+`CREATE TABLE Table1(column1 char PRIMARY KEY(column1))`
 
 `DROP TABLE Table1`
 
@@ -36,7 +36,7 @@ Note2: For code generation, up until now we have covered `CREATE DATABASE`, `DRO
 
 `UPDATE Table1 SET column1 = 1,column2 = #SS# WHERE column1 < column2 AND column2 = #test3# OR column2 = 500`
 
-`SELECT column1 FROM Table2 WHERE column1 != #asd#``
+`SELECT column1 FROM Table2 WHERE column1 != #asd#`
 
 `TRUNCATE TABLE Table1, Table2`
 
