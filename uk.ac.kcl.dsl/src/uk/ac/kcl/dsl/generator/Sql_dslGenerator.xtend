@@ -12,6 +12,10 @@ import uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement
 import uk.ac.kcl.dsl.sql_dsl.Statement
 import uk.ac.kcl.dsl.sql_dsl.CreateTableStatement
 import uk.ac.kcl.dsl.sql_dsl.TableDeclaration
+import uk.ac.kcl.dsl.sql_dsl.DropTableStatement
+import uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement
+import uk.ac.kcl.dsl.sql_dsl.DeleteTableStatement
+import uk.ac.kcl.dsl.sql_dsl.UpdateTableStatement
 
 /**
  * Generates code from your model files on save.
@@ -27,7 +31,7 @@ class Sql_dslGenerator extends AbstractGenerator {
 //				.map[name]
 //				.join(', '))
 		val model = resource.contents.head as Model
-		fsa.generateFile(resource.URI.lastSegment + ".sql", model.doGenerate)
+		fsa.generateFile(resource.URI.lastSegment + ".txt", model.doGenerate)
 	}
 	
 	def String doGenerate(Model m) '''
@@ -44,9 +48,43 @@ class Sql_dslGenerator extends AbstractGenerator {
 	
 	dispatch def String generateJavaStatement(Statement stmt) ''''''
 	dispatch def String generateJavaStatement(DatabaseDeclarationStatement stmt) '''
-	CREATE DATABASE «stmt.name» ;
+	CREATE DATABASE «stmt.name»;
 	'''
 	dispatch def String generateJavaStatement(TableDeclaration stmt) '''
-	CREATE TABLE «stmt.table» («stmt.attributes»);
+	CREATE TABLE «stmt.table» (
+	
+	«FOR at : stmt.attributes SEPARATOR ','»
+	«stmt.getAttributes()»
+	«ENDFOR»
+	
+	);
+	'''
+	
+	dispatch def String generateJavaStatement(DropTableStatement stmt) '''
+	
+	«FOR i : 0 ..< stmt.getTable().size»
+	DROP TABLE «stmt.getTable().get(i).name»;
+	«ENDFOR»
+	'''
+	
+	dispatch def String generateJavaStatement(TruncateTableStatement stmt) '''
+	
+	«FOR i : 0 ..< stmt.getTable().size»
+	TRUNCATE TABLE «stmt.getTable().get(i).name»;
+	«ENDFOR»
+	'''
+	
+	dispatch def String generateJavaStatement(DeleteTableStatement stmt) '''
+	DELETE TABLE «stmt.x.getTable()»;
+	'''
+	
+	dispatch def String generateJavaStatement(UpdateTableStatement stmt) '''
+	UPDATE TABLE «stmt.getTable()» SET 
+	
+	«FOR sc : stmt.sc SEPARATOR ','»
+	«stmt.getSc()»
+	«ENDFOR»
+	
+	;
 	'''
 }

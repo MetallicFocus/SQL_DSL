@@ -1092,6 +1092,25 @@ ruleDropTableStatement returns [EObject current=null]
 				}
 			)
 		)
+		(
+			otherlv_3=','
+			{
+				newLeafNode(otherlv_3, grammarAccess.getDropTableStatementAccess().getCommaKeyword_3_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDropTableStatementRule());
+						}
+					}
+					otherlv_4=RULE_ID
+					{
+						newLeafNode(otherlv_4, grammarAccess.getDropTableStatementAccess().getTableTableNameCrossReference_3_1_0());
+					}
+				)
+			)
+		)*
 	)
 ;
 
@@ -1132,6 +1151,25 @@ ruleTruncateTableStatement returns [EObject current=null]
 				}
 			)
 		)
+		(
+			otherlv_3=','
+			{
+				newLeafNode(otherlv_3, grammarAccess.getTruncateTableStatementAccess().getCommaKeyword_3_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTruncateTableStatementRule());
+						}
+					}
+					otherlv_4=RULE_ID
+					{
+						newLeafNode(otherlv_4, grammarAccess.getTruncateTableStatementAccess().getTableTableNameCrossReference_3_1_0());
+					}
+				)
+			)
+		)*
 	)
 ;
 

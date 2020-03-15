@@ -61,7 +61,9 @@ public class Sql_dslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getForeignKeyAccess().getGroup_4(), "rule__ForeignKey__Group_4__0");
 			builder.put(grammarAccess.getForeignKeyAccess().getGroup_10(), "rule__ForeignKey__Group_10__0");
 			builder.put(grammarAccess.getDropTableStatementAccess().getGroup(), "rule__DropTableStatement__Group__0");
+			builder.put(grammarAccess.getDropTableStatementAccess().getGroup_3(), "rule__DropTableStatement__Group_3__0");
 			builder.put(grammarAccess.getTruncateTableStatementAccess().getGroup(), "rule__TruncateTableStatement__Group__0");
+			builder.put(grammarAccess.getTruncateTableStatementAccess().getGroup_3(), "rule__TruncateTableStatement__Group_3__0");
 			builder.put(grammarAccess.getDeleteTableStatementAccess().getGroup(), "rule__DeleteTableStatement__Group__0");
 			builder.put(grammarAccess.getUpdateTableStatementAccess().getGroup(), "rule__UpdateTableStatement__Group__0");
 			builder.put(grammarAccess.getUpdateTableStatementAccess().getGroup_4(), "rule__UpdateTableStatement__Group_4__0");
@@ -109,7 +111,9 @@ public class Sql_dslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getForeignKeyAccess().getForeignColumnsAssignment_9(), "rule__ForeignKey__ForeignColumnsAssignment_9");
 			builder.put(grammarAccess.getForeignKeyAccess().getForeignColumnsAssignment_10_1(), "rule__ForeignKey__ForeignColumnsAssignment_10_1");
 			builder.put(grammarAccess.getDropTableStatementAccess().getTableAssignment_2(), "rule__DropTableStatement__TableAssignment_2");
+			builder.put(grammarAccess.getDropTableStatementAccess().getTableAssignment_3_1(), "rule__DropTableStatement__TableAssignment_3_1");
 			builder.put(grammarAccess.getTruncateTableStatementAccess().getTableAssignment_2(), "rule__TruncateTableStatement__TableAssignment_2");
+			builder.put(grammarAccess.getTruncateTableStatementAccess().getTableAssignment_3_1(), "rule__TruncateTableStatement__TableAssignment_3_1");
 			builder.put(grammarAccess.getDeleteTableStatementAccess().getXAssignment_1(), "rule__DeleteTableStatement__XAssignment_1");
 			builder.put(grammarAccess.getUpdateTableStatementAccess().getTableAssignment_1(), "rule__UpdateTableStatement__TableAssignment_1");
 			builder.put(grammarAccess.getUpdateTableStatementAccess().getScAssignment_3(), "rule__UpdateTableStatement__ScAssignment_3");

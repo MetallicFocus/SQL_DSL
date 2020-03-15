@@ -727,16 +727,21 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTableAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cTableTableNameCrossReference_2_0 = (CrossReference)cTableAssignment_2.eContents().get(0);
 		private final RuleCall cTableTableNameIDTerminalRuleCall_2_0_1 = (RuleCall)cTableTableNameCrossReference_2_0.eContents().get(1);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTableAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cTableTableNameCrossReference_3_1_0 = (CrossReference)cTableAssignment_3_1.eContents().get(0);
+		private final RuleCall cTableTableNameIDTerminalRuleCall_3_1_0_1 = (RuleCall)cTableTableNameCrossReference_3_1_0.eContents().get(1);
 		
 		///*
 		// * 
 		// * Drop Table Statement
 		// * 
 		// */ DropTableStatement:
-		//	"DROP" "TABLE" table+=[TableName];
+		//	"DROP" "TABLE" table+=[TableName] ("," table+=[TableName])*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"DROP" "TABLE" table+=[TableName]
+		//"DROP" "TABLE" table+=[TableName] ("," table+=[TableName])*
 		public Group getGroup() { return cGroup; }
 		
 		//"DROP"
@@ -753,6 +758,21 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getTableTableNameIDTerminalRuleCall_2_0_1() { return cTableTableNameIDTerminalRuleCall_2_0_1; }
+		
+		//("," table+=[TableName])*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//","
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		
+		//table+=[TableName]
+		public Assignment getTableAssignment_3_1() { return cTableAssignment_3_1; }
+		
+		//[TableName]
+		public CrossReference getTableTableNameCrossReference_3_1_0() { return cTableTableNameCrossReference_3_1_0; }
+		
+		//ID
+		public RuleCall getTableTableNameIDTerminalRuleCall_3_1_0_1() { return cTableTableNameIDTerminalRuleCall_3_1_0_1; }
 	}
 	public class TruncateTableStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.TruncateTableStatement");
@@ -762,16 +782,21 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTableAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cTableTableNameCrossReference_2_0 = (CrossReference)cTableAssignment_2.eContents().get(0);
 		private final RuleCall cTableTableNameIDTerminalRuleCall_2_0_1 = (RuleCall)cTableTableNameCrossReference_2_0.eContents().get(1);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTableAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cTableTableNameCrossReference_3_1_0 = (CrossReference)cTableAssignment_3_1.eContents().get(0);
+		private final RuleCall cTableTableNameIDTerminalRuleCall_3_1_0_1 = (RuleCall)cTableTableNameCrossReference_3_1_0.eContents().get(1);
 		
 		///*
 		// * 
 		// * Truncate Table Statement
 		// * 
 		// */ TruncateTableStatement:
-		//	"TRUNCATE" "TABLE" table+=[TableName];
+		//	"TRUNCATE" "TABLE" table+=[TableName] ("," table+=[TableName])*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"TRUNCATE" "TABLE" table+=[TableName]
+		//"TRUNCATE" "TABLE" table+=[TableName] ("," table+=[TableName])*
 		public Group getGroup() { return cGroup; }
 		
 		//"TRUNCATE"
@@ -788,6 +813,21 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getTableTableNameIDTerminalRuleCall_2_0_1() { return cTableTableNameIDTerminalRuleCall_2_0_1; }
+		
+		//("," table+=[TableName])*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//","
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		
+		//table+=[TableName]
+		public Assignment getTableAssignment_3_1() { return cTableAssignment_3_1; }
+		
+		//[TableName]
+		public CrossReference getTableTableNameCrossReference_3_1_0() { return cTableTableNameCrossReference_3_1_0; }
+		
+		//ID
+		public RuleCall getTableTableNameIDTerminalRuleCall_3_1_0_1() { return cTableTableNameIDTerminalRuleCall_3_1_0_1; }
 	}
 	public class DeleteTableStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.DeleteTableStatement");
@@ -1845,7 +1885,7 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 	// * Drop Table Statement
 	// * 
 	// */ DropTableStatement:
-	//	"DROP" "TABLE" table+=[TableName];
+	//	"DROP" "TABLE" table+=[TableName] ("," table+=[TableName])*;
 	public DropTableStatementElements getDropTableStatementAccess() {
 		return pDropTableStatement;
 	}
@@ -1859,7 +1899,7 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 	// * Truncate Table Statement
 	// * 
 	// */ TruncateTableStatement:
-	//	"TRUNCATE" "TABLE" table+=[TableName];
+	//	"TRUNCATE" "TABLE" table+=[TableName] ("," table+=[TableName])*;
 	public TruncateTableStatementElements getTruncateTableStatementAccess() {
 		return pTruncateTableStatement;
 	}

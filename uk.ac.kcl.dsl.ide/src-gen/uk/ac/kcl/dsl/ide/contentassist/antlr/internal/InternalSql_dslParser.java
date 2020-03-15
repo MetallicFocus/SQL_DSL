@@ -3642,16 +3642,6 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
             if ( (LA14_0==28) ) {
                 switch ( input.LA(2) ) {
-                case 52:
-                    {
-                    alt14=1;
-                    }
-                    break;
-                case 55:
-                    {
-                    alt14=4;
-                    }
-                    break;
                 case 53:
                     {
                     alt14=2;
@@ -3665,6 +3655,16 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
                 case 54:
                     {
                     alt14=3;
+                    }
+                    break;
+                case 52:
+                    {
+                    alt14=1;
+                    }
+                    break;
+                case 55:
+                    {
+                    alt14=4;
                     }
                     break;
                 default:
@@ -9080,17 +9080,22 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DropTableStatement__Group__2"
-    // InternalSql_dsl.g:2891:1: rule__DropTableStatement__Group__2 : rule__DropTableStatement__Group__2__Impl ;
+    // InternalSql_dsl.g:2891:1: rule__DropTableStatement__Group__2 : rule__DropTableStatement__Group__2__Impl rule__DropTableStatement__Group__3 ;
     public final void rule__DropTableStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:2895:1: ( rule__DropTableStatement__Group__2__Impl )
-            // InternalSql_dsl.g:2896:2: rule__DropTableStatement__Group__2__Impl
+            // InternalSql_dsl.g:2895:1: ( rule__DropTableStatement__Group__2__Impl rule__DropTableStatement__Group__3 )
+            // InternalSql_dsl.g:2896:2: rule__DropTableStatement__Group__2__Impl rule__DropTableStatement__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_8);
             rule__DropTableStatement__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__DropTableStatement__Group__3();
 
             state._fsp--;
 
@@ -9113,21 +9118,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DropTableStatement__Group__2__Impl"
-    // InternalSql_dsl.g:2902:1: rule__DropTableStatement__Group__2__Impl : ( ( rule__DropTableStatement__TableAssignment_2 ) ) ;
+    // InternalSql_dsl.g:2903:1: rule__DropTableStatement__Group__2__Impl : ( ( rule__DropTableStatement__TableAssignment_2 ) ) ;
     public final void rule__DropTableStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:2906:1: ( ( ( rule__DropTableStatement__TableAssignment_2 ) ) )
-            // InternalSql_dsl.g:2907:1: ( ( rule__DropTableStatement__TableAssignment_2 ) )
+            // InternalSql_dsl.g:2907:1: ( ( ( rule__DropTableStatement__TableAssignment_2 ) ) )
+            // InternalSql_dsl.g:2908:1: ( ( rule__DropTableStatement__TableAssignment_2 ) )
             {
-            // InternalSql_dsl.g:2907:1: ( ( rule__DropTableStatement__TableAssignment_2 ) )
-            // InternalSql_dsl.g:2908:2: ( rule__DropTableStatement__TableAssignment_2 )
+            // InternalSql_dsl.g:2908:1: ( ( rule__DropTableStatement__TableAssignment_2 ) )
+            // InternalSql_dsl.g:2909:2: ( rule__DropTableStatement__TableAssignment_2 )
             {
              before(grammarAccess.getDropTableStatementAccess().getTableAssignment_2()); 
-            // InternalSql_dsl.g:2909:2: ( rule__DropTableStatement__TableAssignment_2 )
-            // InternalSql_dsl.g:2909:3: rule__DropTableStatement__TableAssignment_2
+            // InternalSql_dsl.g:2910:2: ( rule__DropTableStatement__TableAssignment_2 )
+            // InternalSql_dsl.g:2910:3: rule__DropTableStatement__TableAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__DropTableStatement__TableAssignment_2();
@@ -9159,15 +9164,268 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__DropTableStatement__Group__2__Impl"
 
 
+    // $ANTLR start "rule__DropTableStatement__Group__3"
+    // InternalSql_dsl.g:2918:1: rule__DropTableStatement__Group__3 : rule__DropTableStatement__Group__3__Impl ;
+    public final void rule__DropTableStatement__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:2922:1: ( rule__DropTableStatement__Group__3__Impl )
+            // InternalSql_dsl.g:2923:2: rule__DropTableStatement__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__DropTableStatement__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DropTableStatement__Group__3"
+
+
+    // $ANTLR start "rule__DropTableStatement__Group__3__Impl"
+    // InternalSql_dsl.g:2929:1: rule__DropTableStatement__Group__3__Impl : ( ( rule__DropTableStatement__Group_3__0 )* ) ;
+    public final void rule__DropTableStatement__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:2933:1: ( ( ( rule__DropTableStatement__Group_3__0 )* ) )
+            // InternalSql_dsl.g:2934:1: ( ( rule__DropTableStatement__Group_3__0 )* )
+            {
+            // InternalSql_dsl.g:2934:1: ( ( rule__DropTableStatement__Group_3__0 )* )
+            // InternalSql_dsl.g:2935:2: ( rule__DropTableStatement__Group_3__0 )*
+            {
+             before(grammarAccess.getDropTableStatementAccess().getGroup_3()); 
+            // InternalSql_dsl.g:2936:2: ( rule__DropTableStatement__Group_3__0 )*
+            loop25:
+            do {
+                int alt25=2;
+                int LA25_0 = input.LA(1);
+
+                if ( (LA25_0==29) ) {
+                    alt25=1;
+                }
+
+
+                switch (alt25) {
+            	case 1 :
+            	    // InternalSql_dsl.g:2936:3: rule__DropTableStatement__Group_3__0
+            	    {
+            	    pushFollow(FOLLOW_9);
+            	    rule__DropTableStatement__Group_3__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop25;
+                }
+            } while (true);
+
+             after(grammarAccess.getDropTableStatementAccess().getGroup_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DropTableStatement__Group__3__Impl"
+
+
+    // $ANTLR start "rule__DropTableStatement__Group_3__0"
+    // InternalSql_dsl.g:2945:1: rule__DropTableStatement__Group_3__0 : rule__DropTableStatement__Group_3__0__Impl rule__DropTableStatement__Group_3__1 ;
+    public final void rule__DropTableStatement__Group_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:2949:1: ( rule__DropTableStatement__Group_3__0__Impl rule__DropTableStatement__Group_3__1 )
+            // InternalSql_dsl.g:2950:2: rule__DropTableStatement__Group_3__0__Impl rule__DropTableStatement__Group_3__1
+            {
+            pushFollow(FOLLOW_10);
+            rule__DropTableStatement__Group_3__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__DropTableStatement__Group_3__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DropTableStatement__Group_3__0"
+
+
+    // $ANTLR start "rule__DropTableStatement__Group_3__0__Impl"
+    // InternalSql_dsl.g:2957:1: rule__DropTableStatement__Group_3__0__Impl : ( ',' ) ;
+    public final void rule__DropTableStatement__Group_3__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:2961:1: ( ( ',' ) )
+            // InternalSql_dsl.g:2962:1: ( ',' )
+            {
+            // InternalSql_dsl.g:2962:1: ( ',' )
+            // InternalSql_dsl.g:2963:2: ','
+            {
+             before(grammarAccess.getDropTableStatementAccess().getCommaKeyword_3_0()); 
+            match(input,29,FOLLOW_2); 
+             after(grammarAccess.getDropTableStatementAccess().getCommaKeyword_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DropTableStatement__Group_3__0__Impl"
+
+
+    // $ANTLR start "rule__DropTableStatement__Group_3__1"
+    // InternalSql_dsl.g:2972:1: rule__DropTableStatement__Group_3__1 : rule__DropTableStatement__Group_3__1__Impl ;
+    public final void rule__DropTableStatement__Group_3__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:2976:1: ( rule__DropTableStatement__Group_3__1__Impl )
+            // InternalSql_dsl.g:2977:2: rule__DropTableStatement__Group_3__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__DropTableStatement__Group_3__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DropTableStatement__Group_3__1"
+
+
+    // $ANTLR start "rule__DropTableStatement__Group_3__1__Impl"
+    // InternalSql_dsl.g:2983:1: rule__DropTableStatement__Group_3__1__Impl : ( ( rule__DropTableStatement__TableAssignment_3_1 ) ) ;
+    public final void rule__DropTableStatement__Group_3__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:2987:1: ( ( ( rule__DropTableStatement__TableAssignment_3_1 ) ) )
+            // InternalSql_dsl.g:2988:1: ( ( rule__DropTableStatement__TableAssignment_3_1 ) )
+            {
+            // InternalSql_dsl.g:2988:1: ( ( rule__DropTableStatement__TableAssignment_3_1 ) )
+            // InternalSql_dsl.g:2989:2: ( rule__DropTableStatement__TableAssignment_3_1 )
+            {
+             before(grammarAccess.getDropTableStatementAccess().getTableAssignment_3_1()); 
+            // InternalSql_dsl.g:2990:2: ( rule__DropTableStatement__TableAssignment_3_1 )
+            // InternalSql_dsl.g:2990:3: rule__DropTableStatement__TableAssignment_3_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__DropTableStatement__TableAssignment_3_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDropTableStatementAccess().getTableAssignment_3_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DropTableStatement__Group_3__1__Impl"
+
+
     // $ANTLR start "rule__TruncateTableStatement__Group__0"
-    // InternalSql_dsl.g:2918:1: rule__TruncateTableStatement__Group__0 : rule__TruncateTableStatement__Group__0__Impl rule__TruncateTableStatement__Group__1 ;
+    // InternalSql_dsl.g:2999:1: rule__TruncateTableStatement__Group__0 : rule__TruncateTableStatement__Group__0__Impl rule__TruncateTableStatement__Group__1 ;
     public final void rule__TruncateTableStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:2922:1: ( rule__TruncateTableStatement__Group__0__Impl rule__TruncateTableStatement__Group__1 )
-            // InternalSql_dsl.g:2923:2: rule__TruncateTableStatement__Group__0__Impl rule__TruncateTableStatement__Group__1
+            // InternalSql_dsl.g:3003:1: ( rule__TruncateTableStatement__Group__0__Impl rule__TruncateTableStatement__Group__1 )
+            // InternalSql_dsl.g:3004:2: rule__TruncateTableStatement__Group__0__Impl rule__TruncateTableStatement__Group__1
             {
             pushFollow(FOLLOW_18);
             rule__TruncateTableStatement__Group__0__Impl();
@@ -9198,17 +9456,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TruncateTableStatement__Group__0__Impl"
-    // InternalSql_dsl.g:2930:1: rule__TruncateTableStatement__Group__0__Impl : ( 'TRUNCATE' ) ;
+    // InternalSql_dsl.g:3011:1: rule__TruncateTableStatement__Group__0__Impl : ( 'TRUNCATE' ) ;
     public final void rule__TruncateTableStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:2934:1: ( ( 'TRUNCATE' ) )
-            // InternalSql_dsl.g:2935:1: ( 'TRUNCATE' )
+            // InternalSql_dsl.g:3015:1: ( ( 'TRUNCATE' ) )
+            // InternalSql_dsl.g:3016:1: ( 'TRUNCATE' )
             {
-            // InternalSql_dsl.g:2935:1: ( 'TRUNCATE' )
-            // InternalSql_dsl.g:2936:2: 'TRUNCATE'
+            // InternalSql_dsl.g:3016:1: ( 'TRUNCATE' )
+            // InternalSql_dsl.g:3017:2: 'TRUNCATE'
             {
              before(grammarAccess.getTruncateTableStatementAccess().getTRUNCATEKeyword_0()); 
             match(input,43,FOLLOW_2); 
@@ -9235,14 +9493,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TruncateTableStatement__Group__1"
-    // InternalSql_dsl.g:2945:1: rule__TruncateTableStatement__Group__1 : rule__TruncateTableStatement__Group__1__Impl rule__TruncateTableStatement__Group__2 ;
+    // InternalSql_dsl.g:3026:1: rule__TruncateTableStatement__Group__1 : rule__TruncateTableStatement__Group__1__Impl rule__TruncateTableStatement__Group__2 ;
     public final void rule__TruncateTableStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:2949:1: ( rule__TruncateTableStatement__Group__1__Impl rule__TruncateTableStatement__Group__2 )
-            // InternalSql_dsl.g:2950:2: rule__TruncateTableStatement__Group__1__Impl rule__TruncateTableStatement__Group__2
+            // InternalSql_dsl.g:3030:1: ( rule__TruncateTableStatement__Group__1__Impl rule__TruncateTableStatement__Group__2 )
+            // InternalSql_dsl.g:3031:2: rule__TruncateTableStatement__Group__1__Impl rule__TruncateTableStatement__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__TruncateTableStatement__Group__1__Impl();
@@ -9273,17 +9531,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TruncateTableStatement__Group__1__Impl"
-    // InternalSql_dsl.g:2957:1: rule__TruncateTableStatement__Group__1__Impl : ( 'TABLE' ) ;
+    // InternalSql_dsl.g:3038:1: rule__TruncateTableStatement__Group__1__Impl : ( 'TABLE' ) ;
     public final void rule__TruncateTableStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:2961:1: ( ( 'TABLE' ) )
-            // InternalSql_dsl.g:2962:1: ( 'TABLE' )
+            // InternalSql_dsl.g:3042:1: ( ( 'TABLE' ) )
+            // InternalSql_dsl.g:3043:1: ( 'TABLE' )
             {
-            // InternalSql_dsl.g:2962:1: ( 'TABLE' )
-            // InternalSql_dsl.g:2963:2: 'TABLE'
+            // InternalSql_dsl.g:3043:1: ( 'TABLE' )
+            // InternalSql_dsl.g:3044:2: 'TABLE'
             {
              before(grammarAccess.getTruncateTableStatementAccess().getTABLEKeyword_1()); 
             match(input,35,FOLLOW_2); 
@@ -9310,17 +9568,22 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TruncateTableStatement__Group__2"
-    // InternalSql_dsl.g:2972:1: rule__TruncateTableStatement__Group__2 : rule__TruncateTableStatement__Group__2__Impl ;
+    // InternalSql_dsl.g:3053:1: rule__TruncateTableStatement__Group__2 : rule__TruncateTableStatement__Group__2__Impl rule__TruncateTableStatement__Group__3 ;
     public final void rule__TruncateTableStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:2976:1: ( rule__TruncateTableStatement__Group__2__Impl )
-            // InternalSql_dsl.g:2977:2: rule__TruncateTableStatement__Group__2__Impl
+            // InternalSql_dsl.g:3057:1: ( rule__TruncateTableStatement__Group__2__Impl rule__TruncateTableStatement__Group__3 )
+            // InternalSql_dsl.g:3058:2: rule__TruncateTableStatement__Group__2__Impl rule__TruncateTableStatement__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_8);
             rule__TruncateTableStatement__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__TruncateTableStatement__Group__3();
 
             state._fsp--;
 
@@ -9343,21 +9606,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TruncateTableStatement__Group__2__Impl"
-    // InternalSql_dsl.g:2983:1: rule__TruncateTableStatement__Group__2__Impl : ( ( rule__TruncateTableStatement__TableAssignment_2 ) ) ;
+    // InternalSql_dsl.g:3065:1: rule__TruncateTableStatement__Group__2__Impl : ( ( rule__TruncateTableStatement__TableAssignment_2 ) ) ;
     public final void rule__TruncateTableStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:2987:1: ( ( ( rule__TruncateTableStatement__TableAssignment_2 ) ) )
-            // InternalSql_dsl.g:2988:1: ( ( rule__TruncateTableStatement__TableAssignment_2 ) )
+            // InternalSql_dsl.g:3069:1: ( ( ( rule__TruncateTableStatement__TableAssignment_2 ) ) )
+            // InternalSql_dsl.g:3070:1: ( ( rule__TruncateTableStatement__TableAssignment_2 ) )
             {
-            // InternalSql_dsl.g:2988:1: ( ( rule__TruncateTableStatement__TableAssignment_2 ) )
-            // InternalSql_dsl.g:2989:2: ( rule__TruncateTableStatement__TableAssignment_2 )
+            // InternalSql_dsl.g:3070:1: ( ( rule__TruncateTableStatement__TableAssignment_2 ) )
+            // InternalSql_dsl.g:3071:2: ( rule__TruncateTableStatement__TableAssignment_2 )
             {
              before(grammarAccess.getTruncateTableStatementAccess().getTableAssignment_2()); 
-            // InternalSql_dsl.g:2990:2: ( rule__TruncateTableStatement__TableAssignment_2 )
-            // InternalSql_dsl.g:2990:3: rule__TruncateTableStatement__TableAssignment_2
+            // InternalSql_dsl.g:3072:2: ( rule__TruncateTableStatement__TableAssignment_2 )
+            // InternalSql_dsl.g:3072:3: rule__TruncateTableStatement__TableAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__TruncateTableStatement__TableAssignment_2();
@@ -9389,15 +9652,268 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__TruncateTableStatement__Group__2__Impl"
 
 
+    // $ANTLR start "rule__TruncateTableStatement__Group__3"
+    // InternalSql_dsl.g:3080:1: rule__TruncateTableStatement__Group__3 : rule__TruncateTableStatement__Group__3__Impl ;
+    public final void rule__TruncateTableStatement__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:3084:1: ( rule__TruncateTableStatement__Group__3__Impl )
+            // InternalSql_dsl.g:3085:2: rule__TruncateTableStatement__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__TruncateTableStatement__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TruncateTableStatement__Group__3"
+
+
+    // $ANTLR start "rule__TruncateTableStatement__Group__3__Impl"
+    // InternalSql_dsl.g:3091:1: rule__TruncateTableStatement__Group__3__Impl : ( ( rule__TruncateTableStatement__Group_3__0 )* ) ;
+    public final void rule__TruncateTableStatement__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:3095:1: ( ( ( rule__TruncateTableStatement__Group_3__0 )* ) )
+            // InternalSql_dsl.g:3096:1: ( ( rule__TruncateTableStatement__Group_3__0 )* )
+            {
+            // InternalSql_dsl.g:3096:1: ( ( rule__TruncateTableStatement__Group_3__0 )* )
+            // InternalSql_dsl.g:3097:2: ( rule__TruncateTableStatement__Group_3__0 )*
+            {
+             before(grammarAccess.getTruncateTableStatementAccess().getGroup_3()); 
+            // InternalSql_dsl.g:3098:2: ( rule__TruncateTableStatement__Group_3__0 )*
+            loop26:
+            do {
+                int alt26=2;
+                int LA26_0 = input.LA(1);
+
+                if ( (LA26_0==29) ) {
+                    alt26=1;
+                }
+
+
+                switch (alt26) {
+            	case 1 :
+            	    // InternalSql_dsl.g:3098:3: rule__TruncateTableStatement__Group_3__0
+            	    {
+            	    pushFollow(FOLLOW_9);
+            	    rule__TruncateTableStatement__Group_3__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop26;
+                }
+            } while (true);
+
+             after(grammarAccess.getTruncateTableStatementAccess().getGroup_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TruncateTableStatement__Group__3__Impl"
+
+
+    // $ANTLR start "rule__TruncateTableStatement__Group_3__0"
+    // InternalSql_dsl.g:3107:1: rule__TruncateTableStatement__Group_3__0 : rule__TruncateTableStatement__Group_3__0__Impl rule__TruncateTableStatement__Group_3__1 ;
+    public final void rule__TruncateTableStatement__Group_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:3111:1: ( rule__TruncateTableStatement__Group_3__0__Impl rule__TruncateTableStatement__Group_3__1 )
+            // InternalSql_dsl.g:3112:2: rule__TruncateTableStatement__Group_3__0__Impl rule__TruncateTableStatement__Group_3__1
+            {
+            pushFollow(FOLLOW_10);
+            rule__TruncateTableStatement__Group_3__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__TruncateTableStatement__Group_3__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TruncateTableStatement__Group_3__0"
+
+
+    // $ANTLR start "rule__TruncateTableStatement__Group_3__0__Impl"
+    // InternalSql_dsl.g:3119:1: rule__TruncateTableStatement__Group_3__0__Impl : ( ',' ) ;
+    public final void rule__TruncateTableStatement__Group_3__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:3123:1: ( ( ',' ) )
+            // InternalSql_dsl.g:3124:1: ( ',' )
+            {
+            // InternalSql_dsl.g:3124:1: ( ',' )
+            // InternalSql_dsl.g:3125:2: ','
+            {
+             before(grammarAccess.getTruncateTableStatementAccess().getCommaKeyword_3_0()); 
+            match(input,29,FOLLOW_2); 
+             after(grammarAccess.getTruncateTableStatementAccess().getCommaKeyword_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TruncateTableStatement__Group_3__0__Impl"
+
+
+    // $ANTLR start "rule__TruncateTableStatement__Group_3__1"
+    // InternalSql_dsl.g:3134:1: rule__TruncateTableStatement__Group_3__1 : rule__TruncateTableStatement__Group_3__1__Impl ;
+    public final void rule__TruncateTableStatement__Group_3__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:3138:1: ( rule__TruncateTableStatement__Group_3__1__Impl )
+            // InternalSql_dsl.g:3139:2: rule__TruncateTableStatement__Group_3__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__TruncateTableStatement__Group_3__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TruncateTableStatement__Group_3__1"
+
+
+    // $ANTLR start "rule__TruncateTableStatement__Group_3__1__Impl"
+    // InternalSql_dsl.g:3145:1: rule__TruncateTableStatement__Group_3__1__Impl : ( ( rule__TruncateTableStatement__TableAssignment_3_1 ) ) ;
+    public final void rule__TruncateTableStatement__Group_3__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:3149:1: ( ( ( rule__TruncateTableStatement__TableAssignment_3_1 ) ) )
+            // InternalSql_dsl.g:3150:1: ( ( rule__TruncateTableStatement__TableAssignment_3_1 ) )
+            {
+            // InternalSql_dsl.g:3150:1: ( ( rule__TruncateTableStatement__TableAssignment_3_1 ) )
+            // InternalSql_dsl.g:3151:2: ( rule__TruncateTableStatement__TableAssignment_3_1 )
+            {
+             before(grammarAccess.getTruncateTableStatementAccess().getTableAssignment_3_1()); 
+            // InternalSql_dsl.g:3152:2: ( rule__TruncateTableStatement__TableAssignment_3_1 )
+            // InternalSql_dsl.g:3152:3: rule__TruncateTableStatement__TableAssignment_3_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__TruncateTableStatement__TableAssignment_3_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTruncateTableStatementAccess().getTableAssignment_3_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TruncateTableStatement__Group_3__1__Impl"
+
+
     // $ANTLR start "rule__DeleteTableStatement__Group__0"
-    // InternalSql_dsl.g:2999:1: rule__DeleteTableStatement__Group__0 : rule__DeleteTableStatement__Group__0__Impl rule__DeleteTableStatement__Group__1 ;
+    // InternalSql_dsl.g:3161:1: rule__DeleteTableStatement__Group__0 : rule__DeleteTableStatement__Group__0__Impl rule__DeleteTableStatement__Group__1 ;
     public final void rule__DeleteTableStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3003:1: ( rule__DeleteTableStatement__Group__0__Impl rule__DeleteTableStatement__Group__1 )
-            // InternalSql_dsl.g:3004:2: rule__DeleteTableStatement__Group__0__Impl rule__DeleteTableStatement__Group__1
+            // InternalSql_dsl.g:3165:1: ( rule__DeleteTableStatement__Group__0__Impl rule__DeleteTableStatement__Group__1 )
+            // InternalSql_dsl.g:3166:2: rule__DeleteTableStatement__Group__0__Impl rule__DeleteTableStatement__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__DeleteTableStatement__Group__0__Impl();
@@ -9428,17 +9944,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeleteTableStatement__Group__0__Impl"
-    // InternalSql_dsl.g:3011:1: rule__DeleteTableStatement__Group__0__Impl : ( 'DELETE' ) ;
+    // InternalSql_dsl.g:3173:1: rule__DeleteTableStatement__Group__0__Impl : ( 'DELETE' ) ;
     public final void rule__DeleteTableStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3015:1: ( ( 'DELETE' ) )
-            // InternalSql_dsl.g:3016:1: ( 'DELETE' )
+            // InternalSql_dsl.g:3177:1: ( ( 'DELETE' ) )
+            // InternalSql_dsl.g:3178:1: ( 'DELETE' )
             {
-            // InternalSql_dsl.g:3016:1: ( 'DELETE' )
-            // InternalSql_dsl.g:3017:2: 'DELETE'
+            // InternalSql_dsl.g:3178:1: ( 'DELETE' )
+            // InternalSql_dsl.g:3179:2: 'DELETE'
             {
              before(grammarAccess.getDeleteTableStatementAccess().getDELETEKeyword_0()); 
             match(input,44,FOLLOW_2); 
@@ -9465,14 +9981,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeleteTableStatement__Group__1"
-    // InternalSql_dsl.g:3026:1: rule__DeleteTableStatement__Group__1 : rule__DeleteTableStatement__Group__1__Impl ;
+    // InternalSql_dsl.g:3188:1: rule__DeleteTableStatement__Group__1 : rule__DeleteTableStatement__Group__1__Impl ;
     public final void rule__DeleteTableStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3030:1: ( rule__DeleteTableStatement__Group__1__Impl )
-            // InternalSql_dsl.g:3031:2: rule__DeleteTableStatement__Group__1__Impl
+            // InternalSql_dsl.g:3192:1: ( rule__DeleteTableStatement__Group__1__Impl )
+            // InternalSql_dsl.g:3193:2: rule__DeleteTableStatement__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DeleteTableStatement__Group__1__Impl();
@@ -9498,21 +10014,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeleteTableStatement__Group__1__Impl"
-    // InternalSql_dsl.g:3037:1: rule__DeleteTableStatement__Group__1__Impl : ( ( rule__DeleteTableStatement__XAssignment_1 ) ) ;
+    // InternalSql_dsl.g:3199:1: rule__DeleteTableStatement__Group__1__Impl : ( ( rule__DeleteTableStatement__XAssignment_1 ) ) ;
     public final void rule__DeleteTableStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3041:1: ( ( ( rule__DeleteTableStatement__XAssignment_1 ) ) )
-            // InternalSql_dsl.g:3042:1: ( ( rule__DeleteTableStatement__XAssignment_1 ) )
+            // InternalSql_dsl.g:3203:1: ( ( ( rule__DeleteTableStatement__XAssignment_1 ) ) )
+            // InternalSql_dsl.g:3204:1: ( ( rule__DeleteTableStatement__XAssignment_1 ) )
             {
-            // InternalSql_dsl.g:3042:1: ( ( rule__DeleteTableStatement__XAssignment_1 ) )
-            // InternalSql_dsl.g:3043:2: ( rule__DeleteTableStatement__XAssignment_1 )
+            // InternalSql_dsl.g:3204:1: ( ( rule__DeleteTableStatement__XAssignment_1 ) )
+            // InternalSql_dsl.g:3205:2: ( rule__DeleteTableStatement__XAssignment_1 )
             {
              before(grammarAccess.getDeleteTableStatementAccess().getXAssignment_1()); 
-            // InternalSql_dsl.g:3044:2: ( rule__DeleteTableStatement__XAssignment_1 )
-            // InternalSql_dsl.g:3044:3: rule__DeleteTableStatement__XAssignment_1
+            // InternalSql_dsl.g:3206:2: ( rule__DeleteTableStatement__XAssignment_1 )
+            // InternalSql_dsl.g:3206:3: rule__DeleteTableStatement__XAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__DeleteTableStatement__XAssignment_1();
@@ -9545,14 +10061,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group__0"
-    // InternalSql_dsl.g:3053:1: rule__UpdateTableStatement__Group__0 : rule__UpdateTableStatement__Group__0__Impl rule__UpdateTableStatement__Group__1 ;
+    // InternalSql_dsl.g:3215:1: rule__UpdateTableStatement__Group__0 : rule__UpdateTableStatement__Group__0__Impl rule__UpdateTableStatement__Group__1 ;
     public final void rule__UpdateTableStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3057:1: ( rule__UpdateTableStatement__Group__0__Impl rule__UpdateTableStatement__Group__1 )
-            // InternalSql_dsl.g:3058:2: rule__UpdateTableStatement__Group__0__Impl rule__UpdateTableStatement__Group__1
+            // InternalSql_dsl.g:3219:1: ( rule__UpdateTableStatement__Group__0__Impl rule__UpdateTableStatement__Group__1 )
+            // InternalSql_dsl.g:3220:2: rule__UpdateTableStatement__Group__0__Impl rule__UpdateTableStatement__Group__1
             {
             pushFollow(FOLLOW_10);
             rule__UpdateTableStatement__Group__0__Impl();
@@ -9583,17 +10099,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group__0__Impl"
-    // InternalSql_dsl.g:3065:1: rule__UpdateTableStatement__Group__0__Impl : ( 'UPDATE' ) ;
+    // InternalSql_dsl.g:3227:1: rule__UpdateTableStatement__Group__0__Impl : ( 'UPDATE' ) ;
     public final void rule__UpdateTableStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3069:1: ( ( 'UPDATE' ) )
-            // InternalSql_dsl.g:3070:1: ( 'UPDATE' )
+            // InternalSql_dsl.g:3231:1: ( ( 'UPDATE' ) )
+            // InternalSql_dsl.g:3232:1: ( 'UPDATE' )
             {
-            // InternalSql_dsl.g:3070:1: ( 'UPDATE' )
-            // InternalSql_dsl.g:3071:2: 'UPDATE'
+            // InternalSql_dsl.g:3232:1: ( 'UPDATE' )
+            // InternalSql_dsl.g:3233:2: 'UPDATE'
             {
              before(grammarAccess.getUpdateTableStatementAccess().getUPDATEKeyword_0()); 
             match(input,45,FOLLOW_2); 
@@ -9620,14 +10136,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group__1"
-    // InternalSql_dsl.g:3080:1: rule__UpdateTableStatement__Group__1 : rule__UpdateTableStatement__Group__1__Impl rule__UpdateTableStatement__Group__2 ;
+    // InternalSql_dsl.g:3242:1: rule__UpdateTableStatement__Group__1 : rule__UpdateTableStatement__Group__1__Impl rule__UpdateTableStatement__Group__2 ;
     public final void rule__UpdateTableStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3084:1: ( rule__UpdateTableStatement__Group__1__Impl rule__UpdateTableStatement__Group__2 )
-            // InternalSql_dsl.g:3085:2: rule__UpdateTableStatement__Group__1__Impl rule__UpdateTableStatement__Group__2
+            // InternalSql_dsl.g:3246:1: ( rule__UpdateTableStatement__Group__1__Impl rule__UpdateTableStatement__Group__2 )
+            // InternalSql_dsl.g:3247:2: rule__UpdateTableStatement__Group__1__Impl rule__UpdateTableStatement__Group__2
             {
             pushFollow(FOLLOW_27);
             rule__UpdateTableStatement__Group__1__Impl();
@@ -9658,21 +10174,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group__1__Impl"
-    // InternalSql_dsl.g:3092:1: rule__UpdateTableStatement__Group__1__Impl : ( ( rule__UpdateTableStatement__TableAssignment_1 ) ) ;
+    // InternalSql_dsl.g:3254:1: rule__UpdateTableStatement__Group__1__Impl : ( ( rule__UpdateTableStatement__TableAssignment_1 ) ) ;
     public final void rule__UpdateTableStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3096:1: ( ( ( rule__UpdateTableStatement__TableAssignment_1 ) ) )
-            // InternalSql_dsl.g:3097:1: ( ( rule__UpdateTableStatement__TableAssignment_1 ) )
+            // InternalSql_dsl.g:3258:1: ( ( ( rule__UpdateTableStatement__TableAssignment_1 ) ) )
+            // InternalSql_dsl.g:3259:1: ( ( rule__UpdateTableStatement__TableAssignment_1 ) )
             {
-            // InternalSql_dsl.g:3097:1: ( ( rule__UpdateTableStatement__TableAssignment_1 ) )
-            // InternalSql_dsl.g:3098:2: ( rule__UpdateTableStatement__TableAssignment_1 )
+            // InternalSql_dsl.g:3259:1: ( ( rule__UpdateTableStatement__TableAssignment_1 ) )
+            // InternalSql_dsl.g:3260:2: ( rule__UpdateTableStatement__TableAssignment_1 )
             {
              before(grammarAccess.getUpdateTableStatementAccess().getTableAssignment_1()); 
-            // InternalSql_dsl.g:3099:2: ( rule__UpdateTableStatement__TableAssignment_1 )
-            // InternalSql_dsl.g:3099:3: rule__UpdateTableStatement__TableAssignment_1
+            // InternalSql_dsl.g:3261:2: ( rule__UpdateTableStatement__TableAssignment_1 )
+            // InternalSql_dsl.g:3261:3: rule__UpdateTableStatement__TableAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__UpdateTableStatement__TableAssignment_1();
@@ -9705,14 +10221,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group__2"
-    // InternalSql_dsl.g:3107:1: rule__UpdateTableStatement__Group__2 : rule__UpdateTableStatement__Group__2__Impl rule__UpdateTableStatement__Group__3 ;
+    // InternalSql_dsl.g:3269:1: rule__UpdateTableStatement__Group__2 : rule__UpdateTableStatement__Group__2__Impl rule__UpdateTableStatement__Group__3 ;
     public final void rule__UpdateTableStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3111:1: ( rule__UpdateTableStatement__Group__2__Impl rule__UpdateTableStatement__Group__3 )
-            // InternalSql_dsl.g:3112:2: rule__UpdateTableStatement__Group__2__Impl rule__UpdateTableStatement__Group__3
+            // InternalSql_dsl.g:3273:1: ( rule__UpdateTableStatement__Group__2__Impl rule__UpdateTableStatement__Group__3 )
+            // InternalSql_dsl.g:3274:2: rule__UpdateTableStatement__Group__2__Impl rule__UpdateTableStatement__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__UpdateTableStatement__Group__2__Impl();
@@ -9743,17 +10259,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group__2__Impl"
-    // InternalSql_dsl.g:3119:1: rule__UpdateTableStatement__Group__2__Impl : ( 'SET' ) ;
+    // InternalSql_dsl.g:3281:1: rule__UpdateTableStatement__Group__2__Impl : ( 'SET' ) ;
     public final void rule__UpdateTableStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3123:1: ( ( 'SET' ) )
-            // InternalSql_dsl.g:3124:1: ( 'SET' )
+            // InternalSql_dsl.g:3285:1: ( ( 'SET' ) )
+            // InternalSql_dsl.g:3286:1: ( 'SET' )
             {
-            // InternalSql_dsl.g:3124:1: ( 'SET' )
-            // InternalSql_dsl.g:3125:2: 'SET'
+            // InternalSql_dsl.g:3286:1: ( 'SET' )
+            // InternalSql_dsl.g:3287:2: 'SET'
             {
              before(grammarAccess.getUpdateTableStatementAccess().getSETKeyword_2()); 
             match(input,46,FOLLOW_2); 
@@ -9780,14 +10296,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group__3"
-    // InternalSql_dsl.g:3134:1: rule__UpdateTableStatement__Group__3 : rule__UpdateTableStatement__Group__3__Impl rule__UpdateTableStatement__Group__4 ;
+    // InternalSql_dsl.g:3296:1: rule__UpdateTableStatement__Group__3 : rule__UpdateTableStatement__Group__3__Impl rule__UpdateTableStatement__Group__4 ;
     public final void rule__UpdateTableStatement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3138:1: ( rule__UpdateTableStatement__Group__3__Impl rule__UpdateTableStatement__Group__4 )
-            // InternalSql_dsl.g:3139:2: rule__UpdateTableStatement__Group__3__Impl rule__UpdateTableStatement__Group__4
+            // InternalSql_dsl.g:3300:1: ( rule__UpdateTableStatement__Group__3__Impl rule__UpdateTableStatement__Group__4 )
+            // InternalSql_dsl.g:3301:2: rule__UpdateTableStatement__Group__3__Impl rule__UpdateTableStatement__Group__4
             {
             pushFollow(FOLLOW_28);
             rule__UpdateTableStatement__Group__3__Impl();
@@ -9818,21 +10334,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group__3__Impl"
-    // InternalSql_dsl.g:3146:1: rule__UpdateTableStatement__Group__3__Impl : ( ( rule__UpdateTableStatement__ScAssignment_3 ) ) ;
+    // InternalSql_dsl.g:3308:1: rule__UpdateTableStatement__Group__3__Impl : ( ( rule__UpdateTableStatement__ScAssignment_3 ) ) ;
     public final void rule__UpdateTableStatement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3150:1: ( ( ( rule__UpdateTableStatement__ScAssignment_3 ) ) )
-            // InternalSql_dsl.g:3151:1: ( ( rule__UpdateTableStatement__ScAssignment_3 ) )
+            // InternalSql_dsl.g:3312:1: ( ( ( rule__UpdateTableStatement__ScAssignment_3 ) ) )
+            // InternalSql_dsl.g:3313:1: ( ( rule__UpdateTableStatement__ScAssignment_3 ) )
             {
-            // InternalSql_dsl.g:3151:1: ( ( rule__UpdateTableStatement__ScAssignment_3 ) )
-            // InternalSql_dsl.g:3152:2: ( rule__UpdateTableStatement__ScAssignment_3 )
+            // InternalSql_dsl.g:3313:1: ( ( rule__UpdateTableStatement__ScAssignment_3 ) )
+            // InternalSql_dsl.g:3314:2: ( rule__UpdateTableStatement__ScAssignment_3 )
             {
              before(grammarAccess.getUpdateTableStatementAccess().getScAssignment_3()); 
-            // InternalSql_dsl.g:3153:2: ( rule__UpdateTableStatement__ScAssignment_3 )
-            // InternalSql_dsl.g:3153:3: rule__UpdateTableStatement__ScAssignment_3
+            // InternalSql_dsl.g:3315:2: ( rule__UpdateTableStatement__ScAssignment_3 )
+            // InternalSql_dsl.g:3315:3: rule__UpdateTableStatement__ScAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__UpdateTableStatement__ScAssignment_3();
@@ -9865,14 +10381,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group__4"
-    // InternalSql_dsl.g:3161:1: rule__UpdateTableStatement__Group__4 : rule__UpdateTableStatement__Group__4__Impl rule__UpdateTableStatement__Group__5 ;
+    // InternalSql_dsl.g:3323:1: rule__UpdateTableStatement__Group__4 : rule__UpdateTableStatement__Group__4__Impl rule__UpdateTableStatement__Group__5 ;
     public final void rule__UpdateTableStatement__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3165:1: ( rule__UpdateTableStatement__Group__4__Impl rule__UpdateTableStatement__Group__5 )
-            // InternalSql_dsl.g:3166:2: rule__UpdateTableStatement__Group__4__Impl rule__UpdateTableStatement__Group__5
+            // InternalSql_dsl.g:3327:1: ( rule__UpdateTableStatement__Group__4__Impl rule__UpdateTableStatement__Group__5 )
+            // InternalSql_dsl.g:3328:2: rule__UpdateTableStatement__Group__4__Impl rule__UpdateTableStatement__Group__5
             {
             pushFollow(FOLLOW_28);
             rule__UpdateTableStatement__Group__4__Impl();
@@ -9903,33 +10419,33 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group__4__Impl"
-    // InternalSql_dsl.g:3173:1: rule__UpdateTableStatement__Group__4__Impl : ( ( rule__UpdateTableStatement__Group_4__0 )* ) ;
+    // InternalSql_dsl.g:3335:1: rule__UpdateTableStatement__Group__4__Impl : ( ( rule__UpdateTableStatement__Group_4__0 )* ) ;
     public final void rule__UpdateTableStatement__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3177:1: ( ( ( rule__UpdateTableStatement__Group_4__0 )* ) )
-            // InternalSql_dsl.g:3178:1: ( ( rule__UpdateTableStatement__Group_4__0 )* )
+            // InternalSql_dsl.g:3339:1: ( ( ( rule__UpdateTableStatement__Group_4__0 )* ) )
+            // InternalSql_dsl.g:3340:1: ( ( rule__UpdateTableStatement__Group_4__0 )* )
             {
-            // InternalSql_dsl.g:3178:1: ( ( rule__UpdateTableStatement__Group_4__0 )* )
-            // InternalSql_dsl.g:3179:2: ( rule__UpdateTableStatement__Group_4__0 )*
+            // InternalSql_dsl.g:3340:1: ( ( rule__UpdateTableStatement__Group_4__0 )* )
+            // InternalSql_dsl.g:3341:2: ( rule__UpdateTableStatement__Group_4__0 )*
             {
              before(grammarAccess.getUpdateTableStatementAccess().getGroup_4()); 
-            // InternalSql_dsl.g:3180:2: ( rule__UpdateTableStatement__Group_4__0 )*
-            loop25:
+            // InternalSql_dsl.g:3342:2: ( rule__UpdateTableStatement__Group_4__0 )*
+            loop27:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( (LA25_0==29) ) {
-                    alt25=1;
+                if ( (LA27_0==29) ) {
+                    alt27=1;
                 }
 
 
-                switch (alt25) {
+                switch (alt27) {
             	case 1 :
-            	    // InternalSql_dsl.g:3180:3: rule__UpdateTableStatement__Group_4__0
+            	    // InternalSql_dsl.g:3342:3: rule__UpdateTableStatement__Group_4__0
             	    {
             	    pushFollow(FOLLOW_9);
             	    rule__UpdateTableStatement__Group_4__0();
@@ -9941,7 +10457,7 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop27;
                 }
             } while (true);
 
@@ -9968,14 +10484,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group__5"
-    // InternalSql_dsl.g:3188:1: rule__UpdateTableStatement__Group__5 : rule__UpdateTableStatement__Group__5__Impl ;
+    // InternalSql_dsl.g:3350:1: rule__UpdateTableStatement__Group__5 : rule__UpdateTableStatement__Group__5__Impl ;
     public final void rule__UpdateTableStatement__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3192:1: ( rule__UpdateTableStatement__Group__5__Impl )
-            // InternalSql_dsl.g:3193:2: rule__UpdateTableStatement__Group__5__Impl
+            // InternalSql_dsl.g:3354:1: ( rule__UpdateTableStatement__Group__5__Impl )
+            // InternalSql_dsl.g:3355:2: rule__UpdateTableStatement__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__UpdateTableStatement__Group__5__Impl();
@@ -10001,29 +10517,29 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group__5__Impl"
-    // InternalSql_dsl.g:3199:1: rule__UpdateTableStatement__Group__5__Impl : ( ( rule__UpdateTableStatement__Group_5__0 )? ) ;
+    // InternalSql_dsl.g:3361:1: rule__UpdateTableStatement__Group__5__Impl : ( ( rule__UpdateTableStatement__Group_5__0 )? ) ;
     public final void rule__UpdateTableStatement__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3203:1: ( ( ( rule__UpdateTableStatement__Group_5__0 )? ) )
-            // InternalSql_dsl.g:3204:1: ( ( rule__UpdateTableStatement__Group_5__0 )? )
+            // InternalSql_dsl.g:3365:1: ( ( ( rule__UpdateTableStatement__Group_5__0 )? ) )
+            // InternalSql_dsl.g:3366:1: ( ( rule__UpdateTableStatement__Group_5__0 )? )
             {
-            // InternalSql_dsl.g:3204:1: ( ( rule__UpdateTableStatement__Group_5__0 )? )
-            // InternalSql_dsl.g:3205:2: ( rule__UpdateTableStatement__Group_5__0 )?
+            // InternalSql_dsl.g:3366:1: ( ( rule__UpdateTableStatement__Group_5__0 )? )
+            // InternalSql_dsl.g:3367:2: ( rule__UpdateTableStatement__Group_5__0 )?
             {
              before(grammarAccess.getUpdateTableStatementAccess().getGroup_5()); 
-            // InternalSql_dsl.g:3206:2: ( rule__UpdateTableStatement__Group_5__0 )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // InternalSql_dsl.g:3368:2: ( rule__UpdateTableStatement__Group_5__0 )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA26_0==31) ) {
-                alt26=1;
+            if ( (LA28_0==31) ) {
+                alt28=1;
             }
-            switch (alt26) {
+            switch (alt28) {
                 case 1 :
-                    // InternalSql_dsl.g:3206:3: rule__UpdateTableStatement__Group_5__0
+                    // InternalSql_dsl.g:3368:3: rule__UpdateTableStatement__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__UpdateTableStatement__Group_5__0();
@@ -10059,14 +10575,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_4__0"
-    // InternalSql_dsl.g:3215:1: rule__UpdateTableStatement__Group_4__0 : rule__UpdateTableStatement__Group_4__0__Impl rule__UpdateTableStatement__Group_4__1 ;
+    // InternalSql_dsl.g:3377:1: rule__UpdateTableStatement__Group_4__0 : rule__UpdateTableStatement__Group_4__0__Impl rule__UpdateTableStatement__Group_4__1 ;
     public final void rule__UpdateTableStatement__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3219:1: ( rule__UpdateTableStatement__Group_4__0__Impl rule__UpdateTableStatement__Group_4__1 )
-            // InternalSql_dsl.g:3220:2: rule__UpdateTableStatement__Group_4__0__Impl rule__UpdateTableStatement__Group_4__1
+            // InternalSql_dsl.g:3381:1: ( rule__UpdateTableStatement__Group_4__0__Impl rule__UpdateTableStatement__Group_4__1 )
+            // InternalSql_dsl.g:3382:2: rule__UpdateTableStatement__Group_4__0__Impl rule__UpdateTableStatement__Group_4__1
             {
             pushFollow(FOLLOW_10);
             rule__UpdateTableStatement__Group_4__0__Impl();
@@ -10097,17 +10613,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_4__0__Impl"
-    // InternalSql_dsl.g:3227:1: rule__UpdateTableStatement__Group_4__0__Impl : ( ',' ) ;
+    // InternalSql_dsl.g:3389:1: rule__UpdateTableStatement__Group_4__0__Impl : ( ',' ) ;
     public final void rule__UpdateTableStatement__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3231:1: ( ( ',' ) )
-            // InternalSql_dsl.g:3232:1: ( ',' )
+            // InternalSql_dsl.g:3393:1: ( ( ',' ) )
+            // InternalSql_dsl.g:3394:1: ( ',' )
             {
-            // InternalSql_dsl.g:3232:1: ( ',' )
-            // InternalSql_dsl.g:3233:2: ','
+            // InternalSql_dsl.g:3394:1: ( ',' )
+            // InternalSql_dsl.g:3395:2: ','
             {
              before(grammarAccess.getUpdateTableStatementAccess().getCommaKeyword_4_0()); 
             match(input,29,FOLLOW_2); 
@@ -10134,14 +10650,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_4__1"
-    // InternalSql_dsl.g:3242:1: rule__UpdateTableStatement__Group_4__1 : rule__UpdateTableStatement__Group_4__1__Impl ;
+    // InternalSql_dsl.g:3404:1: rule__UpdateTableStatement__Group_4__1 : rule__UpdateTableStatement__Group_4__1__Impl ;
     public final void rule__UpdateTableStatement__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3246:1: ( rule__UpdateTableStatement__Group_4__1__Impl )
-            // InternalSql_dsl.g:3247:2: rule__UpdateTableStatement__Group_4__1__Impl
+            // InternalSql_dsl.g:3408:1: ( rule__UpdateTableStatement__Group_4__1__Impl )
+            // InternalSql_dsl.g:3409:2: rule__UpdateTableStatement__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__UpdateTableStatement__Group_4__1__Impl();
@@ -10167,21 +10683,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_4__1__Impl"
-    // InternalSql_dsl.g:3253:1: rule__UpdateTableStatement__Group_4__1__Impl : ( ( rule__UpdateTableStatement__ScAssignment_4_1 ) ) ;
+    // InternalSql_dsl.g:3415:1: rule__UpdateTableStatement__Group_4__1__Impl : ( ( rule__UpdateTableStatement__ScAssignment_4_1 ) ) ;
     public final void rule__UpdateTableStatement__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3257:1: ( ( ( rule__UpdateTableStatement__ScAssignment_4_1 ) ) )
-            // InternalSql_dsl.g:3258:1: ( ( rule__UpdateTableStatement__ScAssignment_4_1 ) )
+            // InternalSql_dsl.g:3419:1: ( ( ( rule__UpdateTableStatement__ScAssignment_4_1 ) ) )
+            // InternalSql_dsl.g:3420:1: ( ( rule__UpdateTableStatement__ScAssignment_4_1 ) )
             {
-            // InternalSql_dsl.g:3258:1: ( ( rule__UpdateTableStatement__ScAssignment_4_1 ) )
-            // InternalSql_dsl.g:3259:2: ( rule__UpdateTableStatement__ScAssignment_4_1 )
+            // InternalSql_dsl.g:3420:1: ( ( rule__UpdateTableStatement__ScAssignment_4_1 ) )
+            // InternalSql_dsl.g:3421:2: ( rule__UpdateTableStatement__ScAssignment_4_1 )
             {
              before(grammarAccess.getUpdateTableStatementAccess().getScAssignment_4_1()); 
-            // InternalSql_dsl.g:3260:2: ( rule__UpdateTableStatement__ScAssignment_4_1 )
-            // InternalSql_dsl.g:3260:3: rule__UpdateTableStatement__ScAssignment_4_1
+            // InternalSql_dsl.g:3422:2: ( rule__UpdateTableStatement__ScAssignment_4_1 )
+            // InternalSql_dsl.g:3422:3: rule__UpdateTableStatement__ScAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__UpdateTableStatement__ScAssignment_4_1();
@@ -10214,14 +10730,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_5__0"
-    // InternalSql_dsl.g:3269:1: rule__UpdateTableStatement__Group_5__0 : rule__UpdateTableStatement__Group_5__0__Impl rule__UpdateTableStatement__Group_5__1 ;
+    // InternalSql_dsl.g:3431:1: rule__UpdateTableStatement__Group_5__0 : rule__UpdateTableStatement__Group_5__0__Impl rule__UpdateTableStatement__Group_5__1 ;
     public final void rule__UpdateTableStatement__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3273:1: ( rule__UpdateTableStatement__Group_5__0__Impl rule__UpdateTableStatement__Group_5__1 )
-            // InternalSql_dsl.g:3274:2: rule__UpdateTableStatement__Group_5__0__Impl rule__UpdateTableStatement__Group_5__1
+            // InternalSql_dsl.g:3435:1: ( rule__UpdateTableStatement__Group_5__0__Impl rule__UpdateTableStatement__Group_5__1 )
+            // InternalSql_dsl.g:3436:2: rule__UpdateTableStatement__Group_5__0__Impl rule__UpdateTableStatement__Group_5__1
             {
             pushFollow(FOLLOW_10);
             rule__UpdateTableStatement__Group_5__0__Impl();
@@ -10252,17 +10768,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_5__0__Impl"
-    // InternalSql_dsl.g:3281:1: rule__UpdateTableStatement__Group_5__0__Impl : ( 'WHERE' ) ;
+    // InternalSql_dsl.g:3443:1: rule__UpdateTableStatement__Group_5__0__Impl : ( 'WHERE' ) ;
     public final void rule__UpdateTableStatement__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3285:1: ( ( 'WHERE' ) )
-            // InternalSql_dsl.g:3286:1: ( 'WHERE' )
+            // InternalSql_dsl.g:3447:1: ( ( 'WHERE' ) )
+            // InternalSql_dsl.g:3448:1: ( 'WHERE' )
             {
-            // InternalSql_dsl.g:3286:1: ( 'WHERE' )
-            // InternalSql_dsl.g:3287:2: 'WHERE'
+            // InternalSql_dsl.g:3448:1: ( 'WHERE' )
+            // InternalSql_dsl.g:3449:2: 'WHERE'
             {
              before(grammarAccess.getUpdateTableStatementAccess().getWHEREKeyword_5_0()); 
             match(input,31,FOLLOW_2); 
@@ -10289,14 +10805,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_5__1"
-    // InternalSql_dsl.g:3296:1: rule__UpdateTableStatement__Group_5__1 : rule__UpdateTableStatement__Group_5__1__Impl rule__UpdateTableStatement__Group_5__2 ;
+    // InternalSql_dsl.g:3458:1: rule__UpdateTableStatement__Group_5__1 : rule__UpdateTableStatement__Group_5__1__Impl rule__UpdateTableStatement__Group_5__2 ;
     public final void rule__UpdateTableStatement__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3300:1: ( rule__UpdateTableStatement__Group_5__1__Impl rule__UpdateTableStatement__Group_5__2 )
-            // InternalSql_dsl.g:3301:2: rule__UpdateTableStatement__Group_5__1__Impl rule__UpdateTableStatement__Group_5__2
+            // InternalSql_dsl.g:3462:1: ( rule__UpdateTableStatement__Group_5__1__Impl rule__UpdateTableStatement__Group_5__2 )
+            // InternalSql_dsl.g:3463:2: rule__UpdateTableStatement__Group_5__1__Impl rule__UpdateTableStatement__Group_5__2
             {
             pushFollow(FOLLOW_12);
             rule__UpdateTableStatement__Group_5__1__Impl();
@@ -10327,21 +10843,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_5__1__Impl"
-    // InternalSql_dsl.g:3308:1: rule__UpdateTableStatement__Group_5__1__Impl : ( ( rule__UpdateTableStatement__ZAssignment_5_1 ) ) ;
+    // InternalSql_dsl.g:3470:1: rule__UpdateTableStatement__Group_5__1__Impl : ( ( rule__UpdateTableStatement__ZAssignment_5_1 ) ) ;
     public final void rule__UpdateTableStatement__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3312:1: ( ( ( rule__UpdateTableStatement__ZAssignment_5_1 ) ) )
-            // InternalSql_dsl.g:3313:1: ( ( rule__UpdateTableStatement__ZAssignment_5_1 ) )
+            // InternalSql_dsl.g:3474:1: ( ( ( rule__UpdateTableStatement__ZAssignment_5_1 ) ) )
+            // InternalSql_dsl.g:3475:1: ( ( rule__UpdateTableStatement__ZAssignment_5_1 ) )
             {
-            // InternalSql_dsl.g:3313:1: ( ( rule__UpdateTableStatement__ZAssignment_5_1 ) )
-            // InternalSql_dsl.g:3314:2: ( rule__UpdateTableStatement__ZAssignment_5_1 )
+            // InternalSql_dsl.g:3475:1: ( ( rule__UpdateTableStatement__ZAssignment_5_1 ) )
+            // InternalSql_dsl.g:3476:2: ( rule__UpdateTableStatement__ZAssignment_5_1 )
             {
              before(grammarAccess.getUpdateTableStatementAccess().getZAssignment_5_1()); 
-            // InternalSql_dsl.g:3315:2: ( rule__UpdateTableStatement__ZAssignment_5_1 )
-            // InternalSql_dsl.g:3315:3: rule__UpdateTableStatement__ZAssignment_5_1
+            // InternalSql_dsl.g:3477:2: ( rule__UpdateTableStatement__ZAssignment_5_1 )
+            // InternalSql_dsl.g:3477:3: rule__UpdateTableStatement__ZAssignment_5_1
             {
             pushFollow(FOLLOW_2);
             rule__UpdateTableStatement__ZAssignment_5_1();
@@ -10374,14 +10890,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_5__2"
-    // InternalSql_dsl.g:3323:1: rule__UpdateTableStatement__Group_5__2 : rule__UpdateTableStatement__Group_5__2__Impl ;
+    // InternalSql_dsl.g:3485:1: rule__UpdateTableStatement__Group_5__2 : rule__UpdateTableStatement__Group_5__2__Impl ;
     public final void rule__UpdateTableStatement__Group_5__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3327:1: ( rule__UpdateTableStatement__Group_5__2__Impl )
-            // InternalSql_dsl.g:3328:2: rule__UpdateTableStatement__Group_5__2__Impl
+            // InternalSql_dsl.g:3489:1: ( rule__UpdateTableStatement__Group_5__2__Impl )
+            // InternalSql_dsl.g:3490:2: rule__UpdateTableStatement__Group_5__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__UpdateTableStatement__Group_5__2__Impl();
@@ -10407,33 +10923,33 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_5__2__Impl"
-    // InternalSql_dsl.g:3334:1: rule__UpdateTableStatement__Group_5__2__Impl : ( ( rule__UpdateTableStatement__Group_5_2__0 )* ) ;
+    // InternalSql_dsl.g:3496:1: rule__UpdateTableStatement__Group_5__2__Impl : ( ( rule__UpdateTableStatement__Group_5_2__0 )* ) ;
     public final void rule__UpdateTableStatement__Group_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3338:1: ( ( ( rule__UpdateTableStatement__Group_5_2__0 )* ) )
-            // InternalSql_dsl.g:3339:1: ( ( rule__UpdateTableStatement__Group_5_2__0 )* )
+            // InternalSql_dsl.g:3500:1: ( ( ( rule__UpdateTableStatement__Group_5_2__0 )* ) )
+            // InternalSql_dsl.g:3501:1: ( ( rule__UpdateTableStatement__Group_5_2__0 )* )
             {
-            // InternalSql_dsl.g:3339:1: ( ( rule__UpdateTableStatement__Group_5_2__0 )* )
-            // InternalSql_dsl.g:3340:2: ( rule__UpdateTableStatement__Group_5_2__0 )*
+            // InternalSql_dsl.g:3501:1: ( ( rule__UpdateTableStatement__Group_5_2__0 )* )
+            // InternalSql_dsl.g:3502:2: ( rule__UpdateTableStatement__Group_5_2__0 )*
             {
              before(grammarAccess.getUpdateTableStatementAccess().getGroup_5_2()); 
-            // InternalSql_dsl.g:3341:2: ( rule__UpdateTableStatement__Group_5_2__0 )*
-            loop27:
+            // InternalSql_dsl.g:3503:2: ( rule__UpdateTableStatement__Group_5_2__0 )*
+            loop29:
             do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( ((LA27_0>=12 && LA27_0<=13)) ) {
-                    alt27=1;
+                if ( ((LA29_0>=12 && LA29_0<=13)) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt27) {
+                switch (alt29) {
             	case 1 :
-            	    // InternalSql_dsl.g:3341:3: rule__UpdateTableStatement__Group_5_2__0
+            	    // InternalSql_dsl.g:3503:3: rule__UpdateTableStatement__Group_5_2__0
             	    {
             	    pushFollow(FOLLOW_13);
             	    rule__UpdateTableStatement__Group_5_2__0();
@@ -10445,7 +10961,7 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop27;
+            	    break loop29;
                 }
             } while (true);
 
@@ -10472,14 +10988,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_5_2__0"
-    // InternalSql_dsl.g:3350:1: rule__UpdateTableStatement__Group_5_2__0 : rule__UpdateTableStatement__Group_5_2__0__Impl rule__UpdateTableStatement__Group_5_2__1 ;
+    // InternalSql_dsl.g:3512:1: rule__UpdateTableStatement__Group_5_2__0 : rule__UpdateTableStatement__Group_5_2__0__Impl rule__UpdateTableStatement__Group_5_2__1 ;
     public final void rule__UpdateTableStatement__Group_5_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3354:1: ( rule__UpdateTableStatement__Group_5_2__0__Impl rule__UpdateTableStatement__Group_5_2__1 )
-            // InternalSql_dsl.g:3355:2: rule__UpdateTableStatement__Group_5_2__0__Impl rule__UpdateTableStatement__Group_5_2__1
+            // InternalSql_dsl.g:3516:1: ( rule__UpdateTableStatement__Group_5_2__0__Impl rule__UpdateTableStatement__Group_5_2__1 )
+            // InternalSql_dsl.g:3517:2: rule__UpdateTableStatement__Group_5_2__0__Impl rule__UpdateTableStatement__Group_5_2__1
             {
             pushFollow(FOLLOW_10);
             rule__UpdateTableStatement__Group_5_2__0__Impl();
@@ -10510,21 +11026,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_5_2__0__Impl"
-    // InternalSql_dsl.g:3362:1: rule__UpdateTableStatement__Group_5_2__0__Impl : ( ( rule__UpdateTableStatement__Alternatives_5_2_0 ) ) ;
+    // InternalSql_dsl.g:3524:1: rule__UpdateTableStatement__Group_5_2__0__Impl : ( ( rule__UpdateTableStatement__Alternatives_5_2_0 ) ) ;
     public final void rule__UpdateTableStatement__Group_5_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3366:1: ( ( ( rule__UpdateTableStatement__Alternatives_5_2_0 ) ) )
-            // InternalSql_dsl.g:3367:1: ( ( rule__UpdateTableStatement__Alternatives_5_2_0 ) )
+            // InternalSql_dsl.g:3528:1: ( ( ( rule__UpdateTableStatement__Alternatives_5_2_0 ) ) )
+            // InternalSql_dsl.g:3529:1: ( ( rule__UpdateTableStatement__Alternatives_5_2_0 ) )
             {
-            // InternalSql_dsl.g:3367:1: ( ( rule__UpdateTableStatement__Alternatives_5_2_0 ) )
-            // InternalSql_dsl.g:3368:2: ( rule__UpdateTableStatement__Alternatives_5_2_0 )
+            // InternalSql_dsl.g:3529:1: ( ( rule__UpdateTableStatement__Alternatives_5_2_0 ) )
+            // InternalSql_dsl.g:3530:2: ( rule__UpdateTableStatement__Alternatives_5_2_0 )
             {
              before(grammarAccess.getUpdateTableStatementAccess().getAlternatives_5_2_0()); 
-            // InternalSql_dsl.g:3369:2: ( rule__UpdateTableStatement__Alternatives_5_2_0 )
-            // InternalSql_dsl.g:3369:3: rule__UpdateTableStatement__Alternatives_5_2_0
+            // InternalSql_dsl.g:3531:2: ( rule__UpdateTableStatement__Alternatives_5_2_0 )
+            // InternalSql_dsl.g:3531:3: rule__UpdateTableStatement__Alternatives_5_2_0
             {
             pushFollow(FOLLOW_2);
             rule__UpdateTableStatement__Alternatives_5_2_0();
@@ -10557,14 +11073,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_5_2__1"
-    // InternalSql_dsl.g:3377:1: rule__UpdateTableStatement__Group_5_2__1 : rule__UpdateTableStatement__Group_5_2__1__Impl ;
+    // InternalSql_dsl.g:3539:1: rule__UpdateTableStatement__Group_5_2__1 : rule__UpdateTableStatement__Group_5_2__1__Impl ;
     public final void rule__UpdateTableStatement__Group_5_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3381:1: ( rule__UpdateTableStatement__Group_5_2__1__Impl )
-            // InternalSql_dsl.g:3382:2: rule__UpdateTableStatement__Group_5_2__1__Impl
+            // InternalSql_dsl.g:3543:1: ( rule__UpdateTableStatement__Group_5_2__1__Impl )
+            // InternalSql_dsl.g:3544:2: rule__UpdateTableStatement__Group_5_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__UpdateTableStatement__Group_5_2__1__Impl();
@@ -10590,21 +11106,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__Group_5_2__1__Impl"
-    // InternalSql_dsl.g:3388:1: rule__UpdateTableStatement__Group_5_2__1__Impl : ( ( rule__UpdateTableStatement__ZAssignment_5_2_1 ) ) ;
+    // InternalSql_dsl.g:3550:1: rule__UpdateTableStatement__Group_5_2__1__Impl : ( ( rule__UpdateTableStatement__ZAssignment_5_2_1 ) ) ;
     public final void rule__UpdateTableStatement__Group_5_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3392:1: ( ( ( rule__UpdateTableStatement__ZAssignment_5_2_1 ) ) )
-            // InternalSql_dsl.g:3393:1: ( ( rule__UpdateTableStatement__ZAssignment_5_2_1 ) )
+            // InternalSql_dsl.g:3554:1: ( ( ( rule__UpdateTableStatement__ZAssignment_5_2_1 ) ) )
+            // InternalSql_dsl.g:3555:1: ( ( rule__UpdateTableStatement__ZAssignment_5_2_1 ) )
             {
-            // InternalSql_dsl.g:3393:1: ( ( rule__UpdateTableStatement__ZAssignment_5_2_1 ) )
-            // InternalSql_dsl.g:3394:2: ( rule__UpdateTableStatement__ZAssignment_5_2_1 )
+            // InternalSql_dsl.g:3555:1: ( ( rule__UpdateTableStatement__ZAssignment_5_2_1 ) )
+            // InternalSql_dsl.g:3556:2: ( rule__UpdateTableStatement__ZAssignment_5_2_1 )
             {
              before(grammarAccess.getUpdateTableStatementAccess().getZAssignment_5_2_1()); 
-            // InternalSql_dsl.g:3395:2: ( rule__UpdateTableStatement__ZAssignment_5_2_1 )
-            // InternalSql_dsl.g:3395:3: rule__UpdateTableStatement__ZAssignment_5_2_1
+            // InternalSql_dsl.g:3557:2: ( rule__UpdateTableStatement__ZAssignment_5_2_1 )
+            // InternalSql_dsl.g:3557:3: rule__UpdateTableStatement__ZAssignment_5_2_1
             {
             pushFollow(FOLLOW_2);
             rule__UpdateTableStatement__ZAssignment_5_2_1();
@@ -10637,14 +11153,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__Group__0"
-    // InternalSql_dsl.g:3404:1: rule__SetClause__Group__0 : rule__SetClause__Group__0__Impl rule__SetClause__Group__1 ;
+    // InternalSql_dsl.g:3566:1: rule__SetClause__Group__0 : rule__SetClause__Group__0__Impl rule__SetClause__Group__1 ;
     public final void rule__SetClause__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3408:1: ( rule__SetClause__Group__0__Impl rule__SetClause__Group__1 )
-            // InternalSql_dsl.g:3409:2: rule__SetClause__Group__0__Impl rule__SetClause__Group__1
+            // InternalSql_dsl.g:3570:1: ( rule__SetClause__Group__0__Impl rule__SetClause__Group__1 )
+            // InternalSql_dsl.g:3571:2: rule__SetClause__Group__0__Impl rule__SetClause__Group__1
             {
             pushFollow(FOLLOW_29);
             rule__SetClause__Group__0__Impl();
@@ -10675,21 +11191,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__Group__0__Impl"
-    // InternalSql_dsl.g:3416:1: rule__SetClause__Group__0__Impl : ( ( rule__SetClause__ColumnAssignment_0 ) ) ;
+    // InternalSql_dsl.g:3578:1: rule__SetClause__Group__0__Impl : ( ( rule__SetClause__ColumnAssignment_0 ) ) ;
     public final void rule__SetClause__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3420:1: ( ( ( rule__SetClause__ColumnAssignment_0 ) ) )
-            // InternalSql_dsl.g:3421:1: ( ( rule__SetClause__ColumnAssignment_0 ) )
+            // InternalSql_dsl.g:3582:1: ( ( ( rule__SetClause__ColumnAssignment_0 ) ) )
+            // InternalSql_dsl.g:3583:1: ( ( rule__SetClause__ColumnAssignment_0 ) )
             {
-            // InternalSql_dsl.g:3421:1: ( ( rule__SetClause__ColumnAssignment_0 ) )
-            // InternalSql_dsl.g:3422:2: ( rule__SetClause__ColumnAssignment_0 )
+            // InternalSql_dsl.g:3583:1: ( ( rule__SetClause__ColumnAssignment_0 ) )
+            // InternalSql_dsl.g:3584:2: ( rule__SetClause__ColumnAssignment_0 )
             {
              before(grammarAccess.getSetClauseAccess().getColumnAssignment_0()); 
-            // InternalSql_dsl.g:3423:2: ( rule__SetClause__ColumnAssignment_0 )
-            // InternalSql_dsl.g:3423:3: rule__SetClause__ColumnAssignment_0
+            // InternalSql_dsl.g:3585:2: ( rule__SetClause__ColumnAssignment_0 )
+            // InternalSql_dsl.g:3585:3: rule__SetClause__ColumnAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__SetClause__ColumnAssignment_0();
@@ -10722,14 +11238,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__Group__1"
-    // InternalSql_dsl.g:3431:1: rule__SetClause__Group__1 : rule__SetClause__Group__1__Impl rule__SetClause__Group__2 ;
+    // InternalSql_dsl.g:3593:1: rule__SetClause__Group__1 : rule__SetClause__Group__1__Impl rule__SetClause__Group__2 ;
     public final void rule__SetClause__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3435:1: ( rule__SetClause__Group__1__Impl rule__SetClause__Group__2 )
-            // InternalSql_dsl.g:3436:2: rule__SetClause__Group__1__Impl rule__SetClause__Group__2
+            // InternalSql_dsl.g:3597:1: ( rule__SetClause__Group__1__Impl rule__SetClause__Group__2 )
+            // InternalSql_dsl.g:3598:2: rule__SetClause__Group__1__Impl rule__SetClause__Group__2
             {
             pushFollow(FOLLOW_30);
             rule__SetClause__Group__1__Impl();
@@ -10760,17 +11276,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__Group__1__Impl"
-    // InternalSql_dsl.g:3443:1: rule__SetClause__Group__1__Impl : ( '=' ) ;
+    // InternalSql_dsl.g:3605:1: rule__SetClause__Group__1__Impl : ( '=' ) ;
     public final void rule__SetClause__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3447:1: ( ( '=' ) )
-            // InternalSql_dsl.g:3448:1: ( '=' )
+            // InternalSql_dsl.g:3609:1: ( ( '=' ) )
+            // InternalSql_dsl.g:3610:1: ( '=' )
             {
-            // InternalSql_dsl.g:3448:1: ( '=' )
-            // InternalSql_dsl.g:3449:2: '='
+            // InternalSql_dsl.g:3610:1: ( '=' )
+            // InternalSql_dsl.g:3611:2: '='
             {
              before(grammarAccess.getSetClauseAccess().getEqualsSignKeyword_1()); 
             match(input,14,FOLLOW_2); 
@@ -10797,14 +11313,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__Group__2"
-    // InternalSql_dsl.g:3458:1: rule__SetClause__Group__2 : rule__SetClause__Group__2__Impl ;
+    // InternalSql_dsl.g:3620:1: rule__SetClause__Group__2 : rule__SetClause__Group__2__Impl ;
     public final void rule__SetClause__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3462:1: ( rule__SetClause__Group__2__Impl )
-            // InternalSql_dsl.g:3463:2: rule__SetClause__Group__2__Impl
+            // InternalSql_dsl.g:3624:1: ( rule__SetClause__Group__2__Impl )
+            // InternalSql_dsl.g:3625:2: rule__SetClause__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SetClause__Group__2__Impl();
@@ -10830,21 +11346,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__Group__2__Impl"
-    // InternalSql_dsl.g:3469:1: rule__SetClause__Group__2__Impl : ( ( rule__SetClause__Alternatives_2 ) ) ;
+    // InternalSql_dsl.g:3631:1: rule__SetClause__Group__2__Impl : ( ( rule__SetClause__Alternatives_2 ) ) ;
     public final void rule__SetClause__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3473:1: ( ( ( rule__SetClause__Alternatives_2 ) ) )
-            // InternalSql_dsl.g:3474:1: ( ( rule__SetClause__Alternatives_2 ) )
+            // InternalSql_dsl.g:3635:1: ( ( ( rule__SetClause__Alternatives_2 ) ) )
+            // InternalSql_dsl.g:3636:1: ( ( rule__SetClause__Alternatives_2 ) )
             {
-            // InternalSql_dsl.g:3474:1: ( ( rule__SetClause__Alternatives_2 ) )
-            // InternalSql_dsl.g:3475:2: ( rule__SetClause__Alternatives_2 )
+            // InternalSql_dsl.g:3636:1: ( ( rule__SetClause__Alternatives_2 ) )
+            // InternalSql_dsl.g:3637:2: ( rule__SetClause__Alternatives_2 )
             {
              before(grammarAccess.getSetClauseAccess().getAlternatives_2()); 
-            // InternalSql_dsl.g:3476:2: ( rule__SetClause__Alternatives_2 )
-            // InternalSql_dsl.g:3476:3: rule__SetClause__Alternatives_2
+            // InternalSql_dsl.g:3638:2: ( rule__SetClause__Alternatives_2 )
+            // InternalSql_dsl.g:3638:3: rule__SetClause__Alternatives_2
             {
             pushFollow(FOLLOW_2);
             rule__SetClause__Alternatives_2();
@@ -10877,14 +11393,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__Group_2_0__0"
-    // InternalSql_dsl.g:3485:1: rule__SetClause__Group_2_0__0 : rule__SetClause__Group_2_0__0__Impl rule__SetClause__Group_2_0__1 ;
+    // InternalSql_dsl.g:3647:1: rule__SetClause__Group_2_0__0 : rule__SetClause__Group_2_0__0__Impl rule__SetClause__Group_2_0__1 ;
     public final void rule__SetClause__Group_2_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3489:1: ( rule__SetClause__Group_2_0__0__Impl rule__SetClause__Group_2_0__1 )
-            // InternalSql_dsl.g:3490:2: rule__SetClause__Group_2_0__0__Impl rule__SetClause__Group_2_0__1
+            // InternalSql_dsl.g:3651:1: ( rule__SetClause__Group_2_0__0__Impl rule__SetClause__Group_2_0__1 )
+            // InternalSql_dsl.g:3652:2: rule__SetClause__Group_2_0__0__Impl rule__SetClause__Group_2_0__1
             {
             pushFollow(FOLLOW_10);
             rule__SetClause__Group_2_0__0__Impl();
@@ -10915,17 +11431,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__Group_2_0__0__Impl"
-    // InternalSql_dsl.g:3497:1: rule__SetClause__Group_2_0__0__Impl : ( '#' ) ;
+    // InternalSql_dsl.g:3659:1: rule__SetClause__Group_2_0__0__Impl : ( '#' ) ;
     public final void rule__SetClause__Group_2_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3501:1: ( ( '#' ) )
-            // InternalSql_dsl.g:3502:1: ( '#' )
+            // InternalSql_dsl.g:3663:1: ( ( '#' ) )
+            // InternalSql_dsl.g:3664:1: ( '#' )
             {
-            // InternalSql_dsl.g:3502:1: ( '#' )
-            // InternalSql_dsl.g:3503:2: '#'
+            // InternalSql_dsl.g:3664:1: ( '#' )
+            // InternalSql_dsl.g:3665:2: '#'
             {
              before(grammarAccess.getSetClauseAccess().getNumberSignKeyword_2_0_0()); 
             match(input,32,FOLLOW_2); 
@@ -10952,14 +11468,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__Group_2_0__1"
-    // InternalSql_dsl.g:3512:1: rule__SetClause__Group_2_0__1 : rule__SetClause__Group_2_0__1__Impl rule__SetClause__Group_2_0__2 ;
+    // InternalSql_dsl.g:3674:1: rule__SetClause__Group_2_0__1 : rule__SetClause__Group_2_0__1__Impl rule__SetClause__Group_2_0__2 ;
     public final void rule__SetClause__Group_2_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3516:1: ( rule__SetClause__Group_2_0__1__Impl rule__SetClause__Group_2_0__2 )
-            // InternalSql_dsl.g:3517:2: rule__SetClause__Group_2_0__1__Impl rule__SetClause__Group_2_0__2
+            // InternalSql_dsl.g:3678:1: ( rule__SetClause__Group_2_0__1__Impl rule__SetClause__Group_2_0__2 )
+            // InternalSql_dsl.g:3679:2: rule__SetClause__Group_2_0__1__Impl rule__SetClause__Group_2_0__2
             {
             pushFollow(FOLLOW_16);
             rule__SetClause__Group_2_0__1__Impl();
@@ -10990,21 +11506,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__Group_2_0__1__Impl"
-    // InternalSql_dsl.g:3524:1: rule__SetClause__Group_2_0__1__Impl : ( ( rule__SetClause__NameAssignment_2_0_1 ) ) ;
+    // InternalSql_dsl.g:3686:1: rule__SetClause__Group_2_0__1__Impl : ( ( rule__SetClause__NameAssignment_2_0_1 ) ) ;
     public final void rule__SetClause__Group_2_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3528:1: ( ( ( rule__SetClause__NameAssignment_2_0_1 ) ) )
-            // InternalSql_dsl.g:3529:1: ( ( rule__SetClause__NameAssignment_2_0_1 ) )
+            // InternalSql_dsl.g:3690:1: ( ( ( rule__SetClause__NameAssignment_2_0_1 ) ) )
+            // InternalSql_dsl.g:3691:1: ( ( rule__SetClause__NameAssignment_2_0_1 ) )
             {
-            // InternalSql_dsl.g:3529:1: ( ( rule__SetClause__NameAssignment_2_0_1 ) )
-            // InternalSql_dsl.g:3530:2: ( rule__SetClause__NameAssignment_2_0_1 )
+            // InternalSql_dsl.g:3691:1: ( ( rule__SetClause__NameAssignment_2_0_1 ) )
+            // InternalSql_dsl.g:3692:2: ( rule__SetClause__NameAssignment_2_0_1 )
             {
              before(grammarAccess.getSetClauseAccess().getNameAssignment_2_0_1()); 
-            // InternalSql_dsl.g:3531:2: ( rule__SetClause__NameAssignment_2_0_1 )
-            // InternalSql_dsl.g:3531:3: rule__SetClause__NameAssignment_2_0_1
+            // InternalSql_dsl.g:3693:2: ( rule__SetClause__NameAssignment_2_0_1 )
+            // InternalSql_dsl.g:3693:3: rule__SetClause__NameAssignment_2_0_1
             {
             pushFollow(FOLLOW_2);
             rule__SetClause__NameAssignment_2_0_1();
@@ -11037,14 +11553,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__Group_2_0__2"
-    // InternalSql_dsl.g:3539:1: rule__SetClause__Group_2_0__2 : rule__SetClause__Group_2_0__2__Impl ;
+    // InternalSql_dsl.g:3701:1: rule__SetClause__Group_2_0__2 : rule__SetClause__Group_2_0__2__Impl ;
     public final void rule__SetClause__Group_2_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3543:1: ( rule__SetClause__Group_2_0__2__Impl )
-            // InternalSql_dsl.g:3544:2: rule__SetClause__Group_2_0__2__Impl
+            // InternalSql_dsl.g:3705:1: ( rule__SetClause__Group_2_0__2__Impl )
+            // InternalSql_dsl.g:3706:2: rule__SetClause__Group_2_0__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SetClause__Group_2_0__2__Impl();
@@ -11070,17 +11586,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__Group_2_0__2__Impl"
-    // InternalSql_dsl.g:3550:1: rule__SetClause__Group_2_0__2__Impl : ( '#' ) ;
+    // InternalSql_dsl.g:3712:1: rule__SetClause__Group_2_0__2__Impl : ( '#' ) ;
     public final void rule__SetClause__Group_2_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3554:1: ( ( '#' ) )
-            // InternalSql_dsl.g:3555:1: ( '#' )
+            // InternalSql_dsl.g:3716:1: ( ( '#' ) )
+            // InternalSql_dsl.g:3717:1: ( '#' )
             {
-            // InternalSql_dsl.g:3555:1: ( '#' )
-            // InternalSql_dsl.g:3556:2: '#'
+            // InternalSql_dsl.g:3717:1: ( '#' )
+            // InternalSql_dsl.g:3718:2: '#'
             {
              before(grammarAccess.getSetClauseAccess().getNumberSignKeyword_2_0_2()); 
             match(input,32,FOLLOW_2); 
@@ -11107,14 +11623,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterTableStatement__Group__0"
-    // InternalSql_dsl.g:3566:1: rule__AlterTableStatement__Group__0 : rule__AlterTableStatement__Group__0__Impl rule__AlterTableStatement__Group__1 ;
+    // InternalSql_dsl.g:3728:1: rule__AlterTableStatement__Group__0 : rule__AlterTableStatement__Group__0__Impl rule__AlterTableStatement__Group__1 ;
     public final void rule__AlterTableStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3570:1: ( rule__AlterTableStatement__Group__0__Impl rule__AlterTableStatement__Group__1 )
-            // InternalSql_dsl.g:3571:2: rule__AlterTableStatement__Group__0__Impl rule__AlterTableStatement__Group__1
+            // InternalSql_dsl.g:3732:1: ( rule__AlterTableStatement__Group__0__Impl rule__AlterTableStatement__Group__1 )
+            // InternalSql_dsl.g:3733:2: rule__AlterTableStatement__Group__0__Impl rule__AlterTableStatement__Group__1
             {
             pushFollow(FOLLOW_18);
             rule__AlterTableStatement__Group__0__Impl();
@@ -11145,17 +11661,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterTableStatement__Group__0__Impl"
-    // InternalSql_dsl.g:3578:1: rule__AlterTableStatement__Group__0__Impl : ( 'ALTER' ) ;
+    // InternalSql_dsl.g:3740:1: rule__AlterTableStatement__Group__0__Impl : ( 'ALTER' ) ;
     public final void rule__AlterTableStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3582:1: ( ( 'ALTER' ) )
-            // InternalSql_dsl.g:3583:1: ( 'ALTER' )
+            // InternalSql_dsl.g:3744:1: ( ( 'ALTER' ) )
+            // InternalSql_dsl.g:3745:1: ( 'ALTER' )
             {
-            // InternalSql_dsl.g:3583:1: ( 'ALTER' )
-            // InternalSql_dsl.g:3584:2: 'ALTER'
+            // InternalSql_dsl.g:3745:1: ( 'ALTER' )
+            // InternalSql_dsl.g:3746:2: 'ALTER'
             {
              before(grammarAccess.getAlterTableStatementAccess().getALTERKeyword_0()); 
             match(input,47,FOLLOW_2); 
@@ -11182,14 +11698,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterTableStatement__Group__1"
-    // InternalSql_dsl.g:3593:1: rule__AlterTableStatement__Group__1 : rule__AlterTableStatement__Group__1__Impl rule__AlterTableStatement__Group__2 ;
+    // InternalSql_dsl.g:3755:1: rule__AlterTableStatement__Group__1 : rule__AlterTableStatement__Group__1__Impl rule__AlterTableStatement__Group__2 ;
     public final void rule__AlterTableStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3597:1: ( rule__AlterTableStatement__Group__1__Impl rule__AlterTableStatement__Group__2 )
-            // InternalSql_dsl.g:3598:2: rule__AlterTableStatement__Group__1__Impl rule__AlterTableStatement__Group__2
+            // InternalSql_dsl.g:3759:1: ( rule__AlterTableStatement__Group__1__Impl rule__AlterTableStatement__Group__2 )
+            // InternalSql_dsl.g:3760:2: rule__AlterTableStatement__Group__1__Impl rule__AlterTableStatement__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__AlterTableStatement__Group__1__Impl();
@@ -11220,17 +11736,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterTableStatement__Group__1__Impl"
-    // InternalSql_dsl.g:3605:1: rule__AlterTableStatement__Group__1__Impl : ( 'TABLE' ) ;
+    // InternalSql_dsl.g:3767:1: rule__AlterTableStatement__Group__1__Impl : ( 'TABLE' ) ;
     public final void rule__AlterTableStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3609:1: ( ( 'TABLE' ) )
-            // InternalSql_dsl.g:3610:1: ( 'TABLE' )
+            // InternalSql_dsl.g:3771:1: ( ( 'TABLE' ) )
+            // InternalSql_dsl.g:3772:1: ( 'TABLE' )
             {
-            // InternalSql_dsl.g:3610:1: ( 'TABLE' )
-            // InternalSql_dsl.g:3611:2: 'TABLE'
+            // InternalSql_dsl.g:3772:1: ( 'TABLE' )
+            // InternalSql_dsl.g:3773:2: 'TABLE'
             {
              before(grammarAccess.getAlterTableStatementAccess().getTABLEKeyword_1()); 
             match(input,35,FOLLOW_2); 
@@ -11257,14 +11773,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterTableStatement__Group__2"
-    // InternalSql_dsl.g:3620:1: rule__AlterTableStatement__Group__2 : rule__AlterTableStatement__Group__2__Impl rule__AlterTableStatement__Group__3 ;
+    // InternalSql_dsl.g:3782:1: rule__AlterTableStatement__Group__2 : rule__AlterTableStatement__Group__2__Impl rule__AlterTableStatement__Group__3 ;
     public final void rule__AlterTableStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3624:1: ( rule__AlterTableStatement__Group__2__Impl rule__AlterTableStatement__Group__3 )
-            // InternalSql_dsl.g:3625:2: rule__AlterTableStatement__Group__2__Impl rule__AlterTableStatement__Group__3
+            // InternalSql_dsl.g:3786:1: ( rule__AlterTableStatement__Group__2__Impl rule__AlterTableStatement__Group__3 )
+            // InternalSql_dsl.g:3787:2: rule__AlterTableStatement__Group__2__Impl rule__AlterTableStatement__Group__3
             {
             pushFollow(FOLLOW_31);
             rule__AlterTableStatement__Group__2__Impl();
@@ -11295,21 +11811,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterTableStatement__Group__2__Impl"
-    // InternalSql_dsl.g:3632:1: rule__AlterTableStatement__Group__2__Impl : ( ( rule__AlterTableStatement__TableAssignment_2 ) ) ;
+    // InternalSql_dsl.g:3794:1: rule__AlterTableStatement__Group__2__Impl : ( ( rule__AlterTableStatement__TableAssignment_2 ) ) ;
     public final void rule__AlterTableStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3636:1: ( ( ( rule__AlterTableStatement__TableAssignment_2 ) ) )
-            // InternalSql_dsl.g:3637:1: ( ( rule__AlterTableStatement__TableAssignment_2 ) )
+            // InternalSql_dsl.g:3798:1: ( ( ( rule__AlterTableStatement__TableAssignment_2 ) ) )
+            // InternalSql_dsl.g:3799:1: ( ( rule__AlterTableStatement__TableAssignment_2 ) )
             {
-            // InternalSql_dsl.g:3637:1: ( ( rule__AlterTableStatement__TableAssignment_2 ) )
-            // InternalSql_dsl.g:3638:2: ( rule__AlterTableStatement__TableAssignment_2 )
+            // InternalSql_dsl.g:3799:1: ( ( rule__AlterTableStatement__TableAssignment_2 ) )
+            // InternalSql_dsl.g:3800:2: ( rule__AlterTableStatement__TableAssignment_2 )
             {
              before(grammarAccess.getAlterTableStatementAccess().getTableAssignment_2()); 
-            // InternalSql_dsl.g:3639:2: ( rule__AlterTableStatement__TableAssignment_2 )
-            // InternalSql_dsl.g:3639:3: rule__AlterTableStatement__TableAssignment_2
+            // InternalSql_dsl.g:3801:2: ( rule__AlterTableStatement__TableAssignment_2 )
+            // InternalSql_dsl.g:3801:3: rule__AlterTableStatement__TableAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__AlterTableStatement__TableAssignment_2();
@@ -11342,14 +11858,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterTableStatement__Group__3"
-    // InternalSql_dsl.g:3647:1: rule__AlterTableStatement__Group__3 : rule__AlterTableStatement__Group__3__Impl ;
+    // InternalSql_dsl.g:3809:1: rule__AlterTableStatement__Group__3 : rule__AlterTableStatement__Group__3__Impl ;
     public final void rule__AlterTableStatement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3651:1: ( rule__AlterTableStatement__Group__3__Impl )
-            // InternalSql_dsl.g:3652:2: rule__AlterTableStatement__Group__3__Impl
+            // InternalSql_dsl.g:3813:1: ( rule__AlterTableStatement__Group__3__Impl )
+            // InternalSql_dsl.g:3814:2: rule__AlterTableStatement__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AlterTableStatement__Group__3__Impl();
@@ -11375,21 +11891,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterTableStatement__Group__3__Impl"
-    // InternalSql_dsl.g:3658:1: rule__AlterTableStatement__Group__3__Impl : ( ( rule__AlterTableStatement__AddDropUpdateAssignment_3 ) ) ;
+    // InternalSql_dsl.g:3820:1: rule__AlterTableStatement__Group__3__Impl : ( ( rule__AlterTableStatement__AddDropUpdateAssignment_3 ) ) ;
     public final void rule__AlterTableStatement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3662:1: ( ( ( rule__AlterTableStatement__AddDropUpdateAssignment_3 ) ) )
-            // InternalSql_dsl.g:3663:1: ( ( rule__AlterTableStatement__AddDropUpdateAssignment_3 ) )
+            // InternalSql_dsl.g:3824:1: ( ( ( rule__AlterTableStatement__AddDropUpdateAssignment_3 ) ) )
+            // InternalSql_dsl.g:3825:1: ( ( rule__AlterTableStatement__AddDropUpdateAssignment_3 ) )
             {
-            // InternalSql_dsl.g:3663:1: ( ( rule__AlterTableStatement__AddDropUpdateAssignment_3 ) )
-            // InternalSql_dsl.g:3664:2: ( rule__AlterTableStatement__AddDropUpdateAssignment_3 )
+            // InternalSql_dsl.g:3825:1: ( ( rule__AlterTableStatement__AddDropUpdateAssignment_3 ) )
+            // InternalSql_dsl.g:3826:2: ( rule__AlterTableStatement__AddDropUpdateAssignment_3 )
             {
              before(grammarAccess.getAlterTableStatementAccess().getAddDropUpdateAssignment_3()); 
-            // InternalSql_dsl.g:3665:2: ( rule__AlterTableStatement__AddDropUpdateAssignment_3 )
-            // InternalSql_dsl.g:3665:3: rule__AlterTableStatement__AddDropUpdateAssignment_3
+            // InternalSql_dsl.g:3827:2: ( rule__AlterTableStatement__AddDropUpdateAssignment_3 )
+            // InternalSql_dsl.g:3827:3: rule__AlterTableStatement__AddDropUpdateAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__AlterTableStatement__AddDropUpdateAssignment_3();
@@ -11422,14 +11938,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterDropStatement__Group__0"
-    // InternalSql_dsl.g:3674:1: rule__AlterDropStatement__Group__0 : rule__AlterDropStatement__Group__0__Impl rule__AlterDropStatement__Group__1 ;
+    // InternalSql_dsl.g:3836:1: rule__AlterDropStatement__Group__0 : rule__AlterDropStatement__Group__0__Impl rule__AlterDropStatement__Group__1 ;
     public final void rule__AlterDropStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3678:1: ( rule__AlterDropStatement__Group__0__Impl rule__AlterDropStatement__Group__1 )
-            // InternalSql_dsl.g:3679:2: rule__AlterDropStatement__Group__0__Impl rule__AlterDropStatement__Group__1
+            // InternalSql_dsl.g:3840:1: ( rule__AlterDropStatement__Group__0__Impl rule__AlterDropStatement__Group__1 )
+            // InternalSql_dsl.g:3841:2: rule__AlterDropStatement__Group__0__Impl rule__AlterDropStatement__Group__1
             {
             pushFollow(FOLLOW_32);
             rule__AlterDropStatement__Group__0__Impl();
@@ -11460,17 +11976,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterDropStatement__Group__0__Impl"
-    // InternalSql_dsl.g:3686:1: rule__AlterDropStatement__Group__0__Impl : ( 'DROP' ) ;
+    // InternalSql_dsl.g:3848:1: rule__AlterDropStatement__Group__0__Impl : ( 'DROP' ) ;
     public final void rule__AlterDropStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3690:1: ( ( 'DROP' ) )
-            // InternalSql_dsl.g:3691:1: ( 'DROP' )
+            // InternalSql_dsl.g:3852:1: ( ( 'DROP' ) )
+            // InternalSql_dsl.g:3853:1: ( 'DROP' )
             {
-            // InternalSql_dsl.g:3691:1: ( 'DROP' )
-            // InternalSql_dsl.g:3692:2: 'DROP'
+            // InternalSql_dsl.g:3853:1: ( 'DROP' )
+            // InternalSql_dsl.g:3854:2: 'DROP'
             {
              before(grammarAccess.getAlterDropStatementAccess().getDROPKeyword_0()); 
             match(input,42,FOLLOW_2); 
@@ -11497,14 +12013,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterDropStatement__Group__1"
-    // InternalSql_dsl.g:3701:1: rule__AlterDropStatement__Group__1 : rule__AlterDropStatement__Group__1__Impl rule__AlterDropStatement__Group__2 ;
+    // InternalSql_dsl.g:3863:1: rule__AlterDropStatement__Group__1 : rule__AlterDropStatement__Group__1__Impl rule__AlterDropStatement__Group__2 ;
     public final void rule__AlterDropStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3705:1: ( rule__AlterDropStatement__Group__1__Impl rule__AlterDropStatement__Group__2 )
-            // InternalSql_dsl.g:3706:2: rule__AlterDropStatement__Group__1__Impl rule__AlterDropStatement__Group__2
+            // InternalSql_dsl.g:3867:1: ( rule__AlterDropStatement__Group__1__Impl rule__AlterDropStatement__Group__2 )
+            // InternalSql_dsl.g:3868:2: rule__AlterDropStatement__Group__1__Impl rule__AlterDropStatement__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__AlterDropStatement__Group__1__Impl();
@@ -11535,17 +12051,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterDropStatement__Group__1__Impl"
-    // InternalSql_dsl.g:3713:1: rule__AlterDropStatement__Group__1__Impl : ( 'COLUMN' ) ;
+    // InternalSql_dsl.g:3875:1: rule__AlterDropStatement__Group__1__Impl : ( 'COLUMN' ) ;
     public final void rule__AlterDropStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3717:1: ( ( 'COLUMN' ) )
-            // InternalSql_dsl.g:3718:1: ( 'COLUMN' )
+            // InternalSql_dsl.g:3879:1: ( ( 'COLUMN' ) )
+            // InternalSql_dsl.g:3880:1: ( 'COLUMN' )
             {
-            // InternalSql_dsl.g:3718:1: ( 'COLUMN' )
-            // InternalSql_dsl.g:3719:2: 'COLUMN'
+            // InternalSql_dsl.g:3880:1: ( 'COLUMN' )
+            // InternalSql_dsl.g:3881:2: 'COLUMN'
             {
              before(grammarAccess.getAlterDropStatementAccess().getCOLUMNKeyword_1()); 
             match(input,48,FOLLOW_2); 
@@ -11572,14 +12088,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterDropStatement__Group__2"
-    // InternalSql_dsl.g:3728:1: rule__AlterDropStatement__Group__2 : rule__AlterDropStatement__Group__2__Impl ;
+    // InternalSql_dsl.g:3890:1: rule__AlterDropStatement__Group__2 : rule__AlterDropStatement__Group__2__Impl ;
     public final void rule__AlterDropStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3732:1: ( rule__AlterDropStatement__Group__2__Impl )
-            // InternalSql_dsl.g:3733:2: rule__AlterDropStatement__Group__2__Impl
+            // InternalSql_dsl.g:3894:1: ( rule__AlterDropStatement__Group__2__Impl )
+            // InternalSql_dsl.g:3895:2: rule__AlterDropStatement__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AlterDropStatement__Group__2__Impl();
@@ -11605,21 +12121,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterDropStatement__Group__2__Impl"
-    // InternalSql_dsl.g:3739:1: rule__AlterDropStatement__Group__2__Impl : ( ( rule__AlterDropStatement__ColumnAssignment_2 ) ) ;
+    // InternalSql_dsl.g:3901:1: rule__AlterDropStatement__Group__2__Impl : ( ( rule__AlterDropStatement__ColumnAssignment_2 ) ) ;
     public final void rule__AlterDropStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3743:1: ( ( ( rule__AlterDropStatement__ColumnAssignment_2 ) ) )
-            // InternalSql_dsl.g:3744:1: ( ( rule__AlterDropStatement__ColumnAssignment_2 ) )
+            // InternalSql_dsl.g:3905:1: ( ( ( rule__AlterDropStatement__ColumnAssignment_2 ) ) )
+            // InternalSql_dsl.g:3906:1: ( ( rule__AlterDropStatement__ColumnAssignment_2 ) )
             {
-            // InternalSql_dsl.g:3744:1: ( ( rule__AlterDropStatement__ColumnAssignment_2 ) )
-            // InternalSql_dsl.g:3745:2: ( rule__AlterDropStatement__ColumnAssignment_2 )
+            // InternalSql_dsl.g:3906:1: ( ( rule__AlterDropStatement__ColumnAssignment_2 ) )
+            // InternalSql_dsl.g:3907:2: ( rule__AlterDropStatement__ColumnAssignment_2 )
             {
              before(grammarAccess.getAlterDropStatementAccess().getColumnAssignment_2()); 
-            // InternalSql_dsl.g:3746:2: ( rule__AlterDropStatement__ColumnAssignment_2 )
-            // InternalSql_dsl.g:3746:3: rule__AlterDropStatement__ColumnAssignment_2
+            // InternalSql_dsl.g:3908:2: ( rule__AlterDropStatement__ColumnAssignment_2 )
+            // InternalSql_dsl.g:3908:3: rule__AlterDropStatement__ColumnAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__AlterDropStatement__ColumnAssignment_2();
@@ -11652,14 +12168,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterAddStatement__Group__0"
-    // InternalSql_dsl.g:3755:1: rule__AlterAddStatement__Group__0 : rule__AlterAddStatement__Group__0__Impl rule__AlterAddStatement__Group__1 ;
+    // InternalSql_dsl.g:3917:1: rule__AlterAddStatement__Group__0 : rule__AlterAddStatement__Group__0__Impl rule__AlterAddStatement__Group__1 ;
     public final void rule__AlterAddStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3759:1: ( rule__AlterAddStatement__Group__0__Impl rule__AlterAddStatement__Group__1 )
-            // InternalSql_dsl.g:3760:2: rule__AlterAddStatement__Group__0__Impl rule__AlterAddStatement__Group__1
+            // InternalSql_dsl.g:3921:1: ( rule__AlterAddStatement__Group__0__Impl rule__AlterAddStatement__Group__1 )
+            // InternalSql_dsl.g:3922:2: rule__AlterAddStatement__Group__0__Impl rule__AlterAddStatement__Group__1
             {
             pushFollow(FOLLOW_10);
             rule__AlterAddStatement__Group__0__Impl();
@@ -11690,17 +12206,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterAddStatement__Group__0__Impl"
-    // InternalSql_dsl.g:3767:1: rule__AlterAddStatement__Group__0__Impl : ( 'ADD' ) ;
+    // InternalSql_dsl.g:3929:1: rule__AlterAddStatement__Group__0__Impl : ( 'ADD' ) ;
     public final void rule__AlterAddStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3771:1: ( ( 'ADD' ) )
-            // InternalSql_dsl.g:3772:1: ( 'ADD' )
+            // InternalSql_dsl.g:3933:1: ( ( 'ADD' ) )
+            // InternalSql_dsl.g:3934:1: ( 'ADD' )
             {
-            // InternalSql_dsl.g:3772:1: ( 'ADD' )
-            // InternalSql_dsl.g:3773:2: 'ADD'
+            // InternalSql_dsl.g:3934:1: ( 'ADD' )
+            // InternalSql_dsl.g:3935:2: 'ADD'
             {
              before(grammarAccess.getAlterAddStatementAccess().getADDKeyword_0()); 
             match(input,49,FOLLOW_2); 
@@ -11727,14 +12243,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterAddStatement__Group__1"
-    // InternalSql_dsl.g:3782:1: rule__AlterAddStatement__Group__1 : rule__AlterAddStatement__Group__1__Impl ;
+    // InternalSql_dsl.g:3944:1: rule__AlterAddStatement__Group__1 : rule__AlterAddStatement__Group__1__Impl ;
     public final void rule__AlterAddStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3786:1: ( rule__AlterAddStatement__Group__1__Impl )
-            // InternalSql_dsl.g:3787:2: rule__AlterAddStatement__Group__1__Impl
+            // InternalSql_dsl.g:3948:1: ( rule__AlterAddStatement__Group__1__Impl )
+            // InternalSql_dsl.g:3949:2: rule__AlterAddStatement__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AlterAddStatement__Group__1__Impl();
@@ -11760,21 +12276,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterAddStatement__Group__1__Impl"
-    // InternalSql_dsl.g:3793:1: rule__AlterAddStatement__Group__1__Impl : ( ( rule__AlterAddStatement__ColumnAssignment_1 ) ) ;
+    // InternalSql_dsl.g:3955:1: rule__AlterAddStatement__Group__1__Impl : ( ( rule__AlterAddStatement__ColumnAssignment_1 ) ) ;
     public final void rule__AlterAddStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3797:1: ( ( ( rule__AlterAddStatement__ColumnAssignment_1 ) ) )
-            // InternalSql_dsl.g:3798:1: ( ( rule__AlterAddStatement__ColumnAssignment_1 ) )
+            // InternalSql_dsl.g:3959:1: ( ( ( rule__AlterAddStatement__ColumnAssignment_1 ) ) )
+            // InternalSql_dsl.g:3960:1: ( ( rule__AlterAddStatement__ColumnAssignment_1 ) )
             {
-            // InternalSql_dsl.g:3798:1: ( ( rule__AlterAddStatement__ColumnAssignment_1 ) )
-            // InternalSql_dsl.g:3799:2: ( rule__AlterAddStatement__ColumnAssignment_1 )
+            // InternalSql_dsl.g:3960:1: ( ( rule__AlterAddStatement__ColumnAssignment_1 ) )
+            // InternalSql_dsl.g:3961:2: ( rule__AlterAddStatement__ColumnAssignment_1 )
             {
              before(grammarAccess.getAlterAddStatementAccess().getColumnAssignment_1()); 
-            // InternalSql_dsl.g:3800:2: ( rule__AlterAddStatement__ColumnAssignment_1 )
-            // InternalSql_dsl.g:3800:3: rule__AlterAddStatement__ColumnAssignment_1
+            // InternalSql_dsl.g:3962:2: ( rule__AlterAddStatement__ColumnAssignment_1 )
+            // InternalSql_dsl.g:3962:3: rule__AlterAddStatement__ColumnAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__AlterAddStatement__ColumnAssignment_1();
@@ -11807,14 +12323,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterUpdateStatement__Group__0"
-    // InternalSql_dsl.g:3809:1: rule__AlterUpdateStatement__Group__0 : rule__AlterUpdateStatement__Group__0__Impl rule__AlterUpdateStatement__Group__1 ;
+    // InternalSql_dsl.g:3971:1: rule__AlterUpdateStatement__Group__0 : rule__AlterUpdateStatement__Group__0__Impl rule__AlterUpdateStatement__Group__1 ;
     public final void rule__AlterUpdateStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3813:1: ( rule__AlterUpdateStatement__Group__0__Impl rule__AlterUpdateStatement__Group__1 )
-            // InternalSql_dsl.g:3814:2: rule__AlterUpdateStatement__Group__0__Impl rule__AlterUpdateStatement__Group__1
+            // InternalSql_dsl.g:3975:1: ( rule__AlterUpdateStatement__Group__0__Impl rule__AlterUpdateStatement__Group__1 )
+            // InternalSql_dsl.g:3976:2: rule__AlterUpdateStatement__Group__0__Impl rule__AlterUpdateStatement__Group__1
             {
             pushFollow(FOLLOW_32);
             rule__AlterUpdateStatement__Group__0__Impl();
@@ -11845,17 +12361,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterUpdateStatement__Group__0__Impl"
-    // InternalSql_dsl.g:3821:1: rule__AlterUpdateStatement__Group__0__Impl : ( 'ALTER' ) ;
+    // InternalSql_dsl.g:3983:1: rule__AlterUpdateStatement__Group__0__Impl : ( 'ALTER' ) ;
     public final void rule__AlterUpdateStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3825:1: ( ( 'ALTER' ) )
-            // InternalSql_dsl.g:3826:1: ( 'ALTER' )
+            // InternalSql_dsl.g:3987:1: ( ( 'ALTER' ) )
+            // InternalSql_dsl.g:3988:1: ( 'ALTER' )
             {
-            // InternalSql_dsl.g:3826:1: ( 'ALTER' )
-            // InternalSql_dsl.g:3827:2: 'ALTER'
+            // InternalSql_dsl.g:3988:1: ( 'ALTER' )
+            // InternalSql_dsl.g:3989:2: 'ALTER'
             {
              before(grammarAccess.getAlterUpdateStatementAccess().getALTERKeyword_0()); 
             match(input,47,FOLLOW_2); 
@@ -11882,14 +12398,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterUpdateStatement__Group__1"
-    // InternalSql_dsl.g:3836:1: rule__AlterUpdateStatement__Group__1 : rule__AlterUpdateStatement__Group__1__Impl rule__AlterUpdateStatement__Group__2 ;
+    // InternalSql_dsl.g:3998:1: rule__AlterUpdateStatement__Group__1 : rule__AlterUpdateStatement__Group__1__Impl rule__AlterUpdateStatement__Group__2 ;
     public final void rule__AlterUpdateStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3840:1: ( rule__AlterUpdateStatement__Group__1__Impl rule__AlterUpdateStatement__Group__2 )
-            // InternalSql_dsl.g:3841:2: rule__AlterUpdateStatement__Group__1__Impl rule__AlterUpdateStatement__Group__2
+            // InternalSql_dsl.g:4002:1: ( rule__AlterUpdateStatement__Group__1__Impl rule__AlterUpdateStatement__Group__2 )
+            // InternalSql_dsl.g:4003:2: rule__AlterUpdateStatement__Group__1__Impl rule__AlterUpdateStatement__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__AlterUpdateStatement__Group__1__Impl();
@@ -11920,17 +12436,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterUpdateStatement__Group__1__Impl"
-    // InternalSql_dsl.g:3848:1: rule__AlterUpdateStatement__Group__1__Impl : ( 'COLUMN' ) ;
+    // InternalSql_dsl.g:4010:1: rule__AlterUpdateStatement__Group__1__Impl : ( 'COLUMN' ) ;
     public final void rule__AlterUpdateStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3852:1: ( ( 'COLUMN' ) )
-            // InternalSql_dsl.g:3853:1: ( 'COLUMN' )
+            // InternalSql_dsl.g:4014:1: ( ( 'COLUMN' ) )
+            // InternalSql_dsl.g:4015:1: ( 'COLUMN' )
             {
-            // InternalSql_dsl.g:3853:1: ( 'COLUMN' )
-            // InternalSql_dsl.g:3854:2: 'COLUMN'
+            // InternalSql_dsl.g:4015:1: ( 'COLUMN' )
+            // InternalSql_dsl.g:4016:2: 'COLUMN'
             {
              before(grammarAccess.getAlterUpdateStatementAccess().getCOLUMNKeyword_1()); 
             match(input,48,FOLLOW_2); 
@@ -11957,14 +12473,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterUpdateStatement__Group__2"
-    // InternalSql_dsl.g:3863:1: rule__AlterUpdateStatement__Group__2 : rule__AlterUpdateStatement__Group__2__Impl ;
+    // InternalSql_dsl.g:4025:1: rule__AlterUpdateStatement__Group__2 : rule__AlterUpdateStatement__Group__2__Impl ;
     public final void rule__AlterUpdateStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3867:1: ( rule__AlterUpdateStatement__Group__2__Impl )
-            // InternalSql_dsl.g:3868:2: rule__AlterUpdateStatement__Group__2__Impl
+            // InternalSql_dsl.g:4029:1: ( rule__AlterUpdateStatement__Group__2__Impl )
+            // InternalSql_dsl.g:4030:2: rule__AlterUpdateStatement__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AlterUpdateStatement__Group__2__Impl();
@@ -11990,21 +12506,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterUpdateStatement__Group__2__Impl"
-    // InternalSql_dsl.g:3874:1: rule__AlterUpdateStatement__Group__2__Impl : ( ( rule__AlterUpdateStatement__ColumnAssignment_2 ) ) ;
+    // InternalSql_dsl.g:4036:1: rule__AlterUpdateStatement__Group__2__Impl : ( ( rule__AlterUpdateStatement__ColumnAssignment_2 ) ) ;
     public final void rule__AlterUpdateStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3878:1: ( ( ( rule__AlterUpdateStatement__ColumnAssignment_2 ) ) )
-            // InternalSql_dsl.g:3879:1: ( ( rule__AlterUpdateStatement__ColumnAssignment_2 ) )
+            // InternalSql_dsl.g:4040:1: ( ( ( rule__AlterUpdateStatement__ColumnAssignment_2 ) ) )
+            // InternalSql_dsl.g:4041:1: ( ( rule__AlterUpdateStatement__ColumnAssignment_2 ) )
             {
-            // InternalSql_dsl.g:3879:1: ( ( rule__AlterUpdateStatement__ColumnAssignment_2 ) )
-            // InternalSql_dsl.g:3880:2: ( rule__AlterUpdateStatement__ColumnAssignment_2 )
+            // InternalSql_dsl.g:4041:1: ( ( rule__AlterUpdateStatement__ColumnAssignment_2 ) )
+            // InternalSql_dsl.g:4042:2: ( rule__AlterUpdateStatement__ColumnAssignment_2 )
             {
              before(grammarAccess.getAlterUpdateStatementAccess().getColumnAssignment_2()); 
-            // InternalSql_dsl.g:3881:2: ( rule__AlterUpdateStatement__ColumnAssignment_2 )
-            // InternalSql_dsl.g:3881:3: rule__AlterUpdateStatement__ColumnAssignment_2
+            // InternalSql_dsl.g:4043:2: ( rule__AlterUpdateStatement__ColumnAssignment_2 )
+            // InternalSql_dsl.g:4043:3: rule__AlterUpdateStatement__ColumnAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__AlterUpdateStatement__ColumnAssignment_2();
@@ -12037,14 +12553,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableDeclarationStatement__Group__0"
-    // InternalSql_dsl.g:3890:1: rule__VariableDeclarationStatement__Group__0 : rule__VariableDeclarationStatement__Group__0__Impl rule__VariableDeclarationStatement__Group__1 ;
+    // InternalSql_dsl.g:4052:1: rule__VariableDeclarationStatement__Group__0 : rule__VariableDeclarationStatement__Group__0__Impl rule__VariableDeclarationStatement__Group__1 ;
     public final void rule__VariableDeclarationStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3894:1: ( rule__VariableDeclarationStatement__Group__0__Impl rule__VariableDeclarationStatement__Group__1 )
-            // InternalSql_dsl.g:3895:2: rule__VariableDeclarationStatement__Group__0__Impl rule__VariableDeclarationStatement__Group__1
+            // InternalSql_dsl.g:4056:1: ( rule__VariableDeclarationStatement__Group__0__Impl rule__VariableDeclarationStatement__Group__1 )
+            // InternalSql_dsl.g:4057:2: rule__VariableDeclarationStatement__Group__0__Impl rule__VariableDeclarationStatement__Group__1
             {
             pushFollow(FOLLOW_10);
             rule__VariableDeclarationStatement__Group__0__Impl();
@@ -12075,17 +12591,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableDeclarationStatement__Group__0__Impl"
-    // InternalSql_dsl.g:3902:1: rule__VariableDeclarationStatement__Group__0__Impl : ( 'var' ) ;
+    // InternalSql_dsl.g:4064:1: rule__VariableDeclarationStatement__Group__0__Impl : ( 'var' ) ;
     public final void rule__VariableDeclarationStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3906:1: ( ( 'var' ) )
-            // InternalSql_dsl.g:3907:1: ( 'var' )
+            // InternalSql_dsl.g:4068:1: ( ( 'var' ) )
+            // InternalSql_dsl.g:4069:1: ( 'var' )
             {
-            // InternalSql_dsl.g:3907:1: ( 'var' )
-            // InternalSql_dsl.g:3908:2: 'var'
+            // InternalSql_dsl.g:4069:1: ( 'var' )
+            // InternalSql_dsl.g:4070:2: 'var'
             {
              before(grammarAccess.getVariableDeclarationStatementAccess().getVarKeyword_0()); 
             match(input,50,FOLLOW_2); 
@@ -12112,14 +12628,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableDeclarationStatement__Group__1"
-    // InternalSql_dsl.g:3917:1: rule__VariableDeclarationStatement__Group__1 : rule__VariableDeclarationStatement__Group__1__Impl rule__VariableDeclarationStatement__Group__2 ;
+    // InternalSql_dsl.g:4079:1: rule__VariableDeclarationStatement__Group__1 : rule__VariableDeclarationStatement__Group__1__Impl rule__VariableDeclarationStatement__Group__2 ;
     public final void rule__VariableDeclarationStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3921:1: ( rule__VariableDeclarationStatement__Group__1__Impl rule__VariableDeclarationStatement__Group__2 )
-            // InternalSql_dsl.g:3922:2: rule__VariableDeclarationStatement__Group__1__Impl rule__VariableDeclarationStatement__Group__2
+            // InternalSql_dsl.g:4083:1: ( rule__VariableDeclarationStatement__Group__1__Impl rule__VariableDeclarationStatement__Group__2 )
+            // InternalSql_dsl.g:4084:2: rule__VariableDeclarationStatement__Group__1__Impl rule__VariableDeclarationStatement__Group__2
             {
             pushFollow(FOLLOW_29);
             rule__VariableDeclarationStatement__Group__1__Impl();
@@ -12150,21 +12666,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableDeclarationStatement__Group__1__Impl"
-    // InternalSql_dsl.g:3929:1: rule__VariableDeclarationStatement__Group__1__Impl : ( ( rule__VariableDeclarationStatement__NameAssignment_1 ) ) ;
+    // InternalSql_dsl.g:4091:1: rule__VariableDeclarationStatement__Group__1__Impl : ( ( rule__VariableDeclarationStatement__NameAssignment_1 ) ) ;
     public final void rule__VariableDeclarationStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3933:1: ( ( ( rule__VariableDeclarationStatement__NameAssignment_1 ) ) )
-            // InternalSql_dsl.g:3934:1: ( ( rule__VariableDeclarationStatement__NameAssignment_1 ) )
+            // InternalSql_dsl.g:4095:1: ( ( ( rule__VariableDeclarationStatement__NameAssignment_1 ) ) )
+            // InternalSql_dsl.g:4096:1: ( ( rule__VariableDeclarationStatement__NameAssignment_1 ) )
             {
-            // InternalSql_dsl.g:3934:1: ( ( rule__VariableDeclarationStatement__NameAssignment_1 ) )
-            // InternalSql_dsl.g:3935:2: ( rule__VariableDeclarationStatement__NameAssignment_1 )
+            // InternalSql_dsl.g:4096:1: ( ( rule__VariableDeclarationStatement__NameAssignment_1 ) )
+            // InternalSql_dsl.g:4097:2: ( rule__VariableDeclarationStatement__NameAssignment_1 )
             {
              before(grammarAccess.getVariableDeclarationStatementAccess().getNameAssignment_1()); 
-            // InternalSql_dsl.g:3936:2: ( rule__VariableDeclarationStatement__NameAssignment_1 )
-            // InternalSql_dsl.g:3936:3: rule__VariableDeclarationStatement__NameAssignment_1
+            // InternalSql_dsl.g:4098:2: ( rule__VariableDeclarationStatement__NameAssignment_1 )
+            // InternalSql_dsl.g:4098:3: rule__VariableDeclarationStatement__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__VariableDeclarationStatement__NameAssignment_1();
@@ -12197,14 +12713,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableDeclarationStatement__Group__2"
-    // InternalSql_dsl.g:3944:1: rule__VariableDeclarationStatement__Group__2 : rule__VariableDeclarationStatement__Group__2__Impl rule__VariableDeclarationStatement__Group__3 ;
+    // InternalSql_dsl.g:4106:1: rule__VariableDeclarationStatement__Group__2 : rule__VariableDeclarationStatement__Group__2__Impl rule__VariableDeclarationStatement__Group__3 ;
     public final void rule__VariableDeclarationStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3948:1: ( rule__VariableDeclarationStatement__Group__2__Impl rule__VariableDeclarationStatement__Group__3 )
-            // InternalSql_dsl.g:3949:2: rule__VariableDeclarationStatement__Group__2__Impl rule__VariableDeclarationStatement__Group__3
+            // InternalSql_dsl.g:4110:1: ( rule__VariableDeclarationStatement__Group__2__Impl rule__VariableDeclarationStatement__Group__3 )
+            // InternalSql_dsl.g:4111:2: rule__VariableDeclarationStatement__Group__2__Impl rule__VariableDeclarationStatement__Group__3
             {
             pushFollow(FOLLOW_33);
             rule__VariableDeclarationStatement__Group__2__Impl();
@@ -12235,17 +12751,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableDeclarationStatement__Group__2__Impl"
-    // InternalSql_dsl.g:3956:1: rule__VariableDeclarationStatement__Group__2__Impl : ( '=' ) ;
+    // InternalSql_dsl.g:4118:1: rule__VariableDeclarationStatement__Group__2__Impl : ( '=' ) ;
     public final void rule__VariableDeclarationStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3960:1: ( ( '=' ) )
-            // InternalSql_dsl.g:3961:1: ( '=' )
+            // InternalSql_dsl.g:4122:1: ( ( '=' ) )
+            // InternalSql_dsl.g:4123:1: ( '=' )
             {
-            // InternalSql_dsl.g:3961:1: ( '=' )
-            // InternalSql_dsl.g:3962:2: '='
+            // InternalSql_dsl.g:4123:1: ( '=' )
+            // InternalSql_dsl.g:4124:2: '='
             {
              before(grammarAccess.getVariableDeclarationStatementAccess().getEqualsSignKeyword_2()); 
             match(input,14,FOLLOW_2); 
@@ -12272,14 +12788,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableDeclarationStatement__Group__3"
-    // InternalSql_dsl.g:3971:1: rule__VariableDeclarationStatement__Group__3 : rule__VariableDeclarationStatement__Group__3__Impl ;
+    // InternalSql_dsl.g:4133:1: rule__VariableDeclarationStatement__Group__3 : rule__VariableDeclarationStatement__Group__3__Impl ;
     public final void rule__VariableDeclarationStatement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3975:1: ( rule__VariableDeclarationStatement__Group__3__Impl )
-            // InternalSql_dsl.g:3976:2: rule__VariableDeclarationStatement__Group__3__Impl
+            // InternalSql_dsl.g:4137:1: ( rule__VariableDeclarationStatement__Group__3__Impl )
+            // InternalSql_dsl.g:4138:2: rule__VariableDeclarationStatement__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__VariableDeclarationStatement__Group__3__Impl();
@@ -12305,21 +12821,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableDeclarationStatement__Group__3__Impl"
-    // InternalSql_dsl.g:3982:1: rule__VariableDeclarationStatement__Group__3__Impl : ( ( rule__VariableDeclarationStatement__ValueAssignment_3 ) ) ;
+    // InternalSql_dsl.g:4144:1: rule__VariableDeclarationStatement__Group__3__Impl : ( ( rule__VariableDeclarationStatement__ValueAssignment_3 ) ) ;
     public final void rule__VariableDeclarationStatement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:3986:1: ( ( ( rule__VariableDeclarationStatement__ValueAssignment_3 ) ) )
-            // InternalSql_dsl.g:3987:1: ( ( rule__VariableDeclarationStatement__ValueAssignment_3 ) )
+            // InternalSql_dsl.g:4148:1: ( ( ( rule__VariableDeclarationStatement__ValueAssignment_3 ) ) )
+            // InternalSql_dsl.g:4149:1: ( ( rule__VariableDeclarationStatement__ValueAssignment_3 ) )
             {
-            // InternalSql_dsl.g:3987:1: ( ( rule__VariableDeclarationStatement__ValueAssignment_3 ) )
-            // InternalSql_dsl.g:3988:2: ( rule__VariableDeclarationStatement__ValueAssignment_3 )
+            // InternalSql_dsl.g:4149:1: ( ( rule__VariableDeclarationStatement__ValueAssignment_3 ) )
+            // InternalSql_dsl.g:4150:2: ( rule__VariableDeclarationStatement__ValueAssignment_3 )
             {
              before(grammarAccess.getVariableDeclarationStatementAccess().getValueAssignment_3()); 
-            // InternalSql_dsl.g:3989:2: ( rule__VariableDeclarationStatement__ValueAssignment_3 )
-            // InternalSql_dsl.g:3989:3: rule__VariableDeclarationStatement__ValueAssignment_3
+            // InternalSql_dsl.g:4151:2: ( rule__VariableDeclarationStatement__ValueAssignment_3 )
+            // InternalSql_dsl.g:4151:3: rule__VariableDeclarationStatement__ValueAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__VariableDeclarationStatement__ValueAssignment_3();
@@ -12352,14 +12868,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__REAL__Group__0"
-    // InternalSql_dsl.g:3998:1: rule__REAL__Group__0 : rule__REAL__Group__0__Impl rule__REAL__Group__1 ;
+    // InternalSql_dsl.g:4160:1: rule__REAL__Group__0 : rule__REAL__Group__0__Impl rule__REAL__Group__1 ;
     public final void rule__REAL__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4002:1: ( rule__REAL__Group__0__Impl rule__REAL__Group__1 )
-            // InternalSql_dsl.g:4003:2: rule__REAL__Group__0__Impl rule__REAL__Group__1
+            // InternalSql_dsl.g:4164:1: ( rule__REAL__Group__0__Impl rule__REAL__Group__1 )
+            // InternalSql_dsl.g:4165:2: rule__REAL__Group__0__Impl rule__REAL__Group__1
             {
             pushFollow(FOLLOW_34);
             rule__REAL__Group__0__Impl();
@@ -12390,29 +12906,29 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__REAL__Group__0__Impl"
-    // InternalSql_dsl.g:4010:1: rule__REAL__Group__0__Impl : ( ( RULE_INT )? ) ;
+    // InternalSql_dsl.g:4172:1: rule__REAL__Group__0__Impl : ( ( RULE_INT )? ) ;
     public final void rule__REAL__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4014:1: ( ( ( RULE_INT )? ) )
-            // InternalSql_dsl.g:4015:1: ( ( RULE_INT )? )
+            // InternalSql_dsl.g:4176:1: ( ( ( RULE_INT )? ) )
+            // InternalSql_dsl.g:4177:1: ( ( RULE_INT )? )
             {
-            // InternalSql_dsl.g:4015:1: ( ( RULE_INT )? )
-            // InternalSql_dsl.g:4016:2: ( RULE_INT )?
+            // InternalSql_dsl.g:4177:1: ( ( RULE_INT )? )
+            // InternalSql_dsl.g:4178:2: ( RULE_INT )?
             {
              before(grammarAccess.getREALAccess().getINTTerminalRuleCall_0()); 
-            // InternalSql_dsl.g:4017:2: ( RULE_INT )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // InternalSql_dsl.g:4179:2: ( RULE_INT )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA28_0==RULE_INT) ) {
-                alt28=1;
+            if ( (LA30_0==RULE_INT) ) {
+                alt30=1;
             }
-            switch (alt28) {
+            switch (alt30) {
                 case 1 :
-                    // InternalSql_dsl.g:4017:3: RULE_INT
+                    // InternalSql_dsl.g:4179:3: RULE_INT
                     {
                     match(input,RULE_INT,FOLLOW_2); 
 
@@ -12444,14 +12960,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__REAL__Group__1"
-    // InternalSql_dsl.g:4025:1: rule__REAL__Group__1 : rule__REAL__Group__1__Impl rule__REAL__Group__2 ;
+    // InternalSql_dsl.g:4187:1: rule__REAL__Group__1 : rule__REAL__Group__1__Impl rule__REAL__Group__2 ;
     public final void rule__REAL__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4029:1: ( rule__REAL__Group__1__Impl rule__REAL__Group__2 )
-            // InternalSql_dsl.g:4030:2: rule__REAL__Group__1__Impl rule__REAL__Group__2
+            // InternalSql_dsl.g:4191:1: ( rule__REAL__Group__1__Impl rule__REAL__Group__2 )
+            // InternalSql_dsl.g:4192:2: rule__REAL__Group__1__Impl rule__REAL__Group__2
             {
             pushFollow(FOLLOW_33);
             rule__REAL__Group__1__Impl();
@@ -12482,17 +12998,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__REAL__Group__1__Impl"
-    // InternalSql_dsl.g:4037:1: rule__REAL__Group__1__Impl : ( '.' ) ;
+    // InternalSql_dsl.g:4199:1: rule__REAL__Group__1__Impl : ( '.' ) ;
     public final void rule__REAL__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4041:1: ( ( '.' ) )
-            // InternalSql_dsl.g:4042:1: ( '.' )
+            // InternalSql_dsl.g:4203:1: ( ( '.' ) )
+            // InternalSql_dsl.g:4204:1: ( '.' )
             {
-            // InternalSql_dsl.g:4042:1: ( '.' )
-            // InternalSql_dsl.g:4043:2: '.'
+            // InternalSql_dsl.g:4204:1: ( '.' )
+            // InternalSql_dsl.g:4205:2: '.'
             {
              before(grammarAccess.getREALAccess().getFullStopKeyword_1()); 
             match(input,51,FOLLOW_2); 
@@ -12519,14 +13035,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__REAL__Group__2"
-    // InternalSql_dsl.g:4052:1: rule__REAL__Group__2 : rule__REAL__Group__2__Impl ;
+    // InternalSql_dsl.g:4214:1: rule__REAL__Group__2 : rule__REAL__Group__2__Impl ;
     public final void rule__REAL__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4056:1: ( rule__REAL__Group__2__Impl )
-            // InternalSql_dsl.g:4057:2: rule__REAL__Group__2__Impl
+            // InternalSql_dsl.g:4218:1: ( rule__REAL__Group__2__Impl )
+            // InternalSql_dsl.g:4219:2: rule__REAL__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__REAL__Group__2__Impl();
@@ -12552,17 +13068,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__REAL__Group__2__Impl"
-    // InternalSql_dsl.g:4063:1: rule__REAL__Group__2__Impl : ( RULE_INT ) ;
+    // InternalSql_dsl.g:4225:1: rule__REAL__Group__2__Impl : ( RULE_INT ) ;
     public final void rule__REAL__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4067:1: ( ( RULE_INT ) )
-            // InternalSql_dsl.g:4068:1: ( RULE_INT )
+            // InternalSql_dsl.g:4229:1: ( ( RULE_INT ) )
+            // InternalSql_dsl.g:4230:1: ( RULE_INT )
             {
-            // InternalSql_dsl.g:4068:1: ( RULE_INT )
-            // InternalSql_dsl.g:4069:2: RULE_INT
+            // InternalSql_dsl.g:4230:1: ( RULE_INT )
+            // InternalSql_dsl.g:4231:2: RULE_INT
             {
              before(grammarAccess.getREALAccess().getINTTerminalRuleCall_2()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -12589,14 +13105,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__Group__0"
-    // InternalSql_dsl.g:4079:1: rule__CountFunction__Group__0 : rule__CountFunction__Group__0__Impl rule__CountFunction__Group__1 ;
+    // InternalSql_dsl.g:4241:1: rule__CountFunction__Group__0 : rule__CountFunction__Group__0__Impl rule__CountFunction__Group__1 ;
     public final void rule__CountFunction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4083:1: ( rule__CountFunction__Group__0__Impl rule__CountFunction__Group__1 )
-            // InternalSql_dsl.g:4084:2: rule__CountFunction__Group__0__Impl rule__CountFunction__Group__1
+            // InternalSql_dsl.g:4245:1: ( rule__CountFunction__Group__0__Impl rule__CountFunction__Group__1 )
+            // InternalSql_dsl.g:4246:2: rule__CountFunction__Group__0__Impl rule__CountFunction__Group__1
             {
             pushFollow(FOLLOW_35);
             rule__CountFunction__Group__0__Impl();
@@ -12627,17 +13143,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__Group__0__Impl"
-    // InternalSql_dsl.g:4091:1: rule__CountFunction__Group__0__Impl : ( 'SELECT' ) ;
+    // InternalSql_dsl.g:4253:1: rule__CountFunction__Group__0__Impl : ( 'SELECT' ) ;
     public final void rule__CountFunction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4095:1: ( ( 'SELECT' ) )
-            // InternalSql_dsl.g:4096:1: ( 'SELECT' )
+            // InternalSql_dsl.g:4257:1: ( ( 'SELECT' ) )
+            // InternalSql_dsl.g:4258:1: ( 'SELECT' )
             {
-            // InternalSql_dsl.g:4096:1: ( 'SELECT' )
-            // InternalSql_dsl.g:4097:2: 'SELECT'
+            // InternalSql_dsl.g:4258:1: ( 'SELECT' )
+            // InternalSql_dsl.g:4259:2: 'SELECT'
             {
              before(grammarAccess.getCountFunctionAccess().getSELECTKeyword_0()); 
             match(input,28,FOLLOW_2); 
@@ -12664,14 +13180,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__Group__1"
-    // InternalSql_dsl.g:4106:1: rule__CountFunction__Group__1 : rule__CountFunction__Group__1__Impl rule__CountFunction__Group__2 ;
+    // InternalSql_dsl.g:4268:1: rule__CountFunction__Group__1 : rule__CountFunction__Group__1__Impl rule__CountFunction__Group__2 ;
     public final void rule__CountFunction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4110:1: ( rule__CountFunction__Group__1__Impl rule__CountFunction__Group__2 )
-            // InternalSql_dsl.g:4111:2: rule__CountFunction__Group__1__Impl rule__CountFunction__Group__2
+            // InternalSql_dsl.g:4272:1: ( rule__CountFunction__Group__1__Impl rule__CountFunction__Group__2 )
+            // InternalSql_dsl.g:4273:2: rule__CountFunction__Group__1__Impl rule__CountFunction__Group__2
             {
             pushFollow(FOLLOW_19);
             rule__CountFunction__Group__1__Impl();
@@ -12702,17 +13218,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__Group__1__Impl"
-    // InternalSql_dsl.g:4118:1: rule__CountFunction__Group__1__Impl : ( 'COUNT' ) ;
+    // InternalSql_dsl.g:4280:1: rule__CountFunction__Group__1__Impl : ( 'COUNT' ) ;
     public final void rule__CountFunction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4122:1: ( ( 'COUNT' ) )
-            // InternalSql_dsl.g:4123:1: ( 'COUNT' )
+            // InternalSql_dsl.g:4284:1: ( ( 'COUNT' ) )
+            // InternalSql_dsl.g:4285:1: ( 'COUNT' )
             {
-            // InternalSql_dsl.g:4123:1: ( 'COUNT' )
-            // InternalSql_dsl.g:4124:2: 'COUNT'
+            // InternalSql_dsl.g:4285:1: ( 'COUNT' )
+            // InternalSql_dsl.g:4286:2: 'COUNT'
             {
              before(grammarAccess.getCountFunctionAccess().getCOUNTKeyword_1()); 
             match(input,52,FOLLOW_2); 
@@ -12739,14 +13255,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__Group__2"
-    // InternalSql_dsl.g:4133:1: rule__CountFunction__Group__2 : rule__CountFunction__Group__2__Impl rule__CountFunction__Group__3 ;
+    // InternalSql_dsl.g:4295:1: rule__CountFunction__Group__2 : rule__CountFunction__Group__2__Impl rule__CountFunction__Group__3 ;
     public final void rule__CountFunction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4137:1: ( rule__CountFunction__Group__2__Impl rule__CountFunction__Group__3 )
-            // InternalSql_dsl.g:4138:2: rule__CountFunction__Group__2__Impl rule__CountFunction__Group__3
+            // InternalSql_dsl.g:4299:1: ( rule__CountFunction__Group__2__Impl rule__CountFunction__Group__3 )
+            // InternalSql_dsl.g:4300:2: rule__CountFunction__Group__2__Impl rule__CountFunction__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__CountFunction__Group__2__Impl();
@@ -12777,17 +13293,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__Group__2__Impl"
-    // InternalSql_dsl.g:4145:1: rule__CountFunction__Group__2__Impl : ( '(' ) ;
+    // InternalSql_dsl.g:4307:1: rule__CountFunction__Group__2__Impl : ( '(' ) ;
     public final void rule__CountFunction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4149:1: ( ( '(' ) )
-            // InternalSql_dsl.g:4150:1: ( '(' )
+            // InternalSql_dsl.g:4311:1: ( ( '(' ) )
+            // InternalSql_dsl.g:4312:1: ( '(' )
             {
-            // InternalSql_dsl.g:4150:1: ( '(' )
-            // InternalSql_dsl.g:4151:2: '('
+            // InternalSql_dsl.g:4312:1: ( '(' )
+            // InternalSql_dsl.g:4313:2: '('
             {
              before(grammarAccess.getCountFunctionAccess().getLeftParenthesisKeyword_2()); 
             match(input,36,FOLLOW_2); 
@@ -12814,14 +13330,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__Group__3"
-    // InternalSql_dsl.g:4160:1: rule__CountFunction__Group__3 : rule__CountFunction__Group__3__Impl rule__CountFunction__Group__4 ;
+    // InternalSql_dsl.g:4322:1: rule__CountFunction__Group__3 : rule__CountFunction__Group__3__Impl rule__CountFunction__Group__4 ;
     public final void rule__CountFunction__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4164:1: ( rule__CountFunction__Group__3__Impl rule__CountFunction__Group__4 )
-            // InternalSql_dsl.g:4165:2: rule__CountFunction__Group__3__Impl rule__CountFunction__Group__4
+            // InternalSql_dsl.g:4326:1: ( rule__CountFunction__Group__3__Impl rule__CountFunction__Group__4 )
+            // InternalSql_dsl.g:4327:2: rule__CountFunction__Group__3__Impl rule__CountFunction__Group__4
             {
             pushFollow(FOLLOW_36);
             rule__CountFunction__Group__3__Impl();
@@ -12852,21 +13368,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__Group__3__Impl"
-    // InternalSql_dsl.g:4172:1: rule__CountFunction__Group__3__Impl : ( ( rule__CountFunction__ColumnAssignment_3 ) ) ;
+    // InternalSql_dsl.g:4334:1: rule__CountFunction__Group__3__Impl : ( ( rule__CountFunction__ColumnAssignment_3 ) ) ;
     public final void rule__CountFunction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4176:1: ( ( ( rule__CountFunction__ColumnAssignment_3 ) ) )
-            // InternalSql_dsl.g:4177:1: ( ( rule__CountFunction__ColumnAssignment_3 ) )
+            // InternalSql_dsl.g:4338:1: ( ( ( rule__CountFunction__ColumnAssignment_3 ) ) )
+            // InternalSql_dsl.g:4339:1: ( ( rule__CountFunction__ColumnAssignment_3 ) )
             {
-            // InternalSql_dsl.g:4177:1: ( ( rule__CountFunction__ColumnAssignment_3 ) )
-            // InternalSql_dsl.g:4178:2: ( rule__CountFunction__ColumnAssignment_3 )
+            // InternalSql_dsl.g:4339:1: ( ( rule__CountFunction__ColumnAssignment_3 ) )
+            // InternalSql_dsl.g:4340:2: ( rule__CountFunction__ColumnAssignment_3 )
             {
              before(grammarAccess.getCountFunctionAccess().getColumnAssignment_3()); 
-            // InternalSql_dsl.g:4179:2: ( rule__CountFunction__ColumnAssignment_3 )
-            // InternalSql_dsl.g:4179:3: rule__CountFunction__ColumnAssignment_3
+            // InternalSql_dsl.g:4341:2: ( rule__CountFunction__ColumnAssignment_3 )
+            // InternalSql_dsl.g:4341:3: rule__CountFunction__ColumnAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__CountFunction__ColumnAssignment_3();
@@ -12899,14 +13415,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__Group__4"
-    // InternalSql_dsl.g:4187:1: rule__CountFunction__Group__4 : rule__CountFunction__Group__4__Impl rule__CountFunction__Group__5 ;
+    // InternalSql_dsl.g:4349:1: rule__CountFunction__Group__4 : rule__CountFunction__Group__4__Impl rule__CountFunction__Group__5 ;
     public final void rule__CountFunction__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4191:1: ( rule__CountFunction__Group__4__Impl rule__CountFunction__Group__5 )
-            // InternalSql_dsl.g:4192:2: rule__CountFunction__Group__4__Impl rule__CountFunction__Group__5
+            // InternalSql_dsl.g:4353:1: ( rule__CountFunction__Group__4__Impl rule__CountFunction__Group__5 )
+            // InternalSql_dsl.g:4354:2: rule__CountFunction__Group__4__Impl rule__CountFunction__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__CountFunction__Group__4__Impl();
@@ -12937,17 +13453,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__Group__4__Impl"
-    // InternalSql_dsl.g:4199:1: rule__CountFunction__Group__4__Impl : ( ')' ) ;
+    // InternalSql_dsl.g:4361:1: rule__CountFunction__Group__4__Impl : ( ')' ) ;
     public final void rule__CountFunction__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4203:1: ( ( ')' ) )
-            // InternalSql_dsl.g:4204:1: ( ')' )
+            // InternalSql_dsl.g:4365:1: ( ( ')' ) )
+            // InternalSql_dsl.g:4366:1: ( ')' )
             {
-            // InternalSql_dsl.g:4204:1: ( ')' )
-            // InternalSql_dsl.g:4205:2: ')'
+            // InternalSql_dsl.g:4366:1: ( ')' )
+            // InternalSql_dsl.g:4367:2: ')'
             {
              before(grammarAccess.getCountFunctionAccess().getRightParenthesisKeyword_4()); 
             match(input,37,FOLLOW_2); 
@@ -12974,14 +13490,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__Group__5"
-    // InternalSql_dsl.g:4214:1: rule__CountFunction__Group__5 : rule__CountFunction__Group__5__Impl ;
+    // InternalSql_dsl.g:4376:1: rule__CountFunction__Group__5 : rule__CountFunction__Group__5__Impl ;
     public final void rule__CountFunction__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4218:1: ( rule__CountFunction__Group__5__Impl )
-            // InternalSql_dsl.g:4219:2: rule__CountFunction__Group__5__Impl
+            // InternalSql_dsl.g:4380:1: ( rule__CountFunction__Group__5__Impl )
+            // InternalSql_dsl.g:4381:2: rule__CountFunction__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CountFunction__Group__5__Impl();
@@ -13007,21 +13523,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__Group__5__Impl"
-    // InternalSql_dsl.g:4225:1: rule__CountFunction__Group__5__Impl : ( ( rule__CountFunction__XAssignment_5 ) ) ;
+    // InternalSql_dsl.g:4387:1: rule__CountFunction__Group__5__Impl : ( ( rule__CountFunction__XAssignment_5 ) ) ;
     public final void rule__CountFunction__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4229:1: ( ( ( rule__CountFunction__XAssignment_5 ) ) )
-            // InternalSql_dsl.g:4230:1: ( ( rule__CountFunction__XAssignment_5 ) )
+            // InternalSql_dsl.g:4391:1: ( ( ( rule__CountFunction__XAssignment_5 ) ) )
+            // InternalSql_dsl.g:4392:1: ( ( rule__CountFunction__XAssignment_5 ) )
             {
-            // InternalSql_dsl.g:4230:1: ( ( rule__CountFunction__XAssignment_5 ) )
-            // InternalSql_dsl.g:4231:2: ( rule__CountFunction__XAssignment_5 )
+            // InternalSql_dsl.g:4392:1: ( ( rule__CountFunction__XAssignment_5 ) )
+            // InternalSql_dsl.g:4393:2: ( rule__CountFunction__XAssignment_5 )
             {
              before(grammarAccess.getCountFunctionAccess().getXAssignment_5()); 
-            // InternalSql_dsl.g:4232:2: ( rule__CountFunction__XAssignment_5 )
-            // InternalSql_dsl.g:4232:3: rule__CountFunction__XAssignment_5
+            // InternalSql_dsl.g:4394:2: ( rule__CountFunction__XAssignment_5 )
+            // InternalSql_dsl.g:4394:3: rule__CountFunction__XAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__CountFunction__XAssignment_5();
@@ -13054,14 +13570,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__Group__0"
-    // InternalSql_dsl.g:4241:1: rule__AvgFunction__Group__0 : rule__AvgFunction__Group__0__Impl rule__AvgFunction__Group__1 ;
+    // InternalSql_dsl.g:4403:1: rule__AvgFunction__Group__0 : rule__AvgFunction__Group__0__Impl rule__AvgFunction__Group__1 ;
     public final void rule__AvgFunction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4245:1: ( rule__AvgFunction__Group__0__Impl rule__AvgFunction__Group__1 )
-            // InternalSql_dsl.g:4246:2: rule__AvgFunction__Group__0__Impl rule__AvgFunction__Group__1
+            // InternalSql_dsl.g:4407:1: ( rule__AvgFunction__Group__0__Impl rule__AvgFunction__Group__1 )
+            // InternalSql_dsl.g:4408:2: rule__AvgFunction__Group__0__Impl rule__AvgFunction__Group__1
             {
             pushFollow(FOLLOW_37);
             rule__AvgFunction__Group__0__Impl();
@@ -13092,17 +13608,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__Group__0__Impl"
-    // InternalSql_dsl.g:4253:1: rule__AvgFunction__Group__0__Impl : ( 'SELECT' ) ;
+    // InternalSql_dsl.g:4415:1: rule__AvgFunction__Group__0__Impl : ( 'SELECT' ) ;
     public final void rule__AvgFunction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4257:1: ( ( 'SELECT' ) )
-            // InternalSql_dsl.g:4258:1: ( 'SELECT' )
+            // InternalSql_dsl.g:4419:1: ( ( 'SELECT' ) )
+            // InternalSql_dsl.g:4420:1: ( 'SELECT' )
             {
-            // InternalSql_dsl.g:4258:1: ( 'SELECT' )
-            // InternalSql_dsl.g:4259:2: 'SELECT'
+            // InternalSql_dsl.g:4420:1: ( 'SELECT' )
+            // InternalSql_dsl.g:4421:2: 'SELECT'
             {
              before(grammarAccess.getAvgFunctionAccess().getSELECTKeyword_0()); 
             match(input,28,FOLLOW_2); 
@@ -13129,14 +13645,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__Group__1"
-    // InternalSql_dsl.g:4268:1: rule__AvgFunction__Group__1 : rule__AvgFunction__Group__1__Impl rule__AvgFunction__Group__2 ;
+    // InternalSql_dsl.g:4430:1: rule__AvgFunction__Group__1 : rule__AvgFunction__Group__1__Impl rule__AvgFunction__Group__2 ;
     public final void rule__AvgFunction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4272:1: ( rule__AvgFunction__Group__1__Impl rule__AvgFunction__Group__2 )
-            // InternalSql_dsl.g:4273:2: rule__AvgFunction__Group__1__Impl rule__AvgFunction__Group__2
+            // InternalSql_dsl.g:4434:1: ( rule__AvgFunction__Group__1__Impl rule__AvgFunction__Group__2 )
+            // InternalSql_dsl.g:4435:2: rule__AvgFunction__Group__1__Impl rule__AvgFunction__Group__2
             {
             pushFollow(FOLLOW_19);
             rule__AvgFunction__Group__1__Impl();
@@ -13167,17 +13683,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__Group__1__Impl"
-    // InternalSql_dsl.g:4280:1: rule__AvgFunction__Group__1__Impl : ( 'AVG' ) ;
+    // InternalSql_dsl.g:4442:1: rule__AvgFunction__Group__1__Impl : ( 'AVG' ) ;
     public final void rule__AvgFunction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4284:1: ( ( 'AVG' ) )
-            // InternalSql_dsl.g:4285:1: ( 'AVG' )
+            // InternalSql_dsl.g:4446:1: ( ( 'AVG' ) )
+            // InternalSql_dsl.g:4447:1: ( 'AVG' )
             {
-            // InternalSql_dsl.g:4285:1: ( 'AVG' )
-            // InternalSql_dsl.g:4286:2: 'AVG'
+            // InternalSql_dsl.g:4447:1: ( 'AVG' )
+            // InternalSql_dsl.g:4448:2: 'AVG'
             {
              before(grammarAccess.getAvgFunctionAccess().getAVGKeyword_1()); 
             match(input,53,FOLLOW_2); 
@@ -13204,14 +13720,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__Group__2"
-    // InternalSql_dsl.g:4295:1: rule__AvgFunction__Group__2 : rule__AvgFunction__Group__2__Impl rule__AvgFunction__Group__3 ;
+    // InternalSql_dsl.g:4457:1: rule__AvgFunction__Group__2 : rule__AvgFunction__Group__2__Impl rule__AvgFunction__Group__3 ;
     public final void rule__AvgFunction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4299:1: ( rule__AvgFunction__Group__2__Impl rule__AvgFunction__Group__3 )
-            // InternalSql_dsl.g:4300:2: rule__AvgFunction__Group__2__Impl rule__AvgFunction__Group__3
+            // InternalSql_dsl.g:4461:1: ( rule__AvgFunction__Group__2__Impl rule__AvgFunction__Group__3 )
+            // InternalSql_dsl.g:4462:2: rule__AvgFunction__Group__2__Impl rule__AvgFunction__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__AvgFunction__Group__2__Impl();
@@ -13242,17 +13758,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__Group__2__Impl"
-    // InternalSql_dsl.g:4307:1: rule__AvgFunction__Group__2__Impl : ( '(' ) ;
+    // InternalSql_dsl.g:4469:1: rule__AvgFunction__Group__2__Impl : ( '(' ) ;
     public final void rule__AvgFunction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4311:1: ( ( '(' ) )
-            // InternalSql_dsl.g:4312:1: ( '(' )
+            // InternalSql_dsl.g:4473:1: ( ( '(' ) )
+            // InternalSql_dsl.g:4474:1: ( '(' )
             {
-            // InternalSql_dsl.g:4312:1: ( '(' )
-            // InternalSql_dsl.g:4313:2: '('
+            // InternalSql_dsl.g:4474:1: ( '(' )
+            // InternalSql_dsl.g:4475:2: '('
             {
              before(grammarAccess.getAvgFunctionAccess().getLeftParenthesisKeyword_2()); 
             match(input,36,FOLLOW_2); 
@@ -13279,14 +13795,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__Group__3"
-    // InternalSql_dsl.g:4322:1: rule__AvgFunction__Group__3 : rule__AvgFunction__Group__3__Impl rule__AvgFunction__Group__4 ;
+    // InternalSql_dsl.g:4484:1: rule__AvgFunction__Group__3 : rule__AvgFunction__Group__3__Impl rule__AvgFunction__Group__4 ;
     public final void rule__AvgFunction__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4326:1: ( rule__AvgFunction__Group__3__Impl rule__AvgFunction__Group__4 )
-            // InternalSql_dsl.g:4327:2: rule__AvgFunction__Group__3__Impl rule__AvgFunction__Group__4
+            // InternalSql_dsl.g:4488:1: ( rule__AvgFunction__Group__3__Impl rule__AvgFunction__Group__4 )
+            // InternalSql_dsl.g:4489:2: rule__AvgFunction__Group__3__Impl rule__AvgFunction__Group__4
             {
             pushFollow(FOLLOW_36);
             rule__AvgFunction__Group__3__Impl();
@@ -13317,21 +13833,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__Group__3__Impl"
-    // InternalSql_dsl.g:4334:1: rule__AvgFunction__Group__3__Impl : ( ( rule__AvgFunction__ColumnAssignment_3 ) ) ;
+    // InternalSql_dsl.g:4496:1: rule__AvgFunction__Group__3__Impl : ( ( rule__AvgFunction__ColumnAssignment_3 ) ) ;
     public final void rule__AvgFunction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4338:1: ( ( ( rule__AvgFunction__ColumnAssignment_3 ) ) )
-            // InternalSql_dsl.g:4339:1: ( ( rule__AvgFunction__ColumnAssignment_3 ) )
+            // InternalSql_dsl.g:4500:1: ( ( ( rule__AvgFunction__ColumnAssignment_3 ) ) )
+            // InternalSql_dsl.g:4501:1: ( ( rule__AvgFunction__ColumnAssignment_3 ) )
             {
-            // InternalSql_dsl.g:4339:1: ( ( rule__AvgFunction__ColumnAssignment_3 ) )
-            // InternalSql_dsl.g:4340:2: ( rule__AvgFunction__ColumnAssignment_3 )
+            // InternalSql_dsl.g:4501:1: ( ( rule__AvgFunction__ColumnAssignment_3 ) )
+            // InternalSql_dsl.g:4502:2: ( rule__AvgFunction__ColumnAssignment_3 )
             {
              before(grammarAccess.getAvgFunctionAccess().getColumnAssignment_3()); 
-            // InternalSql_dsl.g:4341:2: ( rule__AvgFunction__ColumnAssignment_3 )
-            // InternalSql_dsl.g:4341:3: rule__AvgFunction__ColumnAssignment_3
+            // InternalSql_dsl.g:4503:2: ( rule__AvgFunction__ColumnAssignment_3 )
+            // InternalSql_dsl.g:4503:3: rule__AvgFunction__ColumnAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__AvgFunction__ColumnAssignment_3();
@@ -13364,14 +13880,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__Group__4"
-    // InternalSql_dsl.g:4349:1: rule__AvgFunction__Group__4 : rule__AvgFunction__Group__4__Impl rule__AvgFunction__Group__5 ;
+    // InternalSql_dsl.g:4511:1: rule__AvgFunction__Group__4 : rule__AvgFunction__Group__4__Impl rule__AvgFunction__Group__5 ;
     public final void rule__AvgFunction__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4353:1: ( rule__AvgFunction__Group__4__Impl rule__AvgFunction__Group__5 )
-            // InternalSql_dsl.g:4354:2: rule__AvgFunction__Group__4__Impl rule__AvgFunction__Group__5
+            // InternalSql_dsl.g:4515:1: ( rule__AvgFunction__Group__4__Impl rule__AvgFunction__Group__5 )
+            // InternalSql_dsl.g:4516:2: rule__AvgFunction__Group__4__Impl rule__AvgFunction__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__AvgFunction__Group__4__Impl();
@@ -13402,17 +13918,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__Group__4__Impl"
-    // InternalSql_dsl.g:4361:1: rule__AvgFunction__Group__4__Impl : ( ')' ) ;
+    // InternalSql_dsl.g:4523:1: rule__AvgFunction__Group__4__Impl : ( ')' ) ;
     public final void rule__AvgFunction__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4365:1: ( ( ')' ) )
-            // InternalSql_dsl.g:4366:1: ( ')' )
+            // InternalSql_dsl.g:4527:1: ( ( ')' ) )
+            // InternalSql_dsl.g:4528:1: ( ')' )
             {
-            // InternalSql_dsl.g:4366:1: ( ')' )
-            // InternalSql_dsl.g:4367:2: ')'
+            // InternalSql_dsl.g:4528:1: ( ')' )
+            // InternalSql_dsl.g:4529:2: ')'
             {
              before(grammarAccess.getAvgFunctionAccess().getRightParenthesisKeyword_4()); 
             match(input,37,FOLLOW_2); 
@@ -13439,14 +13955,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__Group__5"
-    // InternalSql_dsl.g:4376:1: rule__AvgFunction__Group__5 : rule__AvgFunction__Group__5__Impl ;
+    // InternalSql_dsl.g:4538:1: rule__AvgFunction__Group__5 : rule__AvgFunction__Group__5__Impl ;
     public final void rule__AvgFunction__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4380:1: ( rule__AvgFunction__Group__5__Impl )
-            // InternalSql_dsl.g:4381:2: rule__AvgFunction__Group__5__Impl
+            // InternalSql_dsl.g:4542:1: ( rule__AvgFunction__Group__5__Impl )
+            // InternalSql_dsl.g:4543:2: rule__AvgFunction__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AvgFunction__Group__5__Impl();
@@ -13472,21 +13988,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__Group__5__Impl"
-    // InternalSql_dsl.g:4387:1: rule__AvgFunction__Group__5__Impl : ( ( rule__AvgFunction__XAssignment_5 ) ) ;
+    // InternalSql_dsl.g:4549:1: rule__AvgFunction__Group__5__Impl : ( ( rule__AvgFunction__XAssignment_5 ) ) ;
     public final void rule__AvgFunction__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4391:1: ( ( ( rule__AvgFunction__XAssignment_5 ) ) )
-            // InternalSql_dsl.g:4392:1: ( ( rule__AvgFunction__XAssignment_5 ) )
+            // InternalSql_dsl.g:4553:1: ( ( ( rule__AvgFunction__XAssignment_5 ) ) )
+            // InternalSql_dsl.g:4554:1: ( ( rule__AvgFunction__XAssignment_5 ) )
             {
-            // InternalSql_dsl.g:4392:1: ( ( rule__AvgFunction__XAssignment_5 ) )
-            // InternalSql_dsl.g:4393:2: ( rule__AvgFunction__XAssignment_5 )
+            // InternalSql_dsl.g:4554:1: ( ( rule__AvgFunction__XAssignment_5 ) )
+            // InternalSql_dsl.g:4555:2: ( rule__AvgFunction__XAssignment_5 )
             {
              before(grammarAccess.getAvgFunctionAccess().getXAssignment_5()); 
-            // InternalSql_dsl.g:4394:2: ( rule__AvgFunction__XAssignment_5 )
-            // InternalSql_dsl.g:4394:3: rule__AvgFunction__XAssignment_5
+            // InternalSql_dsl.g:4556:2: ( rule__AvgFunction__XAssignment_5 )
+            // InternalSql_dsl.g:4556:3: rule__AvgFunction__XAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__AvgFunction__XAssignment_5();
@@ -13519,14 +14035,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__Group__0"
-    // InternalSql_dsl.g:4403:1: rule__SumFunction__Group__0 : rule__SumFunction__Group__0__Impl rule__SumFunction__Group__1 ;
+    // InternalSql_dsl.g:4565:1: rule__SumFunction__Group__0 : rule__SumFunction__Group__0__Impl rule__SumFunction__Group__1 ;
     public final void rule__SumFunction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4407:1: ( rule__SumFunction__Group__0__Impl rule__SumFunction__Group__1 )
-            // InternalSql_dsl.g:4408:2: rule__SumFunction__Group__0__Impl rule__SumFunction__Group__1
+            // InternalSql_dsl.g:4569:1: ( rule__SumFunction__Group__0__Impl rule__SumFunction__Group__1 )
+            // InternalSql_dsl.g:4570:2: rule__SumFunction__Group__0__Impl rule__SumFunction__Group__1
             {
             pushFollow(FOLLOW_38);
             rule__SumFunction__Group__0__Impl();
@@ -13557,17 +14073,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__Group__0__Impl"
-    // InternalSql_dsl.g:4415:1: rule__SumFunction__Group__0__Impl : ( 'SELECT' ) ;
+    // InternalSql_dsl.g:4577:1: rule__SumFunction__Group__0__Impl : ( 'SELECT' ) ;
     public final void rule__SumFunction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4419:1: ( ( 'SELECT' ) )
-            // InternalSql_dsl.g:4420:1: ( 'SELECT' )
+            // InternalSql_dsl.g:4581:1: ( ( 'SELECT' ) )
+            // InternalSql_dsl.g:4582:1: ( 'SELECT' )
             {
-            // InternalSql_dsl.g:4420:1: ( 'SELECT' )
-            // InternalSql_dsl.g:4421:2: 'SELECT'
+            // InternalSql_dsl.g:4582:1: ( 'SELECT' )
+            // InternalSql_dsl.g:4583:2: 'SELECT'
             {
              before(grammarAccess.getSumFunctionAccess().getSELECTKeyword_0()); 
             match(input,28,FOLLOW_2); 
@@ -13594,14 +14110,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__Group__1"
-    // InternalSql_dsl.g:4430:1: rule__SumFunction__Group__1 : rule__SumFunction__Group__1__Impl rule__SumFunction__Group__2 ;
+    // InternalSql_dsl.g:4592:1: rule__SumFunction__Group__1 : rule__SumFunction__Group__1__Impl rule__SumFunction__Group__2 ;
     public final void rule__SumFunction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4434:1: ( rule__SumFunction__Group__1__Impl rule__SumFunction__Group__2 )
-            // InternalSql_dsl.g:4435:2: rule__SumFunction__Group__1__Impl rule__SumFunction__Group__2
+            // InternalSql_dsl.g:4596:1: ( rule__SumFunction__Group__1__Impl rule__SumFunction__Group__2 )
+            // InternalSql_dsl.g:4597:2: rule__SumFunction__Group__1__Impl rule__SumFunction__Group__2
             {
             pushFollow(FOLLOW_19);
             rule__SumFunction__Group__1__Impl();
@@ -13632,17 +14148,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__Group__1__Impl"
-    // InternalSql_dsl.g:4442:1: rule__SumFunction__Group__1__Impl : ( 'SUM' ) ;
+    // InternalSql_dsl.g:4604:1: rule__SumFunction__Group__1__Impl : ( 'SUM' ) ;
     public final void rule__SumFunction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4446:1: ( ( 'SUM' ) )
-            // InternalSql_dsl.g:4447:1: ( 'SUM' )
+            // InternalSql_dsl.g:4608:1: ( ( 'SUM' ) )
+            // InternalSql_dsl.g:4609:1: ( 'SUM' )
             {
-            // InternalSql_dsl.g:4447:1: ( 'SUM' )
-            // InternalSql_dsl.g:4448:2: 'SUM'
+            // InternalSql_dsl.g:4609:1: ( 'SUM' )
+            // InternalSql_dsl.g:4610:2: 'SUM'
             {
              before(grammarAccess.getSumFunctionAccess().getSUMKeyword_1()); 
             match(input,54,FOLLOW_2); 
@@ -13669,14 +14185,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__Group__2"
-    // InternalSql_dsl.g:4457:1: rule__SumFunction__Group__2 : rule__SumFunction__Group__2__Impl rule__SumFunction__Group__3 ;
+    // InternalSql_dsl.g:4619:1: rule__SumFunction__Group__2 : rule__SumFunction__Group__2__Impl rule__SumFunction__Group__3 ;
     public final void rule__SumFunction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4461:1: ( rule__SumFunction__Group__2__Impl rule__SumFunction__Group__3 )
-            // InternalSql_dsl.g:4462:2: rule__SumFunction__Group__2__Impl rule__SumFunction__Group__3
+            // InternalSql_dsl.g:4623:1: ( rule__SumFunction__Group__2__Impl rule__SumFunction__Group__3 )
+            // InternalSql_dsl.g:4624:2: rule__SumFunction__Group__2__Impl rule__SumFunction__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__SumFunction__Group__2__Impl();
@@ -13707,17 +14223,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__Group__2__Impl"
-    // InternalSql_dsl.g:4469:1: rule__SumFunction__Group__2__Impl : ( '(' ) ;
+    // InternalSql_dsl.g:4631:1: rule__SumFunction__Group__2__Impl : ( '(' ) ;
     public final void rule__SumFunction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4473:1: ( ( '(' ) )
-            // InternalSql_dsl.g:4474:1: ( '(' )
+            // InternalSql_dsl.g:4635:1: ( ( '(' ) )
+            // InternalSql_dsl.g:4636:1: ( '(' )
             {
-            // InternalSql_dsl.g:4474:1: ( '(' )
-            // InternalSql_dsl.g:4475:2: '('
+            // InternalSql_dsl.g:4636:1: ( '(' )
+            // InternalSql_dsl.g:4637:2: '('
             {
              before(grammarAccess.getSumFunctionAccess().getLeftParenthesisKeyword_2()); 
             match(input,36,FOLLOW_2); 
@@ -13744,14 +14260,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__Group__3"
-    // InternalSql_dsl.g:4484:1: rule__SumFunction__Group__3 : rule__SumFunction__Group__3__Impl rule__SumFunction__Group__4 ;
+    // InternalSql_dsl.g:4646:1: rule__SumFunction__Group__3 : rule__SumFunction__Group__3__Impl rule__SumFunction__Group__4 ;
     public final void rule__SumFunction__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4488:1: ( rule__SumFunction__Group__3__Impl rule__SumFunction__Group__4 )
-            // InternalSql_dsl.g:4489:2: rule__SumFunction__Group__3__Impl rule__SumFunction__Group__4
+            // InternalSql_dsl.g:4650:1: ( rule__SumFunction__Group__3__Impl rule__SumFunction__Group__4 )
+            // InternalSql_dsl.g:4651:2: rule__SumFunction__Group__3__Impl rule__SumFunction__Group__4
             {
             pushFollow(FOLLOW_36);
             rule__SumFunction__Group__3__Impl();
@@ -13782,21 +14298,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__Group__3__Impl"
-    // InternalSql_dsl.g:4496:1: rule__SumFunction__Group__3__Impl : ( ( rule__SumFunction__ColumnAssignment_3 ) ) ;
+    // InternalSql_dsl.g:4658:1: rule__SumFunction__Group__3__Impl : ( ( rule__SumFunction__ColumnAssignment_3 ) ) ;
     public final void rule__SumFunction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4500:1: ( ( ( rule__SumFunction__ColumnAssignment_3 ) ) )
-            // InternalSql_dsl.g:4501:1: ( ( rule__SumFunction__ColumnAssignment_3 ) )
+            // InternalSql_dsl.g:4662:1: ( ( ( rule__SumFunction__ColumnAssignment_3 ) ) )
+            // InternalSql_dsl.g:4663:1: ( ( rule__SumFunction__ColumnAssignment_3 ) )
             {
-            // InternalSql_dsl.g:4501:1: ( ( rule__SumFunction__ColumnAssignment_3 ) )
-            // InternalSql_dsl.g:4502:2: ( rule__SumFunction__ColumnAssignment_3 )
+            // InternalSql_dsl.g:4663:1: ( ( rule__SumFunction__ColumnAssignment_3 ) )
+            // InternalSql_dsl.g:4664:2: ( rule__SumFunction__ColumnAssignment_3 )
             {
              before(grammarAccess.getSumFunctionAccess().getColumnAssignment_3()); 
-            // InternalSql_dsl.g:4503:2: ( rule__SumFunction__ColumnAssignment_3 )
-            // InternalSql_dsl.g:4503:3: rule__SumFunction__ColumnAssignment_3
+            // InternalSql_dsl.g:4665:2: ( rule__SumFunction__ColumnAssignment_3 )
+            // InternalSql_dsl.g:4665:3: rule__SumFunction__ColumnAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__SumFunction__ColumnAssignment_3();
@@ -13829,14 +14345,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__Group__4"
-    // InternalSql_dsl.g:4511:1: rule__SumFunction__Group__4 : rule__SumFunction__Group__4__Impl rule__SumFunction__Group__5 ;
+    // InternalSql_dsl.g:4673:1: rule__SumFunction__Group__4 : rule__SumFunction__Group__4__Impl rule__SumFunction__Group__5 ;
     public final void rule__SumFunction__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4515:1: ( rule__SumFunction__Group__4__Impl rule__SumFunction__Group__5 )
-            // InternalSql_dsl.g:4516:2: rule__SumFunction__Group__4__Impl rule__SumFunction__Group__5
+            // InternalSql_dsl.g:4677:1: ( rule__SumFunction__Group__4__Impl rule__SumFunction__Group__5 )
+            // InternalSql_dsl.g:4678:2: rule__SumFunction__Group__4__Impl rule__SumFunction__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__SumFunction__Group__4__Impl();
@@ -13867,17 +14383,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__Group__4__Impl"
-    // InternalSql_dsl.g:4523:1: rule__SumFunction__Group__4__Impl : ( ')' ) ;
+    // InternalSql_dsl.g:4685:1: rule__SumFunction__Group__4__Impl : ( ')' ) ;
     public final void rule__SumFunction__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4527:1: ( ( ')' ) )
-            // InternalSql_dsl.g:4528:1: ( ')' )
+            // InternalSql_dsl.g:4689:1: ( ( ')' ) )
+            // InternalSql_dsl.g:4690:1: ( ')' )
             {
-            // InternalSql_dsl.g:4528:1: ( ')' )
-            // InternalSql_dsl.g:4529:2: ')'
+            // InternalSql_dsl.g:4690:1: ( ')' )
+            // InternalSql_dsl.g:4691:2: ')'
             {
              before(grammarAccess.getSumFunctionAccess().getRightParenthesisKeyword_4()); 
             match(input,37,FOLLOW_2); 
@@ -13904,14 +14420,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__Group__5"
-    // InternalSql_dsl.g:4538:1: rule__SumFunction__Group__5 : rule__SumFunction__Group__5__Impl ;
+    // InternalSql_dsl.g:4700:1: rule__SumFunction__Group__5 : rule__SumFunction__Group__5__Impl ;
     public final void rule__SumFunction__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4542:1: ( rule__SumFunction__Group__5__Impl )
-            // InternalSql_dsl.g:4543:2: rule__SumFunction__Group__5__Impl
+            // InternalSql_dsl.g:4704:1: ( rule__SumFunction__Group__5__Impl )
+            // InternalSql_dsl.g:4705:2: rule__SumFunction__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SumFunction__Group__5__Impl();
@@ -13937,21 +14453,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__Group__5__Impl"
-    // InternalSql_dsl.g:4549:1: rule__SumFunction__Group__5__Impl : ( ( rule__SumFunction__XAssignment_5 ) ) ;
+    // InternalSql_dsl.g:4711:1: rule__SumFunction__Group__5__Impl : ( ( rule__SumFunction__XAssignment_5 ) ) ;
     public final void rule__SumFunction__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4553:1: ( ( ( rule__SumFunction__XAssignment_5 ) ) )
-            // InternalSql_dsl.g:4554:1: ( ( rule__SumFunction__XAssignment_5 ) )
+            // InternalSql_dsl.g:4715:1: ( ( ( rule__SumFunction__XAssignment_5 ) ) )
+            // InternalSql_dsl.g:4716:1: ( ( rule__SumFunction__XAssignment_5 ) )
             {
-            // InternalSql_dsl.g:4554:1: ( ( rule__SumFunction__XAssignment_5 ) )
-            // InternalSql_dsl.g:4555:2: ( rule__SumFunction__XAssignment_5 )
+            // InternalSql_dsl.g:4716:1: ( ( rule__SumFunction__XAssignment_5 ) )
+            // InternalSql_dsl.g:4717:2: ( rule__SumFunction__XAssignment_5 )
             {
              before(grammarAccess.getSumFunctionAccess().getXAssignment_5()); 
-            // InternalSql_dsl.g:4556:2: ( rule__SumFunction__XAssignment_5 )
-            // InternalSql_dsl.g:4556:3: rule__SumFunction__XAssignment_5
+            // InternalSql_dsl.g:4718:2: ( rule__SumFunction__XAssignment_5 )
+            // InternalSql_dsl.g:4718:3: rule__SumFunction__XAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__SumFunction__XAssignment_5();
@@ -13984,14 +14500,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__Group__0"
-    // InternalSql_dsl.g:4565:1: rule__MinFunction__Group__0 : rule__MinFunction__Group__0__Impl rule__MinFunction__Group__1 ;
+    // InternalSql_dsl.g:4727:1: rule__MinFunction__Group__0 : rule__MinFunction__Group__0__Impl rule__MinFunction__Group__1 ;
     public final void rule__MinFunction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4569:1: ( rule__MinFunction__Group__0__Impl rule__MinFunction__Group__1 )
-            // InternalSql_dsl.g:4570:2: rule__MinFunction__Group__0__Impl rule__MinFunction__Group__1
+            // InternalSql_dsl.g:4731:1: ( rule__MinFunction__Group__0__Impl rule__MinFunction__Group__1 )
+            // InternalSql_dsl.g:4732:2: rule__MinFunction__Group__0__Impl rule__MinFunction__Group__1
             {
             pushFollow(FOLLOW_39);
             rule__MinFunction__Group__0__Impl();
@@ -14022,17 +14538,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__Group__0__Impl"
-    // InternalSql_dsl.g:4577:1: rule__MinFunction__Group__0__Impl : ( 'SELECT' ) ;
+    // InternalSql_dsl.g:4739:1: rule__MinFunction__Group__0__Impl : ( 'SELECT' ) ;
     public final void rule__MinFunction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4581:1: ( ( 'SELECT' ) )
-            // InternalSql_dsl.g:4582:1: ( 'SELECT' )
+            // InternalSql_dsl.g:4743:1: ( ( 'SELECT' ) )
+            // InternalSql_dsl.g:4744:1: ( 'SELECT' )
             {
-            // InternalSql_dsl.g:4582:1: ( 'SELECT' )
-            // InternalSql_dsl.g:4583:2: 'SELECT'
+            // InternalSql_dsl.g:4744:1: ( 'SELECT' )
+            // InternalSql_dsl.g:4745:2: 'SELECT'
             {
              before(grammarAccess.getMinFunctionAccess().getSELECTKeyword_0()); 
             match(input,28,FOLLOW_2); 
@@ -14059,14 +14575,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__Group__1"
-    // InternalSql_dsl.g:4592:1: rule__MinFunction__Group__1 : rule__MinFunction__Group__1__Impl rule__MinFunction__Group__2 ;
+    // InternalSql_dsl.g:4754:1: rule__MinFunction__Group__1 : rule__MinFunction__Group__1__Impl rule__MinFunction__Group__2 ;
     public final void rule__MinFunction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4596:1: ( rule__MinFunction__Group__1__Impl rule__MinFunction__Group__2 )
-            // InternalSql_dsl.g:4597:2: rule__MinFunction__Group__1__Impl rule__MinFunction__Group__2
+            // InternalSql_dsl.g:4758:1: ( rule__MinFunction__Group__1__Impl rule__MinFunction__Group__2 )
+            // InternalSql_dsl.g:4759:2: rule__MinFunction__Group__1__Impl rule__MinFunction__Group__2
             {
             pushFollow(FOLLOW_19);
             rule__MinFunction__Group__1__Impl();
@@ -14097,17 +14613,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__Group__1__Impl"
-    // InternalSql_dsl.g:4604:1: rule__MinFunction__Group__1__Impl : ( 'MIN' ) ;
+    // InternalSql_dsl.g:4766:1: rule__MinFunction__Group__1__Impl : ( 'MIN' ) ;
     public final void rule__MinFunction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4608:1: ( ( 'MIN' ) )
-            // InternalSql_dsl.g:4609:1: ( 'MIN' )
+            // InternalSql_dsl.g:4770:1: ( ( 'MIN' ) )
+            // InternalSql_dsl.g:4771:1: ( 'MIN' )
             {
-            // InternalSql_dsl.g:4609:1: ( 'MIN' )
-            // InternalSql_dsl.g:4610:2: 'MIN'
+            // InternalSql_dsl.g:4771:1: ( 'MIN' )
+            // InternalSql_dsl.g:4772:2: 'MIN'
             {
              before(grammarAccess.getMinFunctionAccess().getMINKeyword_1()); 
             match(input,55,FOLLOW_2); 
@@ -14134,14 +14650,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__Group__2"
-    // InternalSql_dsl.g:4619:1: rule__MinFunction__Group__2 : rule__MinFunction__Group__2__Impl rule__MinFunction__Group__3 ;
+    // InternalSql_dsl.g:4781:1: rule__MinFunction__Group__2 : rule__MinFunction__Group__2__Impl rule__MinFunction__Group__3 ;
     public final void rule__MinFunction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4623:1: ( rule__MinFunction__Group__2__Impl rule__MinFunction__Group__3 )
-            // InternalSql_dsl.g:4624:2: rule__MinFunction__Group__2__Impl rule__MinFunction__Group__3
+            // InternalSql_dsl.g:4785:1: ( rule__MinFunction__Group__2__Impl rule__MinFunction__Group__3 )
+            // InternalSql_dsl.g:4786:2: rule__MinFunction__Group__2__Impl rule__MinFunction__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__MinFunction__Group__2__Impl();
@@ -14172,17 +14688,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__Group__2__Impl"
-    // InternalSql_dsl.g:4631:1: rule__MinFunction__Group__2__Impl : ( '(' ) ;
+    // InternalSql_dsl.g:4793:1: rule__MinFunction__Group__2__Impl : ( '(' ) ;
     public final void rule__MinFunction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4635:1: ( ( '(' ) )
-            // InternalSql_dsl.g:4636:1: ( '(' )
+            // InternalSql_dsl.g:4797:1: ( ( '(' ) )
+            // InternalSql_dsl.g:4798:1: ( '(' )
             {
-            // InternalSql_dsl.g:4636:1: ( '(' )
-            // InternalSql_dsl.g:4637:2: '('
+            // InternalSql_dsl.g:4798:1: ( '(' )
+            // InternalSql_dsl.g:4799:2: '('
             {
              before(grammarAccess.getMinFunctionAccess().getLeftParenthesisKeyword_2()); 
             match(input,36,FOLLOW_2); 
@@ -14209,14 +14725,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__Group__3"
-    // InternalSql_dsl.g:4646:1: rule__MinFunction__Group__3 : rule__MinFunction__Group__3__Impl rule__MinFunction__Group__4 ;
+    // InternalSql_dsl.g:4808:1: rule__MinFunction__Group__3 : rule__MinFunction__Group__3__Impl rule__MinFunction__Group__4 ;
     public final void rule__MinFunction__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4650:1: ( rule__MinFunction__Group__3__Impl rule__MinFunction__Group__4 )
-            // InternalSql_dsl.g:4651:2: rule__MinFunction__Group__3__Impl rule__MinFunction__Group__4
+            // InternalSql_dsl.g:4812:1: ( rule__MinFunction__Group__3__Impl rule__MinFunction__Group__4 )
+            // InternalSql_dsl.g:4813:2: rule__MinFunction__Group__3__Impl rule__MinFunction__Group__4
             {
             pushFollow(FOLLOW_36);
             rule__MinFunction__Group__3__Impl();
@@ -14247,21 +14763,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__Group__3__Impl"
-    // InternalSql_dsl.g:4658:1: rule__MinFunction__Group__3__Impl : ( ( rule__MinFunction__ColumnAssignment_3 ) ) ;
+    // InternalSql_dsl.g:4820:1: rule__MinFunction__Group__3__Impl : ( ( rule__MinFunction__ColumnAssignment_3 ) ) ;
     public final void rule__MinFunction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4662:1: ( ( ( rule__MinFunction__ColumnAssignment_3 ) ) )
-            // InternalSql_dsl.g:4663:1: ( ( rule__MinFunction__ColumnAssignment_3 ) )
+            // InternalSql_dsl.g:4824:1: ( ( ( rule__MinFunction__ColumnAssignment_3 ) ) )
+            // InternalSql_dsl.g:4825:1: ( ( rule__MinFunction__ColumnAssignment_3 ) )
             {
-            // InternalSql_dsl.g:4663:1: ( ( rule__MinFunction__ColumnAssignment_3 ) )
-            // InternalSql_dsl.g:4664:2: ( rule__MinFunction__ColumnAssignment_3 )
+            // InternalSql_dsl.g:4825:1: ( ( rule__MinFunction__ColumnAssignment_3 ) )
+            // InternalSql_dsl.g:4826:2: ( rule__MinFunction__ColumnAssignment_3 )
             {
              before(grammarAccess.getMinFunctionAccess().getColumnAssignment_3()); 
-            // InternalSql_dsl.g:4665:2: ( rule__MinFunction__ColumnAssignment_3 )
-            // InternalSql_dsl.g:4665:3: rule__MinFunction__ColumnAssignment_3
+            // InternalSql_dsl.g:4827:2: ( rule__MinFunction__ColumnAssignment_3 )
+            // InternalSql_dsl.g:4827:3: rule__MinFunction__ColumnAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__MinFunction__ColumnAssignment_3();
@@ -14294,14 +14810,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__Group__4"
-    // InternalSql_dsl.g:4673:1: rule__MinFunction__Group__4 : rule__MinFunction__Group__4__Impl rule__MinFunction__Group__5 ;
+    // InternalSql_dsl.g:4835:1: rule__MinFunction__Group__4 : rule__MinFunction__Group__4__Impl rule__MinFunction__Group__5 ;
     public final void rule__MinFunction__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4677:1: ( rule__MinFunction__Group__4__Impl rule__MinFunction__Group__5 )
-            // InternalSql_dsl.g:4678:2: rule__MinFunction__Group__4__Impl rule__MinFunction__Group__5
+            // InternalSql_dsl.g:4839:1: ( rule__MinFunction__Group__4__Impl rule__MinFunction__Group__5 )
+            // InternalSql_dsl.g:4840:2: rule__MinFunction__Group__4__Impl rule__MinFunction__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__MinFunction__Group__4__Impl();
@@ -14332,17 +14848,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__Group__4__Impl"
-    // InternalSql_dsl.g:4685:1: rule__MinFunction__Group__4__Impl : ( ')' ) ;
+    // InternalSql_dsl.g:4847:1: rule__MinFunction__Group__4__Impl : ( ')' ) ;
     public final void rule__MinFunction__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4689:1: ( ( ')' ) )
-            // InternalSql_dsl.g:4690:1: ( ')' )
+            // InternalSql_dsl.g:4851:1: ( ( ')' ) )
+            // InternalSql_dsl.g:4852:1: ( ')' )
             {
-            // InternalSql_dsl.g:4690:1: ( ')' )
-            // InternalSql_dsl.g:4691:2: ')'
+            // InternalSql_dsl.g:4852:1: ( ')' )
+            // InternalSql_dsl.g:4853:2: ')'
             {
              before(grammarAccess.getMinFunctionAccess().getRightParenthesisKeyword_4()); 
             match(input,37,FOLLOW_2); 
@@ -14369,14 +14885,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__Group__5"
-    // InternalSql_dsl.g:4700:1: rule__MinFunction__Group__5 : rule__MinFunction__Group__5__Impl ;
+    // InternalSql_dsl.g:4862:1: rule__MinFunction__Group__5 : rule__MinFunction__Group__5__Impl ;
     public final void rule__MinFunction__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4704:1: ( rule__MinFunction__Group__5__Impl )
-            // InternalSql_dsl.g:4705:2: rule__MinFunction__Group__5__Impl
+            // InternalSql_dsl.g:4866:1: ( rule__MinFunction__Group__5__Impl )
+            // InternalSql_dsl.g:4867:2: rule__MinFunction__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MinFunction__Group__5__Impl();
@@ -14402,21 +14918,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__Group__5__Impl"
-    // InternalSql_dsl.g:4711:1: rule__MinFunction__Group__5__Impl : ( ( rule__MinFunction__XAssignment_5 ) ) ;
+    // InternalSql_dsl.g:4873:1: rule__MinFunction__Group__5__Impl : ( ( rule__MinFunction__XAssignment_5 ) ) ;
     public final void rule__MinFunction__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4715:1: ( ( ( rule__MinFunction__XAssignment_5 ) ) )
-            // InternalSql_dsl.g:4716:1: ( ( rule__MinFunction__XAssignment_5 ) )
+            // InternalSql_dsl.g:4877:1: ( ( ( rule__MinFunction__XAssignment_5 ) ) )
+            // InternalSql_dsl.g:4878:1: ( ( rule__MinFunction__XAssignment_5 ) )
             {
-            // InternalSql_dsl.g:4716:1: ( ( rule__MinFunction__XAssignment_5 ) )
-            // InternalSql_dsl.g:4717:2: ( rule__MinFunction__XAssignment_5 )
+            // InternalSql_dsl.g:4878:1: ( ( rule__MinFunction__XAssignment_5 ) )
+            // InternalSql_dsl.g:4879:2: ( rule__MinFunction__XAssignment_5 )
             {
              before(grammarAccess.getMinFunctionAccess().getXAssignment_5()); 
-            // InternalSql_dsl.g:4718:2: ( rule__MinFunction__XAssignment_5 )
-            // InternalSql_dsl.g:4718:3: rule__MinFunction__XAssignment_5
+            // InternalSql_dsl.g:4880:2: ( rule__MinFunction__XAssignment_5 )
+            // InternalSql_dsl.g:4880:3: rule__MinFunction__XAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__MinFunction__XAssignment_5();
@@ -14449,14 +14965,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__Group__0"
-    // InternalSql_dsl.g:4727:1: rule__MaxFunction__Group__0 : rule__MaxFunction__Group__0__Impl rule__MaxFunction__Group__1 ;
+    // InternalSql_dsl.g:4889:1: rule__MaxFunction__Group__0 : rule__MaxFunction__Group__0__Impl rule__MaxFunction__Group__1 ;
     public final void rule__MaxFunction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4731:1: ( rule__MaxFunction__Group__0__Impl rule__MaxFunction__Group__1 )
-            // InternalSql_dsl.g:4732:2: rule__MaxFunction__Group__0__Impl rule__MaxFunction__Group__1
+            // InternalSql_dsl.g:4893:1: ( rule__MaxFunction__Group__0__Impl rule__MaxFunction__Group__1 )
+            // InternalSql_dsl.g:4894:2: rule__MaxFunction__Group__0__Impl rule__MaxFunction__Group__1
             {
             pushFollow(FOLLOW_40);
             rule__MaxFunction__Group__0__Impl();
@@ -14487,17 +15003,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__Group__0__Impl"
-    // InternalSql_dsl.g:4739:1: rule__MaxFunction__Group__0__Impl : ( 'SELECT' ) ;
+    // InternalSql_dsl.g:4901:1: rule__MaxFunction__Group__0__Impl : ( 'SELECT' ) ;
     public final void rule__MaxFunction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4743:1: ( ( 'SELECT' ) )
-            // InternalSql_dsl.g:4744:1: ( 'SELECT' )
+            // InternalSql_dsl.g:4905:1: ( ( 'SELECT' ) )
+            // InternalSql_dsl.g:4906:1: ( 'SELECT' )
             {
-            // InternalSql_dsl.g:4744:1: ( 'SELECT' )
-            // InternalSql_dsl.g:4745:2: 'SELECT'
+            // InternalSql_dsl.g:4906:1: ( 'SELECT' )
+            // InternalSql_dsl.g:4907:2: 'SELECT'
             {
              before(grammarAccess.getMaxFunctionAccess().getSELECTKeyword_0()); 
             match(input,28,FOLLOW_2); 
@@ -14524,14 +15040,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__Group__1"
-    // InternalSql_dsl.g:4754:1: rule__MaxFunction__Group__1 : rule__MaxFunction__Group__1__Impl rule__MaxFunction__Group__2 ;
+    // InternalSql_dsl.g:4916:1: rule__MaxFunction__Group__1 : rule__MaxFunction__Group__1__Impl rule__MaxFunction__Group__2 ;
     public final void rule__MaxFunction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4758:1: ( rule__MaxFunction__Group__1__Impl rule__MaxFunction__Group__2 )
-            // InternalSql_dsl.g:4759:2: rule__MaxFunction__Group__1__Impl rule__MaxFunction__Group__2
+            // InternalSql_dsl.g:4920:1: ( rule__MaxFunction__Group__1__Impl rule__MaxFunction__Group__2 )
+            // InternalSql_dsl.g:4921:2: rule__MaxFunction__Group__1__Impl rule__MaxFunction__Group__2
             {
             pushFollow(FOLLOW_19);
             rule__MaxFunction__Group__1__Impl();
@@ -14562,17 +15078,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__Group__1__Impl"
-    // InternalSql_dsl.g:4766:1: rule__MaxFunction__Group__1__Impl : ( 'MAX' ) ;
+    // InternalSql_dsl.g:4928:1: rule__MaxFunction__Group__1__Impl : ( 'MAX' ) ;
     public final void rule__MaxFunction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4770:1: ( ( 'MAX' ) )
-            // InternalSql_dsl.g:4771:1: ( 'MAX' )
+            // InternalSql_dsl.g:4932:1: ( ( 'MAX' ) )
+            // InternalSql_dsl.g:4933:1: ( 'MAX' )
             {
-            // InternalSql_dsl.g:4771:1: ( 'MAX' )
-            // InternalSql_dsl.g:4772:2: 'MAX'
+            // InternalSql_dsl.g:4933:1: ( 'MAX' )
+            // InternalSql_dsl.g:4934:2: 'MAX'
             {
              before(grammarAccess.getMaxFunctionAccess().getMAXKeyword_1()); 
             match(input,56,FOLLOW_2); 
@@ -14599,14 +15115,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__Group__2"
-    // InternalSql_dsl.g:4781:1: rule__MaxFunction__Group__2 : rule__MaxFunction__Group__2__Impl rule__MaxFunction__Group__3 ;
+    // InternalSql_dsl.g:4943:1: rule__MaxFunction__Group__2 : rule__MaxFunction__Group__2__Impl rule__MaxFunction__Group__3 ;
     public final void rule__MaxFunction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4785:1: ( rule__MaxFunction__Group__2__Impl rule__MaxFunction__Group__3 )
-            // InternalSql_dsl.g:4786:2: rule__MaxFunction__Group__2__Impl rule__MaxFunction__Group__3
+            // InternalSql_dsl.g:4947:1: ( rule__MaxFunction__Group__2__Impl rule__MaxFunction__Group__3 )
+            // InternalSql_dsl.g:4948:2: rule__MaxFunction__Group__2__Impl rule__MaxFunction__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__MaxFunction__Group__2__Impl();
@@ -14637,17 +15153,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__Group__2__Impl"
-    // InternalSql_dsl.g:4793:1: rule__MaxFunction__Group__2__Impl : ( '(' ) ;
+    // InternalSql_dsl.g:4955:1: rule__MaxFunction__Group__2__Impl : ( '(' ) ;
     public final void rule__MaxFunction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4797:1: ( ( '(' ) )
-            // InternalSql_dsl.g:4798:1: ( '(' )
+            // InternalSql_dsl.g:4959:1: ( ( '(' ) )
+            // InternalSql_dsl.g:4960:1: ( '(' )
             {
-            // InternalSql_dsl.g:4798:1: ( '(' )
-            // InternalSql_dsl.g:4799:2: '('
+            // InternalSql_dsl.g:4960:1: ( '(' )
+            // InternalSql_dsl.g:4961:2: '('
             {
              before(grammarAccess.getMaxFunctionAccess().getLeftParenthesisKeyword_2()); 
             match(input,36,FOLLOW_2); 
@@ -14674,14 +15190,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__Group__3"
-    // InternalSql_dsl.g:4808:1: rule__MaxFunction__Group__3 : rule__MaxFunction__Group__3__Impl rule__MaxFunction__Group__4 ;
+    // InternalSql_dsl.g:4970:1: rule__MaxFunction__Group__3 : rule__MaxFunction__Group__3__Impl rule__MaxFunction__Group__4 ;
     public final void rule__MaxFunction__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4812:1: ( rule__MaxFunction__Group__3__Impl rule__MaxFunction__Group__4 )
-            // InternalSql_dsl.g:4813:2: rule__MaxFunction__Group__3__Impl rule__MaxFunction__Group__4
+            // InternalSql_dsl.g:4974:1: ( rule__MaxFunction__Group__3__Impl rule__MaxFunction__Group__4 )
+            // InternalSql_dsl.g:4975:2: rule__MaxFunction__Group__3__Impl rule__MaxFunction__Group__4
             {
             pushFollow(FOLLOW_36);
             rule__MaxFunction__Group__3__Impl();
@@ -14712,21 +15228,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__Group__3__Impl"
-    // InternalSql_dsl.g:4820:1: rule__MaxFunction__Group__3__Impl : ( ( rule__MaxFunction__ColumnAssignment_3 ) ) ;
+    // InternalSql_dsl.g:4982:1: rule__MaxFunction__Group__3__Impl : ( ( rule__MaxFunction__ColumnAssignment_3 ) ) ;
     public final void rule__MaxFunction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4824:1: ( ( ( rule__MaxFunction__ColumnAssignment_3 ) ) )
-            // InternalSql_dsl.g:4825:1: ( ( rule__MaxFunction__ColumnAssignment_3 ) )
+            // InternalSql_dsl.g:4986:1: ( ( ( rule__MaxFunction__ColumnAssignment_3 ) ) )
+            // InternalSql_dsl.g:4987:1: ( ( rule__MaxFunction__ColumnAssignment_3 ) )
             {
-            // InternalSql_dsl.g:4825:1: ( ( rule__MaxFunction__ColumnAssignment_3 ) )
-            // InternalSql_dsl.g:4826:2: ( rule__MaxFunction__ColumnAssignment_3 )
+            // InternalSql_dsl.g:4987:1: ( ( rule__MaxFunction__ColumnAssignment_3 ) )
+            // InternalSql_dsl.g:4988:2: ( rule__MaxFunction__ColumnAssignment_3 )
             {
              before(grammarAccess.getMaxFunctionAccess().getColumnAssignment_3()); 
-            // InternalSql_dsl.g:4827:2: ( rule__MaxFunction__ColumnAssignment_3 )
-            // InternalSql_dsl.g:4827:3: rule__MaxFunction__ColumnAssignment_3
+            // InternalSql_dsl.g:4989:2: ( rule__MaxFunction__ColumnAssignment_3 )
+            // InternalSql_dsl.g:4989:3: rule__MaxFunction__ColumnAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__MaxFunction__ColumnAssignment_3();
@@ -14759,14 +15275,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__Group__4"
-    // InternalSql_dsl.g:4835:1: rule__MaxFunction__Group__4 : rule__MaxFunction__Group__4__Impl rule__MaxFunction__Group__5 ;
+    // InternalSql_dsl.g:4997:1: rule__MaxFunction__Group__4 : rule__MaxFunction__Group__4__Impl rule__MaxFunction__Group__5 ;
     public final void rule__MaxFunction__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4839:1: ( rule__MaxFunction__Group__4__Impl rule__MaxFunction__Group__5 )
-            // InternalSql_dsl.g:4840:2: rule__MaxFunction__Group__4__Impl rule__MaxFunction__Group__5
+            // InternalSql_dsl.g:5001:1: ( rule__MaxFunction__Group__4__Impl rule__MaxFunction__Group__5 )
+            // InternalSql_dsl.g:5002:2: rule__MaxFunction__Group__4__Impl rule__MaxFunction__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__MaxFunction__Group__4__Impl();
@@ -14797,17 +15313,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__Group__4__Impl"
-    // InternalSql_dsl.g:4847:1: rule__MaxFunction__Group__4__Impl : ( ')' ) ;
+    // InternalSql_dsl.g:5009:1: rule__MaxFunction__Group__4__Impl : ( ')' ) ;
     public final void rule__MaxFunction__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4851:1: ( ( ')' ) )
-            // InternalSql_dsl.g:4852:1: ( ')' )
+            // InternalSql_dsl.g:5013:1: ( ( ')' ) )
+            // InternalSql_dsl.g:5014:1: ( ')' )
             {
-            // InternalSql_dsl.g:4852:1: ( ')' )
-            // InternalSql_dsl.g:4853:2: ')'
+            // InternalSql_dsl.g:5014:1: ( ')' )
+            // InternalSql_dsl.g:5015:2: ')'
             {
              before(grammarAccess.getMaxFunctionAccess().getRightParenthesisKeyword_4()); 
             match(input,37,FOLLOW_2); 
@@ -14834,14 +15350,14 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__Group__5"
-    // InternalSql_dsl.g:4862:1: rule__MaxFunction__Group__5 : rule__MaxFunction__Group__5__Impl ;
+    // InternalSql_dsl.g:5024:1: rule__MaxFunction__Group__5 : rule__MaxFunction__Group__5__Impl ;
     public final void rule__MaxFunction__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4866:1: ( rule__MaxFunction__Group__5__Impl )
-            // InternalSql_dsl.g:4867:2: rule__MaxFunction__Group__5__Impl
+            // InternalSql_dsl.g:5028:1: ( rule__MaxFunction__Group__5__Impl )
+            // InternalSql_dsl.g:5029:2: rule__MaxFunction__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MaxFunction__Group__5__Impl();
@@ -14867,21 +15383,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__Group__5__Impl"
-    // InternalSql_dsl.g:4873:1: rule__MaxFunction__Group__5__Impl : ( ( rule__MaxFunction__XAssignment_5 ) ) ;
+    // InternalSql_dsl.g:5035:1: rule__MaxFunction__Group__5__Impl : ( ( rule__MaxFunction__XAssignment_5 ) ) ;
     public final void rule__MaxFunction__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4877:1: ( ( ( rule__MaxFunction__XAssignment_5 ) ) )
-            // InternalSql_dsl.g:4878:1: ( ( rule__MaxFunction__XAssignment_5 ) )
+            // InternalSql_dsl.g:5039:1: ( ( ( rule__MaxFunction__XAssignment_5 ) ) )
+            // InternalSql_dsl.g:5040:1: ( ( rule__MaxFunction__XAssignment_5 ) )
             {
-            // InternalSql_dsl.g:4878:1: ( ( rule__MaxFunction__XAssignment_5 ) )
-            // InternalSql_dsl.g:4879:2: ( rule__MaxFunction__XAssignment_5 )
+            // InternalSql_dsl.g:5040:1: ( ( rule__MaxFunction__XAssignment_5 ) )
+            // InternalSql_dsl.g:5041:2: ( rule__MaxFunction__XAssignment_5 )
             {
              before(grammarAccess.getMaxFunctionAccess().getXAssignment_5()); 
-            // InternalSql_dsl.g:4880:2: ( rule__MaxFunction__XAssignment_5 )
-            // InternalSql_dsl.g:4880:3: rule__MaxFunction__XAssignment_5
+            // InternalSql_dsl.g:5042:2: ( rule__MaxFunction__XAssignment_5 )
+            // InternalSql_dsl.g:5042:3: rule__MaxFunction__XAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__MaxFunction__XAssignment_5();
@@ -14914,17 +15430,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__StatementsAssignment"
-    // InternalSql_dsl.g:4889:1: rule__Model__StatementsAssignment : ( ruleStatement ) ;
+    // InternalSql_dsl.g:5051:1: rule__Model__StatementsAssignment : ( ruleStatement ) ;
     public final void rule__Model__StatementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4893:1: ( ( ruleStatement ) )
-            // InternalSql_dsl.g:4894:2: ( ruleStatement )
+            // InternalSql_dsl.g:5055:1: ( ( ruleStatement ) )
+            // InternalSql_dsl.g:5056:2: ( ruleStatement )
             {
-            // InternalSql_dsl.g:4894:2: ( ruleStatement )
-            // InternalSql_dsl.g:4895:3: ruleStatement
+            // InternalSql_dsl.g:5056:2: ( ruleStatement )
+            // InternalSql_dsl.g:5057:3: ruleStatement
             {
              before(grammarAccess.getModelAccess().getStatementsStatementParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -14955,21 +15471,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SelectStatement__ColumnAssignment_1_1_0"
-    // InternalSql_dsl.g:4904:1: rule__SelectStatement__ColumnAssignment_1_1_0 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5066:1: rule__SelectStatement__ColumnAssignment_1_1_0 : ( ( RULE_ID ) ) ;
     public final void rule__SelectStatement__ColumnAssignment_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4908:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:4909:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5070:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5071:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:4909:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:4910:3: ( RULE_ID )
+            // InternalSql_dsl.g:5071:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5072:3: ( RULE_ID )
             {
              before(grammarAccess.getSelectStatementAccess().getColumnCDCrossReference_1_1_0_0()); 
-            // InternalSql_dsl.g:4911:3: ( RULE_ID )
-            // InternalSql_dsl.g:4912:4: RULE_ID
+            // InternalSql_dsl.g:5073:3: ( RULE_ID )
+            // InternalSql_dsl.g:5074:4: RULE_ID
             {
              before(grammarAccess.getSelectStatementAccess().getColumnCDIDTerminalRuleCall_1_1_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15000,21 +15516,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SelectStatement__ColumnAssignment_1_1_1_1"
-    // InternalSql_dsl.g:4923:1: rule__SelectStatement__ColumnAssignment_1_1_1_1 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5085:1: rule__SelectStatement__ColumnAssignment_1_1_1_1 : ( ( RULE_ID ) ) ;
     public final void rule__SelectStatement__ColumnAssignment_1_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4927:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:4928:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5089:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5090:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:4928:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:4929:3: ( RULE_ID )
+            // InternalSql_dsl.g:5090:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5091:3: ( RULE_ID )
             {
              before(grammarAccess.getSelectStatementAccess().getColumnCDCrossReference_1_1_1_1_0()); 
-            // InternalSql_dsl.g:4930:3: ( RULE_ID )
-            // InternalSql_dsl.g:4931:4: RULE_ID
+            // InternalSql_dsl.g:5092:3: ( RULE_ID )
+            // InternalSql_dsl.g:5093:4: RULE_ID
             {
              before(grammarAccess.getSelectStatementAccess().getColumnCDIDTerminalRuleCall_1_1_1_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15045,17 +15561,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SelectStatement__XAssignment_2"
-    // InternalSql_dsl.g:4942:1: rule__SelectStatement__XAssignment_2 : ( ruleFromAndWhereClauses ) ;
+    // InternalSql_dsl.g:5104:1: rule__SelectStatement__XAssignment_2 : ( ruleFromAndWhereClauses ) ;
     public final void rule__SelectStatement__XAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4946:1: ( ( ruleFromAndWhereClauses ) )
-            // InternalSql_dsl.g:4947:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:5108:1: ( ( ruleFromAndWhereClauses ) )
+            // InternalSql_dsl.g:5109:2: ( ruleFromAndWhereClauses )
             {
-            // InternalSql_dsl.g:4947:2: ( ruleFromAndWhereClauses )
-            // InternalSql_dsl.g:4948:3: ruleFromAndWhereClauses
+            // InternalSql_dsl.g:5109:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:5110:3: ruleFromAndWhereClauses
             {
              before(grammarAccess.getSelectStatementAccess().getXFromAndWhereClausesParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -15086,21 +15602,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FromAndWhereClauses__TableAssignment_1"
-    // InternalSql_dsl.g:4957:1: rule__FromAndWhereClauses__TableAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5119:1: rule__FromAndWhereClauses__TableAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__FromAndWhereClauses__TableAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4961:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:4962:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5123:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5124:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:4962:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:4963:3: ( RULE_ID )
+            // InternalSql_dsl.g:5124:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5125:3: ( RULE_ID )
             {
              before(grammarAccess.getFromAndWhereClausesAccess().getTableTableNameCrossReference_1_0()); 
-            // InternalSql_dsl.g:4964:3: ( RULE_ID )
-            // InternalSql_dsl.g:4965:4: RULE_ID
+            // InternalSql_dsl.g:5126:3: ( RULE_ID )
+            // InternalSql_dsl.g:5127:4: RULE_ID
             {
              before(grammarAccess.getFromAndWhereClausesAccess().getTableTableNameIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15131,17 +15647,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FromAndWhereClauses__ZAssignment_2_1"
-    // InternalSql_dsl.g:4976:1: rule__FromAndWhereClauses__ZAssignment_2_1 : ( ruleWhereDec ) ;
+    // InternalSql_dsl.g:5138:1: rule__FromAndWhereClauses__ZAssignment_2_1 : ( ruleWhereDec ) ;
     public final void rule__FromAndWhereClauses__ZAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4980:1: ( ( ruleWhereDec ) )
-            // InternalSql_dsl.g:4981:2: ( ruleWhereDec )
+            // InternalSql_dsl.g:5142:1: ( ( ruleWhereDec ) )
+            // InternalSql_dsl.g:5143:2: ( ruleWhereDec )
             {
-            // InternalSql_dsl.g:4981:2: ( ruleWhereDec )
-            // InternalSql_dsl.g:4982:3: ruleWhereDec
+            // InternalSql_dsl.g:5143:2: ( ruleWhereDec )
+            // InternalSql_dsl.g:5144:3: ruleWhereDec
             {
              before(grammarAccess.getFromAndWhereClausesAccess().getZWhereDecParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15172,17 +15688,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FromAndWhereClauses__ZAssignment_2_2_1"
-    // InternalSql_dsl.g:4991:1: rule__FromAndWhereClauses__ZAssignment_2_2_1 : ( ruleWhereDec ) ;
+    // InternalSql_dsl.g:5153:1: rule__FromAndWhereClauses__ZAssignment_2_2_1 : ( ruleWhereDec ) ;
     public final void rule__FromAndWhereClauses__ZAssignment_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:4995:1: ( ( ruleWhereDec ) )
-            // InternalSql_dsl.g:4996:2: ( ruleWhereDec )
+            // InternalSql_dsl.g:5157:1: ( ( ruleWhereDec ) )
+            // InternalSql_dsl.g:5158:2: ( ruleWhereDec )
             {
-            // InternalSql_dsl.g:4996:2: ( ruleWhereDec )
-            // InternalSql_dsl.g:4997:3: ruleWhereDec
+            // InternalSql_dsl.g:5158:2: ( ruleWhereDec )
+            // InternalSql_dsl.g:5159:3: ruleWhereDec
             {
              before(grammarAccess.getFromAndWhereClausesAccess().getZWhereDecParserRuleCall_2_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15213,21 +15729,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhereDec__ColumnAssignment_0"
-    // InternalSql_dsl.g:5006:1: rule__WhereDec__ColumnAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5168:1: rule__WhereDec__ColumnAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__WhereDec__ColumnAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5010:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5011:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5172:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5173:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5011:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5012:3: ( RULE_ID )
+            // InternalSql_dsl.g:5173:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5174:3: ( RULE_ID )
             {
              before(grammarAccess.getWhereDecAccess().getColumnCDCrossReference_0_0()); 
-            // InternalSql_dsl.g:5013:3: ( RULE_ID )
-            // InternalSql_dsl.g:5014:4: RULE_ID
+            // InternalSql_dsl.g:5175:3: ( RULE_ID )
+            // InternalSql_dsl.g:5176:4: RULE_ID
             {
              before(grammarAccess.getWhereDecAccess().getColumnCDIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15258,17 +15774,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhereDec__NameAssignment_2_0_1"
-    // InternalSql_dsl.g:5025:1: rule__WhereDec__NameAssignment_2_0_1 : ( RULE_ID ) ;
+    // InternalSql_dsl.g:5187:1: rule__WhereDec__NameAssignment_2_0_1 : ( RULE_ID ) ;
     public final void rule__WhereDec__NameAssignment_2_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5029:1: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5030:2: ( RULE_ID )
+            // InternalSql_dsl.g:5191:1: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5192:2: ( RULE_ID )
             {
-            // InternalSql_dsl.g:5030:2: ( RULE_ID )
-            // InternalSql_dsl.g:5031:3: RULE_ID
+            // InternalSql_dsl.g:5192:2: ( RULE_ID )
+            // InternalSql_dsl.g:5193:3: RULE_ID
             {
              before(grammarAccess.getWhereDecAccess().getNameIDTerminalRuleCall_2_0_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15295,21 +15811,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhereDec__ColumnAssignment_2_1"
-    // InternalSql_dsl.g:5040:1: rule__WhereDec__ColumnAssignment_2_1 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5202:1: rule__WhereDec__ColumnAssignment_2_1 : ( ( RULE_ID ) ) ;
     public final void rule__WhereDec__ColumnAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5044:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5045:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5206:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5207:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5045:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5046:3: ( RULE_ID )
+            // InternalSql_dsl.g:5207:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5208:3: ( RULE_ID )
             {
              before(grammarAccess.getWhereDecAccess().getColumnCDCrossReference_2_1_0()); 
-            // InternalSql_dsl.g:5047:3: ( RULE_ID )
-            // InternalSql_dsl.g:5048:4: RULE_ID
+            // InternalSql_dsl.g:5209:3: ( RULE_ID )
+            // InternalSql_dsl.g:5210:4: RULE_ID
             {
              before(grammarAccess.getWhereDecAccess().getColumnCDIDTerminalRuleCall_2_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15340,17 +15856,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhereDec__ValAssignment_2_2"
-    // InternalSql_dsl.g:5059:1: rule__WhereDec__ValAssignment_2_2 : ( RULE_INT ) ;
+    // InternalSql_dsl.g:5221:1: rule__WhereDec__ValAssignment_2_2 : ( RULE_INT ) ;
     public final void rule__WhereDec__ValAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5063:1: ( ( RULE_INT ) )
-            // InternalSql_dsl.g:5064:2: ( RULE_INT )
+            // InternalSql_dsl.g:5225:1: ( ( RULE_INT ) )
+            // InternalSql_dsl.g:5226:2: ( RULE_INT )
             {
-            // InternalSql_dsl.g:5064:2: ( RULE_INT )
-            // InternalSql_dsl.g:5065:3: RULE_INT
+            // InternalSql_dsl.g:5226:2: ( RULE_INT )
+            // InternalSql_dsl.g:5227:3: RULE_INT
             {
              before(grammarAccess.getWhereDecAccess().getValINTTerminalRuleCall_2_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15377,17 +15893,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DatabaseDeclarationStatement__NameAssignment_2"
-    // InternalSql_dsl.g:5074:1: rule__DatabaseDeclarationStatement__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalSql_dsl.g:5236:1: rule__DatabaseDeclarationStatement__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__DatabaseDeclarationStatement__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5078:1: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5079:2: ( RULE_ID )
+            // InternalSql_dsl.g:5240:1: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5241:2: ( RULE_ID )
             {
-            // InternalSql_dsl.g:5079:2: ( RULE_ID )
-            // InternalSql_dsl.g:5080:3: RULE_ID
+            // InternalSql_dsl.g:5241:2: ( RULE_ID )
+            // InternalSql_dsl.g:5242:3: RULE_ID
             {
              before(grammarAccess.getDatabaseDeclarationStatementAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15414,17 +15930,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CreateTableStatement__TablesAssignment"
-    // InternalSql_dsl.g:5089:1: rule__CreateTableStatement__TablesAssignment : ( ruleTableDeclaration ) ;
+    // InternalSql_dsl.g:5251:1: rule__CreateTableStatement__TablesAssignment : ( ruleTableDeclaration ) ;
     public final void rule__CreateTableStatement__TablesAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5093:1: ( ( ruleTableDeclaration ) )
-            // InternalSql_dsl.g:5094:2: ( ruleTableDeclaration )
+            // InternalSql_dsl.g:5255:1: ( ( ruleTableDeclaration ) )
+            // InternalSql_dsl.g:5256:2: ( ruleTableDeclaration )
             {
-            // InternalSql_dsl.g:5094:2: ( ruleTableDeclaration )
-            // InternalSql_dsl.g:5095:3: ruleTableDeclaration
+            // InternalSql_dsl.g:5256:2: ( ruleTableDeclaration )
+            // InternalSql_dsl.g:5257:3: ruleTableDeclaration
             {
              before(grammarAccess.getCreateTableStatementAccess().getTablesTableDeclarationParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -15455,17 +15971,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableDeclaration__TableAssignment_2"
-    // InternalSql_dsl.g:5104:1: rule__TableDeclaration__TableAssignment_2 : ( ruletableName ) ;
+    // InternalSql_dsl.g:5266:1: rule__TableDeclaration__TableAssignment_2 : ( ruletableName ) ;
     public final void rule__TableDeclaration__TableAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5108:1: ( ( ruletableName ) )
-            // InternalSql_dsl.g:5109:2: ( ruletableName )
+            // InternalSql_dsl.g:5270:1: ( ( ruletableName ) )
+            // InternalSql_dsl.g:5271:2: ( ruletableName )
             {
-            // InternalSql_dsl.g:5109:2: ( ruletableName )
-            // InternalSql_dsl.g:5110:3: ruletableName
+            // InternalSql_dsl.g:5271:2: ( ruletableName )
+            // InternalSql_dsl.g:5272:3: ruletableName
             {
              before(grammarAccess.getTableDeclarationAccess().getTableTableNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -15496,21 +16012,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableDeclaration__AttributesAssignment_4"
-    // InternalSql_dsl.g:5119:1: rule__TableDeclaration__AttributesAssignment_4 : ( ( rule__TableDeclaration__AttributesAlternatives_4_0 ) ) ;
+    // InternalSql_dsl.g:5281:1: rule__TableDeclaration__AttributesAssignment_4 : ( ( rule__TableDeclaration__AttributesAlternatives_4_0 ) ) ;
     public final void rule__TableDeclaration__AttributesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5123:1: ( ( ( rule__TableDeclaration__AttributesAlternatives_4_0 ) ) )
-            // InternalSql_dsl.g:5124:2: ( ( rule__TableDeclaration__AttributesAlternatives_4_0 ) )
+            // InternalSql_dsl.g:5285:1: ( ( ( rule__TableDeclaration__AttributesAlternatives_4_0 ) ) )
+            // InternalSql_dsl.g:5286:2: ( ( rule__TableDeclaration__AttributesAlternatives_4_0 ) )
             {
-            // InternalSql_dsl.g:5124:2: ( ( rule__TableDeclaration__AttributesAlternatives_4_0 ) )
-            // InternalSql_dsl.g:5125:3: ( rule__TableDeclaration__AttributesAlternatives_4_0 )
+            // InternalSql_dsl.g:5286:2: ( ( rule__TableDeclaration__AttributesAlternatives_4_0 ) )
+            // InternalSql_dsl.g:5287:3: ( rule__TableDeclaration__AttributesAlternatives_4_0 )
             {
              before(grammarAccess.getTableDeclarationAccess().getAttributesAlternatives_4_0()); 
-            // InternalSql_dsl.g:5126:3: ( rule__TableDeclaration__AttributesAlternatives_4_0 )
-            // InternalSql_dsl.g:5126:4: rule__TableDeclaration__AttributesAlternatives_4_0
+            // InternalSql_dsl.g:5288:3: ( rule__TableDeclaration__AttributesAlternatives_4_0 )
+            // InternalSql_dsl.g:5288:4: rule__TableDeclaration__AttributesAlternatives_4_0
             {
             pushFollow(FOLLOW_2);
             rule__TableDeclaration__AttributesAlternatives_4_0();
@@ -15543,21 +16059,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableDeclaration__AttributesAssignment_5_1"
-    // InternalSql_dsl.g:5134:1: rule__TableDeclaration__AttributesAssignment_5_1 : ( ( rule__TableDeclaration__AttributesAlternatives_5_1_0 ) ) ;
+    // InternalSql_dsl.g:5296:1: rule__TableDeclaration__AttributesAssignment_5_1 : ( ( rule__TableDeclaration__AttributesAlternatives_5_1_0 ) ) ;
     public final void rule__TableDeclaration__AttributesAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5138:1: ( ( ( rule__TableDeclaration__AttributesAlternatives_5_1_0 ) ) )
-            // InternalSql_dsl.g:5139:2: ( ( rule__TableDeclaration__AttributesAlternatives_5_1_0 ) )
+            // InternalSql_dsl.g:5300:1: ( ( ( rule__TableDeclaration__AttributesAlternatives_5_1_0 ) ) )
+            // InternalSql_dsl.g:5301:2: ( ( rule__TableDeclaration__AttributesAlternatives_5_1_0 ) )
             {
-            // InternalSql_dsl.g:5139:2: ( ( rule__TableDeclaration__AttributesAlternatives_5_1_0 ) )
-            // InternalSql_dsl.g:5140:3: ( rule__TableDeclaration__AttributesAlternatives_5_1_0 )
+            // InternalSql_dsl.g:5301:2: ( ( rule__TableDeclaration__AttributesAlternatives_5_1_0 ) )
+            // InternalSql_dsl.g:5302:3: ( rule__TableDeclaration__AttributesAlternatives_5_1_0 )
             {
              before(grammarAccess.getTableDeclarationAccess().getAttributesAlternatives_5_1_0()); 
-            // InternalSql_dsl.g:5141:3: ( rule__TableDeclaration__AttributesAlternatives_5_1_0 )
-            // InternalSql_dsl.g:5141:4: rule__TableDeclaration__AttributesAlternatives_5_1_0
+            // InternalSql_dsl.g:5303:3: ( rule__TableDeclaration__AttributesAlternatives_5_1_0 )
+            // InternalSql_dsl.g:5303:4: rule__TableDeclaration__AttributesAlternatives_5_1_0
             {
             pushFollow(FOLLOW_2);
             rule__TableDeclaration__AttributesAlternatives_5_1_0();
@@ -15590,17 +16106,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableName__NameAssignment"
-    // InternalSql_dsl.g:5149:1: rule__TableName__NameAssignment : ( RULE_ID ) ;
+    // InternalSql_dsl.g:5311:1: rule__TableName__NameAssignment : ( RULE_ID ) ;
     public final void rule__TableName__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5153:1: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5154:2: ( RULE_ID )
+            // InternalSql_dsl.g:5315:1: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5316:2: ( RULE_ID )
             {
-            // InternalSql_dsl.g:5154:2: ( RULE_ID )
-            // InternalSql_dsl.g:5155:3: RULE_ID
+            // InternalSql_dsl.g:5316:2: ( RULE_ID )
+            // InternalSql_dsl.g:5317:3: RULE_ID
             {
              before(grammarAccess.getTableNameAccess().getNameIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15627,17 +16143,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ColumnDeclaration__NameAssignment_0"
-    // InternalSql_dsl.g:5164:1: rule__ColumnDeclaration__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalSql_dsl.g:5326:1: rule__ColumnDeclaration__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__ColumnDeclaration__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5168:1: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5169:2: ( RULE_ID )
+            // InternalSql_dsl.g:5330:1: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5331:2: ( RULE_ID )
             {
-            // InternalSql_dsl.g:5169:2: ( RULE_ID )
-            // InternalSql_dsl.g:5170:3: RULE_ID
+            // InternalSql_dsl.g:5331:2: ( RULE_ID )
+            // InternalSql_dsl.g:5332:3: RULE_ID
             {
              before(grammarAccess.getColumnDeclarationAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15664,17 +16180,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ColumnDeclaration__TypeAssignment_1"
-    // InternalSql_dsl.g:5179:1: rule__ColumnDeclaration__TypeAssignment_1 : ( ruleDataStructureType ) ;
+    // InternalSql_dsl.g:5341:1: rule__ColumnDeclaration__TypeAssignment_1 : ( ruleDataStructureType ) ;
     public final void rule__ColumnDeclaration__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5183:1: ( ( ruleDataStructureType ) )
-            // InternalSql_dsl.g:5184:2: ( ruleDataStructureType )
+            // InternalSql_dsl.g:5345:1: ( ( ruleDataStructureType ) )
+            // InternalSql_dsl.g:5346:2: ( ruleDataStructureType )
             {
-            // InternalSql_dsl.g:5184:2: ( ruleDataStructureType )
-            // InternalSql_dsl.g:5185:3: ruleDataStructureType
+            // InternalSql_dsl.g:5346:2: ( ruleDataStructureType )
+            // InternalSql_dsl.g:5347:3: ruleDataStructureType
             {
              before(grammarAccess.getColumnDeclarationAccess().getTypeDataStructureTypeEnumRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15705,21 +16221,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ColumnDeclaration__NotNullAssignment_2"
-    // InternalSql_dsl.g:5194:1: rule__ColumnDeclaration__NotNullAssignment_2 : ( ( 'NOT NULL' ) ) ;
+    // InternalSql_dsl.g:5356:1: rule__ColumnDeclaration__NotNullAssignment_2 : ( ( 'NOT NULL' ) ) ;
     public final void rule__ColumnDeclaration__NotNullAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5198:1: ( ( ( 'NOT NULL' ) ) )
-            // InternalSql_dsl.g:5199:2: ( ( 'NOT NULL' ) )
+            // InternalSql_dsl.g:5360:1: ( ( ( 'NOT NULL' ) ) )
+            // InternalSql_dsl.g:5361:2: ( ( 'NOT NULL' ) )
             {
-            // InternalSql_dsl.g:5199:2: ( ( 'NOT NULL' ) )
-            // InternalSql_dsl.g:5200:3: ( 'NOT NULL' )
+            // InternalSql_dsl.g:5361:2: ( ( 'NOT NULL' ) )
+            // InternalSql_dsl.g:5362:3: ( 'NOT NULL' )
             {
              before(grammarAccess.getColumnDeclarationAccess().getNotNullNOTNULLKeyword_2_0()); 
-            // InternalSql_dsl.g:5201:3: ( 'NOT NULL' )
-            // InternalSql_dsl.g:5202:4: 'NOT NULL'
+            // InternalSql_dsl.g:5363:3: ( 'NOT NULL' )
+            // InternalSql_dsl.g:5364:4: 'NOT NULL'
             {
              before(grammarAccess.getColumnDeclarationAccess().getNotNullNOTNULLKeyword_2_0()); 
             match(input,57,FOLLOW_2); 
@@ -15750,21 +16266,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrimaryKey__ColumnAsPKAssignment_3"
-    // InternalSql_dsl.g:5213:1: rule__PrimaryKey__ColumnAsPKAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5375:1: rule__PrimaryKey__ColumnAsPKAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__PrimaryKey__ColumnAsPKAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5217:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5218:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5379:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5380:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5218:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5219:3: ( RULE_ID )
+            // InternalSql_dsl.g:5380:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5381:3: ( RULE_ID )
             {
              before(grammarAccess.getPrimaryKeyAccess().getColumnAsPKCDCrossReference_3_0()); 
-            // InternalSql_dsl.g:5220:3: ( RULE_ID )
-            // InternalSql_dsl.g:5221:4: RULE_ID
+            // InternalSql_dsl.g:5382:3: ( RULE_ID )
+            // InternalSql_dsl.g:5383:4: RULE_ID
             {
              before(grammarAccess.getPrimaryKeyAccess().getColumnAsPKCDIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15795,21 +16311,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrimaryKey__ColumnAsPKAssignment_4_1"
-    // InternalSql_dsl.g:5232:1: rule__PrimaryKey__ColumnAsPKAssignment_4_1 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5394:1: rule__PrimaryKey__ColumnAsPKAssignment_4_1 : ( ( RULE_ID ) ) ;
     public final void rule__PrimaryKey__ColumnAsPKAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5236:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5237:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5398:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5399:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5237:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5238:3: ( RULE_ID )
+            // InternalSql_dsl.g:5399:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5400:3: ( RULE_ID )
             {
              before(grammarAccess.getPrimaryKeyAccess().getColumnAsPKCDCrossReference_4_1_0()); 
-            // InternalSql_dsl.g:5239:3: ( RULE_ID )
-            // InternalSql_dsl.g:5240:4: RULE_ID
+            // InternalSql_dsl.g:5401:3: ( RULE_ID )
+            // InternalSql_dsl.g:5402:4: RULE_ID
             {
              before(grammarAccess.getPrimaryKeyAccess().getColumnAsPKCDIDTerminalRuleCall_4_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15840,21 +16356,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ForeignKey__ColumnAsFKAssignment_3"
-    // InternalSql_dsl.g:5251:1: rule__ForeignKey__ColumnAsFKAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5413:1: rule__ForeignKey__ColumnAsFKAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__ForeignKey__ColumnAsFKAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5255:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5256:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5417:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5418:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5256:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5257:3: ( RULE_ID )
+            // InternalSql_dsl.g:5418:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5419:3: ( RULE_ID )
             {
              before(grammarAccess.getForeignKeyAccess().getColumnAsFKCDCrossReference_3_0()); 
-            // InternalSql_dsl.g:5258:3: ( RULE_ID )
-            // InternalSql_dsl.g:5259:4: RULE_ID
+            // InternalSql_dsl.g:5420:3: ( RULE_ID )
+            // InternalSql_dsl.g:5421:4: RULE_ID
             {
              before(grammarAccess.getForeignKeyAccess().getColumnAsFKCDIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15885,21 +16401,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ForeignKey__ColumnAsFKAssignment_4_1"
-    // InternalSql_dsl.g:5270:1: rule__ForeignKey__ColumnAsFKAssignment_4_1 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5432:1: rule__ForeignKey__ColumnAsFKAssignment_4_1 : ( ( RULE_ID ) ) ;
     public final void rule__ForeignKey__ColumnAsFKAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5274:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5275:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5436:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5437:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5275:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5276:3: ( RULE_ID )
+            // InternalSql_dsl.g:5437:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5438:3: ( RULE_ID )
             {
              before(grammarAccess.getForeignKeyAccess().getColumnAsFKCDCrossReference_4_1_0()); 
-            // InternalSql_dsl.g:5277:3: ( RULE_ID )
-            // InternalSql_dsl.g:5278:4: RULE_ID
+            // InternalSql_dsl.g:5439:3: ( RULE_ID )
+            // InternalSql_dsl.g:5440:4: RULE_ID
             {
              before(grammarAccess.getForeignKeyAccess().getColumnAsFKCDIDTerminalRuleCall_4_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15930,21 +16446,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ForeignKey__ForeignTableAssignment_7"
-    // InternalSql_dsl.g:5289:1: rule__ForeignKey__ForeignTableAssignment_7 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5451:1: rule__ForeignKey__ForeignTableAssignment_7 : ( ( RULE_ID ) ) ;
     public final void rule__ForeignKey__ForeignTableAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5293:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5294:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5455:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5456:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5294:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5295:3: ( RULE_ID )
+            // InternalSql_dsl.g:5456:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5457:3: ( RULE_ID )
             {
              before(grammarAccess.getForeignKeyAccess().getForeignTableTableDeclarationCrossReference_7_0()); 
-            // InternalSql_dsl.g:5296:3: ( RULE_ID )
-            // InternalSql_dsl.g:5297:4: RULE_ID
+            // InternalSql_dsl.g:5458:3: ( RULE_ID )
+            // InternalSql_dsl.g:5459:4: RULE_ID
             {
              before(grammarAccess.getForeignKeyAccess().getForeignTableTableDeclarationIDTerminalRuleCall_7_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15975,21 +16491,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ForeignKey__ForeignColumnsAssignment_9"
-    // InternalSql_dsl.g:5308:1: rule__ForeignKey__ForeignColumnsAssignment_9 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5470:1: rule__ForeignKey__ForeignColumnsAssignment_9 : ( ( RULE_ID ) ) ;
     public final void rule__ForeignKey__ForeignColumnsAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5312:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5313:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5474:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5475:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5313:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5314:3: ( RULE_ID )
+            // InternalSql_dsl.g:5475:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5476:3: ( RULE_ID )
             {
              before(grammarAccess.getForeignKeyAccess().getForeignColumnsCDCrossReference_9_0()); 
-            // InternalSql_dsl.g:5315:3: ( RULE_ID )
-            // InternalSql_dsl.g:5316:4: RULE_ID
+            // InternalSql_dsl.g:5477:3: ( RULE_ID )
+            // InternalSql_dsl.g:5478:4: RULE_ID
             {
              before(grammarAccess.getForeignKeyAccess().getForeignColumnsCDIDTerminalRuleCall_9_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16020,21 +16536,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ForeignKey__ForeignColumnsAssignment_10_1"
-    // InternalSql_dsl.g:5327:1: rule__ForeignKey__ForeignColumnsAssignment_10_1 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5489:1: rule__ForeignKey__ForeignColumnsAssignment_10_1 : ( ( RULE_ID ) ) ;
     public final void rule__ForeignKey__ForeignColumnsAssignment_10_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5331:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5332:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5493:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5494:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5332:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5333:3: ( RULE_ID )
+            // InternalSql_dsl.g:5494:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5495:3: ( RULE_ID )
             {
              before(grammarAccess.getForeignKeyAccess().getForeignColumnsCDCrossReference_10_1_0()); 
-            // InternalSql_dsl.g:5334:3: ( RULE_ID )
-            // InternalSql_dsl.g:5335:4: RULE_ID
+            // InternalSql_dsl.g:5496:3: ( RULE_ID )
+            // InternalSql_dsl.g:5497:4: RULE_ID
             {
              before(grammarAccess.getForeignKeyAccess().getForeignColumnsCDIDTerminalRuleCall_10_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16065,21 +16581,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DropTableStatement__TableAssignment_2"
-    // InternalSql_dsl.g:5346:1: rule__DropTableStatement__TableAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5508:1: rule__DropTableStatement__TableAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__DropTableStatement__TableAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5350:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5351:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5512:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5513:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5351:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5352:3: ( RULE_ID )
+            // InternalSql_dsl.g:5513:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5514:3: ( RULE_ID )
             {
              before(grammarAccess.getDropTableStatementAccess().getTableTableNameCrossReference_2_0()); 
-            // InternalSql_dsl.g:5353:3: ( RULE_ID )
-            // InternalSql_dsl.g:5354:4: RULE_ID
+            // InternalSql_dsl.g:5515:3: ( RULE_ID )
+            // InternalSql_dsl.g:5516:4: RULE_ID
             {
              before(grammarAccess.getDropTableStatementAccess().getTableTableNameIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16109,22 +16625,67 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__DropTableStatement__TableAssignment_2"
 
 
+    // $ANTLR start "rule__DropTableStatement__TableAssignment_3_1"
+    // InternalSql_dsl.g:5527:1: rule__DropTableStatement__TableAssignment_3_1 : ( ( RULE_ID ) ) ;
+    public final void rule__DropTableStatement__TableAssignment_3_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:5531:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5532:2: ( ( RULE_ID ) )
+            {
+            // InternalSql_dsl.g:5532:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5533:3: ( RULE_ID )
+            {
+             before(grammarAccess.getDropTableStatementAccess().getTableTableNameCrossReference_3_1_0()); 
+            // InternalSql_dsl.g:5534:3: ( RULE_ID )
+            // InternalSql_dsl.g:5535:4: RULE_ID
+            {
+             before(grammarAccess.getDropTableStatementAccess().getTableTableNameIDTerminalRuleCall_3_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getDropTableStatementAccess().getTableTableNameIDTerminalRuleCall_3_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getDropTableStatementAccess().getTableTableNameCrossReference_3_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DropTableStatement__TableAssignment_3_1"
+
+
     // $ANTLR start "rule__TruncateTableStatement__TableAssignment_2"
-    // InternalSql_dsl.g:5365:1: rule__TruncateTableStatement__TableAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5546:1: rule__TruncateTableStatement__TableAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__TruncateTableStatement__TableAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5369:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5370:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5550:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5551:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5370:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5371:3: ( RULE_ID )
+            // InternalSql_dsl.g:5551:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5552:3: ( RULE_ID )
             {
              before(grammarAccess.getTruncateTableStatementAccess().getTableTableNameCrossReference_2_0()); 
-            // InternalSql_dsl.g:5372:3: ( RULE_ID )
-            // InternalSql_dsl.g:5373:4: RULE_ID
+            // InternalSql_dsl.g:5553:3: ( RULE_ID )
+            // InternalSql_dsl.g:5554:4: RULE_ID
             {
              before(grammarAccess.getTruncateTableStatementAccess().getTableTableNameIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16154,18 +16715,63 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__TruncateTableStatement__TableAssignment_2"
 
 
+    // $ANTLR start "rule__TruncateTableStatement__TableAssignment_3_1"
+    // InternalSql_dsl.g:5565:1: rule__TruncateTableStatement__TableAssignment_3_1 : ( ( RULE_ID ) ) ;
+    public final void rule__TruncateTableStatement__TableAssignment_3_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSql_dsl.g:5569:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5570:2: ( ( RULE_ID ) )
+            {
+            // InternalSql_dsl.g:5570:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5571:3: ( RULE_ID )
+            {
+             before(grammarAccess.getTruncateTableStatementAccess().getTableTableNameCrossReference_3_1_0()); 
+            // InternalSql_dsl.g:5572:3: ( RULE_ID )
+            // InternalSql_dsl.g:5573:4: RULE_ID
+            {
+             before(grammarAccess.getTruncateTableStatementAccess().getTableTableNameIDTerminalRuleCall_3_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getTruncateTableStatementAccess().getTableTableNameIDTerminalRuleCall_3_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getTruncateTableStatementAccess().getTableTableNameCrossReference_3_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TruncateTableStatement__TableAssignment_3_1"
+
+
     // $ANTLR start "rule__DeleteTableStatement__XAssignment_1"
-    // InternalSql_dsl.g:5384:1: rule__DeleteTableStatement__XAssignment_1 : ( ruleFromAndWhereClauses ) ;
+    // InternalSql_dsl.g:5584:1: rule__DeleteTableStatement__XAssignment_1 : ( ruleFromAndWhereClauses ) ;
     public final void rule__DeleteTableStatement__XAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5388:1: ( ( ruleFromAndWhereClauses ) )
-            // InternalSql_dsl.g:5389:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:5588:1: ( ( ruleFromAndWhereClauses ) )
+            // InternalSql_dsl.g:5589:2: ( ruleFromAndWhereClauses )
             {
-            // InternalSql_dsl.g:5389:2: ( ruleFromAndWhereClauses )
-            // InternalSql_dsl.g:5390:3: ruleFromAndWhereClauses
+            // InternalSql_dsl.g:5589:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:5590:3: ruleFromAndWhereClauses
             {
              before(grammarAccess.getDeleteTableStatementAccess().getXFromAndWhereClausesParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16196,21 +16802,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__TableAssignment_1"
-    // InternalSql_dsl.g:5399:1: rule__UpdateTableStatement__TableAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5599:1: rule__UpdateTableStatement__TableAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__UpdateTableStatement__TableAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5403:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5404:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5603:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5604:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5404:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5405:3: ( RULE_ID )
+            // InternalSql_dsl.g:5604:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5605:3: ( RULE_ID )
             {
              before(grammarAccess.getUpdateTableStatementAccess().getTableTableNameCrossReference_1_0()); 
-            // InternalSql_dsl.g:5406:3: ( RULE_ID )
-            // InternalSql_dsl.g:5407:4: RULE_ID
+            // InternalSql_dsl.g:5606:3: ( RULE_ID )
+            // InternalSql_dsl.g:5607:4: RULE_ID
             {
              before(grammarAccess.getUpdateTableStatementAccess().getTableTableNameIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16241,17 +16847,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__ScAssignment_3"
-    // InternalSql_dsl.g:5418:1: rule__UpdateTableStatement__ScAssignment_3 : ( ruleSetClause ) ;
+    // InternalSql_dsl.g:5618:1: rule__UpdateTableStatement__ScAssignment_3 : ( ruleSetClause ) ;
     public final void rule__UpdateTableStatement__ScAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5422:1: ( ( ruleSetClause ) )
-            // InternalSql_dsl.g:5423:2: ( ruleSetClause )
+            // InternalSql_dsl.g:5622:1: ( ( ruleSetClause ) )
+            // InternalSql_dsl.g:5623:2: ( ruleSetClause )
             {
-            // InternalSql_dsl.g:5423:2: ( ruleSetClause )
-            // InternalSql_dsl.g:5424:3: ruleSetClause
+            // InternalSql_dsl.g:5623:2: ( ruleSetClause )
+            // InternalSql_dsl.g:5624:3: ruleSetClause
             {
              before(grammarAccess.getUpdateTableStatementAccess().getScSetClauseParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -16282,17 +16888,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__ScAssignment_4_1"
-    // InternalSql_dsl.g:5433:1: rule__UpdateTableStatement__ScAssignment_4_1 : ( ruleSetClause ) ;
+    // InternalSql_dsl.g:5633:1: rule__UpdateTableStatement__ScAssignment_4_1 : ( ruleSetClause ) ;
     public final void rule__UpdateTableStatement__ScAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5437:1: ( ( ruleSetClause ) )
-            // InternalSql_dsl.g:5438:2: ( ruleSetClause )
+            // InternalSql_dsl.g:5637:1: ( ( ruleSetClause ) )
+            // InternalSql_dsl.g:5638:2: ( ruleSetClause )
             {
-            // InternalSql_dsl.g:5438:2: ( ruleSetClause )
-            // InternalSql_dsl.g:5439:3: ruleSetClause
+            // InternalSql_dsl.g:5638:2: ( ruleSetClause )
+            // InternalSql_dsl.g:5639:3: ruleSetClause
             {
              before(grammarAccess.getUpdateTableStatementAccess().getScSetClauseParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16323,17 +16929,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__ZAssignment_5_1"
-    // InternalSql_dsl.g:5448:1: rule__UpdateTableStatement__ZAssignment_5_1 : ( ruleWhereDec ) ;
+    // InternalSql_dsl.g:5648:1: rule__UpdateTableStatement__ZAssignment_5_1 : ( ruleWhereDec ) ;
     public final void rule__UpdateTableStatement__ZAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5452:1: ( ( ruleWhereDec ) )
-            // InternalSql_dsl.g:5453:2: ( ruleWhereDec )
+            // InternalSql_dsl.g:5652:1: ( ( ruleWhereDec ) )
+            // InternalSql_dsl.g:5653:2: ( ruleWhereDec )
             {
-            // InternalSql_dsl.g:5453:2: ( ruleWhereDec )
-            // InternalSql_dsl.g:5454:3: ruleWhereDec
+            // InternalSql_dsl.g:5653:2: ( ruleWhereDec )
+            // InternalSql_dsl.g:5654:3: ruleWhereDec
             {
              before(grammarAccess.getUpdateTableStatementAccess().getZWhereDecParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16364,17 +16970,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateTableStatement__ZAssignment_5_2_1"
-    // InternalSql_dsl.g:5463:1: rule__UpdateTableStatement__ZAssignment_5_2_1 : ( ruleWhereDec ) ;
+    // InternalSql_dsl.g:5663:1: rule__UpdateTableStatement__ZAssignment_5_2_1 : ( ruleWhereDec ) ;
     public final void rule__UpdateTableStatement__ZAssignment_5_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5467:1: ( ( ruleWhereDec ) )
-            // InternalSql_dsl.g:5468:2: ( ruleWhereDec )
+            // InternalSql_dsl.g:5667:1: ( ( ruleWhereDec ) )
+            // InternalSql_dsl.g:5668:2: ( ruleWhereDec )
             {
-            // InternalSql_dsl.g:5468:2: ( ruleWhereDec )
-            // InternalSql_dsl.g:5469:3: ruleWhereDec
+            // InternalSql_dsl.g:5668:2: ( ruleWhereDec )
+            // InternalSql_dsl.g:5669:3: ruleWhereDec
             {
              before(grammarAccess.getUpdateTableStatementAccess().getZWhereDecParserRuleCall_5_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16405,21 +17011,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__ColumnAssignment_0"
-    // InternalSql_dsl.g:5478:1: rule__SetClause__ColumnAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5678:1: rule__SetClause__ColumnAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__SetClause__ColumnAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5482:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5483:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5682:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5683:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5483:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5484:3: ( RULE_ID )
+            // InternalSql_dsl.g:5683:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5684:3: ( RULE_ID )
             {
              before(grammarAccess.getSetClauseAccess().getColumnCDCrossReference_0_0()); 
-            // InternalSql_dsl.g:5485:3: ( RULE_ID )
-            // InternalSql_dsl.g:5486:4: RULE_ID
+            // InternalSql_dsl.g:5685:3: ( RULE_ID )
+            // InternalSql_dsl.g:5686:4: RULE_ID
             {
              before(grammarAccess.getSetClauseAccess().getColumnCDIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16450,17 +17056,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__NameAssignment_2_0_1"
-    // InternalSql_dsl.g:5497:1: rule__SetClause__NameAssignment_2_0_1 : ( RULE_ID ) ;
+    // InternalSql_dsl.g:5697:1: rule__SetClause__NameAssignment_2_0_1 : ( RULE_ID ) ;
     public final void rule__SetClause__NameAssignment_2_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5501:1: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5502:2: ( RULE_ID )
+            // InternalSql_dsl.g:5701:1: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5702:2: ( RULE_ID )
             {
-            // InternalSql_dsl.g:5502:2: ( RULE_ID )
-            // InternalSql_dsl.g:5503:3: RULE_ID
+            // InternalSql_dsl.g:5702:2: ( RULE_ID )
+            // InternalSql_dsl.g:5703:3: RULE_ID
             {
              before(grammarAccess.getSetClauseAccess().getNameIDTerminalRuleCall_2_0_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16487,17 +17093,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetClause__ValAssignment_2_1"
-    // InternalSql_dsl.g:5512:1: rule__SetClause__ValAssignment_2_1 : ( RULE_INT ) ;
+    // InternalSql_dsl.g:5712:1: rule__SetClause__ValAssignment_2_1 : ( RULE_INT ) ;
     public final void rule__SetClause__ValAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5516:1: ( ( RULE_INT ) )
-            // InternalSql_dsl.g:5517:2: ( RULE_INT )
+            // InternalSql_dsl.g:5716:1: ( ( RULE_INT ) )
+            // InternalSql_dsl.g:5717:2: ( RULE_INT )
             {
-            // InternalSql_dsl.g:5517:2: ( RULE_INT )
-            // InternalSql_dsl.g:5518:3: RULE_INT
+            // InternalSql_dsl.g:5717:2: ( RULE_INT )
+            // InternalSql_dsl.g:5718:3: RULE_INT
             {
              before(grammarAccess.getSetClauseAccess().getValINTTerminalRuleCall_2_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -16524,21 +17130,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterTableStatement__TableAssignment_2"
-    // InternalSql_dsl.g:5527:1: rule__AlterTableStatement__TableAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5727:1: rule__AlterTableStatement__TableAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__AlterTableStatement__TableAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5531:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5532:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5731:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5732:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5532:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5533:3: ( RULE_ID )
+            // InternalSql_dsl.g:5732:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5733:3: ( RULE_ID )
             {
              before(grammarAccess.getAlterTableStatementAccess().getTableTableNameCrossReference_2_0()); 
-            // InternalSql_dsl.g:5534:3: ( RULE_ID )
-            // InternalSql_dsl.g:5535:4: RULE_ID
+            // InternalSql_dsl.g:5734:3: ( RULE_ID )
+            // InternalSql_dsl.g:5735:4: RULE_ID
             {
              before(grammarAccess.getAlterTableStatementAccess().getTableTableNameIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16569,21 +17175,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterTableStatement__AddDropUpdateAssignment_3"
-    // InternalSql_dsl.g:5546:1: rule__AlterTableStatement__AddDropUpdateAssignment_3 : ( ( rule__AlterTableStatement__AddDropUpdateAlternatives_3_0 ) ) ;
+    // InternalSql_dsl.g:5746:1: rule__AlterTableStatement__AddDropUpdateAssignment_3 : ( ( rule__AlterTableStatement__AddDropUpdateAlternatives_3_0 ) ) ;
     public final void rule__AlterTableStatement__AddDropUpdateAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5550:1: ( ( ( rule__AlterTableStatement__AddDropUpdateAlternatives_3_0 ) ) )
-            // InternalSql_dsl.g:5551:2: ( ( rule__AlterTableStatement__AddDropUpdateAlternatives_3_0 ) )
+            // InternalSql_dsl.g:5750:1: ( ( ( rule__AlterTableStatement__AddDropUpdateAlternatives_3_0 ) ) )
+            // InternalSql_dsl.g:5751:2: ( ( rule__AlterTableStatement__AddDropUpdateAlternatives_3_0 ) )
             {
-            // InternalSql_dsl.g:5551:2: ( ( rule__AlterTableStatement__AddDropUpdateAlternatives_3_0 ) )
-            // InternalSql_dsl.g:5552:3: ( rule__AlterTableStatement__AddDropUpdateAlternatives_3_0 )
+            // InternalSql_dsl.g:5751:2: ( ( rule__AlterTableStatement__AddDropUpdateAlternatives_3_0 ) )
+            // InternalSql_dsl.g:5752:3: ( rule__AlterTableStatement__AddDropUpdateAlternatives_3_0 )
             {
              before(grammarAccess.getAlterTableStatementAccess().getAddDropUpdateAlternatives_3_0()); 
-            // InternalSql_dsl.g:5553:3: ( rule__AlterTableStatement__AddDropUpdateAlternatives_3_0 )
-            // InternalSql_dsl.g:5553:4: rule__AlterTableStatement__AddDropUpdateAlternatives_3_0
+            // InternalSql_dsl.g:5753:3: ( rule__AlterTableStatement__AddDropUpdateAlternatives_3_0 )
+            // InternalSql_dsl.g:5753:4: rule__AlterTableStatement__AddDropUpdateAlternatives_3_0
             {
             pushFollow(FOLLOW_2);
             rule__AlterTableStatement__AddDropUpdateAlternatives_3_0();
@@ -16616,21 +17222,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterDropStatement__ColumnAssignment_2"
-    // InternalSql_dsl.g:5561:1: rule__AlterDropStatement__ColumnAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5761:1: rule__AlterDropStatement__ColumnAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__AlterDropStatement__ColumnAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5565:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5566:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5765:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5766:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5566:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5567:3: ( RULE_ID )
+            // InternalSql_dsl.g:5766:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5767:3: ( RULE_ID )
             {
              before(grammarAccess.getAlterDropStatementAccess().getColumnCDCrossReference_2_0()); 
-            // InternalSql_dsl.g:5568:3: ( RULE_ID )
-            // InternalSql_dsl.g:5569:4: RULE_ID
+            // InternalSql_dsl.g:5768:3: ( RULE_ID )
+            // InternalSql_dsl.g:5769:4: RULE_ID
             {
              before(grammarAccess.getAlterDropStatementAccess().getColumnCDIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16661,21 +17267,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterAddStatement__ColumnAssignment_1"
-    // InternalSql_dsl.g:5580:1: rule__AlterAddStatement__ColumnAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5780:1: rule__AlterAddStatement__ColumnAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__AlterAddStatement__ColumnAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5584:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5585:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5784:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5785:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5585:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5586:3: ( RULE_ID )
+            // InternalSql_dsl.g:5785:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5786:3: ( RULE_ID )
             {
              before(grammarAccess.getAlterAddStatementAccess().getColumnCDCrossReference_1_0()); 
-            // InternalSql_dsl.g:5587:3: ( RULE_ID )
-            // InternalSql_dsl.g:5588:4: RULE_ID
+            // InternalSql_dsl.g:5787:3: ( RULE_ID )
+            // InternalSql_dsl.g:5788:4: RULE_ID
             {
              before(grammarAccess.getAlterAddStatementAccess().getColumnCDIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16706,21 +17312,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlterUpdateStatement__ColumnAssignment_2"
-    // InternalSql_dsl.g:5599:1: rule__AlterUpdateStatement__ColumnAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5799:1: rule__AlterUpdateStatement__ColumnAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__AlterUpdateStatement__ColumnAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5603:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5604:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5803:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5804:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5604:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5605:3: ( RULE_ID )
+            // InternalSql_dsl.g:5804:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5805:3: ( RULE_ID )
             {
              before(grammarAccess.getAlterUpdateStatementAccess().getColumnCDCrossReference_2_0()); 
-            // InternalSql_dsl.g:5606:3: ( RULE_ID )
-            // InternalSql_dsl.g:5607:4: RULE_ID
+            // InternalSql_dsl.g:5806:3: ( RULE_ID )
+            // InternalSql_dsl.g:5807:4: RULE_ID
             {
              before(grammarAccess.getAlterUpdateStatementAccess().getColumnCDIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16751,17 +17357,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableDeclarationStatement__NameAssignment_1"
-    // InternalSql_dsl.g:5618:1: rule__VariableDeclarationStatement__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSql_dsl.g:5818:1: rule__VariableDeclarationStatement__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__VariableDeclarationStatement__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5622:1: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5623:2: ( RULE_ID )
+            // InternalSql_dsl.g:5822:1: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5823:2: ( RULE_ID )
             {
-            // InternalSql_dsl.g:5623:2: ( RULE_ID )
-            // InternalSql_dsl.g:5624:3: RULE_ID
+            // InternalSql_dsl.g:5823:2: ( RULE_ID )
+            // InternalSql_dsl.g:5824:3: RULE_ID
             {
              before(grammarAccess.getVariableDeclarationStatementAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16788,17 +17394,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableDeclarationStatement__ValueAssignment_3"
-    // InternalSql_dsl.g:5633:1: rule__VariableDeclarationStatement__ValueAssignment_3 : ( RULE_INT ) ;
+    // InternalSql_dsl.g:5833:1: rule__VariableDeclarationStatement__ValueAssignment_3 : ( RULE_INT ) ;
     public final void rule__VariableDeclarationStatement__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5637:1: ( ( RULE_INT ) )
-            // InternalSql_dsl.g:5638:2: ( RULE_INT )
+            // InternalSql_dsl.g:5837:1: ( ( RULE_INT ) )
+            // InternalSql_dsl.g:5838:2: ( RULE_INT )
             {
-            // InternalSql_dsl.g:5638:2: ( RULE_INT )
-            // InternalSql_dsl.g:5639:3: RULE_INT
+            // InternalSql_dsl.g:5838:2: ( RULE_INT )
+            // InternalSql_dsl.g:5839:3: RULE_INT
             {
              before(grammarAccess.getVariableDeclarationStatementAccess().getValueINTTerminalRuleCall_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -16825,21 +17431,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__ColumnAssignment_3"
-    // InternalSql_dsl.g:5648:1: rule__CountFunction__ColumnAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5848:1: rule__CountFunction__ColumnAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__CountFunction__ColumnAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5652:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5653:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5852:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5853:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5653:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5654:3: ( RULE_ID )
+            // InternalSql_dsl.g:5853:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5854:3: ( RULE_ID )
             {
              before(grammarAccess.getCountFunctionAccess().getColumnCDCrossReference_3_0()); 
-            // InternalSql_dsl.g:5655:3: ( RULE_ID )
-            // InternalSql_dsl.g:5656:4: RULE_ID
+            // InternalSql_dsl.g:5855:3: ( RULE_ID )
+            // InternalSql_dsl.g:5856:4: RULE_ID
             {
              before(grammarAccess.getCountFunctionAccess().getColumnCDIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16870,17 +17476,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CountFunction__XAssignment_5"
-    // InternalSql_dsl.g:5667:1: rule__CountFunction__XAssignment_5 : ( ruleFromAndWhereClauses ) ;
+    // InternalSql_dsl.g:5867:1: rule__CountFunction__XAssignment_5 : ( ruleFromAndWhereClauses ) ;
     public final void rule__CountFunction__XAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5671:1: ( ( ruleFromAndWhereClauses ) )
-            // InternalSql_dsl.g:5672:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:5871:1: ( ( ruleFromAndWhereClauses ) )
+            // InternalSql_dsl.g:5872:2: ( ruleFromAndWhereClauses )
             {
-            // InternalSql_dsl.g:5672:2: ( ruleFromAndWhereClauses )
-            // InternalSql_dsl.g:5673:3: ruleFromAndWhereClauses
+            // InternalSql_dsl.g:5872:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:5873:3: ruleFromAndWhereClauses
             {
              before(grammarAccess.getCountFunctionAccess().getXFromAndWhereClausesParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -16911,21 +17517,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__ColumnAssignment_3"
-    // InternalSql_dsl.g:5682:1: rule__AvgFunction__ColumnAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5882:1: rule__AvgFunction__ColumnAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__AvgFunction__ColumnAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5686:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5687:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5886:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5887:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5687:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5688:3: ( RULE_ID )
+            // InternalSql_dsl.g:5887:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5888:3: ( RULE_ID )
             {
              before(grammarAccess.getAvgFunctionAccess().getColumnCDCrossReference_3_0()); 
-            // InternalSql_dsl.g:5689:3: ( RULE_ID )
-            // InternalSql_dsl.g:5690:4: RULE_ID
+            // InternalSql_dsl.g:5889:3: ( RULE_ID )
+            // InternalSql_dsl.g:5890:4: RULE_ID
             {
              before(grammarAccess.getAvgFunctionAccess().getColumnCDIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16956,17 +17562,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvgFunction__XAssignment_5"
-    // InternalSql_dsl.g:5701:1: rule__AvgFunction__XAssignment_5 : ( ruleFromAndWhereClauses ) ;
+    // InternalSql_dsl.g:5901:1: rule__AvgFunction__XAssignment_5 : ( ruleFromAndWhereClauses ) ;
     public final void rule__AvgFunction__XAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5705:1: ( ( ruleFromAndWhereClauses ) )
-            // InternalSql_dsl.g:5706:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:5905:1: ( ( ruleFromAndWhereClauses ) )
+            // InternalSql_dsl.g:5906:2: ( ruleFromAndWhereClauses )
             {
-            // InternalSql_dsl.g:5706:2: ( ruleFromAndWhereClauses )
-            // InternalSql_dsl.g:5707:3: ruleFromAndWhereClauses
+            // InternalSql_dsl.g:5906:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:5907:3: ruleFromAndWhereClauses
             {
              before(grammarAccess.getAvgFunctionAccess().getXFromAndWhereClausesParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -16997,21 +17603,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__ColumnAssignment_3"
-    // InternalSql_dsl.g:5716:1: rule__SumFunction__ColumnAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5916:1: rule__SumFunction__ColumnAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__SumFunction__ColumnAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5720:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5721:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5920:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5921:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5721:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5722:3: ( RULE_ID )
+            // InternalSql_dsl.g:5921:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5922:3: ( RULE_ID )
             {
              before(grammarAccess.getSumFunctionAccess().getColumnCDCrossReference_3_0()); 
-            // InternalSql_dsl.g:5723:3: ( RULE_ID )
-            // InternalSql_dsl.g:5724:4: RULE_ID
+            // InternalSql_dsl.g:5923:3: ( RULE_ID )
+            // InternalSql_dsl.g:5924:4: RULE_ID
             {
              before(grammarAccess.getSumFunctionAccess().getColumnCDIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17042,17 +17648,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SumFunction__XAssignment_5"
-    // InternalSql_dsl.g:5735:1: rule__SumFunction__XAssignment_5 : ( ruleFromAndWhereClauses ) ;
+    // InternalSql_dsl.g:5935:1: rule__SumFunction__XAssignment_5 : ( ruleFromAndWhereClauses ) ;
     public final void rule__SumFunction__XAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5739:1: ( ( ruleFromAndWhereClauses ) )
-            // InternalSql_dsl.g:5740:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:5939:1: ( ( ruleFromAndWhereClauses ) )
+            // InternalSql_dsl.g:5940:2: ( ruleFromAndWhereClauses )
             {
-            // InternalSql_dsl.g:5740:2: ( ruleFromAndWhereClauses )
-            // InternalSql_dsl.g:5741:3: ruleFromAndWhereClauses
+            // InternalSql_dsl.g:5940:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:5941:3: ruleFromAndWhereClauses
             {
              before(grammarAccess.getSumFunctionAccess().getXFromAndWhereClausesParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -17083,21 +17689,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__ColumnAssignment_3"
-    // InternalSql_dsl.g:5750:1: rule__MinFunction__ColumnAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5950:1: rule__MinFunction__ColumnAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__MinFunction__ColumnAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5754:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5755:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5954:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5955:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5755:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5756:3: ( RULE_ID )
+            // InternalSql_dsl.g:5955:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5956:3: ( RULE_ID )
             {
              before(grammarAccess.getMinFunctionAccess().getColumnCDCrossReference_3_0()); 
-            // InternalSql_dsl.g:5757:3: ( RULE_ID )
-            // InternalSql_dsl.g:5758:4: RULE_ID
+            // InternalSql_dsl.g:5957:3: ( RULE_ID )
+            // InternalSql_dsl.g:5958:4: RULE_ID
             {
              before(grammarAccess.getMinFunctionAccess().getColumnCDIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17128,17 +17734,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MinFunction__XAssignment_5"
-    // InternalSql_dsl.g:5769:1: rule__MinFunction__XAssignment_5 : ( ruleFromAndWhereClauses ) ;
+    // InternalSql_dsl.g:5969:1: rule__MinFunction__XAssignment_5 : ( ruleFromAndWhereClauses ) ;
     public final void rule__MinFunction__XAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5773:1: ( ( ruleFromAndWhereClauses ) )
-            // InternalSql_dsl.g:5774:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:5973:1: ( ( ruleFromAndWhereClauses ) )
+            // InternalSql_dsl.g:5974:2: ( ruleFromAndWhereClauses )
             {
-            // InternalSql_dsl.g:5774:2: ( ruleFromAndWhereClauses )
-            // InternalSql_dsl.g:5775:3: ruleFromAndWhereClauses
+            // InternalSql_dsl.g:5974:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:5975:3: ruleFromAndWhereClauses
             {
              before(grammarAccess.getMinFunctionAccess().getXFromAndWhereClausesParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -17169,21 +17775,21 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__ColumnAssignment_3"
-    // InternalSql_dsl.g:5784:1: rule__MaxFunction__ColumnAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalSql_dsl.g:5984:1: rule__MaxFunction__ColumnAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__MaxFunction__ColumnAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5788:1: ( ( ( RULE_ID ) ) )
-            // InternalSql_dsl.g:5789:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5988:1: ( ( ( RULE_ID ) ) )
+            // InternalSql_dsl.g:5989:2: ( ( RULE_ID ) )
             {
-            // InternalSql_dsl.g:5789:2: ( ( RULE_ID ) )
-            // InternalSql_dsl.g:5790:3: ( RULE_ID )
+            // InternalSql_dsl.g:5989:2: ( ( RULE_ID ) )
+            // InternalSql_dsl.g:5990:3: ( RULE_ID )
             {
              before(grammarAccess.getMaxFunctionAccess().getColumnCDCrossReference_3_0()); 
-            // InternalSql_dsl.g:5791:3: ( RULE_ID )
-            // InternalSql_dsl.g:5792:4: RULE_ID
+            // InternalSql_dsl.g:5991:3: ( RULE_ID )
+            // InternalSql_dsl.g:5992:4: RULE_ID
             {
              before(grammarAccess.getMaxFunctionAccess().getColumnCDIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17214,17 +17820,17 @@ public class InternalSql_dslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxFunction__XAssignment_5"
-    // InternalSql_dsl.g:5803:1: rule__MaxFunction__XAssignment_5 : ( ruleFromAndWhereClauses ) ;
+    // InternalSql_dsl.g:6003:1: rule__MaxFunction__XAssignment_5 : ( ruleFromAndWhereClauses ) ;
     public final void rule__MaxFunction__XAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSql_dsl.g:5807:1: ( ( ruleFromAndWhereClauses ) )
-            // InternalSql_dsl.g:5808:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:6007:1: ( ( ruleFromAndWhereClauses ) )
+            // InternalSql_dsl.g:6008:2: ( ruleFromAndWhereClauses )
             {
-            // InternalSql_dsl.g:5808:2: ( ruleFromAndWhereClauses )
-            // InternalSql_dsl.g:5809:3: ruleFromAndWhereClauses
+            // InternalSql_dsl.g:6008:2: ( ruleFromAndWhereClauses )
+            // InternalSql_dsl.g:6009:3: ruleFromAndWhereClauses
             {
              before(grammarAccess.getMaxFunctionAccess().getXFromAndWhereClausesParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);

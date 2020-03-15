@@ -11,14 +11,20 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement;
+import uk.ac.kcl.dsl.sql_dsl.DeleteTableStatement;
+import uk.ac.kcl.dsl.sql_dsl.DropTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.Model;
+import uk.ac.kcl.dsl.sql_dsl.SetClause;
 import uk.ac.kcl.dsl.sql_dsl.Statement;
 import uk.ac.kcl.dsl.sql_dsl.TableDeclaration;
 import uk.ac.kcl.dsl.sql_dsl.TableName;
+import uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement;
+import uk.ac.kcl.dsl.sql_dsl.UpdateTableStatement;
 
 /**
  * Generates code from your model files on save.
@@ -48,7 +54,7 @@ public class Sql_dslGenerator extends AbstractGenerator {
     EObject _head = IterableExtensions.<EObject>head(resource.getContents());
     final Model model = ((Model) _head);
     String _lastSegment = resource.getURI().lastSegment();
-    String _plus = (_lastSegment + ".sql");
+    String _plus = (_lastSegment + ".txt");
     fsa.generateFile(_plus, this.doGenerate(model));
   }
   
@@ -73,7 +79,7 @@ public class Sql_dslGenerator extends AbstractGenerator {
     _builder.append("CREATE DATABASE ");
     String _name = stmt.getName();
     _builder.append(_name);
-    _builder.append(" ;");
+    _builder.append(";");
     _builder.newLineIfNotEmpty();
     return _builder.toString();
   }
@@ -84,16 +90,111 @@ public class Sql_dslGenerator extends AbstractGenerator {
     EList<TableName> _table = stmt.getTable();
     _builder.append(_table);
     _builder.append(" (");
-    EList<EObject> _attributes = stmt.getAttributes();
-    _builder.append(_attributes);
-    _builder.append(");");
     _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    {
+      EList<EObject> _attributes = stmt.getAttributes();
+      boolean _hasElements = false;
+      for(final EObject at : _attributes) {
+        if (!_hasElements) {
+          _hasElements = true;
+        } else {
+          _builder.appendImmediate(",", "");
+        }
+        EList<EObject> _attributes_1 = stmt.getAttributes();
+        _builder.append(_attributes_1);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    _builder.append(");");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  protected String _generateJavaStatement(final DropTableStatement stmt) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.newLine();
+    {
+      int _size = stmt.getTable().size();
+      ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
+      for(final Integer i : _doubleDotLessThan) {
+        _builder.append("DROP TABLE ");
+        String _name = stmt.getTable().get((i).intValue()).getName();
+        _builder.append(_name);
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder.toString();
+  }
+  
+  protected String _generateJavaStatement(final TruncateTableStatement stmt) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.newLine();
+    {
+      int _size = stmt.getTable().size();
+      ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
+      for(final Integer i : _doubleDotLessThan) {
+        _builder.append("TRUNCATE TABLE ");
+        String _name = stmt.getTable().get((i).intValue()).getName();
+        _builder.append(_name);
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder.toString();
+  }
+  
+  protected String _generateJavaStatement(final DeleteTableStatement stmt) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("DELETE TABLE ");
+    EList<TableName> _table = stmt.getX().getTable();
+    _builder.append(_table);
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    return _builder.toString();
+  }
+  
+  protected String _generateJavaStatement(final UpdateTableStatement stmt) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("UPDATE TABLE ");
+    EList<TableName> _table = stmt.getTable();
+    _builder.append(_table);
+    _builder.append(" SET ");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    {
+      EList<SetClause> _sc = stmt.getSc();
+      boolean _hasElements = false;
+      for(final SetClause sc : _sc) {
+        if (!_hasElements) {
+          _hasElements = true;
+        } else {
+          _builder.appendImmediate(",", "");
+        }
+        EList<SetClause> _sc_1 = stmt.getSc();
+        _builder.append(_sc_1);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    _builder.append(";");
+    _builder.newLine();
     return _builder.toString();
   }
   
   public String generateJavaStatement(final EObject stmt) {
     if (stmt instanceof DatabaseDeclarationStatement) {
       return _generateJavaStatement((DatabaseDeclarationStatement)stmt);
+    } else if (stmt instanceof DeleteTableStatement) {
+      return _generateJavaStatement((DeleteTableStatement)stmt);
+    } else if (stmt instanceof DropTableStatement) {
+      return _generateJavaStatement((DropTableStatement)stmt);
+    } else if (stmt instanceof TruncateTableStatement) {
+      return _generateJavaStatement((TruncateTableStatement)stmt);
+    } else if (stmt instanceof UpdateTableStatement) {
+      return _generateJavaStatement((UpdateTableStatement)stmt);
     } else if (stmt instanceof Statement) {
       return _generateJavaStatement((Statement)stmt);
     } else if (stmt instanceof TableDeclaration) {

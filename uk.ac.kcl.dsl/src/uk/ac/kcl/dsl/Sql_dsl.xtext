@@ -108,7 +108,7 @@ enum DataStructureType:
  */
 
 DropTableStatement:
-	"DROP" "TABLE" table+=[TableName]
+	"DROP" "TABLE" table+=[TableName] ("," table+=[TableName])*
 ;
 
 /*
@@ -118,7 +118,7 @@ DropTableStatement:
  */
 
 TruncateTableStatement:
-	"TRUNCATE" "TABLE" table+=[TableName]
+	"TRUNCATE" "TABLE" table+=[TableName] ("," table+=[TableName])*
 ;
 
 /*

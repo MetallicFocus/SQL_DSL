@@ -320,7 +320,7 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     DropTableStatement returns DropTableStatement
 	 *
 	 * Constraint:
-	 *     table+=[TableName|ID]
+	 *     (table+=[TableName|ID] table+=[TableName|ID]*)
 	 */
 	protected void sequence_DropTableStatement(ISerializationContext context, DropTableStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -519,7 +519,7 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TruncateTableStatement returns TruncateTableStatement
 	 *
 	 * Constraint:
-	 *     table+=[TableName|ID]
+	 *     (table+=[TableName|ID] table+=[TableName|ID]*)
 	 */
 	protected void sequence_TruncateTableStatement(ISerializationContext context, TruncateTableStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
