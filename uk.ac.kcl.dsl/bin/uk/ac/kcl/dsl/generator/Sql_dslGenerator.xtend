@@ -73,11 +73,23 @@ class Sql_dslGenerator extends AbstractGenerator {
 	TRUNCATE TABLE «stmt.getTable().get(i).name»;
 	«ENDFOR»
 	'''
-	
+	// Need to figure out sizeOfStatement --> Rn it counts the number of elements inside Z (which is always 3)
+	// How to get the value of rightOperand?
 	dispatch def String generateJavaStatement(DeleteTableStatement stmt) '''
-	DELETE TABLE «stmt.x.getTable()»;
+	DELETE FROM TABLE «stmt.x.getTable().name»
+	«val sizeOfStatement = stmt.x.getZ().size-1»
+	«IF sizeOfStatement == 1»
+	WHERE «stmt.x.getZ().get(sizeOfStatement).getColumn().get(sizeOfStatement).name» «stmt.x.getZ().get(sizeOfStatement).sign» «stmt.x.getZ().get(sizeOfStatement).rightOperand»
+	«ELSE»
+	WHERE 
+		«FOR i : 0 ..< sizeOfStatement»
+	«stmt.x.getZ().get(i).getColumn().get(i).name» «stmt.x.getZ().get(i).sign» «stmt.x.getZ().get(i).rightOperand» AND
+		«ENDFOR»
+	«stmt.x.getZ().get(sizeOfStatement).getColumn().get(sizeOfStatement).name» «stmt.x.getZ().get(sizeOfStatement).sign» «stmt.x.getZ().get(sizeOfStatement).rightOperand»
+	«ENDIF»
+	;
 	'''
-	
+	/*
 	dispatch def String generateJavaStatement(UpdateTableStatement stmt) '''
 	UPDATE TABLE «stmt.getTable()» SET 
 	
@@ -86,5 +98,5 @@ class Sql_dslGenerator extends AbstractGenerator {
 	«ENDFOR»
 	
 	;
-	'''
+	''' */
 }

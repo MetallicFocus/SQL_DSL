@@ -153,7 +153,7 @@ public interface Sql_dslPackage extends EPackage
   int FROM_AND_WHERE_CLAUSES = 3;
 
   /**
-   * The feature id for the '<em><b>Table</b></em>' reference list.
+   * The feature id for the '<em><b>Table</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -199,22 +199,22 @@ public interface Sql_dslPackage extends EPackage
   int WHERE_DEC__COLUMN = 0;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Sign</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHERE_DEC__NAME = 1;
+  int WHERE_DEC__SIGN = 1;
 
   /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * The feature id for the '<em><b>Right Operand</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHERE_DEC__VAL = 2;
+  int WHERE_DEC__RIGHT_OPERAND = 2;
 
   /**
    * The number of structural features of the '<em>Where Dec</em>' class.
@@ -226,6 +226,90 @@ public interface Sql_dslPackage extends EPackage
   int WHERE_DEC_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.RightOperandOneImpl <em>Right Operand One</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.RightOperandOneImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getRightOperandOne()
+   * @generated
+   */
+  int RIGHT_OPERAND_ONE = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGHT_OPERAND_ONE__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Right Operand One</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGHT_OPERAND_ONE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.RightOperandTwoImpl <em>Right Operand Two</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.RightOperandTwoImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getRightOperandTwo()
+   * @generated
+   */
+  int RIGHT_OPERAND_TWO = 6;
+
+  /**
+   * The feature id for the '<em><b>Column</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGHT_OPERAND_TWO__COLUMN = 0;
+
+  /**
+   * The number of structural features of the '<em>Right Operand Two</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGHT_OPERAND_TWO_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.RightOperandThreeImpl <em>Right Operand Three</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.RightOperandThreeImpl
+   * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getRightOperandThree()
+   * @generated
+   */
+  int RIGHT_OPERAND_THREE = 7;
+
+  /**
+   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGHT_OPERAND_THREE__VAL = 0;
+
+  /**
+   * The number of structural features of the '<em>Right Operand Three</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGHT_OPERAND_THREE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.DatabaseDeclarationStatementImpl <em>Database Declaration Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -233,7 +317,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDatabaseDeclarationStatement()
    * @generated
    */
-  int DATABASE_DECLARATION_STATEMENT = 5;
+  int DATABASE_DECLARATION_STATEMENT = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -261,7 +345,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getCreateTableStatement()
    * @generated
    */
-  int CREATE_TABLE_STATEMENT = 6;
+  int CREATE_TABLE_STATEMENT = 9;
 
   /**
    * The feature id for the '<em><b>Tables</b></em>' containment reference list.
@@ -289,7 +373,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTableDeclaration()
    * @generated
    */
-  int TABLE_DECLARATION = 7;
+  int TABLE_DECLARATION = 10;
 
   /**
    * The feature id for the '<em><b>Table</b></em>' containment reference list.
@@ -326,7 +410,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTableName()
    * @generated
    */
-  int TABLE_NAME = 8;
+  int TABLE_NAME = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -354,7 +438,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getCD()
    * @generated
    */
-  int CD = 9;
+  int CD = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -400,7 +484,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getColumnReferencing()
    * @generated
    */
-  int COLUMN_REFERENCING = 10;
+  int COLUMN_REFERENCING = 13;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' reference.
@@ -428,7 +512,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getPrimaryKey()
    * @generated
    */
-  int PRIMARY_KEY = 11;
+  int PRIMARY_KEY = 14;
 
   /**
    * The feature id for the '<em><b>Column As PK</b></em>' reference list.
@@ -456,7 +540,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getForeignKey()
    * @generated
    */
-  int FOREIGN_KEY = 12;
+  int FOREIGN_KEY = 15;
 
   /**
    * The feature id for the '<em><b>Column As FK</b></em>' reference list.
@@ -502,7 +586,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDropTableStatement()
    * @generated
    */
-  int DROP_TABLE_STATEMENT = 13;
+  int DROP_TABLE_STATEMENT = 16;
 
   /**
    * The feature id for the '<em><b>Table</b></em>' reference list.
@@ -530,7 +614,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getTruncateTableStatement()
    * @generated
    */
-  int TRUNCATE_TABLE_STATEMENT = 14;
+  int TRUNCATE_TABLE_STATEMENT = 17;
 
   /**
    * The feature id for the '<em><b>Table</b></em>' reference list.
@@ -558,7 +642,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDeleteTableStatement()
    * @generated
    */
-  int DELETE_TABLE_STATEMENT = 15;
+  int DELETE_TABLE_STATEMENT = 18;
 
   /**
    * The feature id for the '<em><b>X</b></em>' containment reference.
@@ -586,7 +670,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getUpdateTableStatement()
    * @generated
    */
-  int UPDATE_TABLE_STATEMENT = 16;
+  int UPDATE_TABLE_STATEMENT = 19;
 
   /**
    * The feature id for the '<em><b>Table</b></em>' reference list.
@@ -632,7 +716,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getSetClause()
    * @generated
    */
-  int SET_CLAUSE = 17;
+  int SET_CLAUSE = 20;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -678,7 +762,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterTableStatement()
    * @generated
    */
-  int ALTER_TABLE_STATEMENT = 18;
+  int ALTER_TABLE_STATEMENT = 21;
 
   /**
    * The feature id for the '<em><b>Table</b></em>' reference list.
@@ -715,7 +799,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterDropStatement()
    * @generated
    */
-  int ALTER_DROP_STATEMENT = 19;
+  int ALTER_DROP_STATEMENT = 22;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -743,7 +827,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterAddStatement()
    * @generated
    */
-  int ALTER_ADD_STATEMENT = 20;
+  int ALTER_ADD_STATEMENT = 23;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -771,7 +855,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAlterUpdateStatement()
    * @generated
    */
-  int ALTER_UPDATE_STATEMENT = 21;
+  int ALTER_UPDATE_STATEMENT = 24;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -799,7 +883,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getVariableDeclarationStatement()
    * @generated
    */
-  int VARIABLE_DECLARATION_STATEMENT = 22;
+  int VARIABLE_DECLARATION_STATEMENT = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -836,7 +920,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getIntLiteral()
    * @generated
    */
-  int INT_LITERAL = 23;
+  int INT_LITERAL = 26;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -864,7 +948,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getRealLiteral()
    * @generated
    */
-  int REAL_LITERAL = 24;
+  int REAL_LITERAL = 27;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -892,7 +976,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getIntVarExpression()
    * @generated
    */
-  int INT_VAR_EXPRESSION = 25;
+  int INT_VAR_EXPRESSION = 28;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' reference.
@@ -920,7 +1004,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getFunctions()
    * @generated
    */
-  int FUNCTIONS = 26;
+  int FUNCTIONS = 29;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -957,7 +1041,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getCountFunction()
    * @generated
    */
-  int COUNT_FUNCTION = 27;
+  int COUNT_FUNCTION = 30;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -994,7 +1078,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getAvgFunction()
    * @generated
    */
-  int AVG_FUNCTION = 28;
+  int AVG_FUNCTION = 31;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -1031,7 +1115,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getSumFunction()
    * @generated
    */
-  int SUM_FUNCTION = 29;
+  int SUM_FUNCTION = 32;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -1068,7 +1152,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getMinFunction()
    * @generated
    */
-  int MIN_FUNCTION = 30;
+  int MIN_FUNCTION = 33;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -1105,7 +1189,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getMaxFunction()
    * @generated
    */
-  int MAX_FUNCTION = 31;
+  int MAX_FUNCTION = 34;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' reference list.
@@ -1142,7 +1226,7 @@ public interface Sql_dslPackage extends EPackage
    * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getDataStructureType()
    * @generated
    */
-  int DATA_STRUCTURE_TYPE = 32;
+  int DATA_STRUCTURE_TYPE = 35;
 
 
   /**
@@ -1219,10 +1303,10 @@ public interface Sql_dslPackage extends EPackage
   EClass getFromAndWhereClauses();
 
   /**
-   * Returns the meta object for the reference list '{@link uk.ac.kcl.dsl.sql_dsl.FromAndWhereClauses#getTable <em>Table</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.kcl.dsl.sql_dsl.FromAndWhereClauses#getTable <em>Table</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Table</em>'.
+   * @return the meta object for the reference '<em>Table</em>'.
    * @see uk.ac.kcl.dsl.sql_dsl.FromAndWhereClauses#getTable()
    * @see #getFromAndWhereClauses()
    * @generated
@@ -1262,26 +1346,89 @@ public interface Sql_dslPackage extends EPackage
   EReference getWhereDec_Column();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getSign <em>Sign</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sign</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.WhereDec#getSign()
+   * @see #getWhereDec()
+   * @generated
+   */
+  EAttribute getWhereDec_Sign();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getRightOperand <em>Right Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right Operand</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.WhereDec#getRightOperand()
+   * @see #getWhereDec()
+   * @generated
+   */
+  EReference getWhereDec_RightOperand();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.RightOperandOne <em>Right Operand One</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Right Operand One</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.RightOperandOne
+   * @generated
+   */
+  EClass getRightOperandOne();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.RightOperandOne#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.kcl.dsl.sql_dsl.WhereDec#getName()
-   * @see #getWhereDec()
+   * @see uk.ac.kcl.dsl.sql_dsl.RightOperandOne#getName()
+   * @see #getRightOperandOne()
    * @generated
    */
-  EAttribute getWhereDec_Name();
+  EAttribute getRightOperandOne_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getVal <em>Val</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.RightOperandTwo <em>Right Operand Two</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Right Operand Two</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.RightOperandTwo
+   * @generated
+   */
+  EClass getRightOperandTwo();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.kcl.dsl.sql_dsl.RightOperandTwo#getColumn <em>Column</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Column</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.RightOperandTwo#getColumn()
+   * @see #getRightOperandTwo()
+   * @generated
+   */
+  EReference getRightOperandTwo_Column();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.RightOperandThree <em>Right Operand Three</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Right Operand Three</em>'.
+   * @see uk.ac.kcl.dsl.sql_dsl.RightOperandThree
+   * @generated
+   */
+  EClass getRightOperandThree();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.dsl.sql_dsl.RightOperandThree#getVal <em>Val</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Val</em>'.
-   * @see uk.ac.kcl.dsl.sql_dsl.WhereDec#getVal()
-   * @see #getWhereDec()
+   * @see uk.ac.kcl.dsl.sql_dsl.RightOperandThree#getVal()
+   * @see #getRightOperandThree()
    * @generated
    */
-  EAttribute getWhereDec_Val();
+  EAttribute getRightOperandThree_Val();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement <em>Database Declaration Statement</em>}'.
@@ -2025,7 +2172,7 @@ public interface Sql_dslPackage extends EPackage
     EClass FROM_AND_WHERE_CLAUSES = eINSTANCE.getFromAndWhereClauses();
 
     /**
-     * The meta object literal for the '<em><b>Table</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Table</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2059,12 +2206,66 @@ public interface Sql_dslPackage extends EPackage
     EReference WHERE_DEC__COLUMN = eINSTANCE.getWhereDec_Column();
 
     /**
+     * The meta object literal for the '<em><b>Sign</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WHERE_DEC__SIGN = eINSTANCE.getWhereDec_Sign();
+
+    /**
+     * The meta object literal for the '<em><b>Right Operand</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHERE_DEC__RIGHT_OPERAND = eINSTANCE.getWhereDec_RightOperand();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.RightOperandOneImpl <em>Right Operand One</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.RightOperandOneImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getRightOperandOne()
+     * @generated
+     */
+    EClass RIGHT_OPERAND_ONE = eINSTANCE.getRightOperandOne();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute WHERE_DEC__NAME = eINSTANCE.getWhereDec_Name();
+    EAttribute RIGHT_OPERAND_ONE__NAME = eINSTANCE.getRightOperandOne_Name();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.RightOperandTwoImpl <em>Right Operand Two</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.RightOperandTwoImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getRightOperandTwo()
+     * @generated
+     */
+    EClass RIGHT_OPERAND_TWO = eINSTANCE.getRightOperandTwo();
+
+    /**
+     * The meta object literal for the '<em><b>Column</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RIGHT_OPERAND_TWO__COLUMN = eINSTANCE.getRightOperandTwo_Column();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.RightOperandThreeImpl <em>Right Operand Three</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.RightOperandThreeImpl
+     * @see uk.ac.kcl.dsl.sql_dsl.impl.Sql_dslPackageImpl#getRightOperandThree()
+     * @generated
+     */
+    EClass RIGHT_OPERAND_THREE = eINSTANCE.getRightOperandThree();
 
     /**
      * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
@@ -2072,7 +2273,7 @@ public interface Sql_dslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute WHERE_DEC__VAL = eINSTANCE.getWhereDec_Val();
+    EAttribute RIGHT_OPERAND_THREE__VAL = eINSTANCE.getRightOperandThree_Val();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.dsl.sql_dsl.impl.DatabaseDeclarationStatementImpl <em>Database Declaration Statement</em>}' class.

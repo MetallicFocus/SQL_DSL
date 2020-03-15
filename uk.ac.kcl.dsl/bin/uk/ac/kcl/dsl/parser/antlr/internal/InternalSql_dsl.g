@@ -411,103 +411,249 @@ ruleWhereDec returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_1='='
-			{
-				newLeafNode(otherlv_1, grammarAccess.getWhereDecAccess().getEqualsSignKeyword_1_0());
-			}
-			    |
-			otherlv_2='<'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getWhereDecAccess().getLessThanSignKeyword_1_1());
-			}
-			    |
-			otherlv_3='<='
-			{
-				newLeafNode(otherlv_3, grammarAccess.getWhereDecAccess().getLessThanSignEqualsSignKeyword_1_2());
-			}
-			    |
-			otherlv_4='>'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getWhereDecAccess().getGreaterThanSignKeyword_1_3());
-			}
-			    |
-			otherlv_5='>='
-			{
-				newLeafNode(otherlv_5, grammarAccess.getWhereDecAccess().getGreaterThanSignEqualsSignKeyword_1_4());
-			}
-			    |
-			otherlv_6='!='
-			{
-				newLeafNode(otherlv_6, grammarAccess.getWhereDecAccess().getExclamationMarkEqualsSignKeyword_1_5());
-			}
-			    |
-			otherlv_7='LIKE'
-			{
-				newLeafNode(otherlv_7, grammarAccess.getWhereDecAccess().getLIKEKeyword_1_6());
-			}
+			(
+				(
+					lv_sign_1_1='='
+					{
+						newLeafNode(lv_sign_1_1, grammarAccess.getWhereDecAccess().getSignEqualsSignKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getWhereDecRule());
+						}
+						setWithLastConsumed($current, "sign", lv_sign_1_1, null);
+					}
+					    |
+					lv_sign_1_2='<'
+					{
+						newLeafNode(lv_sign_1_2, grammarAccess.getWhereDecAccess().getSignLessThanSignKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getWhereDecRule());
+						}
+						setWithLastConsumed($current, "sign", lv_sign_1_2, null);
+					}
+					    |
+					lv_sign_1_3='<='
+					{
+						newLeafNode(lv_sign_1_3, grammarAccess.getWhereDecAccess().getSignLessThanSignEqualsSignKeyword_1_0_2());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getWhereDecRule());
+						}
+						setWithLastConsumed($current, "sign", lv_sign_1_3, null);
+					}
+					    |
+					lv_sign_1_4='>'
+					{
+						newLeafNode(lv_sign_1_4, grammarAccess.getWhereDecAccess().getSignGreaterThanSignKeyword_1_0_3());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getWhereDecRule());
+						}
+						setWithLastConsumed($current, "sign", lv_sign_1_4, null);
+					}
+					    |
+					lv_sign_1_5='>='
+					{
+						newLeafNode(lv_sign_1_5, grammarAccess.getWhereDecAccess().getSignGreaterThanSignEqualsSignKeyword_1_0_4());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getWhereDecRule());
+						}
+						setWithLastConsumed($current, "sign", lv_sign_1_5, null);
+					}
+					    |
+					lv_sign_1_6='!='
+					{
+						newLeafNode(lv_sign_1_6, grammarAccess.getWhereDecAccess().getSignExclamationMarkEqualsSignKeyword_1_0_5());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getWhereDecRule());
+						}
+						setWithLastConsumed($current, "sign", lv_sign_1_6, null);
+					}
+					    |
+					lv_sign_1_7='LIKE'
+					{
+						newLeafNode(lv_sign_1_7, grammarAccess.getWhereDecAccess().getSignLIKEKeyword_1_0_6());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getWhereDecRule());
+						}
+						setWithLastConsumed($current, "sign", lv_sign_1_7, null);
+					}
+				)
+			)
 		)
 		(
 			(
-				otherlv_8='#'
-				{
-					newLeafNode(otherlv_8, grammarAccess.getWhereDecAccess().getNumberSignKeyword_2_0_0());
-				}
 				(
-					(
-						lv_name_9_0=RULE_ID
-						{
-							newLeafNode(lv_name_9_0, grammarAccess.getWhereDecAccess().getNameIDTerminalRuleCall_2_0_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getWhereDecRule());
-							}
-							setWithLastConsumed(
-								$current,
-								"name",
-								lv_name_9_0,
-								"org.eclipse.xtext.common.Terminals.ID");
-						}
-					)
-				)
-				otherlv_10='#'
-				{
-					newLeafNode(otherlv_10, grammarAccess.getWhereDecAccess().getNumberSignKeyword_2_0_2());
-				}
-			)
-			    |
-			(
-				(
+					{
+						newCompositeNode(grammarAccess.getWhereDecAccess().getRightOperandRightOperandOneParserRuleCall_2_0_0());
+					}
+					lv_rightOperand_2_1=ruleRightOperandOne
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getWhereDecRule());
+							$current = createModelElementForParent(grammarAccess.getWhereDecRule());
 						}
-					}
-					otherlv_11=RULE_ID
-					{
-						newLeafNode(otherlv_11, grammarAccess.getWhereDecAccess().getColumnCDCrossReference_2_1_0());
-					}
-				)
-			)
-			    |
-			(
-				(
-					lv_val_12_0=RULE_INT
-					{
-						newLeafNode(lv_val_12_0, grammarAccess.getWhereDecAccess().getValINTTerminalRuleCall_2_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getWhereDecRule());
-						}
-						setWithLastConsumed(
+						set(
 							$current,
-							"val",
-							lv_val_12_0,
-							"org.eclipse.xtext.common.Terminals.INT");
+							"rightOperand",
+							lv_rightOperand_2_1,
+							"uk.ac.kcl.dsl.Sql_dsl.RightOperandOne");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getWhereDecAccess().getRightOperandRightOperandTwoParserRuleCall_2_0_1());
+					}
+					lv_rightOperand_2_2=ruleRightOperandTwo
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getWhereDecRule());
+						}
+						set(
+							$current,
+							"rightOperand",
+							lv_rightOperand_2_2,
+							"uk.ac.kcl.dsl.Sql_dsl.RightOperandTwo");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getWhereDecAccess().getRightOperandRightOperandThreeParserRuleCall_2_0_2());
+					}
+					lv_rightOperand_2_3=ruleRightOperandThree
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getWhereDecRule());
+						}
+						set(
+							$current,
+							"rightOperand",
+							lv_rightOperand_2_3,
+							"uk.ac.kcl.dsl.Sql_dsl.RightOperandThree");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)
+		)
+	)
+;
+
+// Entry rule entryRuleRightOperandOne
+entryRuleRightOperandOne returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRightOperandOneRule()); }
+	iv_ruleRightOperandOne=ruleRightOperandOne
+	{ $current=$iv_ruleRightOperandOne.current; }
+	EOF;
+
+// Rule RightOperandOne
+ruleRightOperandOne returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='#'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getRightOperandOneAccess().getNumberSignKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getRightOperandOneAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRightOperandOneRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='#'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getRightOperandOneAccess().getNumberSignKeyword_2());
+		}
+	)
+;
+
+// Entry rule entryRuleRightOperandTwo
+entryRuleRightOperandTwo returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRightOperandTwoRule()); }
+	iv_ruleRightOperandTwo=ruleRightOperandTwo
+	{ $current=$iv_ruleRightOperandTwo.current; }
+	EOF;
+
+// Rule RightOperandTwo
+ruleRightOperandTwo returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getRightOperandTwoRule());
+				}
+			}
+			otherlv_0=RULE_ID
+			{
+				newLeafNode(otherlv_0, grammarAccess.getRightOperandTwoAccess().getColumnCDCrossReference_0());
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleRightOperandThree
+entryRuleRightOperandThree returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRightOperandThreeRule()); }
+	iv_ruleRightOperandThree=ruleRightOperandThree
+	{ $current=$iv_ruleRightOperandThree.current; }
+	EOF;
+
+// Rule RightOperandThree
+ruleRightOperandThree returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_val_0_0=RULE_INT
+			{
+				newLeafNode(lv_val_0_0, grammarAccess.getRightOperandThreeAccess().getValINTTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getRightOperandThreeRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"val",
+					lv_val_0_0,
+					"org.eclipse.xtext.common.Terminals.INT");
+			}
 		)
 	)
 ;

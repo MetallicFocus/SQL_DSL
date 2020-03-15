@@ -34,14 +34,23 @@ SelectStatement:
 ;
 
 FromAndWhereClauses:
-	"FROM" table+=[TableName] 
+	"FROM" table=[TableName] 
 	("WHERE" z+=WhereDec (("AND" | "OR") z+=WhereDec)* )?
 ;
 
 WhereDec:
-	(column+=[CD] ("="|"<"|"<="|">"|">="|"!="|"LIKE") (("#" name=ID "#") | column+=[CD] | val = INT) )
+	(column+=[CD] sign=("="|"<"|"<="|">"|">="|"!="|"LIKE") rightOperand=(RightOperandOne | RightOperandTwo | RightOperandThree))
 ;
 
+RightOperandOne:
+	"#" name=ID "#"
+;
+RightOperandTwo:
+	column+=[CD]
+;
+RightOperandThree:
+	val = INT
+;
 
 /*
  * 

@@ -3,6 +3,10 @@
  */
 package uk.ac.kcl.dsl.scoping
 
+import org.eclipse.xtext.scoping.IScope
+import uk.ac.kcl.dsl.sql_dsl.IntVarExpression
+import org.eclipse.emf.ecore.EReference
+import uk.ac.kcl.dsl.sql_dsl.Model
 
 /**
  * This class contains custom scoping description.
@@ -12,9 +16,10 @@ package uk.ac.kcl.dsl.scoping
  */
 class Sql_dslScopeProvider extends AbstractSql_dslScopeProvider {
 
-/*
-	def IScope scope_IntVarExpression_var(IntVarExpression context, EReference ref) {
-		context.visibleVariablesScope
+
+	/*def IScope scope_IntVarExpression_var(IntVarExpression context, EReference ref) {
+		val model = context.eContainer as Model
+		scopeFor(model)
 	}
 	
 	dispatch def IScope visibleVariablesScope(CD ip) {
@@ -35,6 +40,6 @@ class Sql_dslScopeProvider extends AbstractSql_dslScopeProvider {
 	
 	dispatch def IScope internalVisibleVariablesScope(LoopStatement ls) {
 		scopeFor(ls.statements.filter(VariableDeclaration), ls.eContainer.internalVisibleVariablesScope)
-	} */
+	}*/
 
 }

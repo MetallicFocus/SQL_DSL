@@ -33,6 +33,9 @@ import uk.ac.kcl.dsl.sql_dsl.MinFunction;
 import uk.ac.kcl.dsl.sql_dsl.Model;
 import uk.ac.kcl.dsl.sql_dsl.PrimaryKey;
 import uk.ac.kcl.dsl.sql_dsl.RealLiteral;
+import uk.ac.kcl.dsl.sql_dsl.RightOperandOne;
+import uk.ac.kcl.dsl.sql_dsl.RightOperandThree;
+import uk.ac.kcl.dsl.sql_dsl.RightOperandTwo;
 import uk.ac.kcl.dsl.sql_dsl.SelectStatement;
 import uk.ac.kcl.dsl.sql_dsl.SetClause;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslFactory;
@@ -88,6 +91,27 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   private EClass whereDecEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rightOperandOneEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rightOperandTwoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rightOperandThreeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -475,7 +499,7 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EAttribute getWhereDec_Name()
+  public EAttribute getWhereDec_Sign()
   {
     return (EAttribute)whereDecEClass.getEStructuralFeatures().get(1);
   }
@@ -486,9 +510,75 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
    * @generated
    */
   @Override
-  public EAttribute getWhereDec_Val()
+  public EReference getWhereDec_RightOperand()
   {
-    return (EAttribute)whereDecEClass.getEStructuralFeatures().get(2);
+    return (EReference)whereDecEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRightOperandOne()
+  {
+    return rightOperandOneEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRightOperandOne_Name()
+  {
+    return (EAttribute)rightOperandOneEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRightOperandTwo()
+  {
+    return rightOperandTwoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRightOperandTwo_Column()
+  {
+    return (EReference)rightOperandTwoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRightOperandThree()
+  {
+    return rightOperandThreeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRightOperandThree_Val()
+  {
+    return (EAttribute)rightOperandThreeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1219,8 +1309,17 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
 
     whereDecEClass = createEClass(WHERE_DEC);
     createEReference(whereDecEClass, WHERE_DEC__COLUMN);
-    createEAttribute(whereDecEClass, WHERE_DEC__NAME);
-    createEAttribute(whereDecEClass, WHERE_DEC__VAL);
+    createEAttribute(whereDecEClass, WHERE_DEC__SIGN);
+    createEReference(whereDecEClass, WHERE_DEC__RIGHT_OPERAND);
+
+    rightOperandOneEClass = createEClass(RIGHT_OPERAND_ONE);
+    createEAttribute(rightOperandOneEClass, RIGHT_OPERAND_ONE__NAME);
+
+    rightOperandTwoEClass = createEClass(RIGHT_OPERAND_TWO);
+    createEReference(rightOperandTwoEClass, RIGHT_OPERAND_TWO__COLUMN);
+
+    rightOperandThreeEClass = createEClass(RIGHT_OPERAND_THREE);
+    createEAttribute(rightOperandThreeEClass, RIGHT_OPERAND_THREE__VAL);
 
     databaseDeclarationStatementEClass = createEClass(DATABASE_DECLARATION_STATEMENT);
     createEAttribute(databaseDeclarationStatementEClass, DATABASE_DECLARATION_STATEMENT__NAME);
@@ -1370,13 +1469,22 @@ public class Sql_dslPackageImpl extends EPackageImpl implements Sql_dslPackage
     initEReference(getSelectStatement_X(), this.getFromAndWhereClauses(), null, "x", null, 0, 1, SelectStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fromAndWhereClausesEClass, FromAndWhereClauses.class, "FromAndWhereClauses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFromAndWhereClauses_Table(), this.getTableName(), null, "table", null, 0, -1, FromAndWhereClauses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFromAndWhereClauses_Table(), this.getTableName(), null, "table", null, 0, 1, FromAndWhereClauses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFromAndWhereClauses_Z(), this.getWhereDec(), null, "z", null, 0, -1, FromAndWhereClauses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whereDecEClass, WhereDec.class, "WhereDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getWhereDec_Column(), this.getCD(), null, "column", null, 0, -1, WhereDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWhereDec_Name(), ecorePackage.getEString(), "name", null, 0, 1, WhereDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWhereDec_Val(), ecorePackage.getEInt(), "val", null, 0, 1, WhereDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWhereDec_Sign(), ecorePackage.getEString(), "sign", null, 0, 1, WhereDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWhereDec_RightOperand(), ecorePackage.getEObject(), null, "rightOperand", null, 0, 1, WhereDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(rightOperandOneEClass, RightOperandOne.class, "RightOperandOne", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRightOperandOne_Name(), ecorePackage.getEString(), "name", null, 0, 1, RightOperandOne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(rightOperandTwoEClass, RightOperandTwo.class, "RightOperandTwo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRightOperandTwo_Column(), this.getCD(), null, "column", null, 0, -1, RightOperandTwo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(rightOperandThreeEClass, RightOperandThree.class, "RightOperandThree", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRightOperandThree_Val(), ecorePackage.getEInt(), "val", null, 0, 1, RightOperandThree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(databaseDeclarationStatementEClass, DatabaseDeclarationStatement.class, "DatabaseDeclarationStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDatabaseDeclarationStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, DatabaseDeclarationStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -101,6 +101,21 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
         return createWhereDecAdapter();
       }
       @Override
+      public Adapter caseRightOperandOne(RightOperandOne object)
+      {
+        return createRightOperandOneAdapter();
+      }
+      @Override
+      public Adapter caseRightOperandTwo(RightOperandTwo object)
+      {
+        return createRightOperandTwoAdapter();
+      }
+      @Override
+      public Adapter caseRightOperandThree(RightOperandThree object)
+      {
+        return createRightOperandThreeAdapter();
+      }
+      @Override
       public Adapter caseDatabaseDeclarationStatement(DatabaseDeclarationStatement object)
       {
         return createDatabaseDeclarationStatementAdapter();
@@ -328,6 +343,51 @@ public class Sql_dslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createWhereDecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.RightOperandOne <em>Right Operand One</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.RightOperandOne
+   * @generated
+   */
+  public Adapter createRightOperandOneAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.RightOperandTwo <em>Right Operand Two</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.RightOperandTwo
+   * @generated
+   */
+  public Adapter createRightOperandTwoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.dsl.sql_dsl.RightOperandThree <em>Right Operand Three</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.dsl.sql_dsl.RightOperandThree
+   * @generated
+   */
+  public Adapter createRightOperandThreeAdapter()
   {
     return null;
   }

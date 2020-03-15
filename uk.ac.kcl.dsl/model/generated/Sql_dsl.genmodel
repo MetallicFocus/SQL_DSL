@@ -29,8 +29,17 @@
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//WhereDec">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//WhereDec/column"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//WhereDec/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//WhereDec/val"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//WhereDec/sign"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//WhereDec/rightOperand"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//RightOperandOne">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//RightOperandOne/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//RightOperandTwo">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sql_dsl.ecore#//RightOperandTwo/column"/>
+    </genClasses>
+    <genClasses ecoreClass="Sql_dsl.ecore#//RightOperandThree">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//RightOperandThree/val"/>
     </genClasses>
     <genClasses ecoreClass="Sql_dsl.ecore#//DatabaseDeclarationStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sql_dsl.ecore#//DatabaseDeclarationStatement/name"/>

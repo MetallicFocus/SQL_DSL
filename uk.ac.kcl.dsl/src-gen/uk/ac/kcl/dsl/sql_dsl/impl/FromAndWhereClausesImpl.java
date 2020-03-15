@@ -5,6 +5,7 @@ package uk.ac.kcl.dsl.sql_dsl.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,10 +13,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.kcl.dsl.sql_dsl.FromAndWhereClauses;
@@ -40,14 +41,14 @@ import uk.ac.kcl.dsl.sql_dsl.WhereDec;
 public class FromAndWhereClausesImpl extends MinimalEObjectImpl.Container implements FromAndWhereClauses
 {
   /**
-   * The cached value of the '{@link #getTable() <em>Table</em>}' reference list.
+   * The cached value of the '{@link #getTable() <em>Table</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTable()
    * @generated
    * @ordered
    */
-  protected EList<TableName> table;
+  protected TableName table;
 
   /**
    * The cached value of the '{@link #getZ() <em>Z</em>}' containment reference list.
@@ -86,13 +87,43 @@ public class FromAndWhereClausesImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
-  public EList<TableName> getTable()
+  public TableName getTable()
   {
-    if (table == null)
+    if (table != null && table.eIsProxy())
     {
-      table = new EObjectResolvingEList<TableName>(TableName.class, this, Sql_dslPackage.FROM_AND_WHERE_CLAUSES__TABLE);
+      InternalEObject oldTable = (InternalEObject)table;
+      table = (TableName)eResolveProxy(oldTable);
+      if (table != oldTable)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Sql_dslPackage.FROM_AND_WHERE_CLAUSES__TABLE, oldTable, table));
+      }
     }
     return table;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TableName basicGetTable()
+  {
+    return table;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setTable(TableName newTable)
+  {
+    TableName oldTable = table;
+    table = newTable;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.FROM_AND_WHERE_CLAUSES__TABLE, oldTable, table));
   }
 
   /**
@@ -137,7 +168,8 @@ public class FromAndWhereClausesImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case Sql_dslPackage.FROM_AND_WHERE_CLAUSES__TABLE:
-        return getTable();
+        if (resolve) return getTable();
+        return basicGetTable();
       case Sql_dslPackage.FROM_AND_WHERE_CLAUSES__Z:
         return getZ();
     }
@@ -156,8 +188,7 @@ public class FromAndWhereClausesImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case Sql_dslPackage.FROM_AND_WHERE_CLAUSES__TABLE:
-        getTable().clear();
-        getTable().addAll((Collection<? extends TableName>)newValue);
+        setTable((TableName)newValue);
         return;
       case Sql_dslPackage.FROM_AND_WHERE_CLAUSES__Z:
         getZ().clear();
@@ -178,7 +209,7 @@ public class FromAndWhereClausesImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case Sql_dslPackage.FROM_AND_WHERE_CLAUSES__TABLE:
-        getTable().clear();
+        setTable((TableName)null);
         return;
       case Sql_dslPackage.FROM_AND_WHERE_CLAUSES__Z:
         getZ().clear();
@@ -198,7 +229,7 @@ public class FromAndWhereClausesImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case Sql_dslPackage.FROM_AND_WHERE_CLAUSES__TABLE:
-        return table != null && !table.isEmpty();
+        return table != null;
       case Sql_dslPackage.FROM_AND_WHERE_CLAUSES__Z:
         return z != null && !z.isEmpty();
     }

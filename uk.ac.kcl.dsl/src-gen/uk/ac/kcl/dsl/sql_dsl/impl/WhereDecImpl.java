@@ -6,10 +6,13 @@ package uk.ac.kcl.dsl.sql_dsl.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -29,8 +32,8 @@ import uk.ac.kcl.dsl.sql_dsl.WhereDec;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.WhereDecImpl#getColumn <em>Column</em>}</li>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.WhereDecImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.WhereDecImpl#getVal <em>Val</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.WhereDecImpl#getSign <em>Sign</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.impl.WhereDecImpl#getRightOperand <em>Right Operand</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,44 +51,34 @@ public class WhereDecImpl extends MinimalEObjectImpl.Container implements WhereD
   protected EList<CD> column;
 
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getSign() <em>Sign</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getSign()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String SIGN_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getSign() <em>Sign</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getSign()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String sign = SIGN_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getVal() <em>Val</em>}' attribute.
+   * The cached value of the '{@link #getRightOperand() <em>Right Operand</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVal()
+   * @see #getRightOperand()
    * @generated
    * @ordered
    */
-  protected static final int VAL_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getVal() <em>Val</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVal()
-   * @generated
-   * @ordered
-   */
-  protected int val = VAL_EDEFAULT;
+  protected EObject rightOperand;
 
   /**
    * <!-- begin-user-doc -->
@@ -129,9 +122,9 @@ public class WhereDecImpl extends MinimalEObjectImpl.Container implements WhereD
    * @generated
    */
   @Override
-  public String getName()
+  public String getSign()
   {
-    return name;
+    return sign;
   }
 
   /**
@@ -140,12 +133,12 @@ public class WhereDecImpl extends MinimalEObjectImpl.Container implements WhereD
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setSign(String newSign)
   {
-    String oldName = name;
-    name = newName;
+    String oldSign = sign;
+    sign = newSign;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.WHERE_DEC__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.WHERE_DEC__SIGN, oldSign, sign));
   }
 
   /**
@@ -154,9 +147,9 @@ public class WhereDecImpl extends MinimalEObjectImpl.Container implements WhereD
    * @generated
    */
   @Override
-  public int getVal()
+  public EObject getRightOperand()
   {
-    return val;
+    return rightOperand;
   }
 
   /**
@@ -164,13 +157,54 @@ public class WhereDecImpl extends MinimalEObjectImpl.Container implements WhereD
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setVal(int newVal)
+  public NotificationChain basicSetRightOperand(EObject newRightOperand, NotificationChain msgs)
   {
-    int oldVal = val;
-    val = newVal;
+    EObject oldRightOperand = rightOperand;
+    rightOperand = newRightOperand;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.WHERE_DEC__VAL, oldVal, val));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Sql_dslPackage.WHERE_DEC__RIGHT_OPERAND, oldRightOperand, newRightOperand);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRightOperand(EObject newRightOperand)
+  {
+    if (newRightOperand != rightOperand)
+    {
+      NotificationChain msgs = null;
+      if (rightOperand != null)
+        msgs = ((InternalEObject)rightOperand).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sql_dslPackage.WHERE_DEC__RIGHT_OPERAND, null, msgs);
+      if (newRightOperand != null)
+        msgs = ((InternalEObject)newRightOperand).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sql_dslPackage.WHERE_DEC__RIGHT_OPERAND, null, msgs);
+      msgs = basicSetRightOperand(newRightOperand, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Sql_dslPackage.WHERE_DEC__RIGHT_OPERAND, newRightOperand, newRightOperand));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case Sql_dslPackage.WHERE_DEC__RIGHT_OPERAND:
+        return basicSetRightOperand(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -185,10 +219,10 @@ public class WhereDecImpl extends MinimalEObjectImpl.Container implements WhereD
     {
       case Sql_dslPackage.WHERE_DEC__COLUMN:
         return getColumn();
-      case Sql_dslPackage.WHERE_DEC__NAME:
-        return getName();
-      case Sql_dslPackage.WHERE_DEC__VAL:
-        return getVal();
+      case Sql_dslPackage.WHERE_DEC__SIGN:
+        return getSign();
+      case Sql_dslPackage.WHERE_DEC__RIGHT_OPERAND:
+        return getRightOperand();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -208,11 +242,11 @@ public class WhereDecImpl extends MinimalEObjectImpl.Container implements WhereD
         getColumn().clear();
         getColumn().addAll((Collection<? extends CD>)newValue);
         return;
-      case Sql_dslPackage.WHERE_DEC__NAME:
-        setName((String)newValue);
+      case Sql_dslPackage.WHERE_DEC__SIGN:
+        setSign((String)newValue);
         return;
-      case Sql_dslPackage.WHERE_DEC__VAL:
-        setVal((Integer)newValue);
+      case Sql_dslPackage.WHERE_DEC__RIGHT_OPERAND:
+        setRightOperand((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -231,11 +265,11 @@ public class WhereDecImpl extends MinimalEObjectImpl.Container implements WhereD
       case Sql_dslPackage.WHERE_DEC__COLUMN:
         getColumn().clear();
         return;
-      case Sql_dslPackage.WHERE_DEC__NAME:
-        setName(NAME_EDEFAULT);
+      case Sql_dslPackage.WHERE_DEC__SIGN:
+        setSign(SIGN_EDEFAULT);
         return;
-      case Sql_dslPackage.WHERE_DEC__VAL:
-        setVal(VAL_EDEFAULT);
+      case Sql_dslPackage.WHERE_DEC__RIGHT_OPERAND:
+        setRightOperand((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -253,10 +287,10 @@ public class WhereDecImpl extends MinimalEObjectImpl.Container implements WhereD
     {
       case Sql_dslPackage.WHERE_DEC__COLUMN:
         return column != null && !column.isEmpty();
-      case Sql_dslPackage.WHERE_DEC__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case Sql_dslPackage.WHERE_DEC__VAL:
-        return val != VAL_EDEFAULT;
+      case Sql_dslPackage.WHERE_DEC__SIGN:
+        return SIGN_EDEFAULT == null ? sign != null : !SIGN_EDEFAULT.equals(sign);
+      case Sql_dslPackage.WHERE_DEC__RIGHT_OPERAND:
+        return rightOperand != null;
     }
     return super.eIsSet(featureID);
   }
@@ -272,10 +306,8 @@ public class WhereDecImpl extends MinimalEObjectImpl.Container implements WhereD
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", val: ");
-    result.append(val);
+    result.append(" (sign: ");
+    result.append(sign);
     result.append(')');
     return result.toString();
   }

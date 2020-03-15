@@ -27,16 +27,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface FromAndWhereClauses extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Table</b></em>' reference list.
-   * The list contents are of type {@link uk.ac.kcl.dsl.sql_dsl.TableName}.
+   * Returns the value of the '<em><b>Table</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Table</em>' reference list.
+   * @return the value of the '<em>Table</em>' reference.
+   * @see #setTable(TableName)
    * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getFromAndWhereClauses_Table()
    * @model
    * @generated
    */
-  EList<TableName> getTable();
+  TableName getTable();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.FromAndWhereClauses#getTable <em>Table</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Table</em>' reference.
+   * @see #getTable()
+   * @generated
+   */
+  void setTable(TableName value);
 
   /**
    * Returns the value of the '<em><b>Z</b></em>' containment reference list.

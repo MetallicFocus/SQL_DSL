@@ -185,16 +185,16 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cZWhereDecParserRuleCall_2_2_1_0 = (RuleCall)cZAssignment_2_2_1.eContents().get(0);
 		
 		//FromAndWhereClauses:
-		//	"FROM" table+=[TableName] ("WHERE" z+=WhereDec (("AND" | "OR") z+=WhereDec)*)?;
+		//	"FROM" table=[TableName] ("WHERE" z+=WhereDec (("AND" | "OR") z+=WhereDec)*)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"FROM" table+=[TableName] ("WHERE" z+=WhereDec (("AND" | "OR") z+=WhereDec)*)?
+		//"FROM" table=[TableName] ("WHERE" z+=WhereDec (("AND" | "OR") z+=WhereDec)*)?
 		public Group getGroup() { return cGroup; }
 		
 		//"FROM"
 		public Keyword getFROMKeyword_0() { return cFROMKeyword_0; }
 		
-		//table+=[TableName]
+		//table=[TableName]
 		public Assignment getTableAssignment_1() { return cTableAssignment_1; }
 		
 		//[TableName]
@@ -239,31 +239,28 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cColumnAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cColumnCDCrossReference_0_0 = (CrossReference)cColumnAssignment_0.eContents().get(0);
 		private final RuleCall cColumnCDIDTerminalRuleCall_0_0_1 = (RuleCall)cColumnCDCrossReference_0_0.eContents().get(1);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Keyword cEqualsSignKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
-		private final Keyword cLessThanSignKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
-		private final Keyword cLessThanSignEqualsSignKeyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
-		private final Keyword cGreaterThanSignKeyword_1_3 = (Keyword)cAlternatives_1.eContents().get(3);
-		private final Keyword cGreaterThanSignEqualsSignKeyword_1_4 = (Keyword)cAlternatives_1.eContents().get(4);
-		private final Keyword cExclamationMarkEqualsSignKeyword_1_5 = (Keyword)cAlternatives_1.eContents().get(5);
-		private final Keyword cLIKEKeyword_1_6 = (Keyword)cAlternatives_1.eContents().get(6);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
-		private final Keyword cNumberSignKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
-		private final Assignment cNameAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_2_0_1_0 = (RuleCall)cNameAssignment_2_0_1.eContents().get(0);
-		private final Keyword cNumberSignKeyword_2_0_2 = (Keyword)cGroup_2_0.eContents().get(2);
-		private final Assignment cColumnAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
-		private final CrossReference cColumnCDCrossReference_2_1_0 = (CrossReference)cColumnAssignment_2_1.eContents().get(0);
-		private final RuleCall cColumnCDIDTerminalRuleCall_2_1_0_1 = (RuleCall)cColumnCDCrossReference_2_1_0.eContents().get(1);
-		private final Assignment cValAssignment_2_2 = (Assignment)cAlternatives_2.eContents().get(2);
-		private final RuleCall cValINTTerminalRuleCall_2_2_0 = (RuleCall)cValAssignment_2_2.eContents().get(0);
+		private final Assignment cSignAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cSignAlternatives_1_0 = (Alternatives)cSignAssignment_1.eContents().get(0);
+		private final Keyword cSignEqualsSignKeyword_1_0_0 = (Keyword)cSignAlternatives_1_0.eContents().get(0);
+		private final Keyword cSignLessThanSignKeyword_1_0_1 = (Keyword)cSignAlternatives_1_0.eContents().get(1);
+		private final Keyword cSignLessThanSignEqualsSignKeyword_1_0_2 = (Keyword)cSignAlternatives_1_0.eContents().get(2);
+		private final Keyword cSignGreaterThanSignKeyword_1_0_3 = (Keyword)cSignAlternatives_1_0.eContents().get(3);
+		private final Keyword cSignGreaterThanSignEqualsSignKeyword_1_0_4 = (Keyword)cSignAlternatives_1_0.eContents().get(4);
+		private final Keyword cSignExclamationMarkEqualsSignKeyword_1_0_5 = (Keyword)cSignAlternatives_1_0.eContents().get(5);
+		private final Keyword cSignLIKEKeyword_1_0_6 = (Keyword)cSignAlternatives_1_0.eContents().get(6);
+		private final Assignment cRightOperandAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cRightOperandAlternatives_2_0 = (Alternatives)cRightOperandAssignment_2.eContents().get(0);
+		private final RuleCall cRightOperandRightOperandOneParserRuleCall_2_0_0 = (RuleCall)cRightOperandAlternatives_2_0.eContents().get(0);
+		private final RuleCall cRightOperandRightOperandTwoParserRuleCall_2_0_1 = (RuleCall)cRightOperandAlternatives_2_0.eContents().get(1);
+		private final RuleCall cRightOperandRightOperandThreeParserRuleCall_2_0_2 = (RuleCall)cRightOperandAlternatives_2_0.eContents().get(2);
 		
 		//WhereDec:
-		//	column+=[CD] ("=" | "<" | "<=" | ">" | ">=" | "!=" | "LIKE") ("#" name=ID "#" | column+=[CD] | val=INT);
+		//	column+=[CD] sign=("=" | "<" | "<=" | ">" | ">=" | "!=" | "LIKE") rightOperand=(RightOperandOne | RightOperandTwo |
+		//	RightOperandThree);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//column+=[CD] ("=" | "<" | "<=" | ">" | ">=" | "!=" | "LIKE") ("#" name=ID "#" | column+=[CD] | val=INT)
+		//column+=[CD] sign=("=" | "<" | "<=" | ">" | ">=" | "!=" | "LIKE") rightOperand=(RightOperandOne | RightOperandTwo |
+		//RightOperandThree)
 		public Group getGroup() { return cGroup; }
 		
 		//column+=[CD]
@@ -275,62 +272,108 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getColumnCDIDTerminalRuleCall_0_0_1() { return cColumnCDIDTerminalRuleCall_0_0_1; }
 		
+		//sign=("=" | "<" | "<=" | ">" | ">=" | "!=" | "LIKE")
+		public Assignment getSignAssignment_1() { return cSignAssignment_1; }
+		
 		//("=" | "<" | "<=" | ">" | ">=" | "!=" | "LIKE")
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		public Alternatives getSignAlternatives_1_0() { return cSignAlternatives_1_0; }
 		
 		//"="
-		public Keyword getEqualsSignKeyword_1_0() { return cEqualsSignKeyword_1_0; }
+		public Keyword getSignEqualsSignKeyword_1_0_0() { return cSignEqualsSignKeyword_1_0_0; }
 		
 		//"<"
-		public Keyword getLessThanSignKeyword_1_1() { return cLessThanSignKeyword_1_1; }
+		public Keyword getSignLessThanSignKeyword_1_0_1() { return cSignLessThanSignKeyword_1_0_1; }
 		
 		//"<="
-		public Keyword getLessThanSignEqualsSignKeyword_1_2() { return cLessThanSignEqualsSignKeyword_1_2; }
+		public Keyword getSignLessThanSignEqualsSignKeyword_1_0_2() { return cSignLessThanSignEqualsSignKeyword_1_0_2; }
 		
 		//">"
-		public Keyword getGreaterThanSignKeyword_1_3() { return cGreaterThanSignKeyword_1_3; }
+		public Keyword getSignGreaterThanSignKeyword_1_0_3() { return cSignGreaterThanSignKeyword_1_0_3; }
 		
 		//">="
-		public Keyword getGreaterThanSignEqualsSignKeyword_1_4() { return cGreaterThanSignEqualsSignKeyword_1_4; }
+		public Keyword getSignGreaterThanSignEqualsSignKeyword_1_0_4() { return cSignGreaterThanSignEqualsSignKeyword_1_0_4; }
 		
 		//"!="
-		public Keyword getExclamationMarkEqualsSignKeyword_1_5() { return cExclamationMarkEqualsSignKeyword_1_5; }
+		public Keyword getSignExclamationMarkEqualsSignKeyword_1_0_5() { return cSignExclamationMarkEqualsSignKeyword_1_0_5; }
 		
 		//"LIKE"
-		public Keyword getLIKEKeyword_1_6() { return cLIKEKeyword_1_6; }
+		public Keyword getSignLIKEKeyword_1_0_6() { return cSignLIKEKeyword_1_0_6; }
 		
-		//("#" name=ID "#" | column+=[CD] | val=INT)
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		//rightOperand=(RightOperandOne | RightOperandTwo | RightOperandThree)
+		public Assignment getRightOperandAssignment_2() { return cRightOperandAssignment_2; }
+		
+		//(RightOperandOne | RightOperandTwo | RightOperandThree)
+		public Alternatives getRightOperandAlternatives_2_0() { return cRightOperandAlternatives_2_0; }
+		
+		//RightOperandOne
+		public RuleCall getRightOperandRightOperandOneParserRuleCall_2_0_0() { return cRightOperandRightOperandOneParserRuleCall_2_0_0; }
+		
+		//RightOperandTwo
+		public RuleCall getRightOperandRightOperandTwoParserRuleCall_2_0_1() { return cRightOperandRightOperandTwoParserRuleCall_2_0_1; }
+		
+		//RightOperandThree
+		public RuleCall getRightOperandRightOperandThreeParserRuleCall_2_0_2() { return cRightOperandRightOperandThreeParserRuleCall_2_0_2; }
+	}
+	public class RightOperandOneElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.RightOperandOne");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cNumberSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//RightOperandOne:
+		//	"#" name=ID "#";
+		@Override public ParserRule getRule() { return rule; }
 		
 		//"#" name=ID "#"
-		public Group getGroup_2_0() { return cGroup_2_0; }
+		public Group getGroup() { return cGroup; }
 		
 		//"#"
-		public Keyword getNumberSignKeyword_2_0_0() { return cNumberSignKeyword_2_0_0; }
+		public Keyword getNumberSignKeyword_0() { return cNumberSignKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_2_0_1() { return cNameAssignment_2_0_1; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0_1_0() { return cNameIDTerminalRuleCall_2_0_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//"#"
-		public Keyword getNumberSignKeyword_2_0_2() { return cNumberSignKeyword_2_0_2; }
+		public Keyword getNumberSignKeyword_2() { return cNumberSignKeyword_2; }
+	}
+	public class RightOperandTwoElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.RightOperandTwo");
+		private final Assignment cColumnAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cColumnCDCrossReference_0 = (CrossReference)cColumnAssignment.eContents().get(0);
+		private final RuleCall cColumnCDIDTerminalRuleCall_0_1 = (RuleCall)cColumnCDCrossReference_0.eContents().get(1);
+		
+		//RightOperandTwo:
+		//	column+=[CD];
+		@Override public ParserRule getRule() { return rule; }
 		
 		//column+=[CD]
-		public Assignment getColumnAssignment_2_1() { return cColumnAssignment_2_1; }
+		public Assignment getColumnAssignment() { return cColumnAssignment; }
 		
 		//[CD]
-		public CrossReference getColumnCDCrossReference_2_1_0() { return cColumnCDCrossReference_2_1_0; }
+		public CrossReference getColumnCDCrossReference_0() { return cColumnCDCrossReference_0; }
 		
 		//ID
-		public RuleCall getColumnCDIDTerminalRuleCall_2_1_0_1() { return cColumnCDIDTerminalRuleCall_2_1_0_1; }
+		public RuleCall getColumnCDIDTerminalRuleCall_0_1() { return cColumnCDIDTerminalRuleCall_0_1; }
+	}
+	public class RightOperandThreeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.RightOperandThree");
+		private final Assignment cValAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValINTTerminalRuleCall_0 = (RuleCall)cValAssignment.eContents().get(0);
+		
+		//RightOperandThree:
+		//	val=INT;
+		@Override public ParserRule getRule() { return rule; }
 		
 		//val=INT
-		public Assignment getValAssignment_2_2() { return cValAssignment_2_2; }
+		public Assignment getValAssignment() { return cValAssignment; }
 		
 		//INT
-		public RuleCall getValINTTerminalRuleCall_2_2_0() { return cValINTTerminalRuleCall_2_2_0; }
+		public RuleCall getValINTTerminalRuleCall_0() { return cValINTTerminalRuleCall_0; }
 	}
 	public class DatabaseDeclarationStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.dsl.Sql_dsl.DatabaseDeclarationStatement");
@@ -1618,6 +1661,9 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 	private final SelectStatementElements pSelectStatement;
 	private final FromAndWhereClausesElements pFromAndWhereClauses;
 	private final WhereDecElements pWhereDec;
+	private final RightOperandOneElements pRightOperandOne;
+	private final RightOperandTwoElements pRightOperandTwo;
+	private final RightOperandThreeElements pRightOperandThree;
 	private final DatabaseDeclarationStatementElements pDatabaseDeclarationStatement;
 	private final CreateTableStatementElements pCreateTableStatement;
 	private final TableDeclarationElements pTableDeclaration;
@@ -1662,6 +1708,9 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pSelectStatement = new SelectStatementElements();
 		this.pFromAndWhereClauses = new FromAndWhereClausesElements();
 		this.pWhereDec = new WhereDecElements();
+		this.pRightOperandOne = new RightOperandOneElements();
+		this.pRightOperandTwo = new RightOperandTwoElements();
+		this.pRightOperandThree = new RightOperandThreeElements();
 		this.pDatabaseDeclarationStatement = new DatabaseDeclarationStatementElements();
 		this.pCreateTableStatement = new CreateTableStatementElements();
 		this.pTableDeclaration = new TableDeclarationElements();
@@ -1757,7 +1806,7 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//FromAndWhereClauses:
-	//	"FROM" table+=[TableName] ("WHERE" z+=WhereDec (("AND" | "OR") z+=WhereDec)*)?;
+	//	"FROM" table=[TableName] ("WHERE" z+=WhereDec (("AND" | "OR") z+=WhereDec)*)?;
 	public FromAndWhereClausesElements getFromAndWhereClausesAccess() {
 		return pFromAndWhereClauses;
 	}
@@ -1767,13 +1816,44 @@ public class Sql_dslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//WhereDec:
-	//	column+=[CD] ("=" | "<" | "<=" | ">" | ">=" | "!=" | "LIKE") ("#" name=ID "#" | column+=[CD] | val=INT);
+	//	column+=[CD] sign=("=" | "<" | "<=" | ">" | ">=" | "!=" | "LIKE") rightOperand=(RightOperandOne | RightOperandTwo |
+	//	RightOperandThree);
 	public WhereDecElements getWhereDecAccess() {
 		return pWhereDec;
 	}
 	
 	public ParserRule getWhereDecRule() {
 		return getWhereDecAccess().getRule();
+	}
+	
+	//RightOperandOne:
+	//	"#" name=ID "#";
+	public RightOperandOneElements getRightOperandOneAccess() {
+		return pRightOperandOne;
+	}
+	
+	public ParserRule getRightOperandOneRule() {
+		return getRightOperandOneAccess().getRule();
+	}
+	
+	//RightOperandTwo:
+	//	column+=[CD];
+	public RightOperandTwoElements getRightOperandTwoAccess() {
+		return pRightOperandTwo;
+	}
+	
+	public ParserRule getRightOperandTwoRule() {
+		return getRightOperandTwoAccess().getRule();
+	}
+	
+	//RightOperandThree:
+	//	val=INT;
+	public RightOperandThreeElements getRightOperandThreeAccess() {
+		return pRightOperandThree;
+	}
+	
+	public ParserRule getRightOperandThreeRule() {
+		return getRightOperandThreeAccess().getRule();
 	}
 	
 	///*

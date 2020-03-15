@@ -34,8 +34,8 @@ public class Sql_dslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 			builder.put(grammarAccess.getSelectStatementAccess().getAlternatives_1(), "rule__SelectStatement__Alternatives_1");
 			builder.put(grammarAccess.getFromAndWhereClausesAccess().getAlternatives_2_2_0(), "rule__FromAndWhereClauses__Alternatives_2_2_0");
-			builder.put(grammarAccess.getWhereDecAccess().getAlternatives_1(), "rule__WhereDec__Alternatives_1");
-			builder.put(grammarAccess.getWhereDecAccess().getAlternatives_2(), "rule__WhereDec__Alternatives_2");
+			builder.put(grammarAccess.getWhereDecAccess().getSignAlternatives_1_0(), "rule__WhereDec__SignAlternatives_1_0");
+			builder.put(grammarAccess.getWhereDecAccess().getRightOperandAlternatives_2_0(), "rule__WhereDec__RightOperandAlternatives_2_0");
 			builder.put(grammarAccess.getTableDeclarationAccess().getAttributesAlternatives_4_0(), "rule__TableDeclaration__AttributesAlternatives_4_0");
 			builder.put(grammarAccess.getTableDeclarationAccess().getAttributesAlternatives_5_1_0(), "rule__TableDeclaration__AttributesAlternatives_5_1_0");
 			builder.put(grammarAccess.getUpdateTableStatementAccess().getAlternatives_5_2_0(), "rule__UpdateTableStatement__Alternatives_5_2_0");
@@ -50,7 +50,7 @@ public class Sql_dslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFromAndWhereClausesAccess().getGroup_2(), "rule__FromAndWhereClauses__Group_2__0");
 			builder.put(grammarAccess.getFromAndWhereClausesAccess().getGroup_2_2(), "rule__FromAndWhereClauses__Group_2_2__0");
 			builder.put(grammarAccess.getWhereDecAccess().getGroup(), "rule__WhereDec__Group__0");
-			builder.put(grammarAccess.getWhereDecAccess().getGroup_2_0(), "rule__WhereDec__Group_2_0__0");
+			builder.put(grammarAccess.getRightOperandOneAccess().getGroup(), "rule__RightOperandOne__Group__0");
 			builder.put(grammarAccess.getDatabaseDeclarationStatementAccess().getGroup(), "rule__DatabaseDeclarationStatement__Group__0");
 			builder.put(grammarAccess.getTableDeclarationAccess().getGroup(), "rule__TableDeclaration__Group__0");
 			builder.put(grammarAccess.getTableDeclarationAccess().getGroup_5(), "rule__TableDeclaration__Group_5__0");
@@ -90,9 +90,11 @@ public class Sql_dslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFromAndWhereClausesAccess().getZAssignment_2_1(), "rule__FromAndWhereClauses__ZAssignment_2_1");
 			builder.put(grammarAccess.getFromAndWhereClausesAccess().getZAssignment_2_2_1(), "rule__FromAndWhereClauses__ZAssignment_2_2_1");
 			builder.put(grammarAccess.getWhereDecAccess().getColumnAssignment_0(), "rule__WhereDec__ColumnAssignment_0");
-			builder.put(grammarAccess.getWhereDecAccess().getNameAssignment_2_0_1(), "rule__WhereDec__NameAssignment_2_0_1");
-			builder.put(grammarAccess.getWhereDecAccess().getColumnAssignment_2_1(), "rule__WhereDec__ColumnAssignment_2_1");
-			builder.put(grammarAccess.getWhereDecAccess().getValAssignment_2_2(), "rule__WhereDec__ValAssignment_2_2");
+			builder.put(grammarAccess.getWhereDecAccess().getSignAssignment_1(), "rule__WhereDec__SignAssignment_1");
+			builder.put(grammarAccess.getWhereDecAccess().getRightOperandAssignment_2(), "rule__WhereDec__RightOperandAssignment_2");
+			builder.put(grammarAccess.getRightOperandOneAccess().getNameAssignment_1(), "rule__RightOperandOne__NameAssignment_1");
+			builder.put(grammarAccess.getRightOperandTwoAccess().getColumnAssignment(), "rule__RightOperandTwo__ColumnAssignment");
+			builder.put(grammarAccess.getRightOperandThreeAccess().getValAssignment(), "rule__RightOperandThree__ValAssignment");
 			builder.put(grammarAccess.getDatabaseDeclarationStatementAccess().getNameAssignment_2(), "rule__DatabaseDeclarationStatement__NameAssignment_2");
 			builder.put(grammarAccess.getCreateTableStatementAccess().getTablesAssignment(), "rule__CreateTableStatement__TablesAssignment");
 			builder.put(grammarAccess.getTableDeclarationAccess().getTableAssignment_2(), "rule__TableDeclaration__TableAssignment_2");

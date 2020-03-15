@@ -36,6 +36,9 @@ import uk.ac.kcl.dsl.sql_dsl.MinFunction;
 import uk.ac.kcl.dsl.sql_dsl.Model;
 import uk.ac.kcl.dsl.sql_dsl.PrimaryKey;
 import uk.ac.kcl.dsl.sql_dsl.RealLiteral;
+import uk.ac.kcl.dsl.sql_dsl.RightOperandOne;
+import uk.ac.kcl.dsl.sql_dsl.RightOperandThree;
+import uk.ac.kcl.dsl.sql_dsl.RightOperandTwo;
 import uk.ac.kcl.dsl.sql_dsl.SelectStatement;
 import uk.ac.kcl.dsl.sql_dsl.SetClause;
 import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage;
@@ -123,6 +126,15 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case Sql_dslPackage.REAL_LITERAL:
 				sequence_RealLiteral(context, (RealLiteral) semanticObject); 
+				return; 
+			case Sql_dslPackage.RIGHT_OPERAND_ONE:
+				sequence_RightOperandOne(context, (RightOperandOne) semanticObject); 
+				return; 
+			case Sql_dslPackage.RIGHT_OPERAND_THREE:
+				sequence_RightOperandThree(context, (RightOperandThree) semanticObject); 
+				return; 
+			case Sql_dslPackage.RIGHT_OPERAND_TWO:
+				sequence_RightOperandTwo(context, (RightOperandTwo) semanticObject); 
 				return; 
 			case Sql_dslPackage.SELECT_STATEMENT:
 				sequence_SelectStatement(context, (SelectStatement) semanticObject); 
@@ -344,7 +356,7 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     FromAndWhereClauses returns FromAndWhereClauses
 	 *
 	 * Constraint:
-	 *     (table+=[TableName|ID] (z+=WhereDec z+=WhereDec*)?)
+	 *     (table=[TableName|ID] (z+=WhereDec z+=WhereDec*)?)
 	 */
 	protected void sequence_FromAndWhereClauses(ISerializationContext context, FromAndWhereClauses semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -459,6 +471,54 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     RightOperandOne returns RightOperandOne
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_RightOperandOne(ISerializationContext context, RightOperandOne semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.RIGHT_OPERAND_ONE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.RIGHT_OPERAND_ONE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRightOperandOneAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RightOperandThree returns RightOperandThree
+	 *
+	 * Constraint:
+	 *     val=INT
+	 */
+	protected void sequence_RightOperandThree(ISerializationContext context, RightOperandThree semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Sql_dslPackage.Literals.RIGHT_OPERAND_THREE__VAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Sql_dslPackage.Literals.RIGHT_OPERAND_THREE__VAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRightOperandThreeAccess().getValINTTerminalRuleCall_0(), semanticObject.getVal());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RightOperandTwo returns RightOperandTwo
+	 *
+	 * Constraint:
+	 *     column+=[CD|ID]
+	 */
+	protected void sequence_RightOperandTwo(ISerializationContext context, RightOperandTwo semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Statement returns SelectStatement
 	 *     SelectStatement returns SelectStatement
 	 *
@@ -566,7 +626,19 @@ public class Sql_dslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     WhereDec returns WhereDec
 	 *
 	 * Constraint:
-	 *     (column+=[CD|ID] (name=ID | column+=[CD|ID] | val=INT))
+	 *     (
+	 *         column+=[CD|ID] 
+	 *         (
+	 *             sign='=' | 
+	 *             sign='<' | 
+	 *             sign='<=' | 
+	 *             sign='>' | 
+	 *             sign='>=' | 
+	 *             sign='!=' | 
+	 *             sign='LIKE'
+	 *         ) 
+	 *         (rightOperand=RightOperandOne | rightOperand=RightOperandTwo | rightOperand=RightOperandThree)
+	 *     )
 	 */
 	protected void sequence_WhereDec(ISerializationContext context, WhereDec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

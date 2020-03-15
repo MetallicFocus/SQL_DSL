@@ -34,5 +34,7 @@ class Sql_dslValidator extends AbstractSql_dslValidator {
 	 				warning("Columns in select must be unique (not duplicated)", Sql_dslPackage.Literals.SELECT_STATEMENT__COLUMN, INVALID_SAME_SELECT_COLUMNS);
 	 				
 	 }
+	 
+	 // Give a sensible error message for keyword repetition or when entering a wrong keyword at a wrong time
 	
 }

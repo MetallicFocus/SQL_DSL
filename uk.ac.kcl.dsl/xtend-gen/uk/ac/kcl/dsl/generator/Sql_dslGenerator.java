@@ -19,12 +19,10 @@ import uk.ac.kcl.dsl.sql_dsl.DatabaseDeclarationStatement;
 import uk.ac.kcl.dsl.sql_dsl.DeleteTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.DropTableStatement;
 import uk.ac.kcl.dsl.sql_dsl.Model;
-import uk.ac.kcl.dsl.sql_dsl.SetClause;
 import uk.ac.kcl.dsl.sql_dsl.Statement;
 import uk.ac.kcl.dsl.sql_dsl.TableDeclaration;
 import uk.ac.kcl.dsl.sql_dsl.TableName;
 import uk.ac.kcl.dsl.sql_dsl.TruncateTableStatement;
-import uk.ac.kcl.dsl.sql_dsl.UpdateTableStatement;
 
 /**
  * Generates code from your model files on save.
@@ -148,37 +146,54 @@ public class Sql_dslGenerator extends AbstractGenerator {
   
   protected String _generateJavaStatement(final DeleteTableStatement stmt) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("DELETE TABLE ");
-    EList<TableName> _table = stmt.getX().getTable();
-    _builder.append(_table);
-    _builder.append(";");
+    _builder.append("DELETE FROM TABLE ");
+    String _name = stmt.getX().getTable().getName();
+    _builder.append(_name);
     _builder.newLineIfNotEmpty();
-    return _builder.toString();
-  }
-  
-  protected String _generateJavaStatement(final UpdateTableStatement stmt) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("UPDATE TABLE ");
-    EList<TableName> _table = stmt.getTable();
-    _builder.append(_table);
-    _builder.append(" SET ");
+    int _size = stmt.getX().getZ().size();
+    final int sizeOfStatement = (_size - 1);
     _builder.newLineIfNotEmpty();
-    _builder.newLine();
     {
-      EList<SetClause> _sc = stmt.getSc();
-      boolean _hasElements = false;
-      for(final SetClause sc : _sc) {
-        if (!_hasElements) {
-          _hasElements = true;
-        } else {
-          _builder.appendImmediate(",", "");
+      if ((sizeOfStatement == 1)) {
+        _builder.append("WHERE ");
+        String _name_1 = stmt.getX().getZ().get(sizeOfStatement).getColumn().get(sizeOfStatement).getName();
+        _builder.append(_name_1);
+        _builder.append(" ");
+        String _sign = stmt.getX().getZ().get(sizeOfStatement).getSign();
+        _builder.append(_sign);
+        _builder.append(" ");
+        EObject _rightOperand = stmt.getX().getZ().get(sizeOfStatement).getRightOperand();
+        _builder.append(_rightOperand);
+        _builder.newLineIfNotEmpty();
+      } else {
+        _builder.append("WHERE ");
+        _builder.newLine();
+        {
+          ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, sizeOfStatement, true);
+          for(final Integer i : _doubleDotLessThan) {
+            String _name_2 = stmt.getX().getZ().get((i).intValue()).getColumn().get((i).intValue()).getName();
+            _builder.append(_name_2);
+            _builder.append(" ");
+            String _sign_1 = stmt.getX().getZ().get((i).intValue()).getSign();
+            _builder.append(_sign_1);
+            _builder.append(" ");
+            EObject _rightOperand_1 = stmt.getX().getZ().get((i).intValue()).getRightOperand();
+            _builder.append(_rightOperand_1);
+            _builder.append(" AND");
+            _builder.newLineIfNotEmpty();
+          }
         }
-        EList<SetClause> _sc_1 = stmt.getSc();
-        _builder.append(_sc_1);
+        String _name_3 = stmt.getX().getZ().get(sizeOfStatement).getColumn().get(sizeOfStatement).getName();
+        _builder.append(_name_3);
+        _builder.append(" ");
+        String _sign_2 = stmt.getX().getZ().get(sizeOfStatement).getSign();
+        _builder.append(_sign_2);
+        _builder.append(" ");
+        EObject _rightOperand_2 = stmt.getX().getZ().get(sizeOfStatement).getRightOperand();
+        _builder.append(_rightOperand_2);
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.newLine();
     _builder.append(";");
     _builder.newLine();
     return _builder.toString();
@@ -193,8 +208,6 @@ public class Sql_dslGenerator extends AbstractGenerator {
       return _generateJavaStatement((DropTableStatement)stmt);
     } else if (stmt instanceof TruncateTableStatement) {
       return _generateJavaStatement((TruncateTableStatement)stmt);
-    } else if (stmt instanceof UpdateTableStatement) {
-      return _generateJavaStatement((UpdateTableStatement)stmt);
     } else if (stmt instanceof Statement) {
       return _generateJavaStatement((Statement)stmt);
     } else if (stmt instanceof TableDeclaration) {

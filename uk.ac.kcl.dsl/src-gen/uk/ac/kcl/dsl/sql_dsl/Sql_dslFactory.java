@@ -69,6 +69,33 @@ public interface Sql_dslFactory extends EFactory
   WhereDec createWhereDec();
 
   /**
+   * Returns a new object of class '<em>Right Operand One</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Right Operand One</em>'.
+   * @generated
+   */
+  RightOperandOne createRightOperandOne();
+
+  /**
+   * Returns a new object of class '<em>Right Operand Two</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Right Operand Two</em>'.
+   * @generated
+   */
+  RightOperandTwo createRightOperandTwo();
+
+  /**
+   * Returns a new object of class '<em>Right Operand Three</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Right Operand Three</em>'.
+   * @generated
+   */
+  RightOperandThree createRightOperandThree();
+
+  /**
    * Returns a new object of class '<em>Database Declaration Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

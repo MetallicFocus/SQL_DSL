@@ -24,7 +24,6 @@ public class Sql_dslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_FromAndWhereClauses_ANDKeyword_2_2_0_0_or_ORKeyword_2_2_0_1;
 	protected AbstractElementAlias match_SelectStatement_AsteriskKeyword_1_0_q;
 	protected AbstractElementAlias match_UpdateTableStatement_ANDKeyword_5_2_0_0_or_ORKeyword_5_2_0_1;
-	protected AbstractElementAlias match_WhereDec_EqualsSignKeyword_1_0_or_ExclamationMarkEqualsSignKeyword_1_5_or_GreaterThanSignEqualsSignKeyword_1_4_or_GreaterThanSignKeyword_1_3_or_LIKEKeyword_1_6_or_LessThanSignEqualsSignKeyword_1_2_or_LessThanSignKeyword_1_1;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -32,7 +31,6 @@ public class Sql_dslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_FromAndWhereClauses_ANDKeyword_2_2_0_0_or_ORKeyword_2_2_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFromAndWhereClausesAccess().getANDKeyword_2_2_0_0()), new TokenAlias(false, false, grammarAccess.getFromAndWhereClausesAccess().getORKeyword_2_2_0_1()));
 		match_SelectStatement_AsteriskKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getSelectStatementAccess().getAsteriskKeyword_1_0());
 		match_UpdateTableStatement_ANDKeyword_5_2_0_0_or_ORKeyword_5_2_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getUpdateTableStatementAccess().getANDKeyword_5_2_0_0()), new TokenAlias(false, false, grammarAccess.getUpdateTableStatementAccess().getORKeyword_5_2_0_1()));
-		match_WhereDec_EqualsSignKeyword_1_0_or_ExclamationMarkEqualsSignKeyword_1_5_or_GreaterThanSignEqualsSignKeyword_1_4_or_GreaterThanSignKeyword_1_3_or_LIKEKeyword_1_6_or_LessThanSignEqualsSignKeyword_1_2_or_LessThanSignKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getWhereDecAccess().getEqualsSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getWhereDecAccess().getExclamationMarkEqualsSignKeyword_1_5()), new TokenAlias(false, false, grammarAccess.getWhereDecAccess().getGreaterThanSignEqualsSignKeyword_1_4()), new TokenAlias(false, false, grammarAccess.getWhereDecAccess().getGreaterThanSignKeyword_1_3()), new TokenAlias(false, false, grammarAccess.getWhereDecAccess().getLIKEKeyword_1_6()), new TokenAlias(false, false, grammarAccess.getWhereDecAccess().getLessThanSignEqualsSignKeyword_1_2()), new TokenAlias(false, false, grammarAccess.getWhereDecAccess().getLessThanSignKeyword_1_1()));
 	}
 	
 	@Override
@@ -53,8 +51,6 @@ public class Sql_dslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_SelectStatement_AsteriskKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_UpdateTableStatement_ANDKeyword_5_2_0_0_or_ORKeyword_5_2_0_1.equals(syntax))
 				emit_UpdateTableStatement_ANDKeyword_5_2_0_0_or_ORKeyword_5_2_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_WhereDec_EqualsSignKeyword_1_0_or_ExclamationMarkEqualsSignKeyword_1_5_or_GreaterThanSignEqualsSignKeyword_1_4_or_GreaterThanSignKeyword_1_3_or_LIKEKeyword_1_6_or_LessThanSignEqualsSignKeyword_1_2_or_LessThanSignKeyword_1_1.equals(syntax))
-				emit_WhereDec_EqualsSignKeyword_1_0_or_ExclamationMarkEqualsSignKeyword_1_5_or_GreaterThanSignEqualsSignKeyword_1_4_or_GreaterThanSignKeyword_1_3_or_LIKEKeyword_1_6_or_LessThanSignEqualsSignKeyword_1_2_or_LessThanSignKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -89,27 +85,6 @@ public class Sql_dslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     z+=WhereDec (ambiguity) z+=WhereDec
 	 */
 	protected void emit_UpdateTableStatement_ANDKeyword_5_2_0_0_or_ORKeyword_5_2_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     (
-	  *         '=' | 
-	  *         '<' | 
-	  *         '<=' | 
-	  *         '>' | 
-	  *         '>=' | 
-	  *         '!=' | 
-	  *         'LIKE'
-	  *     )
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     column+=[CD|ID] (ambiguity) '#' name=ID
-	 *     column+=[CD|ID] (ambiguity) column+=[CD|ID]
-	 *     column+=[CD|ID] (ambiguity) val=INT
-	 */
-	protected void emit_WhereDec_EqualsSignKeyword_1_0_or_ExclamationMarkEqualsSignKeyword_1_5_or_GreaterThanSignEqualsSignKeyword_1_4_or_GreaterThanSignKeyword_1_3_or_LIKEKeyword_1_6_or_LessThanSignEqualsSignKeyword_1_2_or_LessThanSignKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

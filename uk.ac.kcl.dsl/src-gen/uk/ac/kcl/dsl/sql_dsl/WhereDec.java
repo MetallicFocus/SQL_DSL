@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getColumn <em>Column</em>}</li>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getVal <em>Val</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getSign <em>Sign</em>}</li>
+ *   <li>{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getRightOperand <em>Right Operand</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getWhereDec()
@@ -40,47 +40,47 @@ public interface WhereDec extends EObject
   EList<CD> getColumn();
 
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Sign</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getWhereDec_Name()
+   * @return the value of the '<em>Sign</em>' attribute.
+   * @see #setSign(String)
+   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getWhereDec_Sign()
    * @model
    * @generated
    */
-  String getName();
+  String getSign();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getSign <em>Sign</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Sign</em>' attribute.
+   * @see #getSign()
    * @generated
    */
-  void setName(String value);
+  void setSign(String value);
 
   /**
-   * Returns the value of the '<em><b>Val</b></em>' attribute.
+   * Returns the value of the '<em><b>Right Operand</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Val</em>' attribute.
-   * @see #setVal(int)
-   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getWhereDec_Val()
-   * @model
+   * @return the value of the '<em>Right Operand</em>' containment reference.
+   * @see #setRightOperand(EObject)
+   * @see uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage#getWhereDec_RightOperand()
+   * @model containment="true"
    * @generated
    */
-  int getVal();
+  EObject getRightOperand();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getVal <em>Val</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.dsl.sql_dsl.WhereDec#getRightOperand <em>Right Operand</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Val</em>' attribute.
-   * @see #getVal()
+   * @param value the new value of the '<em>Right Operand</em>' containment reference.
+   * @see #getRightOperand()
    * @generated
    */
-  void setVal(int value);
+  void setRightOperand(EObject value);
 
 } // WhereDec

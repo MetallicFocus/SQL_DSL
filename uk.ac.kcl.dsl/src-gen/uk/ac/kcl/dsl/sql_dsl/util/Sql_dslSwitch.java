@@ -109,6 +109,27 @@ public class Sql_dslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Sql_dslPackage.RIGHT_OPERAND_ONE:
+      {
+        RightOperandOne rightOperandOne = (RightOperandOne)theEObject;
+        T result = caseRightOperandOne(rightOperandOne);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.RIGHT_OPERAND_TWO:
+      {
+        RightOperandTwo rightOperandTwo = (RightOperandTwo)theEObject;
+        T result = caseRightOperandTwo(rightOperandTwo);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Sql_dslPackage.RIGHT_OPERAND_THREE:
+      {
+        RightOperandThree rightOperandThree = (RightOperandThree)theEObject;
+        T result = caseRightOperandThree(rightOperandThree);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case Sql_dslPackage.DATABASE_DECLARATION_STATEMENT:
       {
         DatabaseDeclarationStatement databaseDeclarationStatement = (DatabaseDeclarationStatement)theEObject;
@@ -397,6 +418,54 @@ public class Sql_dslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseWhereDec(WhereDec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Right Operand One</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Right Operand One</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRightOperandOne(RightOperandOne object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Right Operand Two</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Right Operand Two</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRightOperandTwo(RightOperandTwo object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Right Operand Three</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Right Operand Three</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRightOperandThree(RightOperandThree object)
   {
     return null;
   }

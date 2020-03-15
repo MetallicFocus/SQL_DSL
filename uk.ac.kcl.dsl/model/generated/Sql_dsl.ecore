@@ -13,15 +13,25 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FromAndWhereClauses">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="table" unique="false" upperBound="-1"
-        eType="#//TableName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" eType="#//TableName"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="z" upperBound="-1" eType="#//WhereDec"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WhereDec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="column" unique="false"
         upperBound="-1" eType="#//CD"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sign" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightOperand" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RightOperandOne">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RightOperandTwo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="column" unique="false"
+        upperBound="-1" eType="#//CD"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RightOperandThree">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DatabaseDeclarationStatement" eSuperTypes="#//Statement">

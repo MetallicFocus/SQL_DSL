@@ -71,6 +71,9 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
       case Sql_dslPackage.SELECT_STATEMENT: return createSelectStatement();
       case Sql_dslPackage.FROM_AND_WHERE_CLAUSES: return createFromAndWhereClauses();
       case Sql_dslPackage.WHERE_DEC: return createWhereDec();
+      case Sql_dslPackage.RIGHT_OPERAND_ONE: return createRightOperandOne();
+      case Sql_dslPackage.RIGHT_OPERAND_TWO: return createRightOperandTwo();
+      case Sql_dslPackage.RIGHT_OPERAND_THREE: return createRightOperandThree();
       case Sql_dslPackage.DATABASE_DECLARATION_STATEMENT: return createDatabaseDeclarationStatement();
       case Sql_dslPackage.CREATE_TABLE_STATEMENT: return createCreateTableStatement();
       case Sql_dslPackage.TABLE_DECLARATION: return createTableDeclaration();
@@ -195,6 +198,42 @@ public class Sql_dslFactoryImpl extends EFactoryImpl implements Sql_dslFactory
   {
     WhereDecImpl whereDec = new WhereDecImpl();
     return whereDec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RightOperandOne createRightOperandOne()
+  {
+    RightOperandOneImpl rightOperandOne = new RightOperandOneImpl();
+    return rightOperandOne;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RightOperandTwo createRightOperandTwo()
+  {
+    RightOperandTwoImpl rightOperandTwo = new RightOperandTwoImpl();
+    return rightOperandTwo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RightOperandThree createRightOperandThree()
+  {
+    RightOperandThreeImpl rightOperandThree = new RightOperandThreeImpl();
+    return rightOperandThree;
   }
 
   /**
