@@ -3,10 +3,20 @@
  */
 package uk.ac.kcl.dsl.scoping
 
-import org.eclipse.xtext.scoping.IScope
-import uk.ac.kcl.dsl.sql_dsl.IntVarExpression
 import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.scoping.IScope
+import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
+import uk.ac.kcl.dsl.sql_dsl.IntVarExpression
+import uk.ac.kcl.dsl.sql_dsl.CD
 import uk.ac.kcl.dsl.sql_dsl.Model
+import uk.ac.kcl.dsl.sql_dsl.WhereDec
+import uk.ac.kcl.dsl.sql_dsl.VariableDeclarationStatement
+import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.scoping.Scopes
+import org.eclipse.xtext.naming.QualifiedName
+import org.eclipse.xtext.util.SimpleAttributeResolver
+import org.eclipse.emf.ecore.EObject
+import uk.ac.kcl.dsl.sql_dsl.Sql_dslPackage
 
 /**
  * This class contains custom scoping description.
@@ -16,10 +26,12 @@ import uk.ac.kcl.dsl.sql_dsl.Model
  */
 class Sql_dslScopeProvider extends AbstractSql_dslScopeProvider {
 
-
-	/*def IScope scope_IntVarExpression_var(IntVarExpression context, EReference ref) {
-		val model = context.eContainer as Model
-		scopeFor(model)
+    /*
+	override IScope getScope(EObject context, EReference ref) {
+		if(ref == Sql_dslPackage.Literals.SET_CLAUSE__COLUMN) {
+			return abcScope(context.g(Class))
+		}
+		super.getScope(context, ref)
 	}
 	
 	dispatch def IScope visibleVariablesScope(CD ip) {
@@ -38,8 +50,9 @@ class Sql_dslScopeProvider extends AbstractSql_dslScopeProvider {
 		scopeFor(tp.statements.filter(CD))
 	}
 	
-	dispatch def IScope internalVisibleVariablesScope(LoopStatement ls) {
-		scopeFor(ls.statements.filter(VariableDeclaration), ls.eContainer.internalVisibleVariablesScope)
-	}*/
+	//dispatch def IScope internalVisibleVariablesScope(LoopStatement ls) {
+	//	scopeFor(ls.statements.filter(VariableDeclaration), ls.eContainer.internalVisibleVariablesScope)
+	//}
+	*/
 
 }
